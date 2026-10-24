@@ -1,0 +1,24 @@
+# Consistent text files across Windows, Linux, and macOS
+* text=auto eol=lf
+*.bat text eol=crlf
+*.cmd text eol=crlf
+
+# Binary research assets
+*.png binary
+*.jpg binary
+*.jpeg binary
+*.gif binary
+*.webp binary
+*.pdf binary
+*.zip binary
+*.gz binary
+*.npy binary
+*.npz binary
+*.pkl binary
+*.pickle binary
+*.parquet binary
+*.arrow binary
+*.pt binary
+*.pth binary
+*.ckpt binary
+*.safetensors binary

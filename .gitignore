@@ -1,0 +1,68 @@
+# Python environments, bytecode, and build output
+__pycache__/
+*.py[cod]
+.venv/
+venv/
+env/
+.python-version
+build/
+dist/
+*.egg-info/
+
+# Tests, type checking, linting, and notebook cache
+.pytest_cache/
+.mypy_cache/
+.ruff_cache/
+.coverage
+.coverage.*
+htmlcov/
+.ipynb_checkpoints/
+.cache/
+
+# Credentials and machine-local configuration
+.env
+.env.*
+!.env.example
+!.env.*.example
+secrets/
+credentials*.json
+*.pem
+*.key
+
+# Datasets: retain instructions and placeholders only
+/data/*
+!/data/README.md
+!/data/.gitkeep
+/datasets/
+
+# Generated embeddings, checkpoints, and experiment logs
+/embeddings/
+/checkpoints/
+/artifacts/
+/outputs/
+/runs/
+/results/runs/
+/results/raw/
+/wandb/
+/mlruns/
+*.npy
+*.npz
+*.pkl
+*.pickle
+*.parquet
+*.arrow
+*.pt
+*.pth
+*.ckpt
+*.safetensors
+*.log
+
+# Local editor, OS, and code index files
+.idea/
+.vscode/
+.codegraph/
+.DS_Store
+Thumbs.db
+Desktop.ini
+*.swp
+*.swo
