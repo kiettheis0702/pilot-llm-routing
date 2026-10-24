@@ -14,9 +14,9 @@ Pranoy Panda, Raghav Magazine, Chaitanya Devaguptapu, Sho Takemori, and Vishal S
 
 ## Current status
 
-The paper has been accepted for the course project, according to the project handoff. Repository setup is the first implementation step. No dataset preparation, algorithm implementation, or experimental results are included yet.
+The paper has been accepted for the course project, according to the project handoff. The first **Data Gate audit is conditional**: pinned RouterBench 0-shot data is prepared for offline development, deterministic splits and a one-step feedback smoke check run, and Arena preference coverage has been measured. The exact paper dataset choices and several model aliases remain unresolved.
 
-The next milestone is the **Data Gate**: verify the dataset version and schema, map model IDs, define reproducible splits, and demonstrate one bandit interaction with feedback from only the selected arm.
+Read the [Data Gate findings](docs/data-gate.md) before running experiments. No PILOT implementation, preference training, or research result is claimed yet.
 
 ## Scope
 
@@ -33,12 +33,21 @@ git clone https://github.com/kiettheis0702/pilot-llm-routing.git
 cd pilot-llm-routing
 ```
 
-Python dependencies and execution commands will be documented after the data and implementation requirements are verified. There is no runnable research pipeline at this stage.
+Python 3.11–3.13 and `uv` are required for the current data-audit workflow:
+
+```sh
+uv sync --locked
+uv run --locked python scripts/fetch_data.py --data-dir ./data
+uv run --locked python scripts/audit_data.py --data-dir ./data
+uv run --locked python -m pytest -q
+```
+
+Downloads total about 455 MB and require no paid API calls. See [data/README.md](data/README.md) for external-disk paths and output details. This runs the data audit, not a PILOT training or evaluation pipeline.
 
 ## Data and reproducibility
 
 - [RouterBench dataset](https://huggingface.co/datasets/withmartian/routerbench) is the candidate routing benchmark. Its [repository](https://github.com/withmartian/routerbench) is benchmark code, not official PILOT code.
-- [Chatbot Arena conversations](https://huggingface.co/datasets/lmsys/chatbot_arena_conversations) is a candidate preference source; compatibility and preprocessing still need verification against the paper.
+- The legacy [Chatbot Arena conversations](https://huggingface.co/datasets/lmsys/chatbot_arena_conversations) source is gated. The separately audited public [Arena 55K candidate](https://huggingface.co/datasets/lmarena-ai/arena-human-preference-55k) has 57,477 rows; its equivalence to the paper's preference release remains unconfirmed.
 - Keep raw data, embeddings, checkpoints, API keys, and environment files out of Git.
 - Record dataset revisions/checksums, model mappings, splits, seeds, and configurations.
 - During online learning, reveal only the selected arm's reward to the learner.

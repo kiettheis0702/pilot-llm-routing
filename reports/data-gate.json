@@ -1,0 +1,889 @@
+{
+  "gate_status": "conditional: offline routing data usable; faithful reproduction choices unresolved",
+  "source_pins": {
+    "routerbench_0shot": {
+      "repo": "withmartian/routerbench",
+      "revision": "784021482c3f320c6619ed4b3bb3b41a21424fcb",
+      "file": "routerbench_0shot.pkl",
+      "size": 99567659,
+      "sha256": "ba4f77f19517610a707c374e99322d7750c30fc4ae7ff5527888595a1e65d36d"
+    },
+    "routerbench_5shot": {
+      "repo": "withmartian/routerbench",
+      "revision": "784021482c3f320c6619ed4b3bb3b41a21424fcb",
+      "file": "routerbench_5shot.pkl",
+      "size": 171091324,
+      "sha256": "fbd7d3d16fba2759a18fa0ad44409d3e0e92ba80d03d90827eed1a6d084c9ffe"
+    },
+    "arena_55k": {
+      "repo": "lmarena-ai/arena-human-preference-55k",
+      "revision": "18c298340948c0e7f7727399fd459cca6ce0ca6f",
+      "file": "train.csv",
+      "size": 184175071,
+      "sha256": "0692154aaf20fc6649090c3f49b6b5dd1e693a765ecb5f0856ae0da5946f5be2"
+    }
+  },
+  "runtime": {
+    "python": "3.11.0",
+    "numpy": "2.4.6",
+    "pandas": "2.3.3",
+    "pyarrow": "26.0.0"
+  },
+  "config_sha256": {
+    "data_sources.json": "083aaf7201d624056a5b0325ca2c1e9f3576cf91578347d55de7943ca6b1b4f7",
+    "model_mapping.json": "24475e8a9f8e6fe6c9d57018cacc5144332e78faab61ebf72ed08e4d56d99c77"
+  },
+  "routerbench": {
+    "routerbench_0shot": {
+      "rows": 36497,
+      "columns": 37,
+      "arms": [
+        "WizardLM/WizardLM-13B-V1.2",
+        "claude-instant-v1",
+        "claude-v1",
+        "claude-v2",
+        "gpt-3.5-turbo-1106",
+        "gpt-4-1106-preview",
+        "meta/code-llama-instruct-34b-chat",
+        "meta/llama-2-70b-chat",
+        "mistralai/mistral-7b-chat",
+        "mistralai/mixtral-8x7b-chat",
+        "zero-one-ai/Yi-34B-Chat"
+      ],
+      "task_count_raw_eval_name": 86,
+      "task_counts": {
+        "Chinese_character_riddles": 100,
+        "abstract2title": 254,
+        "accounting_audit": 30,
+        "arc-challenge": 1470,
+        "bias_detection": 285,
+        "chinese-lantern-riddles": 20,
+        "chinese-remainder-theorem": 15,
+        "chinese_ancient_masterpieces_dynasty": 16,
+        "chinese_ancient_poetry": 25,
+        "chinese_chu_ci": 15,
+        "chinese_famous_novel": 20,
+        "chinese_hard_translations": 21,
+        "chinese_homonym": 21,
+        "chinese_idioms": 15,
+        "chinese_modern_poem_identification": 21,
+        "chinese_poem": 15,
+        "chinese_shi_jing": 34,
+        "chinese_song_ci": 16,
+        "chinese_tang_poetries": 37,
+        "chinese_zodiac": 394,
+        "consensus_summary": 362,
+        "grade-school-math": 7450,
+        "hellaswag": 10042,
+        "mbpp": 427,
+        "mmlu-abstract-algebra": 100,
+        "mmlu-anatomy": 135,
+        "mmlu-astronomy": 152,
+        "mmlu-business-ethics": 100,
+        "mmlu-clinical-knowledge": 265,
+        "mmlu-college-biology": 144,
+        "mmlu-college-chemistry": 100,
+        "mmlu-college-computer-science": 100,
+        "mmlu-college-mathematics": 100,
+        "mmlu-college-medicine": 173,
+        "mmlu-college-physics": 102,
+        "mmlu-computer-security": 100,
+        "mmlu-conceptual-physics": 235,
+        "mmlu-econometrics": 114,
+        "mmlu-electrical-engineering": 145,
+        "mmlu-elementary-mathematics": 378,
+        "mmlu-formal-logic": 126,
+        "mmlu-global-facts": 100,
+        "mmlu-high-school-biology": 310,
+        "mmlu-high-school-chemistry": 203,
+        "mmlu-high-school-computer-science": 100,
+        "mmlu-high-school-european-history": 165,
+        "mmlu-high-school-geography": 198,
+        "mmlu-high-school-government-and-politics": 193,
+        "mmlu-high-school-macroeconomics": 390,
+        "mmlu-high-school-mathematics": 270,
+        "mmlu-high-school-microeconomics": 238,
+        "mmlu-high-school-physics": 151,
+        "mmlu-high-school-psychology": 545,
+        "mmlu-high-school-statistics": 216,
+        "mmlu-high-school-us-history": 204,
+        "mmlu-high-school-world-history": 237,
+        "mmlu-human-aging": 223,
+        "mmlu-human-sexuality": 131,
+        "mmlu-international-law": 121,
+        "mmlu-jurisprudence": 108,
+        "mmlu-logical-fallacies": 163,
+        "mmlu-machine-learning": 112,
+        "mmlu-management": 103,
+        "mmlu-marketing": 234,
+        "mmlu-medical-genetics": 100,
+        "mmlu-miscellaneous": 783,
+        "mmlu-moral-disputes": 346,
+        "mmlu-moral-scenarios": 895,
+        "mmlu-nutrition": 306,
+        "mmlu-philosophy": 311,
+        "mmlu-prehistory": 324,
+        "mmlu-professional-accounting": 282,
+        "mmlu-professional-law": 1534,
+        "mmlu-professional-medicine": 272,
+        "mmlu-professional-psychology": 612,
+        "mmlu-public-relations": 110,
+        "mmlu-security-studies": 245,
+        "mmlu-sociology": 201,
+        "mmlu-us-foreign-policy": 100,
+        "mmlu-virology": 166,
+        "mmlu-world-religions": 171,
+        "mtbench": 41,
+        "mtbench-math": 20,
+        "mtbench-reference": 19,
+        "test-match": 3,
+        "winogrande": 1267
+      },
+      "duplicate_id_excess_rows": 0,
+      "rows_with_duplicate_ids": 0,
+      "duplicate_prompt_excess_rows": 16,
+      "missing_by_column": {},
+      "rows_with_missing_reward": 0,
+      "nonfinite_rewards": 0,
+      "out_of_range_rewards": 0,
+      "nonbinary_finite_rewards": 84905,
+      "nonfinite_costs": 0,
+      "negative_costs": 0,
+      "reward_range": [
+        0.0,
+        1.0
+      ],
+      "cost_usd_range": [
+        3.8000000000000005e-06,
+        0.05073
+      ],
+      "prompt_segment_count": {
+        "1": 27420,
+        "2": 9077
+      },
+      "response_content": {
+        "WizardLM/WizardLM-13B-V1.2": {
+          "malformed_or_nonlist": 0,
+          "empty_sequences": 0,
+          "null_segments": 0,
+          "other_nonstring_segments": 0
+        },
+        "claude-instant-v1": {
+          "malformed_or_nonlist": 0,
+          "empty_sequences": 0,
+          "null_segments": 0,
+          "other_nonstring_segments": 0
+        },
+        "claude-v1": {
+          "malformed_or_nonlist": 0,
+          "empty_sequences": 0,
+          "null_segments": 0,
+          "other_nonstring_segments": 0
+        },
+        "claude-v2": {
+          "malformed_or_nonlist": 0,
+          "empty_sequences": 0,
+          "null_segments": 0,
+          "other_nonstring_segments": 0
+        },
+        "gpt-3.5-turbo-1106": {
+          "malformed_or_nonlist": 0,
+          "empty_sequences": 0,
+          "null_segments": 0,
+          "other_nonstring_segments": 0
+        },
+        "gpt-4-1106-preview": {
+          "malformed_or_nonlist": 0,
+          "empty_sequences": 0,
+          "null_segments": 0,
+          "other_nonstring_segments": 0
+        },
+        "meta/code-llama-instruct-34b-chat": {
+          "malformed_or_nonlist": 0,
+          "empty_sequences": 63,
+          "null_segments": 0,
+          "other_nonstring_segments": 0
+        },
+        "meta/llama-2-70b-chat": {
+          "malformed_or_nonlist": 0,
+          "empty_sequences": 9,
+          "null_segments": 0,
+          "other_nonstring_segments": 0
+        },
+        "mistralai/mistral-7b-chat": {
+          "malformed_or_nonlist": 0,
+          "empty_sequences": 3,
+          "null_segments": 0,
+          "other_nonstring_segments": 0
+        },
+        "mistralai/mixtral-8x7b-chat": {
+          "malformed_or_nonlist": 0,
+          "empty_sequences": 155,
+          "null_segments": 0,
+          "other_nonstring_segments": 0
+        },
+        "zero-one-ai/Yi-34B-Chat": {
+          "malformed_or_nonlist": 0,
+          "empty_sequences": 0,
+          "null_segments": 0,
+          "other_nonstring_segments": 0
+        }
+      },
+      "per_arm": {
+        "WizardLM/WizardLM-13B-V1.2": {
+          "missing_reward": 0,
+          "reward_mean": 0.43112721593555636,
+          "cost_mean_usd": 7.291440118365893e-05
+        },
+        "claude-instant-v1": {
+          "missing_reward": 0,
+          "reward_mean": 0.5984135682384853,
+          "cost_mean_usd": 0.0002329371290791024
+        },
+        "claude-v1": {
+          "missing_reward": 0,
+          "reward_mean": 0.6301175439077185,
+          "cost_mean_usd": 0.0021446553963339453
+        },
+        "claude-v2": {
+          "missing_reward": 0,
+          "reward_mean": 0.6358056826588486,
+          "cost_mean_usd": 0.0024186040496479164
+        },
+        "gpt-3.5-turbo-1106": {
+          "missing_reward": 0,
+          "reward_mean": 0.6193207660903636,
+          "cost_mean_usd": 0.00024326004877113185
+        },
+        "gpt-4-1106-preview": {
+          "missing_reward": 0,
+          "reward_mean": 0.7813998410828287,
+          "cost_mean_usd": 0.003292752828999644
+        },
+        "meta/code-llama-instruct-34b-chat": {
+          "missing_reward": 0,
+          "reward_mean": 0.2022275803490698,
+          "cost_mean_usd": 0.00017204870624982878
+        },
+        "meta/llama-2-70b-chat": {
+          "missing_reward": 0,
+          "reward_mean": 0.3286886593418637,
+          "cost_mean_usd": 0.0002026650217826123
+        },
+        "mistralai/mistral-7b-chat": {
+          "missing_reward": 0,
+          "reward_mean": 0.30611146121599037,
+          "cost_mean_usd": 4.572428966764392e-05
+        },
+        "mistralai/mixtral-8x7b-chat": {
+          "missing_reward": 0,
+          "reward_mean": 0.5471148313560018,
+          "cost_mean_usd": 0.00013457989971778502
+        },
+        "zero-one-ai/Yi-34B-Chat": {
+          "missing_reward": 0,
+          "reward_mean": 0.6474915746499712,
+          "cost_mean_usd": 0.00018552225114392966
+        }
+      },
+      "schema": {
+        "sample_id": "object",
+        "prompt": "object",
+        "eval_name": "object",
+        "WizardLM/WizardLM-13B-V1.2": "object",
+        "claude-instant-v1": "object",
+        "claude-v1": "object",
+        "claude-v2": "object",
+        "gpt-3.5-turbo-1106": "object",
+        "gpt-4-1106-preview": "object",
+        "meta/code-llama-instruct-34b-chat": "object",
+        "meta/llama-2-70b-chat": "object",
+        "mistralai/mistral-7b-chat": "object",
+        "mistralai/mixtral-8x7b-chat": "object",
+        "zero-one-ai/Yi-34B-Chat": "object",
+        "gpt-3.5-turbo-1106|model_response": "object",
+        "claude-instant-v1|model_response": "object",
+        "claude-v1|model_response": "object",
+        "claude-v2|model_response": "object",
+        "gpt-4-1106-preview|model_response": "object",
+        "meta/llama-2-70b-chat|model_response": "object",
+        "mistralai/mixtral-8x7b-chat|model_response": "object",
+        "zero-one-ai/Yi-34B-Chat|model_response": "object",
+        "WizardLM/WizardLM-13B-V1.2|model_response": "object",
+        "meta/code-llama-instruct-34b-chat|model_response": "object",
+        "mistralai/mistral-7b-chat|model_response": "object",
+        "gpt-3.5-turbo-1106|total_cost": "float64",
+        "claude-instant-v1|total_cost": "float64",
+        "claude-v1|total_cost": "float64",
+        "claude-v2|total_cost": "float64",
+        "gpt-4-1106-preview|total_cost": "float64",
+        "meta/llama-2-70b-chat|total_cost": "float64",
+        "mistralai/mixtral-8x7b-chat|total_cost": "float64",
+        "zero-one-ai/Yi-34B-Chat|total_cost": "float64",
+        "WizardLM/WizardLM-13B-V1.2|total_cost": "float64",
+        "meta/code-llama-instruct-34b-chat|total_cost": "float64",
+        "mistralai/mistral-7b-chat|total_cost": "float64",
+        "oracle_model_to_route_to": "object"
+      }
+    },
+    "routerbench_5shot": {
+      "rows": 36511,
+      "columns": 37,
+      "arms": [
+        "WizardLM/WizardLM-13B-V1.2",
+        "claude-instant-v1",
+        "claude-v1",
+        "claude-v2",
+        "gpt-3.5-turbo-1106",
+        "gpt-4-1106-preview",
+        "meta/code-llama-instruct-34b-chat",
+        "meta/llama-2-70b-chat",
+        "mistralai/mistral-7b-chat",
+        "mistralai/mixtral-8x7b-chat",
+        "zero-one-ai/Yi-34B-Chat"
+      ],
+      "task_count_raw_eval_name": 86,
+      "task_counts": {
+        "Chinese_character_riddles": 100,
+        "abstract2title": 254,
+        "accounting_audit": 30,
+        "arc-challenge": 1484,
+        "bias_detection": 285,
+        "chinese-lantern-riddles": 20,
+        "chinese-remainder-theorem": 15,
+        "chinese_ancient_masterpieces_dynasty": 16,
+        "chinese_ancient_poetry": 25,
+        "chinese_chu_ci": 15,
+        "chinese_famous_novel": 20,
+        "chinese_hard_translations": 21,
+        "chinese_homonym": 21,
+        "chinese_idioms": 15,
+        "chinese_modern_poem_identification": 21,
+        "chinese_poem": 15,
+        "chinese_shi_jing": 34,
+        "chinese_song_ci": 16,
+        "chinese_tang_poetries": 37,
+        "chinese_zodiac": 394,
+        "consensus_summary": 362,
+        "grade-school-math": 7450,
+        "hellaswag": 10042,
+        "mbpp": 427,
+        "mmlu-abstract-algebra": 100,
+        "mmlu-anatomy": 135,
+        "mmlu-astronomy": 152,
+        "mmlu-business-ethics": 100,
+        "mmlu-clinical-knowledge": 265,
+        "mmlu-college-biology": 144,
+        "mmlu-college-chemistry": 100,
+        "mmlu-college-computer-science": 100,
+        "mmlu-college-mathematics": 100,
+        "mmlu-college-medicine": 173,
+        "mmlu-college-physics": 102,
+        "mmlu-computer-security": 100,
+        "mmlu-conceptual-physics": 235,
+        "mmlu-econometrics": 114,
+        "mmlu-electrical-engineering": 145,
+        "mmlu-elementary-mathematics": 378,
+        "mmlu-formal-logic": 126,
+        "mmlu-global-facts": 100,
+        "mmlu-high-school-biology": 310,
+        "mmlu-high-school-chemistry": 203,
+        "mmlu-high-school-computer-science": 100,
+        "mmlu-high-school-european-history": 165,
+        "mmlu-high-school-geography": 198,
+        "mmlu-high-school-government-and-politics": 193,
+        "mmlu-high-school-macroeconomics": 390,
+        "mmlu-high-school-mathematics": 270,
+        "mmlu-high-school-microeconomics": 238,
+        "mmlu-high-school-physics": 151,
+        "mmlu-high-school-psychology": 545,
+        "mmlu-high-school-statistics": 216,
+        "mmlu-high-school-us-history": 204,
+        "mmlu-high-school-world-history": 237,
+        "mmlu-human-aging": 223,
+        "mmlu-human-sexuality": 131,
+        "mmlu-international-law": 121,
+        "mmlu-jurisprudence": 108,
+        "mmlu-logical-fallacies": 163,
+        "mmlu-machine-learning": 112,
+        "mmlu-management": 103,
+        "mmlu-marketing": 234,
+        "mmlu-medical-genetics": 100,
+        "mmlu-miscellaneous": 783,
+        "mmlu-moral-disputes": 346,
+        "mmlu-moral-scenarios": 895,
+        "mmlu-nutrition": 306,
+        "mmlu-philosophy": 311,
+        "mmlu-prehistory": 324,
+        "mmlu-professional-accounting": 282,
+        "mmlu-professional-law": 1534,
+        "mmlu-professional-medicine": 272,
+        "mmlu-professional-psychology": 612,
+        "mmlu-public-relations": 110,
+        "mmlu-security-studies": 245,
+        "mmlu-sociology": 201,
+        "mmlu-us-foreign-policy": 100,
+        "mmlu-virology": 166,
+        "mmlu-world-religions": 171,
+        "mtbench": 41,
+        "mtbench-math": 20,
+        "mtbench-reference": 19,
+        "test-match": 3,
+        "winogrande": 1267
+      },
+      "duplicate_id_excess_rows": 14,
+      "rows_with_duplicate_ids": 28,
+      "duplicate_prompt_excess_rows": 14,
+      "missing_by_column": {
+        "WizardLM/WizardLM-13B-V1.2": 14,
+        "claude-instant-v1": 14,
+        "claude-v1": 14,
+        "claude-v2": 14,
+        "gpt-3.5-turbo-1106": 14,
+        "gpt-4-1106-preview": 14,
+        "meta/code-llama-instruct-34b-chat": 14,
+        "meta/llama-2-70b-chat": 14,
+        "mistralai/mistral-7b-chat": 14,
+        "mistralai/mixtral-8x7b-chat": 14,
+        "zero-one-ai/Yi-34B-Chat": 14
+      },
+      "rows_with_missing_reward": 28,
+      "nonfinite_rewards": 154,
+      "out_of_range_rewards": 0,
+      "nonbinary_finite_rewards": 84905,
+      "nonfinite_costs": 0,
+      "negative_costs": 0,
+      "reward_range": [
+        0.0,
+        1.0
+      ],
+      "cost_usd_range": [
+        3.8000000000000005e-06,
+        0.05073
+      ],
+      "prompt_segment_count": {
+        "1": 27420,
+        "2": 9091
+      },
+      "response_content": {
+        "WizardLM/WizardLM-13B-V1.2": {
+          "malformed_or_nonlist": 0,
+          "empty_sequences": 0,
+          "null_segments": 0,
+          "other_nonstring_segments": 0
+        },
+        "claude-instant-v1": {
+          "malformed_or_nonlist": 0,
+          "empty_sequences": 0,
+          "null_segments": 0,
+          "other_nonstring_segments": 0
+        },
+        "claude-v1": {
+          "malformed_or_nonlist": 0,
+          "empty_sequences": 0,
+          "null_segments": 0,
+          "other_nonstring_segments": 0
+        },
+        "claude-v2": {
+          "malformed_or_nonlist": 0,
+          "empty_sequences": 0,
+          "null_segments": 0,
+          "other_nonstring_segments": 0
+        },
+        "gpt-3.5-turbo-1106": {
+          "malformed_or_nonlist": 0,
+          "empty_sequences": 0,
+          "null_segments": 0,
+          "other_nonstring_segments": 0
+        },
+        "gpt-4-1106-preview": {
+          "malformed_or_nonlist": 0,
+          "empty_sequences": 0,
+          "null_segments": 0,
+          "other_nonstring_segments": 0
+        },
+        "meta/code-llama-instruct-34b-chat": {
+          "malformed_or_nonlist": 0,
+          "empty_sequences": 0,
+          "null_segments": 0,
+          "other_nonstring_segments": 0
+        },
+        "meta/llama-2-70b-chat": {
+          "malformed_or_nonlist": 0,
+          "empty_sequences": 0,
+          "null_segments": 0,
+          "other_nonstring_segments": 0
+        },
+        "mistralai/mistral-7b-chat": {
+          "malformed_or_nonlist": 0,
+          "empty_sequences": 0,
+          "null_segments": 0,
+          "other_nonstring_segments": 0
+        },
+        "mistralai/mixtral-8x7b-chat": {
+          "malformed_or_nonlist": 0,
+          "empty_sequences": 0,
+          "null_segments": 0,
+          "other_nonstring_segments": 0
+        },
+        "zero-one-ai/Yi-34B-Chat": {
+          "malformed_or_nonlist": 0,
+          "empty_sequences": 0,
+          "null_segments": 0,
+          "other_nonstring_segments": 0
+        }
+      },
+      "per_arm": {
+        "WizardLM/WizardLM-13B-V1.2": {
+          "missing_reward": 14,
+          "reward_mean": 0.5391908924021152,
+          "cost_mean_usd": 0.00021255297855440823
+        },
+        "claude-instant-v1": {
+          "missing_reward": 14,
+          "reward_mean": 0.5900019179658602,
+          "cost_mean_usd": 0.0006057310290049574
+        },
+        "claude-v1": {
+          "missing_reward": 14,
+          "reward_mean": 0.64795462640765,
+          "cost_mean_usd": 0.0058709568075374545
+        },
+        "claude-v2": {
+          "missing_reward": 14,
+          "reward_mean": 0.5115762939419678,
+          "cost_mean_usd": 0.006153435183917175
+        },
+        "gpt-3.5-turbo-1106": {
+          "missing_reward": 14,
+          "reward_mean": 0.6867235663205195,
+          "cost_mean_usd": 0.0007085386869710498
+        },
+        "gpt-4-1106-preview": {
+          "missing_reward": 14,
+          "reward_mean": 0.8048264240896512,
+          "cost_mean_usd": 0.007943272712333268
+        },
+        "meta/code-llama-instruct-34b-chat": {
+          "missing_reward": 14,
+          "reward_mean": 0.5040332082088939,
+          "cost_mean_usd": 0.000533520180548328
+        },
+        "meta/llama-2-70b-chat": {
+          "missing_reward": 14,
+          "reward_mean": 0.6059443241910294,
+          "cost_mean_usd": 0.0006220537180575718
+        },
+        "mistralai/mistral-7b-chat": {
+          "missing_reward": 14,
+          "reward_mean": 0.4998534126092556,
+          "cost_mean_usd": 0.0001388719618745036
+        },
+        "mistralai/mixtral-8x7b-chat": {
+          "missing_reward": 14,
+          "reward_mean": 0.6504109926843302,
+          "cost_mean_usd": 0.0004140720604749254
+        },
+        "zero-one-ai/Yi-34B-Chat": {
+          "missing_reward": 14,
+          "reward_mean": 0.7152779680521687,
+          "cost_mean_usd": 0.0005580088849935636
+        }
+      },
+      "schema": {
+        "sample_id": "object",
+        "prompt": "object",
+        "eval_name": "object",
+        "WizardLM/WizardLM-13B-V1.2": "object",
+        "claude-instant-v1": "object",
+        "claude-v1": "object",
+        "claude-v2": "object",
+        "gpt-3.5-turbo-1106": "object",
+        "gpt-4-1106-preview": "object",
+        "meta/code-llama-instruct-34b-chat": "object",
+        "meta/llama-2-70b-chat": "object",
+        "mistralai/mistral-7b-chat": "object",
+        "mistralai/mixtral-8x7b-chat": "object",
+        "zero-one-ai/Yi-34B-Chat": "object",
+        "gpt-3.5-turbo-1106|model_response": "object",
+        "claude-instant-v1|model_response": "object",
+        "claude-v1|model_response": "object",
+        "claude-v2|model_response": "object",
+        "gpt-4-1106-preview|model_response": "object",
+        "meta/llama-2-70b-chat|model_response": "object",
+        "mistralai/mixtral-8x7b-chat|model_response": "object",
+        "zero-one-ai/Yi-34B-Chat|model_response": "object",
+        "WizardLM/WizardLM-13B-V1.2|model_response": "object",
+        "meta/code-llama-instruct-34b-chat|model_response": "object",
+        "mistralai/mistral-7b-chat|model_response": "object",
+        "gpt-3.5-turbo-1106|total_cost": "float64",
+        "claude-instant-v1|total_cost": "float64",
+        "claude-v1|total_cost": "float64",
+        "claude-v2|total_cost": "float64",
+        "gpt-4-1106-preview|total_cost": "float64",
+        "meta/llama-2-70b-chat|total_cost": "float64",
+        "mistralai/mixtral-8x7b-chat|total_cost": "float64",
+        "zero-one-ai/Yi-34B-Chat|total_cost": "float64",
+        "WizardLM/WizardLM-13B-V1.2|total_cost": "float64",
+        "meta/code-llama-instruct-34b-chat|total_cost": "float64",
+        "mistralai/mistral-7b-chat|total_cost": "float64",
+        "oracle_model_to_route_to": "object"
+      }
+    }
+  },
+  "arena_55k": {
+    "rows": 57477,
+    "columns": [
+      "id",
+      "model_a",
+      "model_b",
+      "prompt",
+      "response_a",
+      "response_b",
+      "winner_model_a",
+      "winner_model_b",
+      "winner_tie"
+    ],
+    "model_count": 64,
+    "model_names": [
+      "RWKV-4-Raven-14B",
+      "alpaca-13b",
+      "chatglm-6b",
+      "chatglm2-6b",
+      "chatglm3-6b",
+      "claude-1",
+      "claude-2.0",
+      "claude-2.1",
+      "claude-instant-1",
+      "codellama-34b-instruct",
+      "deepseek-llm-67b-chat",
+      "dolly-v2-12b",
+      "dolphin-2.2.1-mistral-7b",
+      "falcon-180b-chat",
+      "fastchat-t5-3b",
+      "gemini-pro",
+      "gemini-pro-dev-api",
+      "gpt-3.5-turbo-0125",
+      "gpt-3.5-turbo-0314",
+      "gpt-3.5-turbo-0613",
+      "gpt-3.5-turbo-1106",
+      "gpt-4-0125-preview",
+      "gpt-4-0314",
+      "gpt-4-0613",
+      "gpt-4-1106-preview",
+      "gpt4all-13b-snoozy",
+      "guanaco-33b",
+      "koala-13b",
+      "llama-13b",
+      "llama-2-13b-chat",
+      "llama-2-70b-chat",
+      "llama-2-7b-chat",
+      "llama2-70b-steerlm-chat",
+      "mistral-7b-instruct",
+      "mistral-7b-instruct-v0.2",
+      "mistral-medium",
+      "mixtral-8x7b-instruct-v0.1",
+      "mpt-30b-chat",
+      "mpt-7b-chat",
+      "nous-hermes-2-mixtral-8x7b-dpo",
+      "oasst-pythia-12b",
+      "openchat-3.5",
+      "openchat-3.5-0106",
+      "openhermes-2.5-mistral-7b",
+      "palm-2",
+      "pplx-70b-online",
+      "pplx-7b-online",
+      "qwen-14b-chat",
+      "qwen1.5-4b-chat",
+      "qwen1.5-72b-chat",
+      "qwen1.5-7b-chat",
+      "solar-10.7b-instruct-v1.0",
+      "stablelm-tuned-alpha-7b",
+      "starling-lm-7b-alpha",
+      "stripedhyena-nous-7b",
+      "tulu-2-dpo-70b",
+      "vicuna-13b",
+      "vicuna-33b",
+      "vicuna-7b",
+      "wizardlm-13b",
+      "wizardlm-70b",
+      "yi-34b-chat",
+      "zephyr-7b-alpha",
+      "zephyr-7b-beta"
+    ],
+    "duplicate_id_excess_rows": 0,
+    "missing_by_column": {},
+    "invalid_winner_rows": 0,
+    "invalid_prompt_rows": 0,
+    "winner_counts": {
+      "winner_model_a": 20064,
+      "winner_model_b": 19652,
+      "winner_tie": 17761
+    },
+    "response_content": {
+      "response_a": {
+        "malformed_or_nonlist": 0,
+        "empty_sequences": 12,
+        "null_segments": 120,
+        "other_nonstring_segments": 0
+      },
+      "response_b": {
+        "malformed_or_nonlist": 0,
+        "empty_sequences": 14,
+        "null_segments": 126,
+        "other_nonstring_segments": 0
+      }
+    },
+    "mapping_scenarios": {
+      "exact_ids_only": {
+        "both_models_mapped": 576,
+        "ties_with_both_models_mapped": 142,
+        "decisive_valid_pairs": 434,
+        "single_turn_decisive_pairs": 374,
+        "multi_turn_decisive_pairs": 60,
+        "duplicate_first_prompt_excess_rows": 4,
+        "first_prompt_matches_full_routerbench_query": 0,
+        "first_prompt_matches_any_routerbench_segment": 0,
+        "per_arm_decisive_pairs": {
+          "gpt-3.5-turbo-1106": 434,
+          "gpt-4-1106-preview": 434
+        },
+        "pair_counts": {
+          "gpt-3.5-turbo-1106 / gpt-4-1106-preview": 434
+        }
+      },
+      "all_proposed_mappings": {
+        "both_models_mapped": 4970,
+        "ties_with_both_models_mapped": 1493,
+        "decisive_valid_pairs": 3477,
+        "single_turn_decisive_pairs": 2993,
+        "multi_turn_decisive_pairs": 484,
+        "duplicate_first_prompt_excess_rows": 87,
+        "first_prompt_matches_full_routerbench_query": 0,
+        "first_prompt_matches_any_routerbench_segment": 0,
+        "per_arm_decisive_pairs": {
+          "gpt-3.5-turbo-1106": 1110,
+          "gpt-4-1106-preview": 1221,
+          "claude-instant-v1": 929,
+          "claude-v1": 539,
+          "claude-v2": 648,
+          "meta/llama-2-70b-chat": 597,
+          "meta/code-llama-instruct-34b-chat": 343,
+          "zero-one-ai/Yi-34B-Chat": 250,
+          "mistralai/mistral-7b-chat": 242,
+          "mistralai/mixtral-8x7b-chat": 824,
+          "WizardLM/WizardLM-13B-V1.2": 251
+        },
+        "pair_counts": {
+          "claude-1 / claude-2.0": 134,
+          "claude-1 / claude-instant-1": 69,
+          "claude-1 / codellama-34b-instruct": 22,
+          "claude-1 / gpt-3.5-turbo-1106": 56,
+          "claude-1 / gpt-4-1106-preview": 101,
+          "claude-1 / llama-2-70b-chat": 14,
+          "claude-1 / mistral-7b-instruct": 25,
+          "claude-1 / mixtral-8x7b-instruct-v0.1": 67,
+          "claude-1 / wizardlm-13b": 35,
+          "claude-1 / yi-34b-chat": 16,
+          "claude-2.0 / claude-instant-1": 90,
+          "claude-2.0 / codellama-34b-instruct": 54,
+          "claude-2.0 / gpt-3.5-turbo-1106": 34,
+          "claude-2.0 / gpt-4-1106-preview": 187,
+          "claude-2.0 / llama-2-70b-chat": 44,
+          "claude-2.0 / mistral-7b-instruct": 20,
+          "claude-2.0 / mixtral-8x7b-instruct-v0.1": 20,
+          "claude-2.0 / wizardlm-13b": 54,
+          "claude-2.0 / yi-34b-chat": 11,
+          "claude-instant-1 / codellama-34b-instruct": 61,
+          "claude-instant-1 / gpt-3.5-turbo-1106": 306,
+          "claude-instant-1 / gpt-4-1106-preview": 62,
+          "claude-instant-1 / llama-2-70b-chat": 130,
+          "claude-instant-1 / mistral-7b-instruct": 23,
+          "claude-instant-1 / mixtral-8x7b-instruct-v0.1": 25,
+          "claude-instant-1 / wizardlm-13b": 53,
+          "claude-instant-1 / yi-34b-chat": 110,
+          "codellama-34b-instruct / gpt-3.5-turbo-1106": 13,
+          "codellama-34b-instruct / gpt-4-1106-preview": 62,
+          "codellama-34b-instruct / llama-2-70b-chat": 47,
+          "codellama-34b-instruct / mistral-7b-instruct": 17,
+          "codellama-34b-instruct / mixtral-8x7b-instruct-v0.1": 19,
+          "codellama-34b-instruct / wizardlm-13b": 37,
+          "codellama-34b-instruct / yi-34b-chat": 11,
+          "gpt-3.5-turbo-1106 / gpt-4-1106-preview": 434,
+          "gpt-3.5-turbo-1106 / llama-2-70b-chat": 15,
+          "gpt-3.5-turbo-1106 / mistral-7b-instruct": 14,
+          "gpt-3.5-turbo-1106 / mixtral-8x7b-instruct-v0.1": 211,
+          "gpt-3.5-turbo-1106 / wizardlm-13b": 7,
+          "gpt-3.5-turbo-1106 / yi-34b-chat": 20,
+          "gpt-4-1106-preview / llama-2-70b-chat": 32,
+          "gpt-4-1106-preview / mistral-7b-instruct": 31,
+          "gpt-4-1106-preview / mixtral-8x7b-instruct-v0.1": 260,
+          "gpt-4-1106-preview / wizardlm-13b": 9,
+          "gpt-4-1106-preview / yi-34b-chat": 43,
+          "llama-2-70b-chat / mistral-7b-instruct": 78,
+          "llama-2-70b-chat / mixtral-8x7b-instruct-v0.1": 189,
+          "llama-2-70b-chat / wizardlm-13b": 39,
+          "llama-2-70b-chat / yi-34b-chat": 9,
+          "mistral-7b-instruct / mixtral-8x7b-instruct-v0.1": 13,
+          "mistral-7b-instruct / wizardlm-13b": 14,
+          "mistral-7b-instruct / yi-34b-chat": 7,
+          "mixtral-8x7b-instruct-v0.1 / yi-34b-chat": 20,
+          "wizardlm-13b / yi-34b-chat": 3
+        }
+      }
+    },
+    "training_ready": false,
+    "note": "Proposed mappings are sensitivity counts, not approved model equivalence. Multi-turn labels apply to whole conversations; no prior-training dataset is exported."
+  },
+  "legacy_arena_33k": {
+    "repo": "lmsys/chatbot_arena_conversations",
+    "revision": "1b6335d42a1d2c7e34870c905d03ab964f7f2bd8",
+    "access_observation_2026_10_24": "Anonymous file HEAD returned HTTP 401; gated=auto in metadata. Contents not audited."
+  },
+  "prepared": {
+    "variant": "routerbench_0shot",
+    "variant_status": "provisional; not confirmed as paper artifact",
+    "query_rows": 36497,
+    "outcome_rows": 401467,
+    "whitespace_normalized_duplicate_excess_rows": 16,
+    "split_seed": 42,
+    "split_method": "SHA-256 ordering of seed and prompt group; exact tuning=1000, deployment=ceil(remaining/11); identical normalized queries stay together",
+    "split_counts": {
+      "learning": 32270,
+      "deployment": 3227,
+      "tuning": 1000
+    },
+    "split_query_hash_overlap": 0,
+    "file_sha256": {
+      "outcomes.parquet": "82eb9baeab0452d1b59ee053ae7205b641cb70e22deae5e71b86596ffcd87ca4",
+      "queries.parquet": "14542cd83a43f7fb64655e21e0e1c8fec48b0753a7334015099b065e061a058a",
+      "splits.csv": "989d3663aa4051f6ccd80bedf62e6ef789ead57d744c87fd14c828ac9b08a8a5"
+    },
+    "estimated_cost_status": "all null; tuning-only token estimator not implemented",
+    "actual_cost_semantics": "historical RouterBench response-dependent cost estimate in USD, not current API price or actual invoice"
+  },
+  "smoke": {
+    "policy": "seeded random selection for one-step I/O check only",
+    "observation_fields": [
+      "query_id",
+      "query",
+      "task",
+      "arm_ids"
+    ],
+    "feedback": {
+      "query_id": "mmlu-econometrics.val.66",
+      "arm_id": "zero-one-ai/Yi-34B-Chat",
+      "reward": 0.0,
+      "actual_cost": 8.48e-05
+    },
+    "learner_update_count": 1
+  },
+  "unresolved": [
+    "Paper does not identify 0-shot/5-shot artifact, dataset revision, or exact preprocessing.",
+    "Both public variants contain 86 raw eval_name labels; paper states 64 tasks.",
+    "5-shot contains duplicated IDs and incomplete reward rows; rejected by strict preparation.",
+    "Exact ChatArena release, alias/checkpoint identity, tie treatment, and multi-turn handling remain unconfirmed.",
+    "RouterBench HF card has no license field/file; code MIT license is not proof of dataset licensing.",
+    "Estimated deployment cost requires a tuning-only token estimator and pinned historical prices/tokenizers."
+  ]
+}

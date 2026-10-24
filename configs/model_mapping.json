@@ -1,0 +1,16 @@
+{
+  "note": "Audit candidates, not blanket equivalence. Only literal exact IDs are enabled for strict counts. Alias/checkpoint mappings need review before prior training; never collapse GPT snapshots or Claude versions.",
+  "mappings": [
+    {"routerbench": "gpt-3.5-turbo-1106", "arena": "gpt-3.5-turbo-1106", "status": "exact_id"},
+    {"routerbench": "gpt-4-1106-preview", "arena": "gpt-4-1106-preview", "status": "exact_id"},
+    {"routerbench": "claude-instant-v1", "arena": "claude-instant-1", "status": "proposed_alias"},
+    {"routerbench": "claude-v1", "arena": "claude-1", "status": "proposed_alias"},
+    {"routerbench": "claude-v2", "arena": "claude-2.0", "status": "proposed_alias"},
+    {"routerbench": "meta/llama-2-70b-chat", "arena": "llama-2-70b-chat", "status": "proposed_alias"},
+    {"routerbench": "meta/code-llama-instruct-34b-chat", "arena": "codellama-34b-instruct", "status": "proposed_alias"},
+    {"routerbench": "zero-one-ai/Yi-34B-Chat", "arena": "yi-34b-chat", "status": "proposed_alias"},
+    {"routerbench": "mistralai/mistral-7b-chat", "arena": "mistral-7b-instruct", "status": "checkpoint_unverified"},
+    {"routerbench": "mistralai/mixtral-8x7b-chat", "arena": "mixtral-8x7b-instruct-v0.1", "status": "checkpoint_unverified"},
+    {"routerbench": "WizardLM/WizardLM-13B-V1.2", "arena": "wizardlm-13b", "status": "checkpoint_unverified"}
+  ]
+}

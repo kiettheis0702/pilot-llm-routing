@@ -9,7 +9,7 @@ Updated: 2026-10-24. This is a concise summary of the supplied project handoff; 
 - Course registration status: Accepted, as confirmed in the handoff.
 - Focus: online learning and contextual bandits, faithful reproduction, fair baseline comparisons, analysis, and a poster.
 - Prefer Python and offline benchmark simulation with minimal recurring API costs.
-- Current stage: repository setup, followed by W1 / Data Gate. No implementation or experiment is assumed complete.
+- Current stage: conditional W1 / Data Gate. The [audit](docs/data-gate.md) verifies public files, prepares provisional 0-shot routing data, and checks splits and selected-arm feedback. No PILOT training or experiment is complete.
 
 ## Method boundaries
 
@@ -19,13 +19,13 @@ Updated: 2026-10-24. This is a concise summary of the supplied project handoff; 
 
 Verify Algorithms 1–3, equations, hyperparameters, and preprocessing against the official paper before coding. Label every deliberate change, including a local embedding model replacing the paper's embedding model, as a deviation.
 
-## Next milestone: Data Gate
+## Data Gate follow-up
 
-- Verify which RouterBench variant the paper uses; record revision, checksum, row count, tasks, and arms.
-- Inspect query, reward, and cost fields, missing values, and model identifiers.
-- Verify the preference dataset, licensing, model overlap, and usable pairs.
-- Define and persist tuning, learning, and deployment splits with explicit seeds.
-- Demonstrate one interaction: query → select arm → observe selected reward → update/log.
+- Completed: pinned public RouterBench 0-shot/5-shot and Arena 55K files, full-file statistics, provisional 0-shot schema, seed-42 splits, and one selected-arm feedback/update smoke round.
+- Resolve: exact paper variant and the mismatch between 86 raw task labels and 64 tasks reported in the paper.
+- Resolve: original preference release and nine proposed model aliases/checkpoints. 3,477 decisive pairs is conditional on the proposed mappings, not a verified training set.
+- Resolve: preference ties/multi-turn handling and a prompt-group holdout.
+- Implement: tuning-only deployment cost estimation. Prepared `estimated_cost` values are currently null.
 
 ## Evaluation priorities
 
