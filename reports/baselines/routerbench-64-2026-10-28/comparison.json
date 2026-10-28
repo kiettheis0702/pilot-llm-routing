@@ -1,0 +1,337 @@
+{
+  "source": "routerbench",
+  "configuration": {
+    "seed": 42,
+    "rows": 64,
+    "dimension": 8,
+    "alpha": 1,
+    "ridge": 1,
+    "window": 10
+  },
+  "code": {
+    "git_commit": "ececbd35fb4eee0c40051ea12ba2628248e0877e",
+    "working_tree_dirty": true,
+    "implementation_sha256": {
+      "scripts/policies.py": "d4c7b95399ff54ab7686a361e3298473ad7f14d4682ec1b2f95d9215189406e8",
+      "scripts/run_baselines.py": "c1830421ca4e1876ad238e0fa14689097d7940b0f45c4d6fbb610fa84a4462e5",
+      "scripts/evaluation.py": "c94c9a2cff061f32a6e29092cfa7fdf815d729fd10225a95e1f391e82ccac0cb",
+      "scripts/bandit_contracts.py": "99eb79f510ef37d85c5ec7d8ea37ae587716130302b8bc91b38281e927ababcf",
+      "scripts/splits.py": "0479209e80b6947677991511f1e71c869d490f7e01fe1d06452ca0379ca2644e",
+      "scripts/data_gate.py": "84c250fa3594507ce0091c49bc366551b100af6e21b3ca5e392b9f3ed1b1ba23",
+      "uv.lock": "808a62de80da88be15936373dae4d9d2a9c5f133002eb52d207c44ee667a6910"
+    }
+  },
+  "created_at": "2026-10-28T16:26:25.486293+00:00",
+  "runtime": {
+    "python": "3.11.0",
+    "numpy": "2.4.6",
+    "pandas": "2.3.3"
+  },
+  "deviations": [
+    "Synthetic contexts; not comparable to paper results",
+    "ExploreOnly and EpochGreedy schedule are PAPER_INFERRED"
+  ],
+  "metrics": {
+    "random": {
+      "rounds": 64,
+      "total_reward": 28.5,
+      "mean_reward": 0.4453125,
+      "total_actual_cost": 0.05050838800000001,
+      "cumulative_empirical_oracle_regret": 29.0,
+      "action_counts": {
+        "WizardLM/WizardLM-13B-V1.2": 5,
+        "claude-instant-v1": 5,
+        "claude-v1": 4,
+        "claude-v2": 2,
+        "gpt-3.5-turbo-1106": 10,
+        "gpt-4-1106-preview": 6,
+        "meta/code-llama-instruct-34b-chat": 3,
+        "meta/llama-2-70b-chat": 7,
+        "mistralai/mistral-7b-chat": 10,
+        "mistralai/mixtral-8x7b-chat": 7,
+        "zero-one-ai/Yi-34B-Chat": 5
+      }
+    },
+    "linucb": {
+      "rounds": 64,
+      "total_reward": 39.5,
+      "mean_reward": 0.6171875,
+      "total_actual_cost": 0.081254256,
+      "cumulative_empirical_oracle_regret": 18.0,
+      "action_counts": {
+        "WizardLM/WizardLM-13B-V1.2": 1,
+        "claude-instant-v1": 4,
+        "claude-v1": 1,
+        "claude-v2": 10,
+        "gpt-3.5-turbo-1106": 13,
+        "gpt-4-1106-preview": 17,
+        "meta/code-llama-instruct-34b-chat": 3,
+        "meta/llama-2-70b-chat": 1,
+        "mistralai/mistral-7b-chat": 6,
+        "mistralai/mixtral-8x7b-chat": 7,
+        "zero-one-ai/Yi-34B-Chat": 1
+      }
+    },
+    "explore-only": {
+      "rounds": 64,
+      "total_reward": 30.25,
+      "mean_reward": 0.47265625,
+      "total_actual_cost": 0.05004865199999999,
+      "cumulative_empirical_oracle_regret": 27.25,
+      "action_counts": {
+        "WizardLM/WizardLM-13B-V1.2": 6,
+        "claude-instant-v1": 6,
+        "claude-v1": 6,
+        "claude-v2": 6,
+        "gpt-3.5-turbo-1106": 6,
+        "gpt-4-1106-preview": 6,
+        "meta/code-llama-instruct-34b-chat": 5,
+        "meta/llama-2-70b-chat": 5,
+        "mistralai/mistral-7b-chat": 5,
+        "mistralai/mixtral-8x7b-chat": 6,
+        "zero-one-ai/Yi-34B-Chat": 7
+      }
+    },
+    "epoch-greedy": {
+      "rounds": 64,
+      "total_reward": 36.0,
+      "mean_reward": 0.5625,
+      "total_actual_cost": 0.037272099999999996,
+      "cumulative_empirical_oracle_regret": 21.5,
+      "action_counts": {
+        "WizardLM/WizardLM-13B-V1.2": 17,
+        "claude-instant-v1": 16,
+        "claude-v1": 15,
+        "claude-v2": 0,
+        "gpt-3.5-turbo-1106": 4,
+        "gpt-4-1106-preview": 0,
+        "meta/code-llama-instruct-34b-chat": 0,
+        "meta/llama-2-70b-chat": 5,
+        "mistralai/mistral-7b-chat": 6,
+        "mistralai/mixtral-8x7b-chat": 1,
+        "zero-one-ai/Yi-34B-Chat": 0
+      }
+    },
+    "fixed-00": {
+      "rounds": 64,
+      "total_reward": 28.75,
+      "mean_reward": 0.44921875,
+      "total_actual_cost": 0.0049245,
+      "cumulative_empirical_oracle_regret": 28.75,
+      "action_counts": {
+        "WizardLM/WizardLM-13B-V1.2": 64,
+        "claude-instant-v1": 0,
+        "claude-v1": 0,
+        "claude-v2": 0,
+        "gpt-3.5-turbo-1106": 0,
+        "gpt-4-1106-preview": 0,
+        "meta/code-llama-instruct-34b-chat": 0,
+        "meta/llama-2-70b-chat": 0,
+        "mistralai/mistral-7b-chat": 0,
+        "mistralai/mixtral-8x7b-chat": 0,
+        "zero-one-ai/Yi-34B-Chat": 0
+      }
+    },
+    "fixed-01": {
+      "rounds": 64,
+      "total_reward": 37.5,
+      "mean_reward": 0.5859375,
+      "total_actual_cost": 0.015677600000000003,
+      "cumulative_empirical_oracle_regret": 20.0,
+      "action_counts": {
+        "WizardLM/WizardLM-13B-V1.2": 0,
+        "claude-instant-v1": 64,
+        "claude-v1": 0,
+        "claude-v2": 0,
+        "gpt-3.5-turbo-1106": 0,
+        "gpt-4-1106-preview": 0,
+        "meta/code-llama-instruct-34b-chat": 0,
+        "meta/llama-2-70b-chat": 0,
+        "mistralai/mistral-7b-chat": 0,
+        "mistralai/mixtral-8x7b-chat": 0,
+        "zero-one-ai/Yi-34B-Chat": 0
+      }
+    },
+    "fixed-02": {
+      "rounds": 64,
+      "total_reward": 42.75,
+      "mean_reward": 0.66796875,
+      "total_actual_cost": 0.15163999999999997,
+      "cumulative_empirical_oracle_regret": 14.75,
+      "action_counts": {
+        "WizardLM/WizardLM-13B-V1.2": 0,
+        "claude-instant-v1": 0,
+        "claude-v1": 64,
+        "claude-v2": 0,
+        "gpt-3.5-turbo-1106": 0,
+        "gpt-4-1106-preview": 0,
+        "meta/code-llama-instruct-34b-chat": 0,
+        "meta/llama-2-70b-chat": 0,
+        "mistralai/mistral-7b-chat": 0,
+        "mistralai/mixtral-8x7b-chat": 0,
+        "zero-one-ai/Yi-34B-Chat": 0
+      }
+    },
+    "fixed-03": {
+      "rounds": 64,
+      "total_reward": 42.25,
+      "mean_reward": 0.66015625,
+      "total_actual_cost": 0.16176799999999997,
+      "cumulative_empirical_oracle_regret": 15.25,
+      "action_counts": {
+        "WizardLM/WizardLM-13B-V1.2": 0,
+        "claude-instant-v1": 0,
+        "claude-v1": 0,
+        "claude-v2": 64,
+        "gpt-3.5-turbo-1106": 0,
+        "gpt-4-1106-preview": 0,
+        "meta/code-llama-instruct-34b-chat": 0,
+        "meta/llama-2-70b-chat": 0,
+        "mistralai/mistral-7b-chat": 0,
+        "mistralai/mixtral-8x7b-chat": 0,
+        "zero-one-ai/Yi-34B-Chat": 0
+      }
+    },
+    "fixed-04": {
+      "rounds": 64,
+      "total_reward": 37.25,
+      "mean_reward": 0.58203125,
+      "total_actual_cost": 0.016623999999999996,
+      "cumulative_empirical_oracle_regret": 20.25,
+      "action_counts": {
+        "WizardLM/WizardLM-13B-V1.2": 0,
+        "claude-instant-v1": 0,
+        "claude-v1": 0,
+        "claude-v2": 0,
+        "gpt-3.5-turbo-1106": 64,
+        "gpt-4-1106-preview": 0,
+        "meta/code-llama-instruct-34b-chat": 0,
+        "meta/llama-2-70b-chat": 0,
+        "mistralai/mistral-7b-chat": 0,
+        "mistralai/mixtral-8x7b-chat": 0,
+        "zero-one-ai/Yi-34B-Chat": 0
+      }
+    },
+    "fixed-05": {
+      "rounds": 64,
+      "total_reward": 49.75,
+      "mean_reward": 0.77734375,
+      "total_actual_cost": 0.22722999999999993,
+      "cumulative_empirical_oracle_regret": 7.75,
+      "action_counts": {
+        "WizardLM/WizardLM-13B-V1.2": 0,
+        "claude-instant-v1": 0,
+        "claude-v1": 0,
+        "claude-v2": 0,
+        "gpt-3.5-turbo-1106": 0,
+        "gpt-4-1106-preview": 64,
+        "meta/code-llama-instruct-34b-chat": 0,
+        "meta/llama-2-70b-chat": 0,
+        "mistralai/mistral-7b-chat": 0,
+        "mistralai/mixtral-8x7b-chat": 0,
+        "zero-one-ai/Yi-34B-Chat": 0
+      }
+    },
+    "fixed-06": {
+      "rounds": 64,
+      "total_reward": 11.25,
+      "mean_reward": 0.17578125,
+      "total_actual_cost": 0.011454535999999994,
+      "cumulative_empirical_oracle_regret": 46.25,
+      "action_counts": {
+        "WizardLM/WizardLM-13B-V1.2": 0,
+        "claude-instant-v1": 0,
+        "claude-v1": 0,
+        "claude-v2": 0,
+        "gpt-3.5-turbo-1106": 0,
+        "gpt-4-1106-preview": 0,
+        "meta/code-llama-instruct-34b-chat": 64,
+        "meta/llama-2-70b-chat": 0,
+        "mistralai/mistral-7b-chat": 0,
+        "mistralai/mixtral-8x7b-chat": 0,
+        "zero-one-ai/Yi-34B-Chat": 0
+      }
+    },
+    "fixed-07": {
+      "rounds": 64,
+      "total_reward": 25.25,
+      "mean_reward": 0.39453125,
+      "total_actual_cost": 0.013541400000000004,
+      "cumulative_empirical_oracle_regret": 32.25,
+      "action_counts": {
+        "WizardLM/WizardLM-13B-V1.2": 0,
+        "claude-instant-v1": 0,
+        "claude-v1": 0,
+        "claude-v2": 0,
+        "gpt-3.5-turbo-1106": 0,
+        "gpt-4-1106-preview": 0,
+        "meta/code-llama-instruct-34b-chat": 0,
+        "meta/llama-2-70b-chat": 64,
+        "mistralai/mistral-7b-chat": 0,
+        "mistralai/mixtral-8x7b-chat": 0,
+        "zero-one-ai/Yi-34B-Chat": 0
+      }
+    },
+    "fixed-08": {
+      "rounds": 64,
+      "total_reward": 14.25,
+      "mean_reward": 0.22265625,
+      "total_actual_cost": 0.0032145999999999984,
+      "cumulative_empirical_oracle_regret": 43.25,
+      "action_counts": {
+        "WizardLM/WizardLM-13B-V1.2": 0,
+        "claude-instant-v1": 0,
+        "claude-v1": 0,
+        "claude-v2": 0,
+        "gpt-3.5-turbo-1106": 0,
+        "gpt-4-1106-preview": 0,
+        "meta/code-llama-instruct-34b-chat": 0,
+        "meta/llama-2-70b-chat": 0,
+        "mistralai/mistral-7b-chat": 64,
+        "mistralai/mixtral-8x7b-chat": 0,
+        "zero-one-ai/Yi-34B-Chat": 0
+      }
+    },
+    "fixed-09": {
+      "rounds": 64,
+      "total_reward": 34.0,
+      "mean_reward": 0.53125,
+      "total_actual_cost": 0.009282599999999998,
+      "cumulative_empirical_oracle_regret": 23.5,
+      "action_counts": {
+        "WizardLM/WizardLM-13B-V1.2": 0,
+        "claude-instant-v1": 0,
+        "claude-v1": 0,
+        "claude-v2": 0,
+        "gpt-3.5-turbo-1106": 0,
+        "gpt-4-1106-preview": 0,
+        "meta/code-llama-instruct-34b-chat": 0,
+        "meta/llama-2-70b-chat": 0,
+        "mistralai/mistral-7b-chat": 0,
+        "mistralai/mixtral-8x7b-chat": 64,
+        "zero-one-ai/Yi-34B-Chat": 0
+      }
+    },
+    "fixed-10": {
+      "rounds": 64,
+      "total_reward": 42.0,
+      "mean_reward": 0.65625,
+      "total_actual_cost": 0.0131568,
+      "cumulative_empirical_oracle_regret": 15.5,
+      "action_counts": {
+        "WizardLM/WizardLM-13B-V1.2": 0,
+        "claude-instant-v1": 0,
+        "claude-v1": 0,
+        "claude-v2": 0,
+        "gpt-3.5-turbo-1106": 0,
+        "gpt-4-1106-preview": 0,
+        "meta/code-llama-instruct-34b-chat": 0,
+        "meta/llama-2-70b-chat": 0,
+        "mistralai/mistral-7b-chat": 0,
+        "mistralai/mixtral-8x7b-chat": 0,
+        "zero-one-ai/Yi-34B-Chat": 64
+      }
+    }
+  },
+  "elapsed_seconds": 11.877
+}

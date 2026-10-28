@@ -23,4 +23,4 @@ None. Uses the completed baseline-infrastructure change without changing its con
 
 ## Impact
 
-New scripts/policies.py, scripts/run_baselines.py and tests; existing evaluator is reused. No new dependency. User authorized continued feasible implementation and commit/push on 2026-10-28. Source: published PILOT §3.1.3/§3.2 and Li et al. 2010 disjoint LinUCB.
+New scripts/policies.py, scripts/run_baselines.py and tests; existing evaluator is reused. Matplotlib is the only added direct dependency, pinned through uv.lock for standard reproducible plots. User authorized continued feasible implementation and commit/push on 2026-10-28. Source: published PILOT §3.1.3/§3.2 and Li et al. 2010 disjoint LinUCB.

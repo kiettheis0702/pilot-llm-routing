@@ -3,7 +3,12 @@ name = "pilot-llm-routing"
 version = "0.1.0"
 description = "Student reproduction of PILOT, starting with a reproducible data audit"
 requires-python = ">=3.11,<3.14"
-dependencies = ["numpy>=1.26,<3", "pandas>=2.2,<3", "pyarrow>=18"]
+dependencies = [
+    "matplotlib>=3.9,<4",
+    "numpy>=1.26,<3",
+    "pandas>=2.2,<3",
+    "pyarrow>=18",
+]
 
 [dependency-groups]
 dev = ["pytest>=8,<10"]

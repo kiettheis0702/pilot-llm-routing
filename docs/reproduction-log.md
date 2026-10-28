@@ -134,3 +134,12 @@ passes. A two-query synthetic integration obtains reward 2 and reloads identical
 scores. Checkpoints resume model state, not a stream cursor; run_learning still
 resets by contract. Zero query vectors fail, zero arm estimates score zero. Priors
 are caller supplied with explicit provenance; no real trained prior is implied.
+
+B07 now runs bounded baseline comparisons and produces standard Matplotlib PNG/SVG
+plots from saved traces. Matplotlib 3.11.2 and its dependencies were resolved into
+uv.lock (about 18 MiB of principal wheel downloads); no model/download/API was used.
+The plan was updated from custom dependency-free SVG to a standard plotting library.
+Toy: 7 methods × 100 rows, 2.227 s. RouterBench: 15 methods × 64 rows, 11.877 s.
+Independent review recomputed all artifact metrics and checked fingerprints/order;
+3 CLI regression tests pass. Source/prepared data remain read-only, and all contexts
+are explicitly synthetic. See [baselines.md](baselines.md) and saved reports.

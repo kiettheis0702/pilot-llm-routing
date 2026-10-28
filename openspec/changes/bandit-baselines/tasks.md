@@ -7,5 +7,5 @@
 
 ## 2. Bounded runner (B07)
 
-- [ ] 2.1 Write CLI replay/provenance/overwrite tests, implement toy and pinned small RouterBench comparison with trace-derived SVG, then pass full pytest.
-- [ ] 2.2 Execute documented toy and small RouterBench commands, verify source hashes, save measured evidence, validate OpenSpec and commit/push the completed runner.
+- [x] 2.1 Write CLI replay/provenance/overwrite tests, implement toy and pinned small RouterBench comparison with trace-derived SVG, then pass full pytest.
+- [x] 2.2 Execute documented toy and small RouterBench commands, verify source hashes, save measured evidence, validate OpenSpec and commit/push the completed runner.

@@ -25,6 +25,12 @@ See [usage and limitations](docs/baseline-infrastructure.md), the
 [verification log](docs/reproduction-log.md). Research baselines and preference
 training remain later work.
 
+Baseline policies and a bounded comparison CLI are now available; see
+[commands, evidence and feature limitations](docs/baselines.md). Standalone
+[cost control](docs/cost-policy.md) and the [PILOT mathematical core](docs/pilot-core.md)
+have analytic tests. [Preference readiness](docs/preference-readiness.md) remains
+blocked for an eleven-arm real prior. Synthetic smoke results are not paper results.
+
 ## Scope
 
 - Reproduce preference pretraining, PILOT/LinUCB online learning, and the deployment budget policy.

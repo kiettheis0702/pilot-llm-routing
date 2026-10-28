@@ -1,0 +1,121 @@
+{
+  "source": "toy",
+  "configuration": {
+    "seed": 42,
+    "rows": 100,
+    "dimension": 8,
+    "alpha": 1,
+    "ridge": 1,
+    "window": 10
+  },
+  "code": {
+    "git_commit": "ececbd35fb4eee0c40051ea12ba2628248e0877e",
+    "working_tree_dirty": true,
+    "implementation_sha256": {
+      "scripts/policies.py": "d4c7b95399ff54ab7686a361e3298473ad7f14d4682ec1b2f95d9215189406e8",
+      "scripts/run_baselines.py": "c1830421ca4e1876ad238e0fa14689097d7940b0f45c4d6fbb610fa84a4462e5",
+      "scripts/evaluation.py": "c94c9a2cff061f32a6e29092cfa7fdf815d729fd10225a95e1f391e82ccac0cb",
+      "scripts/bandit_contracts.py": "99eb79f510ef37d85c5ec7d8ea37ae587716130302b8bc91b38281e927ababcf",
+      "scripts/splits.py": "0479209e80b6947677991511f1e71c869d490f7e01fe1d06452ca0379ca2644e",
+      "scripts/data_gate.py": "84c250fa3594507ce0091c49bc366551b100af6e21b3ca5e392b9f3ed1b1ba23",
+      "uv.lock": "808a62de80da88be15936373dae4d9d2a9c5f133002eb52d207c44ee667a6910"
+    }
+  },
+  "created_at": "2026-10-28T16:26:15.827477+00:00",
+  "runtime": {
+    "python": "3.11.0",
+    "numpy": "2.4.6",
+    "pandas": "2.3.3"
+  },
+  "deviations": [
+    "Synthetic contexts; not comparable to paper results",
+    "ExploreOnly and EpochGreedy schedule are PAPER_INFERRED"
+  ],
+  "metrics": {
+    "random": {
+      "rounds": 100,
+      "total_reward": 47.064905205552776,
+      "mean_reward": 0.47064905205552776,
+      "total_actual_cost": 0.21300000000000016,
+      "cumulative_empirical_oracle_regret": 10.687861076269296,
+      "action_counts": {
+        "a": 27,
+        "b": 33,
+        "c": 40
+      }
+    },
+    "linucb": {
+      "rounds": 100,
+      "total_reward": 44.70629789647266,
+      "mean_reward": 0.44706297896472663,
+      "total_actual_cost": 0.19100000000000014,
+      "cumulative_empirical_oracle_regret": 13.046468385349423,
+      "action_counts": {
+        "a": 39,
+        "b": 31,
+        "c": 30
+      }
+    },
+    "explore-only": {
+      "rounds": 100,
+      "total_reward": 47.27930389096651,
+      "mean_reward": 0.4727930389096651,
+      "total_actual_cost": 0.19900000000000012,
+      "cumulative_empirical_oracle_regret": 10.473462390855573,
+      "action_counts": {
+        "a": 33,
+        "b": 35,
+        "c": 32
+      }
+    },
+    "epoch-greedy": {
+      "rounds": 100,
+      "total_reward": 44.30091329184262,
+      "mean_reward": 0.4430091329184262,
+      "total_actual_cost": 0.19700000000000015,
+      "cumulative_empirical_oracle_regret": 13.45185298997946,
+      "action_counts": {
+        "a": 40,
+        "b": 23,
+        "c": 37
+      }
+    },
+    "fixed-00": {
+      "rounds": 100,
+      "total_reward": 47.77304703377331,
+      "mean_reward": 0.4777304703377331,
+      "total_actual_cost": 0.10000000000000007,
+      "cumulative_empirical_oracle_regret": 9.979719248048758,
+      "action_counts": {
+        "a": 100,
+        "b": 0,
+        "c": 0
+      }
+    },
+    "fixed-01": {
+      "rounds": 100,
+      "total_reward": 47.64080848788154,
+      "mean_reward": 0.4764080848788154,
+      "total_actual_cost": 0.20000000000000015,
+      "cumulative_empirical_oracle_regret": 10.111957793940567,
+      "action_counts": {
+        "a": 0,
+        "b": 100,
+        "c": 0
+      }
+    },
+    "fixed-02": {
+      "rounds": 100,
+      "total_reward": 46.498974380918,
+      "mean_reward": 0.46498974380918,
+      "total_actual_cost": 0.3000000000000002,
+      "cumulative_empirical_oracle_regret": 11.253791900904078,
+      "action_counts": {
+        "a": 0,
+        "b": 0,
+        "c": 100
+      }
+    }
+  },
+  "elapsed_seconds": 2.227
+}
