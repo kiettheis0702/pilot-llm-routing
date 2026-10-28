@@ -56,6 +56,8 @@ uv run --locked python -m scripts.run_baselines --source toy --rows 100 --output
 
 Use new output directories for each run; existing results are never overwritten.
 These CPU commands generate synthetic data locally and make no model/API calls.
+Verified in a fresh clone and new Python environment: 310 tests passed and both
+commands completed; [execution evidence](reports/reproducibility-2026-10-29.json).
 See [toy outputs and interpretation](docs/toy-pipeline.md), [baseline commands](docs/baselines.md),
 [pretraining](docs/pretraining-core.md), [PILOT](docs/pilot-core.md),
 [cost policy](docs/cost-policy.md), and [deployment](docs/deployment.md).

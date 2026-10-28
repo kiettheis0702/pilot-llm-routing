@@ -181,3 +181,31 @@ report hashes, and `git diff --cached --check` passes. Inventory of 177 tracked 
 proposed files found no file over 5 MiB and no raw dataset/model/private-key/env
 file extensions; this is a scoped file inventory, not a secret-content/security
 audit. Dataset licensing remains unresolved where recorded in the G0 audit.
+
+## 2026-10-29 — Fresh checkout and environment verification
+
+Verified published code revision `5de84dd2dbb1c24f392c82603cb264b433be5d39` in a
+new temporary local clone (`git clone --no-hardlinks --single-branch --branch
+codex/data-gate`) with a separate new `.venv`, using CPython 3.11.0.
+
+The initial `uv sync --locked --offline --python <base Python 3.11>` exited 1
+because dependency wheels were absent from the machine cache. Retried
+`uv sync --locked --python <base Python 3.11>` and it exited 0, installing 20
+locked packages. Reported downloads: PyArrow 27.2 MiB, NumPy 12.0 MiB, pandas
+10.8 MiB and Pygments 1.2 MiB. These are ordinary Python dependencies; no model,
+benchmark dataset or paid API was used. All subsequent execution used offline mode.
+
+| Command inside the new clone | Observed result |
+| --- | --- |
+| `uv run --locked --offline --no-sync python -B -m pytest -q -p no:cacheprovider` | Exit 0; 310 passed in 23.59 s. |
+| `uv run --locked --offline --no-sync python -B -m scripts.run_toy_pipeline --output-dir outputs/toy` | Exit 0; 50 learning rounds, 6 deployment queries, 0.195 s internal time. |
+| `uv run --locked --offline --no-sync python -B -m scripts.run_baselines --source toy --rows 100 --output-dir outputs/baselines` | Exit 0; 7 methods × 100 rows, 2.908 s internal time; trace-derived PNG/SVG written. |
+| Compare saved/new source, lock, split fingerprints, checkpoints, traces and numerical metrics | Exit 0; all match. Prior/learned/deployed checkpoint bytes match exactly. |
+| `git status --porcelain` | Exit 0; empty, both before execution and after ignored outputs were generated. |
+
+[Machine-readable evidence](../reports/reproducibility-2026-10-29.json) records
+the revision, environment, commands, actual setup failure/recovery and results.
+No lint/typecheck/build/E2E suite or CI exists in this repository; those checks
+were not run or represented as passing. Relevant input/leakage/artifact validation
+was reviewed; no dedicated security audit or scanner was run. Real-data research
+prerequisites remain in [implementation-status.md](implementation-status.md).

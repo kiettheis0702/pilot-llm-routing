@@ -7,4 +7,4 @@
 
 ## 2. Reproducibility handoff
 
-- [ ] 2.1 Verify installation/tests/toy commands from a clean checkout and fresh environment, document exact results and unresolved real-data gates, then commit/push completed work.
+- [x] 2.1 Verify installation/tests/toy commands from a clean checkout and fresh environment, document exact results and unresolved real-data gates, then commit/push completed work.

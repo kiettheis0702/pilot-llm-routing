@@ -1,0 +1,95 @@
+{
+  "verified_at_utc": "2026-10-28T17:01:48.529812+00:00",
+  "local_date": "2026-10-29",
+  "scope": "fresh clone and fresh virtual environment; synthetic execution only",
+  "revision": "5de84dd2dbb1c24f392c82603cb264b433be5d39",
+  "clone_method": "git clone --no-hardlinks --single-branch --branch codex/data-gate <local published repository> <new temporary directory>",
+  "environment": {
+    "python": "3.11.0",
+    "numpy": "2.4.6",
+    "pandas": "2.3.3"
+  },
+  "uv_lock_sha256": "808a62de80da88be15936373dae4d9d2a9c5f133002eb52d207c44ee667a6910",
+  "installation": {
+    "initial_offline_sync_exit": 1,
+    "initial_offline_failure": "required wheels absent from local cache",
+    "online_locked_sync_exit": 0,
+    "installed_packages": 20,
+    "reported_downloads_mib": {
+      "pygments": 1.2,
+      "pandas": 10.8,
+      "pyarrow": 27.2,
+      "numpy": 12.0
+    },
+    "note": "Ordinary locked Python dependencies only; no model or benchmark download."
+  },
+  "checks": [
+    {
+      "command": "uv run --locked --offline --no-sync python -B -m pytest -q -p no:cacheprovider",
+      "exit_code": 0,
+      "passed": 310,
+      "pytest_elapsed_seconds": 23.59
+    },
+    {
+      "command": "uv run --locked --offline --no-sync python -B -m scripts.run_toy_pipeline --output-dir outputs/toy",
+      "exit_code": 0,
+      "elapsed_seconds": 0.195
+    },
+    {
+      "command": "uv run --locked --offline --no-sync python -B -m scripts.run_baselines --source toy --rows 100 --output-dir outputs/baselines",
+      "exit_code": 0,
+      "elapsed_seconds": 2.908
+    },
+    {
+      "command": "persisted source/lock/split hashes and repeated numerical artifact checks",
+      "exit_code": 0
+    },
+    {
+      "command": "git status --porcelain",
+      "exit_code": 0,
+      "output": ""
+    }
+  ],
+  "toy": {
+    "learning": {
+      "rounds": 50,
+      "total_reward": 49.0,
+      "mean_reward": 0.98,
+      "total_actual_cost": 25.0,
+      "cumulative_empirical_oracle_regret": 1.0,
+      "action_counts": {
+        "large": 21,
+        "small": 29
+      }
+    },
+    "deployment": {
+      "total_reward": 6.0,
+      "mean_reward_served": 1.0,
+      "empirical_oracle_regret_served": 0.0,
+      "action_counts": {
+        "small": 1,
+        "large": 5
+      }
+    },
+    "served_queries": 6,
+    "estimated_cost": 1.47,
+    "actual_cost": 3.0,
+    "actual_overspend_visible": true,
+    "source_hashes_match": true,
+    "split_hashes_survive_git_checkout": true,
+    "checkpoint_bytes_match_saved_run": true,
+    "traces_and_metrics_match_saved_run": true,
+    "working_tree_dirty_at_start": false
+  },
+  "baselines": {
+    "methods": 7,
+    "rows_per_method": 100
+  },
+  "not_run": [
+    "Full real-data training",
+    "Figure 3/4 experiments",
+    "Paid inference or embeddings",
+    "Dedicated security audit/scanner",
+    "Unconfigured lint/typecheck/build/E2E suites"
+  ]
+}

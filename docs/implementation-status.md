@@ -1,4 +1,4 @@
-# Implementation and research readiness — 2026-10-28
+# Implementation and research readiness — 2026-10-29
 
 The current branch implements a runnable offline numerical pipeline. No Figure 3/4
 reproduction or eleven-arm preference training is claimed. OpenSpec change files
@@ -16,7 +16,7 @@ handoff's broader tickets.
 | A08 | Synthetic integration complete; RouterBench acceptance blocked | Frozen deployment runner plus full synthetic CLI work. No real learned prior, embedding/token-price inputs, or baseline deployment score protocol. [Deployment](deployment.md), [toy](toy-pipeline.md). |
 | E01–E06 / V01–V06 | Not run | A defensible Figure 3/4 protocol requires settled source/model/embedding/cost inputs and resource estimates. No hyperparameter or seed is selected on deployment data. |
 | C01–C03 | Not research experiments | Unit/toy cases verify sensitivity and cost-error reporting; controlled hypotheses, replicates and statistics remain future work. |
-| F01/F02 | Engineering package available | Locked environment, executable toy/baseline commands and plots derived from saved traces. Fresh-checkout evidence is recorded in the verification log. |
+| F01/F02 | Engineering package verified | Fresh clone and new environment: 310 tests pass; toy and baseline commands succeed with matching numerical artifacts. [Evidence](../reports/reproducibility-2026-10-29.json). |
 | F03 | Blocked | A results poster needs real experiments; synthetic evidence cannot stand in for them. |
 | F04 | Scoped repository hygiene | Raw datasets stay external; explicit toy JSON and aggregate evidence are tracked. File-size/type checks are recorded in the log; no dedicated security audit implied. |
 
