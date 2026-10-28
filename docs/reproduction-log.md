@@ -104,3 +104,13 @@ candidate Cholesky validation before state mutation. Policy tests: 17 passing.
 The entire concurrent working tree suite also passed (151 tests at this checkpoint);
 preference/cost-policy changes are separately reviewed units and are not part of this
 policy commit. No full experiments or embedding calls were run.
+
+P01/P04 preparation adds strict exact-ID parsing, grouped preference holdout and
+aggregate readiness reporting. Parent reviewed the implementation and exclusion
+precedence. The local source yields 374 eligible single-turn pairs, 299 train and
+75 holdout, with no normalized prompt-group overlap. Nine arms have no eligible
+coverage and the scoped cache inventory finds no embeddings. Unknown alias/version
+statuses are unchanged; `all_arm_prior_ready=false`. Focused tests: 28 passing;
+strict OpenSpec preference-readiness valid. The report is deterministic across two
+measured executions. See [readiness details](preference-readiness.md). This is a
+completed preparation unit with explicit blocked real-training prerequisites.

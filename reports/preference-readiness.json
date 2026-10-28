@@ -1,0 +1,470 @@
+{
+  "protocol": "provisional-exact-id-single-turn-v1",
+  "mapping_policy": "literal exact_id only; no aliases approved",
+  "mapping_status_counts": {
+    "checkpoint_unverified": 3,
+    "exact_id": 2,
+    "proposed_alias": 6
+  },
+  "model_pool": [
+    "WizardLM/WizardLM-13B-V1.2",
+    "claude-instant-v1",
+    "claude-v1",
+    "claude-v2",
+    "gpt-3.5-turbo-1106",
+    "gpt-4-1106-preview",
+    "meta/code-llama-instruct-34b-chat",
+    "meta/llama-2-70b-chat",
+    "mistralai/mistral-7b-chat",
+    "mistralai/mixtral-8x7b-chat",
+    "zero-one-ai/Yi-34B-Chat"
+  ],
+  "diagnostics": {
+    "source_rows": 57477,
+    "exact_both_models_rows": 576,
+    "eligible_rows": 374,
+    "excluded_rows": 57103,
+    "missing_cells_by_column": {},
+    "exclusion_reason_counts": {
+      "multi_turn": 7538,
+      "prompt_blank_segment": 5,
+      "response_a_blank_segment": 22,
+      "response_a_nonstring_segment": 111,
+      "response_b_blank_segment": 23,
+      "response_b_nonstring_segment": 120,
+      "tie": 17761,
+      "unapproved_model_mapping": 56901
+    },
+    "primary_exclusion_counts": {
+      "multi_turn": 58,
+      "response_a_blank_segment": 1,
+      "response_b_nonstring_segment": 1,
+      "tie": 142,
+      "unapproved_model_mapping": 56901
+    },
+    "primary_reason_precedence": [
+      "missing_model",
+      "unapproved_model_mapping",
+      "same_model",
+      "invalid_winner",
+      "tie",
+      "prompt_content",
+      "response_a_content",
+      "response_b_content",
+      "multi_turn"
+    ],
+    "count_note": "Reason incidence can overlap; primary exclusions sum to excluded_rows."
+  },
+  "eligible": {
+    "rows": 374,
+    "prompt_groups": 373,
+    "per_arm": {
+      "WizardLM/WizardLM-13B-V1.2": {
+        "comparisons": 0,
+        "wins": 0,
+        "losses": 0
+      },
+      "claude-instant-v1": {
+        "comparisons": 0,
+        "wins": 0,
+        "losses": 0
+      },
+      "claude-v1": {
+        "comparisons": 0,
+        "wins": 0,
+        "losses": 0
+      },
+      "claude-v2": {
+        "comparisons": 0,
+        "wins": 0,
+        "losses": 0
+      },
+      "gpt-3.5-turbo-1106": {
+        "comparisons": 374,
+        "wins": 49,
+        "losses": 325
+      },
+      "gpt-4-1106-preview": {
+        "comparisons": 374,
+        "wins": 325,
+        "losses": 49
+      },
+      "meta/code-llama-instruct-34b-chat": {
+        "comparisons": 0,
+        "wins": 0,
+        "losses": 0
+      },
+      "meta/llama-2-70b-chat": {
+        "comparisons": 0,
+        "wins": 0,
+        "losses": 0
+      },
+      "mistralai/mistral-7b-chat": {
+        "comparisons": 0,
+        "wins": 0,
+        "losses": 0
+      },
+      "mistralai/mixtral-8x7b-chat": {
+        "comparisons": 0,
+        "wins": 0,
+        "losses": 0
+      },
+      "zero-one-ai/Yi-34B-Chat": {
+        "comparisons": 0,
+        "wins": 0,
+        "losses": 0
+      }
+    },
+    "pair_counts": {
+      "gpt-3.5-turbo-1106 / gpt-4-1106-preview": 374
+    }
+  },
+  "eligible_table_sha256": "b37926d0da45114e214c5eaae2158ddc743dfe0a7437402a1b542f4306c9390a",
+  "split": {
+    "status": "prepared",
+    "seed": 42,
+    "holdout_group_fraction": 0.2,
+    "method": "SHA-256 seed:preference:prompt_hash ordering; ceil(fraction * groups), at least one train group",
+    "query_hash_overlap": 0,
+    "battle_id_overlap": 0,
+    "manifest_sha256": "552ea91a09b5638d159df0317c2ed310999fbe38c1f25685d3a1b9fc462a07ee",
+    "partitions": {
+      "train": {
+        "rows": 299,
+        "prompt_groups": 298,
+        "per_arm": {
+          "WizardLM/WizardLM-13B-V1.2": {
+            "comparisons": 0,
+            "wins": 0,
+            "losses": 0
+          },
+          "claude-instant-v1": {
+            "comparisons": 0,
+            "wins": 0,
+            "losses": 0
+          },
+          "claude-v1": {
+            "comparisons": 0,
+            "wins": 0,
+            "losses": 0
+          },
+          "claude-v2": {
+            "comparisons": 0,
+            "wins": 0,
+            "losses": 0
+          },
+          "gpt-3.5-turbo-1106": {
+            "comparisons": 299,
+            "wins": 36,
+            "losses": 263
+          },
+          "gpt-4-1106-preview": {
+            "comparisons": 299,
+            "wins": 263,
+            "losses": 36
+          },
+          "meta/code-llama-instruct-34b-chat": {
+            "comparisons": 0,
+            "wins": 0,
+            "losses": 0
+          },
+          "meta/llama-2-70b-chat": {
+            "comparisons": 0,
+            "wins": 0,
+            "losses": 0
+          },
+          "mistralai/mistral-7b-chat": {
+            "comparisons": 0,
+            "wins": 0,
+            "losses": 0
+          },
+          "mistralai/mixtral-8x7b-chat": {
+            "comparisons": 0,
+            "wins": 0,
+            "losses": 0
+          },
+          "zero-one-ai/Yi-34B-Chat": {
+            "comparisons": 0,
+            "wins": 0,
+            "losses": 0
+          }
+        },
+        "pair_counts": {
+          "gpt-3.5-turbo-1106 / gpt-4-1106-preview": 299
+        }
+      },
+      "holdout": {
+        "rows": 75,
+        "prompt_groups": 75,
+        "per_arm": {
+          "WizardLM/WizardLM-13B-V1.2": {
+            "comparisons": 0,
+            "wins": 0,
+            "losses": 0
+          },
+          "claude-instant-v1": {
+            "comparisons": 0,
+            "wins": 0,
+            "losses": 0
+          },
+          "claude-v1": {
+            "comparisons": 0,
+            "wins": 0,
+            "losses": 0
+          },
+          "claude-v2": {
+            "comparisons": 0,
+            "wins": 0,
+            "losses": 0
+          },
+          "gpt-3.5-turbo-1106": {
+            "comparisons": 75,
+            "wins": 13,
+            "losses": 62
+          },
+          "gpt-4-1106-preview": {
+            "comparisons": 75,
+            "wins": 62,
+            "losses": 13
+          },
+          "meta/code-llama-instruct-34b-chat": {
+            "comparisons": 0,
+            "wins": 0,
+            "losses": 0
+          },
+          "meta/llama-2-70b-chat": {
+            "comparisons": 0,
+            "wins": 0,
+            "losses": 0
+          },
+          "mistralai/mistral-7b-chat": {
+            "comparisons": 0,
+            "wins": 0,
+            "losses": 0
+          },
+          "mistralai/mixtral-8x7b-chat": {
+            "comparisons": 0,
+            "wins": 0,
+            "losses": 0
+          },
+          "zero-one-ai/Yi-34B-Chat": {
+            "comparisons": 0,
+            "wins": 0,
+            "losses": 0
+          }
+        },
+        "pair_counts": {
+          "gpt-3.5-turbo-1106 / gpt-4-1106-preview": 75
+        }
+      }
+    }
+  },
+  "routerbench_overlap": {
+    "full_query_rows": 0,
+    "segment_rows": 0,
+    "scope": "Exact whitespace-normalized text only; not semantic decontamination"
+  },
+  "missing_eligible_arms": [
+    "WizardLM/WizardLM-13B-V1.2",
+    "claude-instant-v1",
+    "claude-v1",
+    "claude-v2",
+    "meta/code-llama-instruct-34b-chat",
+    "meta/llama-2-70b-chat",
+    "mistralai/mistral-7b-chat",
+    "mistralai/mixtral-8x7b-chat",
+    "zero-one-ai/Yi-34B-Chat"
+  ],
+  "missing_partition_arms": {
+    "train": [
+      "WizardLM/WizardLM-13B-V1.2",
+      "claude-instant-v1",
+      "claude-v1",
+      "claude-v2",
+      "meta/code-llama-instruct-34b-chat",
+      "meta/llama-2-70b-chat",
+      "mistralai/mistral-7b-chat",
+      "mistralai/mixtral-8x7b-chat",
+      "zero-one-ai/Yi-34B-Chat"
+    ],
+    "holdout": [
+      "WizardLM/WizardLM-13B-V1.2",
+      "claude-instant-v1",
+      "claude-v1",
+      "claude-v2",
+      "meta/code-llama-instruct-34b-chat",
+      "meta/llama-2-70b-chat",
+      "mistralai/mistral-7b-chat",
+      "mistralai/mixtral-8x7b-chat",
+      "zero-one-ai/Yi-34B-Chat"
+    ]
+  },
+  "triplets": {
+    "valid_triplets": null,
+    "status": "blocked",
+    "reason": "No pinned token-cost model-size order for paper Section 2.2.1 hard negatives; no sampler/training executed"
+  },
+  "all_arm_prior_ready": false,
+  "blockers": [
+    "Exact-ID eligible data does not cover the complete requested arm pool",
+    "No validated embedding model/version/dimension/cache provenance",
+    "No verified triplet size ordering or trained preference checkpoint",
+    "Arena 55K source and local filtering/split are not confirmed paper artifacts"
+  ],
+  "descriptive_mapping_scenarios": {
+    "exact_ids_only": {
+      "both_models_mapped": 576,
+      "ties_with_both_models_mapped": 142,
+      "decisive_valid_pairs": 434,
+      "single_turn_decisive_pairs": 374,
+      "multi_turn_decisive_pairs": 60,
+      "duplicate_first_prompt_excess_rows": 4,
+      "first_prompt_matches_full_routerbench_query": 0,
+      "first_prompt_matches_any_routerbench_segment": 0,
+      "per_arm_decisive_pairs": {
+        "gpt-3.5-turbo-1106": 434,
+        "gpt-4-1106-preview": 434
+      },
+      "pair_counts": {
+        "gpt-3.5-turbo-1106 / gpt-4-1106-preview": 434
+      }
+    },
+    "all_proposed_mappings": {
+      "both_models_mapped": 4970,
+      "ties_with_both_models_mapped": 1493,
+      "decisive_valid_pairs": 3477,
+      "single_turn_decisive_pairs": 2993,
+      "multi_turn_decisive_pairs": 484,
+      "duplicate_first_prompt_excess_rows": 87,
+      "first_prompt_matches_full_routerbench_query": 0,
+      "first_prompt_matches_any_routerbench_segment": 0,
+      "per_arm_decisive_pairs": {
+        "gpt-3.5-turbo-1106": 1110,
+        "gpt-4-1106-preview": 1221,
+        "claude-instant-v1": 929,
+        "claude-v1": 539,
+        "claude-v2": 648,
+        "meta/llama-2-70b-chat": 597,
+        "meta/code-llama-instruct-34b-chat": 343,
+        "zero-one-ai/Yi-34B-Chat": 250,
+        "mistralai/mistral-7b-chat": 242,
+        "mistralai/mixtral-8x7b-chat": 824,
+        "WizardLM/WizardLM-13B-V1.2": 251
+      },
+      "pair_counts": {
+        "claude-1 / claude-2.0": 134,
+        "claude-1 / claude-instant-1": 69,
+        "claude-1 / codellama-34b-instruct": 22,
+        "claude-1 / gpt-3.5-turbo-1106": 56,
+        "claude-1 / gpt-4-1106-preview": 101,
+        "claude-1 / llama-2-70b-chat": 14,
+        "claude-1 / mistral-7b-instruct": 25,
+        "claude-1 / mixtral-8x7b-instruct-v0.1": 67,
+        "claude-1 / wizardlm-13b": 35,
+        "claude-1 / yi-34b-chat": 16,
+        "claude-2.0 / claude-instant-1": 90,
+        "claude-2.0 / codellama-34b-instruct": 54,
+        "claude-2.0 / gpt-3.5-turbo-1106": 34,
+        "claude-2.0 / gpt-4-1106-preview": 187,
+        "claude-2.0 / llama-2-70b-chat": 44,
+        "claude-2.0 / mistral-7b-instruct": 20,
+        "claude-2.0 / mixtral-8x7b-instruct-v0.1": 20,
+        "claude-2.0 / wizardlm-13b": 54,
+        "claude-2.0 / yi-34b-chat": 11,
+        "claude-instant-1 / codellama-34b-instruct": 61,
+        "claude-instant-1 / gpt-3.5-turbo-1106": 306,
+        "claude-instant-1 / gpt-4-1106-preview": 62,
+        "claude-instant-1 / llama-2-70b-chat": 130,
+        "claude-instant-1 / mistral-7b-instruct": 23,
+        "claude-instant-1 / mixtral-8x7b-instruct-v0.1": 25,
+        "claude-instant-1 / wizardlm-13b": 53,
+        "claude-instant-1 / yi-34b-chat": 110,
+        "codellama-34b-instruct / gpt-3.5-turbo-1106": 13,
+        "codellama-34b-instruct / gpt-4-1106-preview": 62,
+        "codellama-34b-instruct / llama-2-70b-chat": 47,
+        "codellama-34b-instruct / mistral-7b-instruct": 17,
+        "codellama-34b-instruct / mixtral-8x7b-instruct-v0.1": 19,
+        "codellama-34b-instruct / wizardlm-13b": 37,
+        "codellama-34b-instruct / yi-34b-chat": 11,
+        "gpt-3.5-turbo-1106 / gpt-4-1106-preview": 434,
+        "gpt-3.5-turbo-1106 / llama-2-70b-chat": 15,
+        "gpt-3.5-turbo-1106 / mistral-7b-instruct": 14,
+        "gpt-3.5-turbo-1106 / mixtral-8x7b-instruct-v0.1": 211,
+        "gpt-3.5-turbo-1106 / wizardlm-13b": 7,
+        "gpt-3.5-turbo-1106 / yi-34b-chat": 20,
+        "gpt-4-1106-preview / llama-2-70b-chat": 32,
+        "gpt-4-1106-preview / mistral-7b-instruct": 31,
+        "gpt-4-1106-preview / mixtral-8x7b-instruct-v0.1": 260,
+        "gpt-4-1106-preview / wizardlm-13b": 9,
+        "gpt-4-1106-preview / yi-34b-chat": 43,
+        "llama-2-70b-chat / mistral-7b-instruct": 78,
+        "llama-2-70b-chat / mixtral-8x7b-instruct-v0.1": 189,
+        "llama-2-70b-chat / wizardlm-13b": 39,
+        "llama-2-70b-chat / yi-34b-chat": 9,
+        "mistral-7b-instruct / mixtral-8x7b-instruct-v0.1": 13,
+        "mistral-7b-instruct / wizardlm-13b": 14,
+        "mistral-7b-instruct / yi-34b-chat": 7,
+        "mixtral-8x7b-instruct-v0.1 / yi-34b-chat": 20,
+        "wizardlm-13b / yi-34b-chat": 3
+      }
+    }
+  },
+  "embedding_inventory": {
+    "roots": [
+      "C:\\Users\\ASUS\\OneDrive\\Documents\\ChatGPT\\AI PILOT",
+      "D:\\DOWNLOAD GG\\PILOT_DATA"
+    ],
+    "excluded_directory_names": [
+      ".agents",
+      ".git",
+      ".pytest_cache",
+      ".venv",
+      "__pycache__",
+      "node_modules"
+    ],
+    "candidates": [],
+    "scan_errors": [],
+    "scan_complete": true,
+    "method": "Filename/extension inventory; directory links excluded",
+    "embedding_model": null,
+    "embedding_version": null,
+    "dimension": null,
+    "provenance": null,
+    "validated_cache_ready": false,
+    "note": "No cache validation or model generation; candidate filenames alone cannot establish provenance or dimensions"
+  },
+  "provenance": {
+    "source": {
+      "repo": "lmarena-ai/arena-human-preference-55k",
+      "revision": "18c298340948c0e7f7727399fd459cca6ce0ca6f",
+      "file": "train.csv",
+      "size": 184175071,
+      "sha256": "0692154aaf20fc6649090c3f49b6b5dd1e693a765ecb5f0856ae0da5946f5be2"
+    },
+    "source_path": "D:\\DOWNLOAD GG\\PILOT_DATA\\arena_55k\\train.csv",
+    "prepared_query_path": "D:\\DOWNLOAD GG\\PILOT_DATA\\processed\\routerbench_0shot\\queries.parquet",
+    "prepared_query_sha256": "14542cd83a43f7fb64655e21e0e1c8fec48b0753a7334015099b065e061a058a",
+    "data_gate_report_sha256": "3d1589f487cc8d39a55659d0301bf45460055398be5f09d0faf32e0fc7a1f4bf",
+    "config_sha256": {
+      "data_sources.json": "083aaf7201d624056a5b0325ca2c1e9f3576cf91578347d55de7943ca6b1b4f7",
+      "model_mapping.json": "24475e8a9f8e6fe6c9d57018cacc5144332e78faab61ebf72ed08e4d56d99c77"
+    },
+    "code_sha256": {
+      "preference_data.py": "3547d6fcc3853be7205b766b5a62c81659c861be710ffec1ed3a25f261365e0c",
+      "data_gate.py": "84c250fa3594507ce0091c49bc366551b100af6e21b3ca5e392b9f3ed1b1ba23",
+      "audit_data.py": "a7e50afb64b10d6312d988a1d1b34e6524e7d244f6f5b0bafa261707e17bd608",
+      "fetch_data.py": "b6a7deda384e51f2ba4c40e7483d2f759116eabae20164cc09cfe76096da4fe1"
+    },
+    "runtime": {
+      "python": "3.11.0",
+      "pandas": "2.3.3"
+    }
+  },
+  "operations": {
+    "source_writes": 0,
+    "conversation_exports": 0,
+    "training_runs": 0,
+    "external_api_calls": 0,
+    "downloads": 0
+  }
+}
