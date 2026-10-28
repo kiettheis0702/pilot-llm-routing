@@ -143,3 +143,12 @@ Toy: 7 methods × 100 rows, 2.227 s. RouterBench: 15 methods × 64 rows, 11.877 
 Independent review recomputed all artifact metrics and checked fingerprints/order;
 3 CLI regression tests pass. Source/prepared data remain read-only, and all contexts
 are explicitly synthetic. See [baselines.md](baselines.md) and saved reports.
+
+A08 connects a fixed learned PILOT to held-out deployment and separate estimated/
+actual cost accounting. Parent reviewed the implementation and its declared model
+lineage limitation. Preflight rejects split overlap, catalog/context/count gaps
+before any reservation; no deployment feedback updates the learned router.
+The focused deployment plus end-to-end toy tests passed: 29 tests in 4.23 s,
+exit 0. Strict OpenSpec heldout-deployment is valid. Full-suite evidence and
+analytic examples are in [deployment.md](deployment.md). This completes the
+deployment API, while real deployment inputs remain gated.
