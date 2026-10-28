@@ -1,0 +1,97 @@
+{
+  "scope": "synthetic mathematical verification only; no actual eleven-arm training",
+  "synthetic": true,
+  "real_data_training_ready": false,
+  "fixture": {
+    "queries": 8,
+    "train_comparisons": 6,
+    "holdout_comparisons": 2,
+    "arms": [
+      "small",
+      "large"
+    ],
+    "cache_sha256": "a836350083107558fbe6a957731f69fe63c3ef57e084c90c573030a7242ce7d3"
+  },
+  "protocol": {
+    "interpretation": "PAPER_INFERRED",
+    "seed": 7,
+    "projection_epochs": 30,
+    "prior_epochs": 40,
+    "learning_rate": 0.03,
+    "margin": 0.5,
+    "optimizer": "seeded shuffled SGD",
+    "triplets_per_eligible_anchor": 1,
+    "distinct_prompt_members": true,
+    "prediction_ties": "incorrect"
+  },
+  "triplets": {
+    "triplets": [
+      [
+        "q0",
+        "q4",
+        "q5"
+      ],
+      [
+        "q1",
+        "q4",
+        "q2"
+      ],
+      [
+        "q4",
+        "q1",
+        "q3"
+      ]
+    ],
+    "eligible_anchors": 3,
+    "unusable_anchors": 3,
+    "train_anchors": 6,
+    "seed": 7,
+    "size_provenance": "synthetic token-cost units v1; not actual model prices"
+  },
+  "losses": {
+    "projection_initial": 0.49807665687573593,
+    "projection_final": 0.0,
+    "prior_initial": 0.44123386146652993,
+    "prior_final": 0.2532473589021748
+  },
+  "validation": {
+    "per_arm": {
+      "small": {
+        "support": 2,
+        "correct": 2,
+        "accuracy": 1.0,
+        "lambda": 1.0
+      },
+      "large": {
+        "support": 2,
+        "correct": 2,
+        "accuracy": 1.0,
+        "lambda": 1.0
+      }
+    },
+    "all_lambdas_ready": true,
+    "blockers": {}
+  },
+  "gradient_max_abs_error": {
+    "W": 9.84450299057471e-11,
+    "b": 6.206601899094721e-11,
+    "theta": 6.032682686729629e-11
+  },
+  "checkpoint_readback": {
+    "parameters_exact": true,
+    "projected_vectors_exact": true
+  },
+  "file_sha256": {
+    "scripts/pretraining.py": "10bc6779898f64c3f9da9bee7e39767adc56d7cfaaa7daef2685f12bfef6bcfc",
+    "tests/test_pretraining.py": "4537aaed41371a81f424e3011043d224948f3c01256ac408c22742018cda8c61",
+    "reports/preference-readiness.json": "e4ee71d0bbd50e1b885f758f674fbfab4fec49b15be82fa82749fedc981b6410"
+  },
+  "blocked_real_inputs": [
+    "No validated actual embedding cache",
+    "Nine real arms lack exact-ID eligible coverage",
+    "No verified actual token-cost size ordering"
+  ],
+  "external_api_calls": 0,
+  "downloads": 0,
+  "actual_data_training_runs": 0
+}

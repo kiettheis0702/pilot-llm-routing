@@ -152,3 +152,14 @@ The focused deployment plus end-to-end toy tests passed: 29 tests in 4.23 s,
 exit 0. Strict OpenSpec heldout-deployment is valid. Full-suite evidence and
 analytic examples are in [deployment.md](deployment.md). This completes the
 deployment API, while real deployment inputs remain gated.
+
+P02/P03/P05–P07 now have explicit embedding-cache contracts, strict triplet
+sampling, NumPy cosine losses/gradients, two-stage training with frozen projection,
+held-out inverse-accuracy diagnostics and validated JSON interchange. This is a
+small-input numerical core; real embedding generation and eleven-arm training
+remain blocked. Independent review compared gradients to separately constructed
+objectives (maximum error 3.78e-10) and found artifact-size/type validation defects;
+regression tests preceded their fixes. Final focused suite: 39 passed. Reviewer
+full suite: 310 passed in 47.10 s, exit 0. Strict OpenSpec pretraining-core passes.
+Parent inspected the implementation and documented inferred sampling/SGD choices.
+See [pretraining-core.md](pretraining-core.md) and its fingerprinted toy evidence.
