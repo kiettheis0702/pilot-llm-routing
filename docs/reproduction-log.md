@@ -163,3 +163,21 @@ regression tests preceded their fixes. Final focused suite: 39 passed. Reviewer
 full suite: 310 passed in 47.10 s, exit 0. Strict OpenSpec pretraining-core passes.
 Parent inspected the implementation and documented inferred sampling/SGD choices.
 See [pretraining-core.md](pretraining-core.md) and its fingerprinted toy evidence.
+
+The complete synthetic CLI now fits a prior, learns on 50 queries, reloads and
+serves 6 held-out queries without router updates. Independent review confirmed
+arm/lambda alignment, split isolation, fixed cosine deployment and provenance.
+Parent found a Windows CSV newline issue: Git's CRLF-to-LF normalization changed
+the persisted split checksum. A regression failed before explicit LF serialization
+and then passed; evidence was regenerated in 0.217 s. The pre-fix generated output
+is retained only in ignored local outputs, not committed. Source/lock and persisted
+manifest hashes are checked. See [toy-pipeline.md](toy-pipeline.md).
+
+After the newline correction, parent full-suite command
+`uv run --locked --offline --no-sync python -B -m pytest -q -p no:cacheprovider`
+passed **310 tests in 14.24 s**, exit 0. `openspec validate --all --strict`
+passed all eight changes. Git-staged source, uv.lock and split bytes match the toy
+report hashes, and `git diff --cached --check` passes. Inventory of 177 tracked or
+proposed files found no file over 5 MiB and no raw dataset/model/private-key/env
+file extensions; this is a scoped file inventory, not a secret-content/security
+audit. Dataset licensing remains unresolved where recorded in the G0 audit.

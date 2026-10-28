@@ -1,0 +1,58 @@
+[
+  {
+    "battle_id": "pair-0",
+    "query_id": "pref-0",
+    "winner": "large",
+    "loser": "small",
+    "split": "train"
+  },
+  {
+    "battle_id": "pair-1",
+    "query_id": "pref-1",
+    "winner": "large",
+    "loser": "small",
+    "split": "train"
+  },
+  {
+    "battle_id": "pair-2",
+    "query_id": "pref-2",
+    "winner": "small",
+    "loser": "large",
+    "split": "train"
+  },
+  {
+    "battle_id": "pair-3",
+    "query_id": "pref-3",
+    "winner": "small",
+    "loser": "large",
+    "split": "train"
+  },
+  {
+    "battle_id": "pair-4",
+    "query_id": "pref-4",
+    "winner": "large",
+    "loser": "small",
+    "split": "train"
+  },
+  {
+    "battle_id": "pair-5",
+    "query_id": "pref-5",
+    "winner": "small",
+    "loser": "large",
+    "split": "train"
+  },
+  {
+    "battle_id": "pair-6",
+    "query_id": "pref-6",
+    "winner": "large",
+    "loser": "small",
+    "split": "holdout"
+  },
+  {
+    "battle_id": "pair-7",
+    "query_id": "pref-7",
+    "winner": "small",
+    "loser": "large",
+    "split": "holdout"
+  }
+]

@@ -1,0 +1,7 @@
+query_id,reward,actual_cost,oracle_reward,empirical_oracle_regret,cumulative_reward,cumulative_empirical_oracle_regret,decision.status,decision.query_index,decision.bin_index,decision.remaining_queries_in_bin,decision.arm_id,decision.predicted_reward,decision.estimated_cost,decision.branch,decision.eligible_arms,decision.available_before,decision.available_after,decision.cumulative_estimated_cost,decision.utilization_before,decision.utilization_after
+route-027,1.0,0.5,1.0,0.0,1.0,0.0,selected,1,1,2,small,0.8081570349652242,0.07,threshold,"('small',)",0.6666666666666666,0.5966666666666667,0.07,0.0,0.105
+route-054,1.0,0.5,1.0,0.0,2.0,0.0,selected,2,1,1,large,0.7380337775921169,0.28,threshold,"('small', 'large')",0.5966666666666667,0.31666666666666665,0.35,0.105,0.525
+route-036,1.0,0.5,1.0,0.0,3.0,0.0,selected,3,2,2,large,0.7380337775921169,0.28,threshold,"('small', 'large')",0.9833333333333333,0.7033333333333334,0.63,0.0,0.42
+route-006,1.0,0.5,1.0,0.0,4.0,0.0,selected,4,2,1,large,0.7380337775921169,0.28,threshold,"('small', 'large')",0.7033333333333334,0.42333333333333334,0.91,0.42,0.84
+route-020,1.0,0.5,1.0,0.0,5.0,0.0,selected,5,3,2,large,0.7380337775921169,0.28,threshold,"('small', 'large')",1.09,0.81,1.19,0.0,0.42
+route-008,1.0,0.5,1.0,0.0,6.0,0.0,selected,6,3,1,large,0.7380337775921169,0.28,threshold,"('small', 'large')",0.81,0.53,1.47,0.42,0.84

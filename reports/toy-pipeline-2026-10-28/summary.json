@@ -1,0 +1,370 @@
+{
+  "synthetic": true,
+  "scope": "integration verification, not paper reproduction results",
+  "seed": 7,
+  "split_counts": {
+    "deployment": 6,
+    "learning": 50,
+    "tuning": 10
+  },
+  "prior_validation": {
+    "all_lambdas_ready": true,
+    "blockers": {},
+    "per_arm": {
+      "large": {
+        "accuracy": 1.0,
+        "correct": 2,
+        "lambda": 1.0,
+        "support": 2
+      },
+      "small": {
+        "accuracy": 1.0,
+        "correct": 2,
+        "lambda": 1.0,
+        "support": 2
+      }
+    }
+  },
+  "training": {
+    "projection_loss_start": 0.19807665687573586,
+    "projection_loss_end": 0.0,
+    "prior_loss_start": 0.6918870697704848,
+    "prior_loss_end": 0.3957933422891858
+  },
+  "learning": {
+    "schema_version": 1,
+    "phase": "learning",
+    "seed": 7,
+    "policy": "scripts.pilot.PILOT",
+    "arm_catalog": [
+      "large",
+      "small"
+    ],
+    "split": {
+      "query_ids": [
+        "route-014",
+        "route-024",
+        "route-045",
+        "route-046",
+        "route-000",
+        "route-037",
+        "route-029",
+        "route-004",
+        "route-057",
+        "route-062",
+        "route-019",
+        "route-031",
+        "route-056",
+        "route-044",
+        "route-028",
+        "route-003",
+        "route-038",
+        "route-016",
+        "route-032",
+        "route-005",
+        "route-010",
+        "route-040",
+        "route-026",
+        "route-035",
+        "route-013",
+        "route-042",
+        "route-012",
+        "route-047",
+        "route-021",
+        "route-001",
+        "route-049",
+        "route-039",
+        "route-007",
+        "route-034",
+        "route-053",
+        "route-025",
+        "route-051",
+        "route-041",
+        "route-060",
+        "route-061",
+        "route-063",
+        "route-065",
+        "route-064",
+        "route-058",
+        "route-002",
+        "route-017",
+        "route-011",
+        "route-043",
+        "route-059",
+        "route-055"
+      ],
+      "split": "learning",
+      "manifest_sha256": "ccd54f51e6cd8f7050104a11bc366c80f843c65f927eca00426d029974f96774",
+      "seed": 42,
+      "tuning_size": 10,
+      "learning_ratio": 10,
+      "full_size": 50,
+      "limit": null,
+      "subset_seed": null
+    },
+    "context": {
+      "label": "synthetic pretrained toy projection",
+      "dimension": 2,
+      "sha256": "6eaf5ea5369c498f14f487dafc85a324663c0afe2271003e1e999b38cb0301a2"
+    },
+    "data": {
+      "queries_sha256": "96640f68f3afcf480cad4af277f73fbb8316640dbeffcd3d3d353e3ba4dec112",
+      "outcomes_sha256": "e7c0bdcb0cfd3eaba220c4f55a87824615e0b5eaf0dde121f87c8158d71b50a6"
+    },
+    "metrics": {
+      "rounds": 50,
+      "total_reward": 49.0,
+      "mean_reward": 0.98,
+      "total_actual_cost": 25.0,
+      "cumulative_empirical_oracle_regret": 1.0,
+      "action_counts": {
+        "large": 21,
+        "small": 29
+      }
+    },
+    "metric_interpretation": "empirical_oracle_regret_on_stored_outcomes"
+  },
+  "deployment": {
+    "schema_version": 1,
+    "phase": "deployment",
+    "status": "complete",
+    "requested_queries": 6,
+    "served_queries": 6,
+    "unserved_queries": 0,
+    "terminal_decision": null,
+    "learning_split": {
+      "query_ids": [
+        "route-014",
+        "route-024",
+        "route-045",
+        "route-046",
+        "route-000",
+        "route-037",
+        "route-029",
+        "route-004",
+        "route-057",
+        "route-062",
+        "route-019",
+        "route-031",
+        "route-056",
+        "route-044",
+        "route-028",
+        "route-003",
+        "route-038",
+        "route-016",
+        "route-032",
+        "route-005",
+        "route-010",
+        "route-040",
+        "route-026",
+        "route-035",
+        "route-013",
+        "route-042",
+        "route-012",
+        "route-047",
+        "route-021",
+        "route-001",
+        "route-049",
+        "route-039",
+        "route-007",
+        "route-034",
+        "route-053",
+        "route-025",
+        "route-051",
+        "route-041",
+        "route-060",
+        "route-061",
+        "route-063",
+        "route-065",
+        "route-064",
+        "route-058",
+        "route-002",
+        "route-017",
+        "route-011",
+        "route-043",
+        "route-059",
+        "route-055"
+      ],
+      "split": "learning",
+      "manifest_sha256": "ccd54f51e6cd8f7050104a11bc366c80f843c65f927eca00426d029974f96774",
+      "seed": 42,
+      "tuning_size": 10,
+      "learning_ratio": 10,
+      "full_size": 50,
+      "limit": null,
+      "subset_seed": null
+    },
+    "deployment_split": {
+      "query_ids": [
+        "route-027",
+        "route-054",
+        "route-036",
+        "route-006",
+        "route-020",
+        "route-008"
+      ],
+      "split": "deployment",
+      "manifest_sha256": "ccd54f51e6cd8f7050104a11bc366c80f843c65f927eca00426d029974f96774",
+      "seed": 42,
+      "tuning_size": 10,
+      "learning_ratio": 10,
+      "full_size": 6,
+      "limit": null,
+      "subset_seed": null
+    },
+    "model": {
+      "policy": "scripts.pilot.PILOT",
+      "sha256": "610a4f2af3b105d61117f3b17372f670b65989f490d8da13e5e050226e9a1c14",
+      "prior_provenance": "synthetic fitted preference-prior.json sha256=7670695bc3d6da411e960331fe12abc4ac9884bcf3c6eb2cbc9fb1fa59395c09",
+      "learning_provenance": "caller_declared_not_attested"
+    },
+    "context": {
+      "label": "synthetic pretrained toy projection",
+      "dimension": 2,
+      "sha256": "6697a0d54bfa513a73904710106e49e8f3bf010dd98c87478b414ba17a208a26"
+    },
+    "data": {
+      "queries_sha256": "c87fdcd134ce1012b0944b7145be1bc8d863cf7003f49e74586f84d807b6ffef",
+      "outcomes_sha256": "1632c646df46d9e5ddcf82912b042f109769f9b285cc8b66e0e8872fc3213472",
+      "input_tokens_sha256": "093a3f97e4ab331d8a80be92ac183df2accc46de1bbb49751dd82a828823034c"
+    },
+    "input_token_provenance": "synthetic query-only input count=100",
+    "estimator": {
+      "tuning_query_ids": [
+        "route-033",
+        "route-009",
+        "route-030",
+        "route-050",
+        "route-048",
+        "route-015",
+        "route-023",
+        "route-052",
+        "route-022",
+        "route-018"
+      ],
+      "split_manifest_sha256": "ccd54f51e6cd8f7050104a11bc366c80f843c65f927eca00426d029974f96774",
+      "token_provenance": "synthetic tuning counts: 20 output tokens per arm",
+      "price_provenance": "synthetic currency per million tokens; not provider pricing",
+      "price_unit": "caller_currency_per_million_tokens",
+      "mean_output_tokens": {
+        "small": 20.0,
+        "large": 20.0
+      },
+      "prices": {
+        "small": {
+          "input_per_million": 500.0,
+          "output_per_million": 1000.0
+        },
+        "large": {
+          "input_per_million": 2000.0,
+          "output_per_million": 4000.0
+        }
+      }
+    },
+    "budget": {
+      "status": "complete",
+      "budget": 2.0,
+      "query_count": 6,
+      "bin_size": 2,
+      "bin_count": 3,
+      "base_bin_budget": 0.6666666666666666,
+      "lower_bound": 1.0,
+      "upper_bound": 10.0,
+      "successful_queries": 6,
+      "estimated_total": 1.47,
+      "allocated_budget": 2.0,
+      "available_budget": 0.53,
+      "unallocated_budget": 0.0,
+      "remaining_total_budget": 0.53,
+      "utilization": 0.84,
+      "estimated_budget_violation": false,
+      "arm_catalog": [
+        "small",
+        "large"
+      ],
+      "actual_observations": 6,
+      "actual_costs_complete": true,
+      "missing_actual_queries": [],
+      "actual_total_observed": 3.0,
+      "actual_total": 3.0,
+      "actual_budget_violation_observed": true,
+      "actual_budget_excess_observed": 1.0,
+      "observed_estimation_error": 1.53,
+      "actual_trace": [
+        {
+          "query_index": 1,
+          "arm_id": "small",
+          "estimated_cost": 0.07,
+          "actual_cost": 0.5
+        },
+        {
+          "query_index": 2,
+          "arm_id": "large",
+          "estimated_cost": 0.28,
+          "actual_cost": 0.5
+        },
+        {
+          "query_index": 3,
+          "arm_id": "large",
+          "estimated_cost": 0.28,
+          "actual_cost": 0.5
+        },
+        {
+          "query_index": 4,
+          "arm_id": "large",
+          "estimated_cost": 0.28,
+          "actual_cost": 0.5
+        },
+        {
+          "query_index": 5,
+          "arm_id": "large",
+          "estimated_cost": 0.28,
+          "actual_cost": 0.5
+        },
+        {
+          "query_index": 6,
+          "arm_id": "large",
+          "estimated_cost": 0.28,
+          "actual_cost": 0.5
+        }
+      ]
+    },
+    "metrics": {
+      "total_reward": 6.0,
+      "mean_reward_served": 1.0,
+      "empirical_oracle_regret_served": 0.0,
+      "action_counts": {
+        "small": 1,
+        "large": 5
+      }
+    },
+    "metric_interpretation": "unconstrained_empirical_oracle_on_served_stored_outcomes_only"
+  },
+  "frozen_router_verified": true,
+  "git_commit": "22ba6e4e5655f8b057c3bc0fae32f5450a89c073",
+  "working_tree_dirty": true,
+  "runtime": {
+    "python": "3.11.0",
+    "numpy": "2.4.6",
+    "pandas": "2.3.3"
+  },
+  "dependency_lock_sha256": "808a62de80da88be15936373dae4d9d2a9c5f133002eb52d207c44ee667a6910",
+  "implementation_sha256": {
+    "scripts/audit_data.py": "a7e50afb64b10d6312d988a1d1b34e6524e7d244f6f5b0bafa261707e17bd608",
+    "scripts/bandit_contracts.py": "99eb79f510ef37d85c5ec7d8ea37ae587716130302b8bc91b38281e927ababcf",
+    "scripts/cost_policy.py": "dcaadd871079be0fa90bc4b9bf77ffd1519f0a01356f05f1c6f1864a289e8a5a",
+    "scripts/data_gate.py": "84c250fa3594507ce0091c49bc366551b100af6e21b3ca5e392b9f3ed1b1ba23",
+    "scripts/data_io.py": "a9029eaef35804fd8d1202409cd7d0299030cba8f862ff4450e847e23852bf63",
+    "scripts/deployment.py": "29de9db33136bf2deb5cf1551520de471e2865f055d27c14c66c8b9a05837932",
+    "scripts/evaluation.py": "c94c9a2cff061f32a6e29092cfa7fdf815d729fd10225a95e1f391e82ccac0cb",
+    "scripts/fetch_data.py": "b6a7deda384e51f2ba4c40e7483d2f759116eabae20164cc09cfe76096da4fe1",
+    "scripts/pilot.py": "742dc3638a59eaccce64f9104ec8ecc6021f812849f86b4b67394fddc50ef067",
+    "scripts/policies.py": "d4c7b95399ff54ab7686a361e3298473ad7f14d4682ec1b2f95d9215189406e8",
+    "scripts/preference_data.py": "3547d6fcc3853be7205b766b5a62c81659c861be710ffec1ed3a25f261365e0c",
+    "scripts/pretraining.py": "10bc6779898f64c3f9da9bee7e39767adc56d7cfaaa7daef2685f12bfef6bcfc",
+    "scripts/run_baselines.py": "c1830421ca4e1876ad238e0fa14689097d7940b0f45c4d6fbb610fa84a4462e5",
+    "scripts/run_toy_pipeline.py": "b119bce11b420bb3b8e3425c4c67f06804c17b3ba1dddf52deb3a72c22bf8591",
+    "scripts/splits.py": "0479209e80b6947677991511f1e71c869d490f7e01fe1d06452ca0379ca2644e"
+  },
+  "elapsed_seconds": 0.217
+}

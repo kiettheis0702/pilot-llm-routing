@@ -24,3 +24,23 @@ Deterministic hash-ranked subsets restore the existing stream order and are an
 engineering `EXTENSION` for smoke verification, not a paper experiment protocol.
 Synthetic two-dimensional contexts remain explicit test inputs (MODEL-01).
 Preference identity/version, task aggregation and estimated-cost questions remain open.
+
+## Implementation update after B01–B07 and numerical core work
+
+The table above preserves the original G0 findings. MODEL-01 is now superseded:
+baseline, PILOT, pretraining and deployment mathematical cores exist, with synthetic
+end-to-end evidence. No real embedding cache or eleven-arm trained prior exists.
+PREF-03 preparation now excludes ties, multiple turns and incomplete responses,
+and uses a deterministic prompt-group holdout; see [preference-readiness.md](preference-readiness.md).
+
+| Decision | Current explicit interpretation / remaining question |
+| --- | --- |
+| BASELINE-01 | ExploreOnly uses uncertainty alone; EpochGreedy explores at rounds 0,w,2w. These schedules are PAPER_INFERRED; [baselines.md](baselines.md). |
+| PREF-04 | Triplets require the anchor winner to lose to a strictly cheaper arm in the negative pair. Cost-size order is caller supplied. Margin, one triplet per eligible anchor, SGD settings and initialization are PAPER_INFERRED; [pretraining-core.md](pretraining-core.md). |
+| PREF-05 | Per-arm held-out pair accuracy counts both participants; ties count incorrect. Zero/absent accuracy blocks inverse lambda rather than choosing a floor. Denominator/tie policy is PAPER_INFERRED. |
+| COST-02 | An explicit affordability intersection prevents estimated overspend (DEVIATION); rollover, final-bin query count and utilization conventions are documented in [cost-policy.md](cost-policy.md). Bounds are explicit inputs, never fit on deployment outcomes. |
+| COST-03 | Tuning-only estimation is implemented, but actual tokenizer provenance, output-token counts, historical prices and real LB/UB remain unresolved. Synthetic counts/prices cannot close this gate. |
+| DEPLOY-01 | The current integrated runner accepts PILOT cosine predictions. A fair multi-method deployment experiment still needs a declared score/cost interface for each baseline; raw unbounded linear scores are not silently clipped. |
+| SCALE-01 | The NumPy pretraining core enumerates triplet candidates and JSON caches are capped at 16 MiB. This is a small-input correctness implementation; full-scale caching/sampling requires separate design and resource measurement. |
+
+DATA-01/02, PREF-01/02 and CONTEXT-01 still prevent paper-equivalent claims.

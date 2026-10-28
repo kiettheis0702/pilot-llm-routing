@@ -16,20 +16,18 @@ Pranoy Panda, Raghav Magazine, Chaitanya Devaguptapu, Sho Takemori, and Vishal S
 
 The paper has been accepted for the course project, according to the project handoff. The first **Data Gate audit is conditional**: pinned RouterBench 0-shot data is prepared for offline development, deterministic splits and a one-step feedback smoke check run, and Arena preference coverage has been measured. The exact paper dataset choices and several model aliases remain unresolved.
 
-Read the [Data Gate findings](docs/data-gate.md) before running experiments. No PILOT implementation, preference training, or research result is claimed yet.
+Implemented and tested: validated offline evaluation, Random/fixed/LinUCB/
+ExploreOnly/EpochGreedy baselines, two-stage NumPy preference pretraining,
+prior-informed PILOT, checkpoint readback, tuning-only cost estimation and fixed
+router deployment with binning/rollover and separate actual-cost accounting.
+A single command runs the complete synthetic pipeline below.
 
-B01–B03 infrastructure is implemented: validated simulator/context contracts,
-frozen split verification and learning-only reward/cost/empirical-regret evaluation.
-See [usage and limitations](docs/baseline-infrastructure.md), the
-[OpenSpec change](openspec/changes/baseline-infrastructure/tasks.md), and the
-[verification log](docs/reproduction-log.md). Research baselines and preference
-training remain later work.
-
-Baseline policies and a bounded comparison CLI are now available; see
-[commands, evidence and feature limitations](docs/baselines.md). Standalone
-[cost control](docs/cost-policy.md) and the [PILOT mathematical core](docs/pilot-core.md)
-have analytic tests. [Preference readiness](docs/preference-readiness.md) remains
-blocked for an eleven-arm real prior. Synthetic smoke results are not paper results.
+The [implementation status](docs/implementation-status.md) distinguishes completed
+engineering work from blocked research runs. Read the [Data Gate findings](docs/data-gate.md),
+[preference readiness](docs/preference-readiness.md), and [verification log](docs/reproduction-log.md).
+Actual eleven-arm training and Figure 3/4 experiments remain blocked by verified
+model mappings, real embeddings, token counts/prices and scientific protocol decisions.
+Synthetic smoke results and the 64-row RouterBench plumbing comparison are not paper results.
 
 ## Scope
 
@@ -46,7 +44,23 @@ git clone https://github.com/kiettheis0702/pilot-llm-routing.git
 cd pilot-llm-routing
 ```
 
-Python 3.11–3.13 and `uv` are required for the current data-audit workflow:
+Python 3.11–3.13 and `uv` are required. The implemented branch is `codex/data-gate`:
+
+```sh
+git switch codex/data-gate
+uv sync --locked
+uv run --locked python -m pytest -q
+uv run --locked python -m scripts.run_toy_pipeline --output-dir outputs/toy
+uv run --locked python -m scripts.run_baselines --source toy --rows 100 --output-dir outputs/baselines
+```
+
+Use new output directories for each run; existing results are never overwritten.
+These CPU commands generate synthetic data locally and make no model/API calls.
+See [toy outputs and interpretation](docs/toy-pipeline.md), [baseline commands](docs/baselines.md),
+[pretraining](docs/pretraining-core.md), [PILOT](docs/pilot-core.md),
+[cost policy](docs/cost-policy.md), and [deployment](docs/deployment.md).
+
+Separately, download and audit the public candidate datasets:
 
 ```sh
 uv sync --locked
@@ -61,7 +75,7 @@ Downloads total about 455 MB and require no paid API calls. See [data/README.md]
 
 - [RouterBench dataset](https://huggingface.co/datasets/withmartian/routerbench) is the candidate routing benchmark. Its [repository](https://github.com/withmartian/routerbench) is benchmark code, not official PILOT code.
 - The legacy [Chatbot Arena conversations](https://huggingface.co/datasets/lmsys/chatbot_arena_conversations) source is gated. The separately audited public [Arena 55K candidate](https://huggingface.co/datasets/lmarena-ai/arena-human-preference-55k) has 57,477 rows; its equivalence to the paper's preference release remains unconfirmed.
-- Keep raw data, embeddings, checkpoints, API keys, and environment files out of Git.
+- Keep raw datasets, real embeddings/checkpoints, API keys, and environment files out of Git. Small explicitly synthetic fixtures and their evidence are tracked under `reports/`.
 - Record dataset revisions/checksums, model mappings, splits, seeds, and configurations.
 - During online learning, reveal only the selected arm's reward to the learner.
 - Keep tuning data separate from deployment evaluation.

@@ -1,0 +1,387 @@
+{
+  "trace": [
+    {
+      "query_id": "route-027",
+      "decision": {
+        "status": "selected",
+        "query_index": 1,
+        "bin_index": 1,
+        "remaining_queries_in_bin": 2,
+        "arm_id": "small",
+        "predicted_reward": 0.8081570349652242,
+        "estimated_cost": 0.07,
+        "branch": "threshold",
+        "eligible_arms": [
+          "small"
+        ],
+        "available_before": 0.6666666666666666,
+        "available_after": 0.5966666666666667,
+        "cumulative_estimated_cost": 0.07,
+        "utilization_before": 0.0,
+        "utilization_after": 0.105
+      },
+      "reward": 1.0,
+      "actual_cost": 0.5,
+      "oracle_reward": 1.0,
+      "empirical_oracle_regret": 0.0,
+      "cumulative_reward": 1.0,
+      "cumulative_empirical_oracle_regret": 0.0
+    },
+    {
+      "query_id": "route-054",
+      "decision": {
+        "status": "selected",
+        "query_index": 2,
+        "bin_index": 1,
+        "remaining_queries_in_bin": 1,
+        "arm_id": "large",
+        "predicted_reward": 0.7380337775921169,
+        "estimated_cost": 0.28,
+        "branch": "threshold",
+        "eligible_arms": [
+          "small",
+          "large"
+        ],
+        "available_before": 0.5966666666666667,
+        "available_after": 0.31666666666666665,
+        "cumulative_estimated_cost": 0.35,
+        "utilization_before": 0.105,
+        "utilization_after": 0.525
+      },
+      "reward": 1.0,
+      "actual_cost": 0.5,
+      "oracle_reward": 1.0,
+      "empirical_oracle_regret": 0.0,
+      "cumulative_reward": 2.0,
+      "cumulative_empirical_oracle_regret": 0.0
+    },
+    {
+      "query_id": "route-036",
+      "decision": {
+        "status": "selected",
+        "query_index": 3,
+        "bin_index": 2,
+        "remaining_queries_in_bin": 2,
+        "arm_id": "large",
+        "predicted_reward": 0.7380337775921169,
+        "estimated_cost": 0.28,
+        "branch": "threshold",
+        "eligible_arms": [
+          "small",
+          "large"
+        ],
+        "available_before": 0.9833333333333333,
+        "available_after": 0.7033333333333334,
+        "cumulative_estimated_cost": 0.63,
+        "utilization_before": 0.0,
+        "utilization_after": 0.42
+      },
+      "reward": 1.0,
+      "actual_cost": 0.5,
+      "oracle_reward": 1.0,
+      "empirical_oracle_regret": 0.0,
+      "cumulative_reward": 3.0,
+      "cumulative_empirical_oracle_regret": 0.0
+    },
+    {
+      "query_id": "route-006",
+      "decision": {
+        "status": "selected",
+        "query_index": 4,
+        "bin_index": 2,
+        "remaining_queries_in_bin": 1,
+        "arm_id": "large",
+        "predicted_reward": 0.7380337775921169,
+        "estimated_cost": 0.28,
+        "branch": "threshold",
+        "eligible_arms": [
+          "small",
+          "large"
+        ],
+        "available_before": 0.7033333333333334,
+        "available_after": 0.42333333333333334,
+        "cumulative_estimated_cost": 0.91,
+        "utilization_before": 0.42,
+        "utilization_after": 0.84
+      },
+      "reward": 1.0,
+      "actual_cost": 0.5,
+      "oracle_reward": 1.0,
+      "empirical_oracle_regret": 0.0,
+      "cumulative_reward": 4.0,
+      "cumulative_empirical_oracle_regret": 0.0
+    },
+    {
+      "query_id": "route-020",
+      "decision": {
+        "status": "selected",
+        "query_index": 5,
+        "bin_index": 3,
+        "remaining_queries_in_bin": 2,
+        "arm_id": "large",
+        "predicted_reward": 0.7380337775921169,
+        "estimated_cost": 0.28,
+        "branch": "threshold",
+        "eligible_arms": [
+          "small",
+          "large"
+        ],
+        "available_before": 1.09,
+        "available_after": 0.81,
+        "cumulative_estimated_cost": 1.19,
+        "utilization_before": 0.0,
+        "utilization_after": 0.42
+      },
+      "reward": 1.0,
+      "actual_cost": 0.5,
+      "oracle_reward": 1.0,
+      "empirical_oracle_regret": 0.0,
+      "cumulative_reward": 5.0,
+      "cumulative_empirical_oracle_regret": 0.0
+    },
+    {
+      "query_id": "route-008",
+      "decision": {
+        "status": "selected",
+        "query_index": 6,
+        "bin_index": 3,
+        "remaining_queries_in_bin": 1,
+        "arm_id": "large",
+        "predicted_reward": 0.7380337775921169,
+        "estimated_cost": 0.28,
+        "branch": "threshold",
+        "eligible_arms": [
+          "small",
+          "large"
+        ],
+        "available_before": 0.81,
+        "available_after": 0.53,
+        "cumulative_estimated_cost": 1.47,
+        "utilization_before": 0.42,
+        "utilization_after": 0.84
+      },
+      "reward": 1.0,
+      "actual_cost": 0.5,
+      "oracle_reward": 1.0,
+      "empirical_oracle_regret": 0.0,
+      "cumulative_reward": 6.0,
+      "cumulative_empirical_oracle_regret": 0.0
+    }
+  ],
+  "summary": {
+    "schema_version": 1,
+    "phase": "deployment",
+    "status": "complete",
+    "requested_queries": 6,
+    "served_queries": 6,
+    "unserved_queries": 0,
+    "terminal_decision": null,
+    "learning_split": {
+      "query_ids": [
+        "route-014",
+        "route-024",
+        "route-045",
+        "route-046",
+        "route-000",
+        "route-037",
+        "route-029",
+        "route-004",
+        "route-057",
+        "route-062",
+        "route-019",
+        "route-031",
+        "route-056",
+        "route-044",
+        "route-028",
+        "route-003",
+        "route-038",
+        "route-016",
+        "route-032",
+        "route-005",
+        "route-010",
+        "route-040",
+        "route-026",
+        "route-035",
+        "route-013",
+        "route-042",
+        "route-012",
+        "route-047",
+        "route-021",
+        "route-001",
+        "route-049",
+        "route-039",
+        "route-007",
+        "route-034",
+        "route-053",
+        "route-025",
+        "route-051",
+        "route-041",
+        "route-060",
+        "route-061",
+        "route-063",
+        "route-065",
+        "route-064",
+        "route-058",
+        "route-002",
+        "route-017",
+        "route-011",
+        "route-043",
+        "route-059",
+        "route-055"
+      ],
+      "split": "learning",
+      "manifest_sha256": "ccd54f51e6cd8f7050104a11bc366c80f843c65f927eca00426d029974f96774",
+      "seed": 42,
+      "tuning_size": 10,
+      "learning_ratio": 10,
+      "full_size": 50,
+      "limit": null,
+      "subset_seed": null
+    },
+    "deployment_split": {
+      "query_ids": [
+        "route-027",
+        "route-054",
+        "route-036",
+        "route-006",
+        "route-020",
+        "route-008"
+      ],
+      "split": "deployment",
+      "manifest_sha256": "ccd54f51e6cd8f7050104a11bc366c80f843c65f927eca00426d029974f96774",
+      "seed": 42,
+      "tuning_size": 10,
+      "learning_ratio": 10,
+      "full_size": 6,
+      "limit": null,
+      "subset_seed": null
+    },
+    "model": {
+      "policy": "scripts.pilot.PILOT",
+      "sha256": "610a4f2af3b105d61117f3b17372f670b65989f490d8da13e5e050226e9a1c14",
+      "prior_provenance": "synthetic fitted preference-prior.json sha256=7670695bc3d6da411e960331fe12abc4ac9884bcf3c6eb2cbc9fb1fa59395c09",
+      "learning_provenance": "caller_declared_not_attested"
+    },
+    "context": {
+      "label": "synthetic pretrained toy projection",
+      "dimension": 2,
+      "sha256": "6697a0d54bfa513a73904710106e49e8f3bf010dd98c87478b414ba17a208a26"
+    },
+    "data": {
+      "queries_sha256": "c87fdcd134ce1012b0944b7145be1bc8d863cf7003f49e74586f84d807b6ffef",
+      "outcomes_sha256": "1632c646df46d9e5ddcf82912b042f109769f9b285cc8b66e0e8872fc3213472",
+      "input_tokens_sha256": "093a3f97e4ab331d8a80be92ac183df2accc46de1bbb49751dd82a828823034c"
+    },
+    "input_token_provenance": "synthetic query-only input count=100",
+    "estimator": {
+      "tuning_query_ids": [
+        "route-033",
+        "route-009",
+        "route-030",
+        "route-050",
+        "route-048",
+        "route-015",
+        "route-023",
+        "route-052",
+        "route-022",
+        "route-018"
+      ],
+      "split_manifest_sha256": "ccd54f51e6cd8f7050104a11bc366c80f843c65f927eca00426d029974f96774",
+      "token_provenance": "synthetic tuning counts: 20 output tokens per arm",
+      "price_provenance": "synthetic currency per million tokens; not provider pricing",
+      "price_unit": "caller_currency_per_million_tokens",
+      "mean_output_tokens": {
+        "small": 20.0,
+        "large": 20.0
+      },
+      "prices": {
+        "small": {
+          "input_per_million": 500.0,
+          "output_per_million": 1000.0
+        },
+        "large": {
+          "input_per_million": 2000.0,
+          "output_per_million": 4000.0
+        }
+      }
+    },
+    "budget": {
+      "status": "complete",
+      "budget": 2.0,
+      "query_count": 6,
+      "bin_size": 2,
+      "bin_count": 3,
+      "base_bin_budget": 0.6666666666666666,
+      "lower_bound": 1.0,
+      "upper_bound": 10.0,
+      "successful_queries": 6,
+      "estimated_total": 1.47,
+      "allocated_budget": 2.0,
+      "available_budget": 0.53,
+      "unallocated_budget": 0.0,
+      "remaining_total_budget": 0.53,
+      "utilization": 0.84,
+      "estimated_budget_violation": false,
+      "arm_catalog": [
+        "small",
+        "large"
+      ],
+      "actual_observations": 6,
+      "actual_costs_complete": true,
+      "missing_actual_queries": [],
+      "actual_total_observed": 3.0,
+      "actual_total": 3.0,
+      "actual_budget_violation_observed": true,
+      "actual_budget_excess_observed": 1.0,
+      "observed_estimation_error": 1.53,
+      "actual_trace": [
+        {
+          "query_index": 1,
+          "arm_id": "small",
+          "estimated_cost": 0.07,
+          "actual_cost": 0.5
+        },
+        {
+          "query_index": 2,
+          "arm_id": "large",
+          "estimated_cost": 0.28,
+          "actual_cost": 0.5
+        },
+        {
+          "query_index": 3,
+          "arm_id": "large",
+          "estimated_cost": 0.28,
+          "actual_cost": 0.5
+        },
+        {
+          "query_index": 4,
+          "arm_id": "large",
+          "estimated_cost": 0.28,
+          "actual_cost": 0.5
+        },
+        {
+          "query_index": 5,
+          "arm_id": "large",
+          "estimated_cost": 0.28,
+          "actual_cost": 0.5
+        },
+        {
+          "query_index": 6,
+          "arm_id": "large",
+          "estimated_cost": 0.28,
+          "actual_cost": 0.5
+        }
+      ]
+    },
+    "metrics": {
+      "total_reward": 6.0,
+      "mean_reward_served": 1.0,
+      "empirical_oracle_regret_served": 0.0,
+      "action_counts": {
+        "small": 1,
+        "large": 5
+      }
+    },
+    "metric_interpretation": "unconstrained_empirical_oracle_on_served_stored_outcomes_only"
+  }
+}

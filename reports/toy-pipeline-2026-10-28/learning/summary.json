@@ -1,0 +1,93 @@
+{
+  "schema_version": 1,
+  "phase": "learning",
+  "seed": 7,
+  "policy": "scripts.pilot.PILOT",
+  "arm_catalog": [
+    "large",
+    "small"
+  ],
+  "split": {
+    "query_ids": [
+      "route-014",
+      "route-024",
+      "route-045",
+      "route-046",
+      "route-000",
+      "route-037",
+      "route-029",
+      "route-004",
+      "route-057",
+      "route-062",
+      "route-019",
+      "route-031",
+      "route-056",
+      "route-044",
+      "route-028",
+      "route-003",
+      "route-038",
+      "route-016",
+      "route-032",
+      "route-005",
+      "route-010",
+      "route-040",
+      "route-026",
+      "route-035",
+      "route-013",
+      "route-042",
+      "route-012",
+      "route-047",
+      "route-021",
+      "route-001",
+      "route-049",
+      "route-039",
+      "route-007",
+      "route-034",
+      "route-053",
+      "route-025",
+      "route-051",
+      "route-041",
+      "route-060",
+      "route-061",
+      "route-063",
+      "route-065",
+      "route-064",
+      "route-058",
+      "route-002",
+      "route-017",
+      "route-011",
+      "route-043",
+      "route-059",
+      "route-055"
+    ],
+    "split": "learning",
+    "manifest_sha256": "ccd54f51e6cd8f7050104a11bc366c80f843c65f927eca00426d029974f96774",
+    "seed": 42,
+    "tuning_size": 10,
+    "learning_ratio": 10,
+    "full_size": 50,
+    "limit": null,
+    "subset_seed": null
+  },
+  "context": {
+    "label": "synthetic pretrained toy projection",
+    "dimension": 2,
+    "sha256": "6eaf5ea5369c498f14f487dafc85a324663c0afe2271003e1e999b38cb0301a2"
+  },
+  "data": {
+    "queries_sha256": "96640f68f3afcf480cad4af277f73fbb8316640dbeffcd3d3d353e3ba4dec112",
+    "outcomes_sha256": "e7c0bdcb0cfd3eaba220c4f55a87824615e0b5eaf0dde121f87c8158d71b50a6"
+  },
+  "metrics": {
+    "rounds": 50,
+    "total_reward": 49.0,
+    "mean_reward": 0.98,
+    "total_actual_cost": 25.0,
+    "cumulative_empirical_oracle_regret": 1.0,
+    "action_counts": {
+      "large": 21,
+      "small": 29
+    }
+  },
+  "metric_interpretation": "empirical_oracle_regret_on_stored_outcomes"
+}
