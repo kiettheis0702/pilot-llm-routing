@@ -90,3 +90,17 @@ No lint/typecheck/build/E2E suite or CI is configured; none is claimed passing.
 Basic relevant code review covered validation and leakage; no dedicated security
 audit or scanner was run. B01–B03 is complete; overall research Data Gate remains
 conditional. Next implementation work is B04–B07 baselines, then the gated preference work.
+
+## 2026-10-28 — Incremental continuation authorized
+
+The user authorized all currently feasible work and commit/push after each completed
+unit. B01–B03 was rechecked (74 tests, strict OpenSpec validation) and published as
+`5e8f499` on `origin/codex/data-gate`.
+
+B04–B06 adds five validated baseline policies, with disjoint linear UCB and explicit
+PAPER_INFERRED exploration schedules. Independent review found finite but numerically
+singular updates at context [1e8,1e8]; the new regression failed, then passed after
+candidate Cholesky validation before state mutation. Policy tests: 17 passing.
+The entire concurrent working tree suite also passed (151 tests at this checkpoint);
+preference/cost-policy changes are separately reviewed units and are not part of this
+policy commit. No full experiments or embedding calls were run.
