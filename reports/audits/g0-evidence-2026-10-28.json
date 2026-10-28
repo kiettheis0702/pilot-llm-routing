@@ -1,0 +1,60 @@
+{
+  "audit_date": "2026-10-28",
+  "code_commit_audited": "f07ac1cee551fda203083aa3f160f3a09aa932fd",
+  "implementation_sha256": {
+    "scripts/data_gate.py": "65fa773ea262b36746e4109c74f32a9bae197a974e2b01681e0d09a3da97a939",
+    "scripts/audit_data.py": "a7e50afb64b10d6312d988a1d1b34e6524e7d244f6f5b0bafa261707e17bd608",
+    "scripts/data_io.py": "a9029eaef35804fd8d1202409cd7d0299030cba8f862ff4450e847e23852bf63",
+    "scripts/fetch_data.py": "b6a7deda384e51f2ba4c40e7483d2f759116eabae20164cc09cfe76096da4fe1",
+    "tests/test_data_gate.py": "b15d1e1fdf87a2f983332d806a6736fdb6d3bd992f14c1b65f1608a1dcd1118a"
+  },
+  "runtime": {
+    "python": "3.11.0",
+    "numpy": "2.4.6",
+    "pandas": "2.3.3",
+    "pyarrow": "26.0.0"
+  },
+  "source_verification": {
+    "routerbench_0shot": {
+      "bytes": 99567659,
+      "sha256": "ba4f77f19517610a707c374e99322d7750c30fc4ae7ff5527888595a1e65d36d"
+    },
+    "routerbench_5shot": {
+      "bytes": 171091324,
+      "sha256": "fbd7d3d16fba2759a18fa0ad44409d3e0e92ba80d03d90827eed1a6d084c9ffe"
+    },
+    "arena_55k": {
+      "bytes": 184175071,
+      "sha256": "0692154aaf20fc6649090c3f49b6b5dd1e693a765ecb5f0856ae0da5946f5be2"
+    }
+  },
+  "stored_prepared_hashes_match": true,
+  "saved_split_matches_fresh_in_memory_split": true,
+  "query_rows": 36497,
+  "outcome_rows": 401467,
+  "split_counts": {
+    "learning": 32270,
+    "deployment": 3227,
+    "tuning": 1000
+  },
+  "all_stored_query_ids_have_11_unique_arms": true,
+  "replay_rounds": 10,
+  "same_seed_replay_identical": true,
+  "first_feedback_matches_saved_smoke": true,
+  "selected_feedback_keys": [
+    "query_id",
+    "arm_id",
+    "reward",
+    "actual_cost"
+  ],
+  "replay_trace_sha256": "4055cdecd1e06344b4ff9f5b81938871a6e2af8cec2f684e4ba3af34f6e1a391",
+  "negative_probes": {
+    "constructor_accepts_nan_reward": true,
+    "per_query_derived_pool_sizes_without_catalog_validation": [
+      1,
+      11
+    ]
+  },
+  "data_files_written": false,
+  "elapsed_seconds": 5.348
+}

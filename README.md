@@ -18,6 +18,13 @@ The paper has been accepted for the course project, according to the project han
 
 Read the [Data Gate findings](docs/data-gate.md) before running experiments. No PILOT implementation, preference training, or research result is claimed yet.
 
+B01–B03 infrastructure is implemented: validated simulator/context contracts,
+frozen split verification and learning-only reward/cost/empirical-regret evaluation.
+See [usage and limitations](docs/baseline-infrastructure.md), the
+[OpenSpec change](openspec/changes/baseline-infrastructure/tasks.md), and the
+[verification log](docs/reproduction-log.md). Research baselines and preference
+training remain later work.
+
 ## Scope
 
 - Reproduce preference pretraining, PILOT/LinUCB online learning, and the deployment budget policy.

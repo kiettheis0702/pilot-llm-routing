@@ -1,0 +1,36 @@
+{
+  "date": "2026-10-28",
+  "scope": "B01-B03 contract verification, not research results",
+  "runtime": {
+    "python": "3.11.0",
+    "numpy": "2.4.6",
+    "pandas": "2.3.3"
+  },
+  "rows": {
+    "queries": 36497,
+    "outcomes": 401467
+  },
+  "split_counts": {
+    "deployment": 3227,
+    "learning": 32270,
+    "tuning": 1000
+  },
+  "same_seed_trace_identical": true,
+  "source_and_prepared_hashes_unchanged": {
+    "D:\\DOWNLOAD GG\\PILOT_DATA\\routerbench_0shot\\routerbench_0shot.pkl": "ba4f77f19517610a707c374e99322d7750c30fc4ae7ff5527888595a1e65d36d",
+    "D:\\DOWNLOAD GG\\PILOT_DATA\\routerbench_5shot\\routerbench_5shot.pkl": "fbd7d3d16fba2759a18fa0ad44409d3e0e92ba80d03d90827eed1a6d084c9ffe",
+    "D:\\DOWNLOAD GG\\PILOT_DATA\\arena_55k\\train.csv": "0692154aaf20fc6649090c3f49b6b5dd1e693a765ecb5f0856ae0da5946f5be2",
+    "D:\\DOWNLOAD GG\\PILOT_DATA\\processed\\routerbench_0shot\\outcomes.parquet": "82eb9baeab0452d1b59ee053ae7205b641cb70e22deae5e71b86596ffcd87ca4",
+    "D:\\DOWNLOAD GG\\PILOT_DATA\\processed\\routerbench_0shot\\queries.parquet": "14542cd83a43f7fb64655e21e0e1c8fec48b0753a7334015099b065e061a058a",
+    "D:\\DOWNLOAD GG\\PILOT_DATA\\processed\\routerbench_0shot\\splits.csv": "989d3663aa4051f6ccd80bedf62e6ef789ead57d744c87fd14c828ac9b08a8a5"
+  },
+  "implementation_sha256": {
+    "scripts/data_gate.py": "84c250fa3594507ce0091c49bc366551b100af6e21b3ca5e392b9f3ed1b1ba23",
+    "scripts/bandit_contracts.py": "99eb79f510ef37d85c5ec7d8ea37ae587716130302b8bc91b38281e927ababcf",
+    "scripts/splits.py": "f250dd98bbeed065cdb35f375adcbed8274b6d36b5d6029d0e317cd5f47fec03",
+    "scripts/evaluation.py": "c94c9a2cff061f32a6e29092cfa7fdf815d729fd10225a95e1f391e82ccac0cb"
+  },
+  "rounds": 10,
+  "data_files_written": false,
+  "elapsed_seconds": 3.215
+}

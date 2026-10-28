@@ -1,0 +1,71 @@
+{
+  "schema_version": 1,
+  "phase": "learning",
+  "seed": 42,
+  "policy": "__main__.FixedArmProbe",
+  "arm_catalog": [
+    "WizardLM/WizardLM-13B-V1.2",
+    "claude-instant-v1",
+    "claude-v1",
+    "claude-v2",
+    "gpt-3.5-turbo-1106",
+    "gpt-4-1106-preview",
+    "meta/code-llama-instruct-34b-chat",
+    "meta/llama-2-70b-chat",
+    "mistralai/mistral-7b-chat",
+    "mistralai/mixtral-8x7b-chat",
+    "zero-one-ai/Yi-34B-Chat"
+  ],
+  "split": {
+    "query_ids": [
+      "grade-school-math.dev.7154",
+      "mmlu-college-biology.val.92",
+      "hellaswag.val.2856",
+      "hellaswag.val.4796",
+      "hellaswag.val.2748",
+      "hellaswag.val.4251",
+      "mmlu-high-school-chemistry.val.145",
+      "grade-school-math.dev.1644",
+      "mmlu-world-religions.val.13",
+      "mmlu-virology.val.10"
+    ],
+    "split": "learning",
+    "manifest_sha256": "989d3663aa4051f6ccd80bedf62e6ef789ead57d744c87fd14c828ac9b08a8a5",
+    "seed": 42,
+    "tuning_size": 1000,
+    "learning_ratio": 10,
+    "full_size": 32270,
+    "limit": 10,
+    "subset_seed": 7
+  },
+  "context": {
+    "label": "synthetic-constant-plus-stream-index; contract verification only",
+    "dimension": 2,
+    "sha256": "8766859a9ee615c14a32eda8d8f496f2b04b189f782d671d420927af9a511023"
+  },
+  "data": {
+    "queries_sha256": "68ff2c9b1c8571e4ecbf6d1ff28b603119e6cc33fa32f4b22e893d2498531e2e",
+    "outcomes_sha256": "bf05437e0d1edcfa361166a1113c9367b73755b3af05515d44884f87863d17a8"
+  },
+  "metrics": {
+    "rounds": 10,
+    "total_reward": 1.75,
+    "mean_reward": 0.175,
+    "total_actual_cost": 0.0006609,
+    "cumulative_empirical_oracle_regret": 7.75,
+    "action_counts": {
+      "WizardLM/WizardLM-13B-V1.2": 10,
+      "claude-instant-v1": 0,
+      "claude-v1": 0,
+      "claude-v2": 0,
+      "gpt-3.5-turbo-1106": 0,
+      "gpt-4-1106-preview": 0,
+      "meta/code-llama-instruct-34b-chat": 0,
+      "meta/llama-2-70b-chat": 0,
+      "mistralai/mistral-7b-chat": 0,
+      "mistralai/mixtral-8x7b-chat": 0,
+      "zero-one-ai/Yi-34B-Chat": 0
+    }
+  },
+  "metric_interpretation": "empirical_oracle_regret_on_stored_outcomes"
+}

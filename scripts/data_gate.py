@@ -120,17 +120,48 @@ class Feedback:
 class OfflineBandit:
     """One-use feedback interface; full outcomes remain inside the environment."""
 
-    def __init__(self, queries: pd.DataFrame, outcomes: pd.DataFrame):
+    def __init__(self, queries: pd.DataFrame, outcomes: pd.DataFrame,
+                 *, arm_catalog: tuple[str, ...] | None = None):
+        for frame, required in ((queries, {"query_id", "query", "task"}),
+                                (outcomes, {"query_id", "arm_id", "reward", "actual_cost"})):
+            if frame.empty or not frame.columns.is_unique or not required <= set(frame.columns):
+                raise ValueError("Empty table or missing/duplicate required columns")
+        for values in (queries.query_id, outcomes.query_id, outcomes.arm_id):
+            if not all(isinstance(v, str) and v.strip() for v in values):
+                raise ValueError("Identifiers must be nonempty strings")
+        for column in ("query", "task"):
+            if not queries[column].map(lambda v: isinstance(v, str) and bool(v.strip())).all():
+                raise ValueError("Query text and task must be nonempty strings")
         if queries.query_id.duplicated().any() or outcomes.duplicated(["query_id", "arm_id"]).any():
             raise ValueError("Duplicate query/arm keys")
-        self._queries = queries.set_index("query_id")
-        self._outcomes = outcomes.set_index(["query_id", "arm_id"])
+        catalog = tuple(sorted(outcomes.arm_id.unique())) if arm_catalog is None else tuple(arm_catalog)
+        if (not catalog or not all(isinstance(a, str) and a.strip() for a in catalog)
+                or len(set(catalog)) != len(catalog)):
+            raise ValueError("Arm catalog must contain unique nonempty strings")
+        if (set(outcomes.query_id) != set(queries.query_id)
+                or set(outcomes.arm_id) != set(catalog)
+                or not outcomes.groupby("query_id").size().eq(len(catalog)).all()):
+            raise ValueError("Outcomes must contain every query/catalog pair exactly once")
+        clean = outcomes[["query_id", "arm_id", "reward", "actual_cost"]].copy()
+        try:
+            numbers = clean[["reward", "actual_cost"]].to_numpy(dtype=float)
+        except (ValueError, TypeError) as exc:
+            raise ValueError("Rewards and costs must be numeric") from exc
+        if not np.isfinite(numbers).all() or (numbers < 0).any() or (numbers[:, 0] > 1).any():
+            raise ValueError("Rewards must be finite in [0,1]; costs finite and nonnegative")
+        clean[["reward", "actual_cost"]] = numbers
+        self._arm_catalog = catalog
+        self._queries = queries[["query_id", "query", "task"]].set_index("query_id").copy()
+        self._outcomes = clean.set_index(["query_id", "arm_id"])
         self._seen: set[str] = set()
+
+    @property
+    def arm_catalog(self) -> tuple[str, ...]:
+        return self._arm_catalog
 
     def observe(self, query_id: str) -> Observation:
         row = self._queries.loc[query_id]
-        arms = tuple(sorted(self._outcomes.loc[query_id].index))
-        return Observation(query_id, row["query"], row["task"], arms)
+        return Observation(query_id, row["query"], row["task"], self.arm_catalog)
 
     def step(self, query_id: str, arm_id: str) -> Feedback:
         if query_id in self._seen:
