@@ -124,3 +124,13 @@ in-memory mutations were caught. Strict OpenSpec deployment-cost-policy passes.
 Synthetic measured evidence is [cost-policy-toy.json](../reports/cost-policy-toy.json).
 Real estimation still requires verified tokenizer/counts/prices and bounds; no
 actual deployment cost or output is used as an estimated-cost shortcut.
+
+A01–A04 mathematical core adds normalized cosine-UCB, explicit per-arm priors and
+positive lambdas, selected-only ridge updates and validated JSON model checkpoints.
+Parent reviewed numerical normalization, initialization, loading and evaluator use.
+37 focused tests pass, including analytic matrices/scores, extreme finite vector
+scales, corrupt checkpoints and continuation equivalence. Strict OpenSpec pilot-core
+passes. A two-query synthetic integration obtains reward 2 and reloads identical
+scores. Checkpoints resume model state, not a stream cursor; run_learning still
+resets by contract. Zero query vectors fail, zero arm estimates score zero. Priors
+are caller supplied with explicit provenance; no real trained prior is implied.
