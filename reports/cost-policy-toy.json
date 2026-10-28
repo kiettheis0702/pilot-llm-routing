@@ -1,0 +1,112 @@
+{
+  "schema_version": 1,
+  "kind": "synthetic_cost_accounting_example",
+  "paper_source": "https://aclanthology.org/2025.findings-emnlp.1301.pdf",
+  "paper_sections": [
+    "2.2.3",
+    "3.2",
+    "C.2 Algorithm 3"
+  ],
+  "limitations": [
+    "Synthetic prices/costs; not provider pricing or RouterBench results",
+    "No learned router, outcomes or tokenizer used",
+    "Affordability intersection is a documented safety deviation"
+  ],
+  "code_sha256": "dcaadd871079be0fa90bc4b9bf77ffd1519f0a01356f05f1c6f1864a289e8a5a",
+  "inputs": {
+    "predicted_rewards": {
+      "a": 1,
+      "b": 0
+    },
+    "estimated_costs": {
+      "a": 1,
+      "b": 1
+    },
+    "selected_actual_costs": [
+      4,
+      1
+    ]
+  },
+  "decisions": [
+    {
+      "status": "selected",
+      "query_index": 1,
+      "bin_index": 1,
+      "remaining_queries_in_bin": 2,
+      "arm_id": "a",
+      "predicted_reward": 1.0,
+      "estimated_cost": 1.0,
+      "branch": "threshold",
+      "eligible_arms": [
+        "a"
+      ],
+      "available_before": 3.0,
+      "available_after": 2.0,
+      "cumulative_estimated_cost": 1.0,
+      "utilization_before": 0.0,
+      "utilization_after": 0.3333333333333333
+    },
+    {
+      "status": "selected",
+      "query_index": 2,
+      "bin_index": 1,
+      "remaining_queries_in_bin": 1,
+      "arm_id": "a",
+      "predicted_reward": 1.0,
+      "estimated_cost": 1.0,
+      "branch": "threshold",
+      "eligible_arms": [
+        "a"
+      ],
+      "available_before": 2.0,
+      "available_after": 1.0,
+      "cumulative_estimated_cost": 2.0,
+      "utilization_before": 0.3333333333333333,
+      "utilization_after": 0.6666666666666666
+    }
+  ],
+  "report": {
+    "status": "complete",
+    "budget": 3.0,
+    "query_count": 2,
+    "bin_size": 2,
+    "bin_count": 1,
+    "base_bin_budget": 3.0,
+    "lower_bound": 1.0,
+    "upper_bound": 1.0,
+    "successful_queries": 2,
+    "estimated_total": 2.0,
+    "allocated_budget": 3.0,
+    "available_budget": 1.0,
+    "unallocated_budget": 0.0,
+    "remaining_total_budget": 1.0,
+    "utilization": 0.6666666666666666,
+    "estimated_budget_violation": false,
+    "arm_catalog": [
+      "a",
+      "b"
+    ],
+    "actual_observations": 2,
+    "actual_costs_complete": true,
+    "missing_actual_queries": [],
+    "actual_total_observed": 5.0,
+    "actual_total": 5.0,
+    "actual_budget_violation_observed": true,
+    "actual_budget_excess_observed": 2.0,
+    "observed_estimation_error": 3.0,
+    "actual_trace": [
+      {
+        "query_index": 1,
+        "arm_id": "a",
+        "estimated_cost": 1.0,
+        "actual_cost": 4.0
+      },
+      {
+        "query_index": 2,
+        "arm_id": "a",
+        "estimated_cost": 1.0,
+        "actual_cost": 1.0
+      }
+    ]
+  }
+}

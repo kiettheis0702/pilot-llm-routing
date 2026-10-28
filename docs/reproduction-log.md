@@ -114,3 +114,13 @@ statuses are unchanged; `all_arm_prior_ready=false`. Focused tests: 28 passing;
 strict OpenSpec preference-readiness valid. The report is deterministic across two
 measured executions. See [readiness details](preference-readiness.md). This is a
 completed preparation unit with explicit blocked real-training prerequisites.
+
+A05–A07 now provides a tuning-only token-cost estimator, Algorithm 3 binning and
+rollover policy, plus a separate actual-cost ledger. Parent reviewed the threshold,
+fallback, allocation arithmetic and separation of actual costs. The explicit
+affordability guard is a documented DEVIATION; other unresolved edge interpretations
+are listed in [cost-policy.md](cost-policy.md). 83 focused tests pass; six targeted
+in-memory mutations were caught. Strict OpenSpec deployment-cost-policy passes.
+Synthetic measured evidence is [cost-policy-toy.json](../reports/cost-policy-toy.json).
+Real estimation still requires verified tokenizer/counts/prices and bounds; no
+actual deployment cost or output is used as an estimated-cost shortcut.
