@@ -1,0 +1,54 @@
+{
+  "schema_version": 1,
+  "created_at_utc": "2026-10-29T05:47:55.959298+00:00",
+  "source_directory": "D:\\DOWNLOAD GG\\PILOT_DATA",
+  "destination_directory": "user-selected on new PC; keep relative paths",
+  "baseline_revision": "eaca6dabd7786ea6bf792a939fd251a0f0a87809",
+  "file_count": 7,
+  "total_bytes": 484074124,
+  "files": [
+    {
+      "relative_path": "arena_55k/train.csv",
+      "size_bytes": 184175071,
+      "sha256": "0692154aaf20fc6649090c3f49b6b5dd1e693a765ecb5f0856ae0da5946f5be2",
+      "verification": "existing source/prepared pin"
+    },
+    {
+      "relative_path": "download_manifest.json",
+      "size_bytes": 1468,
+      "sha256": "7833db3fb7518a5dd8fe2333b31d95a1a4c2a5066feb3986258d9ef279d1c5d7",
+      "verification": "snapshot of local download metadata"
+    },
+    {
+      "relative_path": "processed/routerbench_0shot/outcomes.parquet",
+      "size_bytes": 1094125,
+      "sha256": "82eb9baeab0452d1b59ee053ae7205b641cb70e22deae5e71b86596ffcd87ca4",
+      "verification": "existing source/prepared pin"
+    },
+    {
+      "relative_path": "processed/routerbench_0shot/queries.parquet",
+      "size_bytes": 23675459,
+      "sha256": "14542cd83a43f7fb64655e21e0e1c8fec48b0753a7334015099b065e061a058a",
+      "verification": "existing source/prepared pin"
+    },
+    {
+      "relative_path": "processed/routerbench_0shot/splits.csv",
+      "size_bytes": 4469018,
+      "sha256": "989d3663aa4051f6ccd80bedf62e6ef789ead57d744c87fd14c828ac9b08a8a5",
+      "verification": "existing source/prepared pin"
+    },
+    {
+      "relative_path": "routerbench_0shot/routerbench_0shot.pkl",
+      "size_bytes": 99567659,
+      "sha256": "ba4f77f19517610a707c374e99322d7750c30fc4ae7ff5527888595a1e65d36d",
+      "verification": "existing source/prepared pin"
+    },
+    {
+      "relative_path": "routerbench_5shot/routerbench_5shot.pkl",
+      "size_bytes": 171091324,
+      "sha256": "fbd7d3d16fba2759a18fa0ad44409d3e0e92ba80d03d90827eed1a6d084c9ffe",
+      "verification": "existing source/prepared pin"
+    }
+  ],
+  "note": "Read-only checksums; no raw conversations or binary data included. download_manifest paths may name the old computer and are historical metadata."
+}

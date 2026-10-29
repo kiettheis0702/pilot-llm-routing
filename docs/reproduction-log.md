@@ -209,3 +209,20 @@ No lint/typecheck/build/E2E suite or CI exists in this repository; those checks
 were not run or represented as passing. Relevant input/leakage/artifact validation
 was reviewed; no dedicated security audit or scanner was run. Real-data research
 prerequisites remain in [implementation-status.md](implementation-status.md).
+
+## 2026-10-29 — PC handoff
+
+Created [Vietnamese PC handoff](PC_HANDOFF_2026-10-29.md), linked from README,
+and a [seven-file transfer manifest](../reports/pc-transfer-manifest-2026-10-29.json).
+Read-only inventory totals 484,074,124 bytes (461.65 MiB); all three raw-source
+and three prepared-file hashes match existing pins. The seventh entry snapshots
+local download metadata. No raw data or model files are included in this commit.
+
+Parsed all five PowerShell command blocks successfully, and executed the exact
+documented verification block against the source folder: seven files match.
+Setup commands reference official Git/uv/Robocopy documentation; no install,
+physical copy or PC execution is claimed here. No Python behavior or dependency
+lock changed, so the previous 310-test evidence is retained without a redundant
+full test run. Git diff whitespace checks pass. User authorization to commit/push
+completed increments persists; the handoff records unresolved research/resource
+decisions without treating earlier recommendations as consent.

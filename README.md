@@ -39,6 +39,10 @@ Synthetic smoke results and the 64-row RouterBench plumbing comparison are not p
 
 ## Get the repository
 
+Moving to another Windows PC: follow the Vietnamese
+[PC handoff and setup guide](docs/PC_HANDOFF_2026-10-29.md), including the
+seven-file data transfer checksum manifest.
+
 ```sh
 git clone https://github.com/kiettheis0702/pilot-llm-routing.git
 cd pilot-llm-routing
