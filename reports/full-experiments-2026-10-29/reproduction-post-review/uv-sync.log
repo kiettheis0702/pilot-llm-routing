@@ -1,0 +1,31 @@
+Using CPython 3.11.18 interpreter at: C:\Users\ADMIN\AppData\Roaming\uv\python\cpython-3.11.18-windows-x86_64-none\python.exe
+Creating virtual environment at: .venv
+Resolved 30 packages in 0.95ms
+Installed 27 packages in 2.38s
+ + certifi==2026.10.23
+ + charset-normalizer==3.5.2
+ + colorama==0.4.6
+ + contourpy==1.3.3
+ + cycler==0.12.1
+ + fonttools==4.68.0
+ + idna==3.20
+ + iniconfig==2.3.1
+ + kiwisolver==1.5.1
+ + matplotlib==3.11.2
+ + numpy==2.4.6
+ + packaging==26.3
+ + pandas==2.3.3
+ + pillow==13.0.0
+ + pluggy==1.7.0
+ + pyarrow==26.0.0
+ + pygments==2.21.0
+ + pyparsing==3.3.3
+ + pytest==9.1.1
+ + python-dateutil==3.0.0
+ + pytz==2026.5
+ + regex==2026.9.29
+ + requests==2.34.2
+ + six==1.17.0
+ + tiktoken==0.5.2
+ + tzdata==2026.5
+ + urllib3==2.8.0

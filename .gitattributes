@@ -22,3 +22,11 @@
 *.pth binary
 *.ckpt binary
 *.safetensors binary
+
+# Preserve exact bytes of already-frozen research identities and evidence.
+# Their hashes identify completed local runs; newline conversion breaks replay.
+configs/model_mapping.json -text
+configs/frozen_experiment_protocol.json -text
+configs/research_prior_index.json -text
+tools/research/verify_replicate.py -text
+reports/full-experiments-2026-10-29/** -text

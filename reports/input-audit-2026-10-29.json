@@ -1,0 +1,435 @@
+{
+  "status": "Complete token-length audit; full GPU cache pending RAM",
+  "audit": {
+    "version": 1,
+    "kind": "input-length-audit",
+    "rows": 38055,
+    "input_sha256": "53905c85d5d2771dad29a64ba990f4b3c86b66ff81fcd9aabb14bf52eac9fbeb",
+    "tokenizer": {
+      "model": "BAAI/bge-m3",
+      "revision": "5617a9f61b028005a4858fdac845db406aefb181",
+      "file_sha256": {
+        "tokenizer.json": "21106b6d7dab2952c1d496fb21d5dc9db75c28ed361a05f5020bbba27810dd08",
+        "tokenizer_config.json": "a62b2b6784f990259fddef5f16388693a8043be4f69179e6a5257eeb3f9abac4",
+        "special_tokens_map.json": "8c785abebea9ae3257b61681b4e6fd8365ceafde980c21970d001e834cf10835"
+      },
+      "library": "tokenizers",
+      "library_version": "0.22.2",
+      "special_tokens": true,
+      "truncation": false,
+      "padding": false,
+      "network": false
+    },
+    "source_provenance": {
+      "input_bundle_sha256": "21c0bd2d2a0a3c201f1af3c62b3802bef27fa5c16e12cdba9fa7a0f1c0450a5c",
+      "preflight": {
+        "heavy_jobs": [],
+        "available_gib": 8.218029022216797
+      }
+    },
+    "caps": [
+      512,
+      1024,
+      2048,
+      4096,
+      8192
+    ],
+    "batch_size": 32,
+    "by_phase": {
+      "preference:holdout": {
+        "count": 313,
+        "total_tokens": 38741,
+        "max": 3185,
+        "quantiles": {
+          "50": 22.0,
+          "90": 185.80000000000018,
+          "95": 469.59999999999945,
+          "99": 2606.4799999999996,
+          "99.9": 3093.272000000013
+        },
+        "over_cap": {
+          "512": 15,
+          "1024": 9,
+          "2048": 5,
+          "4096": 0,
+          "8192": 0
+        },
+        "truncated_tokens": {
+          "512": 17315,
+          "1024": 11560,
+          "2048": 3799,
+          "4096": 0,
+          "8192": 0
+        }
+      },
+      "preference:train": {
+        "count": 1245,
+        "total_tokens": 105661,
+        "max": 3032,
+        "quantiles": {
+          "50": 23.0,
+          "90": 189.20000000000027,
+          "95": 324.79999999999995,
+          "99": 1039.799999999993,
+          "99.9": 2899.412000000002
+        },
+        "over_cap": {
+          "512": 35,
+          "1024": 13,
+          "2048": 8,
+          "4096": 0,
+          "8192": 0
+        },
+        "truncated_tokens": {
+          "512": 24680,
+          "1024": 14369,
+          "2048": 4926,
+          "4096": 0,
+          "8192": 0
+        }
+      },
+      "routing:deployment": {
+        "count": 3227,
+        "total_tokens": 636295,
+        "max": 1072,
+        "quantiles": {
+          "50": 175.0,
+          "90": 314.0,
+          "95": 337.0,
+          "99": 478.1799999999985,
+          "99.9": 701.5420000000113
+        },
+        "over_cap": {
+          "512": 30,
+          "1024": 1,
+          "2048": 0,
+          "4096": 0,
+          "8192": 0
+        },
+        "truncated_tokens": {
+          "512": 2918,
+          "1024": 48,
+          "2048": 0,
+          "4096": 0,
+          "8192": 0
+        }
+      },
+      "routing:learning": {
+        "count": 32270,
+        "total_tokens": 6355357,
+        "max": 1119,
+        "quantiles": {
+          "50": 180.0,
+          "90": 313.0,
+          "95": 335.0,
+          "99": 452.3100000000013,
+          "99.9": 670.9240000000136
+        },
+        "over_cap": {
+          "512": 190,
+          "1024": 4,
+          "2048": 0,
+          "4096": 0,
+          "8192": 0
+        },
+        "truncated_tokens": {
+          "512": 19135,
+          "1024": 304,
+          "2048": 0,
+          "4096": 0,
+          "8192": 0
+        }
+      },
+      "routing:tuning": {
+        "count": 1000,
+        "total_tokens": 195689,
+        "max": 539,
+        "quantiles": {
+          "50": 169.0,
+          "90": 315.1,
+          "95": 339.04999999999995,
+          "99": 425.0799999999999,
+          "99.9": 522.0170000000015
+        },
+        "over_cap": {
+          "512": 3,
+          "1024": 0,
+          "2048": 0,
+          "4096": 0,
+          "8192": 0
+        },
+        "truncated_tokens": {
+          "512": 44,
+          "1024": 0,
+          "2048": 0,
+          "4096": 0,
+          "8192": 0
+        }
+      }
+    },
+    "selection_statistics": {
+      "preference": {
+        "count": 1245,
+        "total_tokens": 105661,
+        "max": 3032,
+        "quantiles": {
+          "50": 23.0,
+          "90": 189.20000000000027,
+          "95": 324.79999999999995,
+          "99": 1039.799999999993,
+          "99.9": 2899.412000000002
+        },
+        "over_cap": {
+          "512": 35,
+          "1024": 13,
+          "2048": 8,
+          "4096": 0,
+          "8192": 0
+        },
+        "truncated_tokens": {
+          "512": 24680,
+          "1024": 14369,
+          "2048": 4926,
+          "4096": 0,
+          "8192": 0
+        }
+      },
+      "routing": {
+        "count": 33270,
+        "total_tokens": 6551046,
+        "max": 1119,
+        "quantiles": {
+          "50": 179.0,
+          "90": 313.0,
+          "95": 335.0,
+          "99": 449.3099999999977,
+          "99.9": 668.0
+        },
+        "over_cap": {
+          "512": 193,
+          "1024": 4,
+          "2048": 0,
+          "4096": 0,
+          "8192": 0
+        },
+        "truncated_tokens": {
+          "512": 19179,
+          "1024": 304,
+          "2048": 0,
+          "4096": 0,
+          "8192": 0
+        }
+      }
+    },
+    "decision": {
+      "cap": 2048,
+      "coverage_target": 0.99,
+      "coverage_target_met": true,
+      "selection_groups": {
+        "preference": 1245,
+        "routing": 33270
+      },
+      "rule": "smallest cap meeting coverage separately in routing learning+tuning and preference train; holdouts excluded"
+    },
+    "lengths_sha256": "85604a073ef3b186ddbfd9b3e7d7444a868c96c1b077f584bf986ebce8ccecb3",
+    "seconds": 9.78272270000889,
+    "manifest_sha256": "7a8a921066816a472f0deed12bd47def4f0d7f2d7c615460350fae1a6da1619d"
+  },
+  "input_bundle": {
+    "version": 1,
+    "kind": "full-research-inputs",
+    "source_hashes": {
+      "outcomes.parquet": "82eb9baeab0452d1b59ee053ae7205b641cb70e22deae5e71b86596ffcd87ca4",
+      "queries.parquet": "14542cd83a43f7fb64655e21e0e1c8fec48b0753a7334015099b065e061a058a",
+      "splits.csv": "989d3663aa4051f6ccd80bedf62e6ef789ead57d744c87fd14c828ac9b08a8a5"
+    },
+    "preparation_sha256": "9d1cc854c431ddce40bce59940d23d7bc0cd7de7db38c1d487121f6179c63c91",
+    "mapping_policy": "identity_match",
+    "mapping_sha256": "ca00ca697ca0368d9438860e2e6378e419d20920df1dd2fa827c12e63dbaf7fd",
+    "arena_sha256": "0692154aaf20fc6649090c3f49b6b5dd1e693a765ecb5f0856ae0da5946f5be2",
+    "arms": [
+      "WizardLM/WizardLM-13B-V1.2",
+      "claude-instant-v1",
+      "claude-v1",
+      "gpt-3.5-turbo-1106",
+      "gpt-4-1106-preview",
+      "meta/code-llama-instruct-34b-chat",
+      "meta/llama-2-70b-chat",
+      "zero-one-ai/Yi-34B-Chat"
+    ],
+    "phase_counts": {
+      "routing:tuning": 1000,
+      "routing:learning": 32270,
+      "routing:deployment": 3227,
+      "preference:train": 1245,
+      "preference:holdout": 313
+    },
+    "task_counts": {
+      "hellaswag": 10042,
+      "grade-school-math": 7450,
+      "mmlu-professional-law": 1534,
+      "arc-challenge": 1470,
+      "winogrande": 1267,
+      "mmlu-moral-scenarios": 895,
+      "mmlu-miscellaneous": 783,
+      "mmlu-professional-psychology": 612,
+      "mmlu-high-school-psychology": 545,
+      "mbpp": 427,
+      "chinese_zodiac": 394,
+      "mmlu-high-school-macroeconomics": 390,
+      "mmlu-elementary-mathematics": 378,
+      "consensus_summary": 362,
+      "mmlu-moral-disputes": 346,
+      "mmlu-prehistory": 324,
+      "mmlu-philosophy": 311,
+      "mmlu-high-school-biology": 310,
+      "mmlu-nutrition": 306,
+      "bias_detection": 285,
+      "mmlu-professional-accounting": 282,
+      "mmlu-professional-medicine": 272,
+      "mmlu-high-school-mathematics": 270,
+      "mmlu-clinical-knowledge": 265,
+      "abstract2title": 254,
+      "mmlu-security-studies": 245,
+      "mmlu-high-school-microeconomics": 238,
+      "mmlu-high-school-world-history": 237,
+      "mmlu-conceptual-physics": 235,
+      "mmlu-marketing": 234,
+      "mmlu-human-aging": 223,
+      "mmlu-high-school-statistics": 216,
+      "mmlu-high-school-us-history": 204,
+      "mmlu-high-school-chemistry": 203,
+      "mmlu-sociology": 201,
+      "mmlu-high-school-geography": 198,
+      "mmlu-high-school-government-and-politics": 193,
+      "mmlu-college-medicine": 173,
+      "mmlu-world-religions": 171,
+      "mmlu-virology": 166,
+      "mmlu-high-school-european-history": 165,
+      "mmlu-logical-fallacies": 163,
+      "mmlu-astronomy": 152,
+      "mmlu-high-school-physics": 151,
+      "mmlu-electrical-engineering": 145,
+      "mmlu-college-biology": 144,
+      "mmlu-anatomy": 135,
+      "mmlu-human-sexuality": 131,
+      "mmlu-formal-logic": 126,
+      "mmlu-international-law": 121,
+      "mmlu-econometrics": 114,
+      "mmlu-machine-learning": 112,
+      "mmlu-public-relations": 110,
+      "mmlu-jurisprudence": 108,
+      "mmlu-management": 103,
+      "mmlu-college-physics": 102,
+      "mmlu-business-ethics": 100,
+      "mmlu-abstract-algebra": 100,
+      "mmlu-college-mathematics": 100,
+      "mmlu-college-computer-science": 100,
+      "mmlu-college-chemistry": 100,
+      "mmlu-computer-security": 100,
+      "mmlu-global-facts": 100,
+      "mmlu-high-school-computer-science": 100,
+      "mmlu-medical-genetics": 100,
+      "mmlu-us-foreign-policy": 100,
+      "Chinese_character_riddles": 100,
+      "mtbench": 41,
+      "chinese_tang_poetries": 37,
+      "chinese_shi_jing": 34,
+      "accounting_audit": 30,
+      "chinese_ancient_poetry": 25,
+      "chinese_modern_poem_identification": 21,
+      "chinese_homonym": 21,
+      "chinese_hard_translations": 21,
+      "mtbench-math": 20,
+      "chinese_famous_novel": 20,
+      "chinese-lantern-riddles": 20,
+      "mtbench-reference": 19,
+      "chinese_song_ci": 16,
+      "chinese_ancient_masterpieces_dynasty": 16,
+      "chinese_idioms": 15,
+      "chinese_poem": 15,
+      "chinese-remainder-theorem": 15,
+      "chinese_chu_ci": 15,
+      "test-match": 3
+    },
+    "preference_routing_prompt_overlap": 0,
+    "paper_equivalent": false,
+    "research_blockers": [
+      "Authors exact RouterBench release and 0-shot/5-shot choice unconfirmed",
+      "86 observed raw task labels versus 64 in paper; no invented grouping",
+      "Authors exact Arena preference release/preprocessing unconfirmed",
+      "Three provider checkpoint aliases unresolved; full eleven-arm prior unavailable",
+      "BGE-M3 is an embedding substitution; final input/truncation recipe needs length audit",
+      "Historical per-arm token prices/tokenizer counts and triplet cost-size order need provenance",
+      "Budget evaluation needs tuning-only token counts, bounds and common baseline deployment scores"
+    ],
+    "files": {
+      "routing-inputs.json": "2e820e635a45c4d31b634671c128010abf619b9f83decda16653092662a188ca",
+      "preference-inputs.json": "a8c9edc0b80bd881599598bba5097d95b08530a38776f879f891f9352fddb383",
+      "phases.json": "753945471e62638e43d2842aff33f801074305d79e7babd7d9781c0802eeb3fc"
+    },
+    "manifest_sha256": "21c0bd2d2a0a3c201f1af3c62b3802bef27fa5c16e12cdba9fa7a0f1c0450a5c"
+  },
+  "verification": {
+    "probes": [
+      {
+        "name": "complete ordered input and verbatim identity readback",
+        "passed": true
+      },
+      {
+        "name": "all input and manifest checksums",
+        "passed": true
+      },
+      {
+        "name": "frozen split coverage and unchanged source hashes",
+        "passed": true
+      },
+      {
+        "name": "128-query former encoder token-count oracle",
+        "passed": true
+      },
+      {
+        "name": "independent AutoTokenizer equivalence on longest and sampled prompts",
+        "passed": true
+      },
+      {
+        "name": "repeat CLI refuses existing artifact without rewrite",
+        "passed": true
+      }
+    ],
+    "rows": 38055,
+    "independent_tokenizer_samples": 36,
+    "feasibility_rows": 16,
+    "cap": 2048,
+    "torch_loaded": false
+  },
+  "tests": {
+    "passed": 348,
+    "skipped": 1,
+    "failed": 0,
+    "seconds": 9.86,
+    "report": "outputs/research-input-audit-20261029/pytest.xml"
+  },
+  "gpu_feasibility": {
+    "completed": false,
+    "reason": "Both attempts stopped after library load below the 8 GiB RAM threshold; last measurement 7.40 GiB. Encoder not loaded.",
+    "candidate_recipe": "configs/local_embedding_full.json",
+    "candidate_recipe_sha256": "fd9f8f83dc6271671f23bbf382c312be92d4d07eb827285e958a506a8fa4c5f3",
+    "requested_rows": 16,
+    "batch_size": 2,
+    "output": "outputs/research-input-audit-20261029/bge-2048-feasibility",
+    "resume_required": true,
+    "attempts": [
+      {
+        "resume": false,
+        "available_gib_at_guard": 7.95,
+        "encoder_loaded": false
+      },
+      {
+        "resume": true,
+        "available_gib_at_guard": 7.4,
+        "encoder_loaded": false
+      }
+    ]
+  }
+}

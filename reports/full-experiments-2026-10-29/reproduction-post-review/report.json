@@ -1,0 +1,200 @@
+{
+  "kind": "post-review-clean-source-reproduction",
+  "base_commit": "47ce94384f9c4a709f9bc85a02c7eb344cce75ae",
+  "source_files": 422,
+  "steps": [
+    {
+      "name": "uv-sync",
+      "command": [
+        "C:\\Users\\ADMIN\\AppData\\Local\\Microsoft\\WinGet\\Packages\\astral-sh.uv_Microsoft.Winget.Source_8wekyb3d8bbwe\\uv.exe",
+        "sync",
+        "--locked",
+        "--extra",
+        "cost",
+        "--offline",
+        "--python",
+        "C:\\Users\\ADMIN\\AppData\\Roaming\\uv\\python\\cpython-3.11.18-windows-x86_64-none\\python.exe",
+        "--project",
+        "C:\\Users\\ADMIN\\Documents\\ChatGPT\\AI pilot\\outputs\\final-reproduction-post-review-20261029\\source"
+      ],
+      "cwd": "C:\\Users\\ADMIN\\Documents\\ChatGPT\\AI pilot\\outputs\\final-reproduction-post-review-20261029\\source",
+      "exit_code": 0,
+      "seconds": 2.4359489999478683,
+      "preflight": {
+        "heavy_jobs": [],
+        "available_gib": 11.281684875488281
+      }
+    },
+    {
+      "name": "pytest",
+      "command": [
+        "C:\\Users\\ADMIN\\Documents\\ChatGPT\\AI pilot\\outputs\\final-reproduction-post-review-20261029\\source\\.venv\\Scripts\\python.exe",
+        "-m",
+        "pytest",
+        "-q",
+        "--basetemp",
+        "C:\\Users\\ADMIN\\Documents\\ChatGPT\\AI pilot\\outputs\\final-reproduction-post-review-20261029\\pytest-tmp",
+        "--junitxml",
+        "C:\\Users\\ADMIN\\Documents\\ChatGPT\\AI pilot\\outputs\\final-reproduction-post-review-20261029\\pytest.xml"
+      ],
+      "cwd": "C:\\Users\\ADMIN\\Documents\\ChatGPT\\AI pilot\\outputs\\final-reproduction-post-review-20261029\\source",
+      "exit_code": 0,
+      "seconds": 14.887394100020174,
+      "preflight": {
+        "heavy_jobs": [],
+        "available_gib": 11.208805084228516
+      }
+    },
+    {
+      "name": "toy-smoke",
+      "command": [
+        "C:\\Users\\ADMIN\\Documents\\ChatGPT\\AI pilot\\outputs\\final-reproduction-post-review-20261029\\source\\.venv\\Scripts\\python.exe",
+        "-m",
+        "scripts.run_toy_pipeline",
+        "--output-dir",
+        "C:\\Users\\ADMIN\\Documents\\ChatGPT\\AI pilot\\outputs\\final-reproduction-post-review-20261029\\toy-smoke"
+      ],
+      "cwd": "C:\\Users\\ADMIN\\Documents\\ChatGPT\\AI pilot\\outputs\\final-reproduction-post-review-20261029\\source",
+      "exit_code": 0,
+      "seconds": 0.8062898999778554,
+      "preflight": {
+        "heavy_jobs": [],
+        "available_gib": 11.192611694335938
+      }
+    },
+    {
+      "name": "baseline-smoke",
+      "command": [
+        "C:\\Users\\ADMIN\\Documents\\ChatGPT\\AI pilot\\outputs\\final-reproduction-post-review-20261029\\source\\.venv\\Scripts\\python.exe",
+        "-m",
+        "scripts.run_baselines",
+        "--source",
+        "toy",
+        "--rows",
+        "100",
+        "--output-dir",
+        "C:\\Users\\ADMIN\\Documents\\ChatGPT\\AI pilot\\outputs\\final-reproduction-post-review-20261029\\baseline-smoke"
+      ],
+      "cwd": "C:\\Users\\ADMIN\\Documents\\ChatGPT\\AI pilot\\outputs\\final-reproduction-post-review-20261029\\source",
+      "exit_code": 0,
+      "seconds": 1.4200711000012234,
+      "preflight": {
+        "heavy_jobs": [],
+        "available_gib": 11.439098358154297
+      }
+    },
+    {
+      "name": "guarded-real-replay",
+      "command": [
+        "C:\\Users\\ADMIN\\Documents\\ChatGPT\\AI pilot\\outputs\\final-reproduction-post-review-20261029\\source\\.venv\\Scripts\\python.exe",
+        "C:\\Users\\ADMIN\\Documents\\ChatGPT\\AI pilot\\tools\\research\\verify_runs.py",
+        "--domain",
+        "routerbench",
+        "--seed",
+        "7",
+        "--method",
+        "pilot",
+        "--variant",
+        "main",
+        "--output",
+        "outputs/research-experiments-20261029/verification-reproduction/routerbench-seed7-pilot-main-guarded.json"
+      ],
+      "cwd": "C:\\Users\\ADMIN\\Documents\\ChatGPT\\AI pilot",
+      "exit_code": 0,
+      "seconds": 18.38543620001292,
+      "preflight": {
+        "heavy_jobs": [],
+        "available_gib": 11.36407470703125
+      }
+    }
+  ],
+  "assertions_enabled": true,
+  "verified": true,
+  "scope": "fresh source snapshot and locked CPU environment; full real group replay uses existing immutable inputs, not a full-grid or GPU re-embedding rerun",
+  "tests": {
+    "name": "pytest",
+    "errors": "0",
+    "failures": "0",
+    "skipped": "1",
+    "tests": "442",
+    "time": "14.114",
+    "timestamp": "2026-10-29T23:46:09.215783+07:00",
+    "hostname": "EMPIRE-01"
+  },
+  "passed": 441,
+  "skipped": 1,
+  "current_source_matches_snapshot": {
+    "configs/ablation_plan.json": "0285e9742518f875b16d9a111d0986743f7d74f95d8fb18579428cdc485f57b9",
+    "configs/data_sources.json": "083aaf7201d624056a5b0325ca2c1e9f3576cf91578347d55de7943ca6b1b4f7",
+    "configs/frozen_experiment_protocol.json": "ae4e9e76e8ae34bb40b1391a55c6a05dd62aa5ee2c0bd7fa2df279f66d97e229",
+    "configs/local_embedding.json": "a9ca18722f5ebf01b1043065808c6eb4066104915f0df77559604c129a404dd2",
+    "configs/local_embedding_full.json": "fd9f8f83dc6271671f23bbf382c312be92d4d07eb827285e958a506a8fa4c5f3",
+    "configs/main_experiment_plan.json": "6b89fe73c4e7622a4fc36273da2c5a958fe02deda42c485e8787e0f9d500be17",
+    "configs/model_mapping.json": "ca00ca697ca0368d9438860e2e6378e419d20920df1dd2fa827c12e63dbaf7fd",
+    "configs/research_prior_index.json": "078dfe202ce8fc238b415c809d7b0a2da0d65103677de92d18391948ad145572",
+    "configs/research_protocol.json": "7380c648dee72eae720edd2605dda37fb8e6f38dcadda34952b9d3e954a785a6",
+    "configs/routerbench_costs.json": "87a78411730025d567d28b764f3946864d4a4211b6c3faa9c4e8c989f5b8f718",
+    "configs/tuning_grid.json": "5cadba21a8264cbbcad935da7ca2ce03353e85420b70ff000b7f7f522e66f4dd",
+    "pyproject.toml": "b56dcdb805bb38085fbeb64e57d8373254eccbca90fbce7285031bb921df26cb",
+    "scripts/audit_data.py": "a7e50afb64b10d6312d988a1d1b34e6524e7d244f6f5b0bafa261707e17bd608",
+    "scripts/bandit_contracts.py": "99eb79f510ef37d85c5ec7d8ea37ae587716130302b8bc91b38281e927ababcf",
+    "scripts/cost_inputs.py": "ed150fd62f42cc0c3cae024919498af79de7e7f08007f985c75c98ee98105936",
+    "scripts/cost_policy.py": "56d9c5313060b5d08e353fc97ffeaa447f6caf81b1e5bf65dd7532bcd7b2e1e5",
+    "scripts/data_gate.py": "84c250fa3594507ce0091c49bc366551b100af6e21b3ca5e392b9f3ed1b1ba23",
+    "scripts/data_io.py": "a9029eaef35804fd8d1202409cd7d0299030cba8f862ff4450e847e23852bf63",
+    "scripts/deployment.py": "775b174bb394e49fe944efa7aea78ee32946382dd64a68c823c2f96dc1b19935",
+    "scripts/deployment_adapter.py": "174823185e484f82192a983c53940fd196f1164d3bb842f532de813894e03ae1",
+    "scripts/embedding_store.py": "013eae2303189415bc79ff1d324070f380491443fcea6194ab876f1b98c27787",
+    "scripts/evaluation.py": "c94c9a2cff061f32a6e29092cfa7fdf815d729fd10225a95e1f391e82ccac0cb",
+    "scripts/experiments.py": "87bf55174075f4fd560018b96514ba3b21360c93b0c1bafaaf1acbac8afb9f0a",
+    "scripts/fetch_data.py": "b6a7deda384e51f2ba4c40e7483d2f759116eabae20164cc09cfe76096da4fe1",
+    "scripts/input_audit.py": "a58a61c8bc7d083162aa9a89b445e491ee445466af0019b4aa57037de694b757",
+    "scripts/local_embeddings.py": "e69f965d765fd9ac91687311b15cf80a4ba0c37ed2d2bc1d60aa1ede18e974e4",
+    "scripts/model_mapping.py": "ce9863bf3bbac30e208ea07c10f31dc030562b343e26f3add6c0ad695da17528",
+    "scripts/pilot.py": "742dc3638a59eaccce64f9104ec8ecc6021f812849f86b4b67394fddc50ef067",
+    "scripts/policies.py": "d4c7b95399ff54ab7686a361e3298473ad7f14d4682ec1b2f95d9215189406e8",
+    "scripts/preference_data.py": "26140e171f2dcb5dcdce0bfff6664a8edf2e0043f567cbc0ad66073dc1098521",
+    "scripts/pretraining.py": "3e5760538b39226fd03475e538034fdebe6dee65c19e293b7f0882b7943a2607",
+    "scripts/research_pipeline.py": "00e17401978bd0840a5a5b2d78dc7cdae1767c680be09074cace5c1bc9564a34",
+    "scripts/resources.py": "eed8e73a485540170e686e6aa144b8cac6ce53352751709120997dc92f1c8293",
+    "scripts/run_baselines.py": "c1830421ca4e1876ad238e0fa14689097d7940b0f45c4d6fbb610fa84a4462e5",
+    "scripts/run_toy_pipeline.py": "b119bce11b420bb3b8e3425c4c67f06804c17b3ba1dddf52deb3a72c22bf8591",
+    "scripts/splits.py": "0479209e80b6947677991511f1e71c869d490f7e01fe1d06452ca0379ca2644e",
+    "scripts/tuning.py": "9801b4e2efd985876cfe1081e644c2f43c80f6cf8a1edc80f4f39fd797f62e32",
+    "tests/test_bandit_contracts.py": "f244516de1683be5398062921c882711ca37833e5dfe25bc8b5950363cca79bb",
+    "tests/test_baseline_runner.py": "73517f9b3dbfa26bb8cd9b90ecd99255b7a3d02681f2c3384cfc16d4c1809f35",
+    "tests/test_common_deployment.py": "04d8dc3800f826915ec656d0a8ec427158aaf0be81fa54da8c93282ecf9284e8",
+    "tests/test_cost_inputs.py": "98afe5f3270543f481f870c78d7645d109bfac28ee54009e7994cf6fdd765bed",
+    "tests/test_cost_policy.py": "9e76af45807b88f895ec155b986b845801db3e833f002cd5a9405419dcb7cd82",
+    "tests/test_data_gate.py": "b15d1e1fdf87a2f983332d806a6736fdb6d3bd992f14c1b65f1608a1dcd1118a",
+    "tests/test_deployment.py": "fa7adbc0ffbf3366257a5631b6785151b4437eba096a6127a64ff9c87c6b28bf",
+    "tests/test_embedding_store.py": "9db87a847e9eb26f2a5c682474eeb450ef03691cc3d6a69698bcb37a5ab71550",
+    "tests/test_evaluation.py": "e41c391a935d884b7eedd6bfd019bbe3b3a9f1f23d216b5b6de129d06ad4d15e",
+    "tests/test_experiments.py": "84e16689db1d38713565d60e0367c6b14b659e728dd9c644b75b270772fe48a8",
+    "tests/test_input_audit.py": "c7a9b8bb65577f4f31ad6b6b42744055af69b977cedeb1841fdbe0581ad34f09",
+    "tests/test_local_embeddings.py": "097fc29205f9709662b90f66c896135f9731335f00ddbde81753e8e5e5400b6b",
+    "tests/test_model_mapping.py": "f3b44db829c6f023ad3ee0435371d3e956b15977d17d8320fc1ce4ef6499cf52",
+    "tests/test_pilot.py": "609b8e63463086c7ec3a139a5dfe555b254f65ad10d6e8d34c439709f68cd9c2",
+    "tests/test_policies.py": "da9af54f0d0b395efce73c868a87055ede00d01f778693a1a360e2cc2e1d7de3",
+    "tests/test_preference_data.py": "426f855c14144bef243cfe3b3574b7b32d3778585e7dcbe38133587693885e53",
+    "tests/test_pretraining.py": "4537aaed41371a81f424e3011043d224948f3c01256ac408c22742018cda8c61",
+    "tests/test_pretraining_disk.py": "0241d4a4c38927dbd95101371c274348ed73acc0fdcd5b97134181d5e3342269",
+    "tests/test_research_pipeline.py": "e76ffae9188a0e742b5b6d19221a9531d8af866ab8fc41a325ea472a7c375324",
+    "tests/test_research_tool_guards.py": "5f79ab23c3c63cfe945e469fe39d6720cbecdab12f8f630f86396bddd8a0db89",
+    "tests/test_splits.py": "a0154fabae16b0f11329df64679dc2891a55c24be8f85210f32f2a1bb5990e9c",
+    "tests/test_toy_pipeline.py": "b5a1c53ca2cdd2c5290bfb1c8853fff547a34bb2ff3e37390e1a862a9fc1bf95",
+    "tests/test_tuning.py": "1853203ddc0571341bab64beda4bafb192dbe1cd7155ef9a05aa29dab596f58c",
+    "tools/research/aggregate_results.py": "9cee16584f362a3411c6081187a5f6082c2695ac4076a2aebf16678947133f86",
+    "tools/research/build_documents.py": "f1ac8f5fda262ef8da5177eb4d9a770ae94273c820f86fd07fb7135acefa2438",
+    "tools/research/probe_cli.py": "b6f701e910ebd9505dca5642e74d0d97100cc41abbe03c282c5bc2996bad93c6",
+    "tools/research/render_figures.py": "8424058efe92505fb968695255162132f71b1c85cb502a3e1614b8271d54b20a",
+    "tools/research/verify_deliverables.py": "339b304698df963be2cdd71d7ce3718e11e27819dd2dedcb694629397aa80c39",
+    "tools/research/verify_replicate.py": "e9fd66bee6ceba903815b3495aded378086df402622c2f9db6a0267b1ae8204c",
+    "tools/research/verify_runs.py": "b293f1fee9bf48062778a4ac6a493fa572cc122a4031fa40185d085b044fa44a",
+    "uv.lock": "c30ba76791e4ae4088b58e040e1f015e3aaac2513e1614570fdeb62e31d03d41"
+  },
+  "guarded_real_replay_matches_original": true,
+  "synthetic_smoke_numerics_match_pre_review": true,
+  "baseline_reference": "../reproduction/report.json",
+  "source_snapshot_not_git_clone": true
+}

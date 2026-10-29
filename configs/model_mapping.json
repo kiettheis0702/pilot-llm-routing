@@ -1,16 +1,111 @@
 {
-  "note": "Audit candidates, not blanket equivalence. Only literal exact IDs are enabled for strict counts. Alias/checkpoint mappings need review before prior training; never collapse GPT snapshots or Claude versions.",
+  "note": "Exact IDs remain the default. verified_alias and identity_match require explicit opt-in and pinned evidence; identity does not prove identical serving parameters. Three unresolved provider aliases stay excluded.",
   "mappings": [
-    {"routerbench": "gpt-3.5-turbo-1106", "arena": "gpt-3.5-turbo-1106", "status": "exact_id"},
-    {"routerbench": "gpt-4-1106-preview", "arena": "gpt-4-1106-preview", "status": "exact_id"},
-    {"routerbench": "claude-instant-v1", "arena": "claude-instant-1", "status": "proposed_alias"},
-    {"routerbench": "claude-v1", "arena": "claude-1", "status": "proposed_alias"},
-    {"routerbench": "claude-v2", "arena": "claude-2.0", "status": "proposed_alias"},
-    {"routerbench": "meta/llama-2-70b-chat", "arena": "llama-2-70b-chat", "status": "proposed_alias"},
-    {"routerbench": "meta/code-llama-instruct-34b-chat", "arena": "codellama-34b-instruct", "status": "proposed_alias"},
-    {"routerbench": "zero-one-ai/Yi-34B-Chat", "arena": "yi-34b-chat", "status": "proposed_alias"},
-    {"routerbench": "mistralai/mistral-7b-chat", "arena": "mistral-7b-instruct", "status": "checkpoint_unverified"},
-    {"routerbench": "mistralai/mixtral-8x7b-chat", "arena": "mixtral-8x7b-instruct-v0.1", "status": "checkpoint_unverified"},
-    {"routerbench": "WizardLM/WizardLM-13B-V1.2", "arena": "wizardlm-13b", "status": "checkpoint_unverified"}
+    {
+      "routerbench": "gpt-3.5-turbo-1106",
+      "arena": "gpt-3.5-turbo-1106",
+      "status": "exact_id"
+    },
+    {
+      "routerbench": "gpt-4-1106-preview",
+      "arena": "gpt-4-1106-preview",
+      "status": "exact_id"
+    },
+    {
+      "routerbench": "claude-instant-v1",
+      "arena": "claude-instant-1",
+      "status": "verified_alias",
+      "evidence": [
+        {
+          "url": "https://github.com/lm-sys/FastChat/blob/851ef88a4c2a5dd5fa3bcadd9150f4a1f9e84af1/fastchat/serve/monitor/clean_battle_data.py#L90-L108",
+          "revision": "851ef88a4c2a5dd5fa3bcadd9150f4a1f9e84af1",
+          "relationship": "LMSYS explicitly renames claude-instant-v1 to claude-instant-1.",
+          "limitation": "Name identity only; serving parameters and exact provider snapshots are not established."
+        }
+      ]
+    },
+    {
+      "routerbench": "claude-v1",
+      "arena": "claude-1",
+      "status": "verified_alias",
+      "evidence": [
+        {
+          "url": "https://github.com/lm-sys/FastChat/blob/851ef88a4c2a5dd5fa3bcadd9150f4a1f9e84af1/fastchat/serve/monitor/clean_battle_data.py#L90-L108",
+          "revision": "851ef88a4c2a5dd5fa3bcadd9150f4a1f9e84af1",
+          "relationship": "LMSYS explicitly renames claude-v1 to claude-1.",
+          "limitation": "Name identity only; serving parameters and exact provider snapshots are not established."
+        }
+      ]
+    },
+    {
+      "routerbench": "claude-v2",
+      "arena": "claude-2.0",
+      "status": "proposed_alias",
+      "unresolved_reason": "Arena identity is known, but the RouterBench provider alias has no verified version/checkpoint bridge."
+    },
+    {
+      "routerbench": "meta/llama-2-70b-chat",
+      "arena": "llama-2-70b-chat",
+      "status": "identity_match",
+      "evidence": [
+        {
+          "url": "https://huggingface.co/spaces/lmarena-ai/arena-leaderboard/blob/6f2eeeba09bf42144dbc118fe1a8e12e4c533f9d/leaderboard_table_20240426.csv",
+          "revision": "6f2eeeba09bf42144dbc118fe1a8e12e4c533f9d",
+          "relationship": "Arena llama-2-70b-chat links the named canonical model release matching the RouterBench model/variant.",
+          "limitation": "Canonical model identity; no proof of identical serving settings, quantization or provider revision."
+        }
+      ]
+    },
+    {
+      "routerbench": "meta/code-llama-instruct-34b-chat",
+      "arena": "codellama-34b-instruct",
+      "status": "identity_match",
+      "evidence": [
+        {
+          "url": "https://huggingface.co/spaces/lmarena-ai/arena-leaderboard/blob/6f2eeeba09bf42144dbc118fe1a8e12e4c533f9d/leaderboard_table_20240426.csv",
+          "revision": "6f2eeeba09bf42144dbc118fe1a8e12e4c533f9d",
+          "relationship": "Arena codellama-34b-instruct links the named canonical model release matching the RouterBench model/variant.",
+          "limitation": "Canonical model identity; no proof of identical serving settings, quantization or provider revision."
+        }
+      ]
+    },
+    {
+      "routerbench": "zero-one-ai/Yi-34B-Chat",
+      "arena": "yi-34b-chat",
+      "status": "identity_match",
+      "evidence": [
+        {
+          "url": "https://huggingface.co/spaces/lmarena-ai/arena-leaderboard/blob/6f2eeeba09bf42144dbc118fe1a8e12e4c533f9d/leaderboard_table_20240426.csv",
+          "revision": "6f2eeeba09bf42144dbc118fe1a8e12e4c533f9d",
+          "relationship": "Arena yi-34b-chat links the named canonical model release matching the RouterBench model/variant.",
+          "limitation": "Canonical model identity; no proof of identical serving settings, quantization or provider revision."
+        }
+      ]
+    },
+    {
+      "routerbench": "mistralai/mistral-7b-chat",
+      "arena": "mistral-7b-instruct",
+      "status": "checkpoint_unverified",
+      "unresolved_reason": "Arena identity is known, but the RouterBench provider alias has no verified version/checkpoint bridge."
+    },
+    {
+      "routerbench": "mistralai/mixtral-8x7b-chat",
+      "arena": "mixtral-8x7b-instruct-v0.1",
+      "status": "checkpoint_unverified",
+      "unresolved_reason": "Arena identity is known, but the RouterBench provider alias has no verified version/checkpoint bridge."
+    },
+    {
+      "routerbench": "WizardLM/WizardLM-13B-V1.2",
+      "arena": "wizardlm-13b",
+      "status": "verified_alias",
+      "evidence": [
+        {
+          "url": "https://huggingface.co/spaces/lmarena-ai/arena-leaderboard/blob/6f2eeeba09bf42144dbc118fe1a8e12e4c533f9d/leaderboard_table_20240426.csv",
+          "revision": "6f2eeeba09bf42144dbc118fe1a8e12e4c533f9d",
+          "relationship": "Arena wizardlm-13b links WizardLM/WizardLM-13B-V1.2; V1.0 and V1.1 have separate keys.",
+          "limitation": "Canonical model identity; no proof of identical serving settings, quantization or provider revision."
+        }
+      ]
+    }
   ]
 }

@@ -1,0 +1,109 @@
+{
+  "verified": true,
+  "kind": "independent-full-condition-replay",
+  "domain": "mmlu",
+  "seed": 7,
+  "method": "linucb",
+  "variant": "main",
+  "learning_rounds": 12369,
+  "verified_deployment_runs": 11,
+  "verified_served_deployment_rounds": 9324,
+  "inventory": [
+    {
+      "id": "mmlu/seed-7/main/linucb/learn-0.1/budget-0.5",
+      "manifest_sha256": "5dae7e3ff81f661c2e02b1a255e63d31692962ebf93b9262c9db6519c923769e",
+      "served": 1275,
+      "reward": 870.0,
+      "actual_cost": 0.846382,
+      "estimated_cost": 0.8466866994974874
+    },
+    {
+      "id": "mmlu/seed-7/main/linucb/learn-0.25/budget-0.5",
+      "manifest_sha256": "3c6d53697e4500bce3e3ede8e4d491232d9bd1ea3102df99d037d3b4e2002e2a",
+      "served": 1275,
+      "reward": 858.0,
+      "actual_cost": 0.7802387000000001,
+      "estimated_cost": 0.7805983560301507
+    },
+    {
+      "id": "mmlu/seed-7/main/linucb/learn-0.5/budget-0.5",
+      "manifest_sha256": "4317079f5bf3118028082e9fa25a379be85b6a4330838fdb3014941757de0e3d",
+      "served": 1275,
+      "reward": 867.0,
+      "actual_cost": 0.7569695,
+      "estimated_cost": 0.7571959075376884
+    },
+    {
+      "id": "mmlu/seed-7/main/linucb/learn-1/budget-0.05",
+      "manifest_sha256": "1e5b63495d4ebad5dae2ec3d5de538645c3446c3590659b56dac406f1ef22941",
+      "served": 5,
+      "reward": 4.0,
+      "actual_cost": 0.005576,
+      "estimated_cost": 0.005595489447236181
+    },
+    {
+      "id": "mmlu/seed-7/main/linucb/learn-1/budget-0.1",
+      "manifest_sha256": "80f1a703f7dc0d9062b0577bd3c8a767d2c24dfd925a0bd6ac9130664a4a031c",
+      "served": 15,
+      "reward": 9.0,
+      "actual_cost": 0.010254800000000001,
+      "estimated_cost": 0.010292201005025125
+    },
+    {
+      "id": "mmlu/seed-7/main/linucb/learn-1/budget-0.2",
+      "manifest_sha256": "c8285ec83a70fc49667575de7211bf7de58f5d5b401614896cf453f2a1c4ce15",
+      "served": 29,
+      "reward": 15.0,
+      "actual_cost": 0.0207032,
+      "estimated_cost": 0.020726695477386935
+    },
+    {
+      "id": "mmlu/seed-7/main/linucb/learn-1/budget-0.3",
+      "manifest_sha256": "b40daea96581d855c597f9f260f625ae1b35a6865212068dc74d8ba0f5222108",
+      "served": 350,
+      "reward": 216.0,
+      "actual_cost": 0.1512318,
+      "estimated_cost": 0.1511756688442211
+    },
+    {
+      "id": "mmlu/seed-7/main/linucb/learn-1/budget-0.5",
+      "manifest_sha256": "4bf428847710684309be51b47beb3da7f02bb5a9fecd11cda52c2db396ad1f8d",
+      "served": 1275,
+      "reward": 881.0,
+      "actual_cost": 0.7519934,
+      "estimated_cost": 0.7521115168341709
+    },
+    {
+      "id": "mmlu/seed-7/main/linucb/learn-1/budget-0.75",
+      "manifest_sha256": "67f7baed171b50563b3eeda569c8634bb734a67dd11eec352437e242e0573be0",
+      "served": 1275,
+      "reward": 908.0,
+      "actual_cost": 0.9725133,
+      "estimated_cost": 0.972337508040201
+    },
+    {
+      "id": "mmlu/seed-7/main/linucb/learn-1/budget-1",
+      "manifest_sha256": "26c7e5fa658f475235436c9f2bf84f03483f12909d6e81d588614f315b6494d1",
+      "served": 1275,
+      "reward": 954.0,
+      "actual_cost": 1.2272309,
+      "estimated_cost": 1.226616734924623
+    },
+    {
+      "id": "mmlu/seed-7/main/linucb/learn-1/budget-1.25",
+      "manifest_sha256": "3f4ca2b7c1420b76de5cb0372b4517240613d460848ce4a9bf5963b5889fbc3b",
+      "served": 1275,
+      "reward": 974.0,
+      "actual_cost": 1.3924132,
+      "estimated_cost": 1.3915901085427136
+    }
+  ],
+  "learning_manifest_sha256": "0e5aa743447c1f458ffe83a2dcaf7081157e6fb5d9cf1dff704e3c615193999b",
+  "script_sha256": "a580f2f173dbb70d91a2a551b90a328ee39ff9ab4ae047c6445f5dbbb0089a85",
+  "preflight": {
+    "heavy_jobs": [],
+    "available_gib": 10.293445587158203
+  },
+  "synthetic": false,
+  "paper_equivalent": false
+}

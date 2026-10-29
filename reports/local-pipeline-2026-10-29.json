@@ -1,0 +1,352 @@
+{
+  "created_at_utc": "2026-10-29T10:36:49.708396+00:00",
+  "status": "Local pipeline engineering and CPU/GPU smoke verified; full research inputs remain gated",
+  "git_head": "47ce94384f9c4a709f9bc85a02c7eb344cce75ae",
+  "working_tree_dirty": true,
+  "execution": {
+    "workers": 1,
+    "serial": true,
+    "cpu_test_ram_exception": "Explicit user approval for this run only",
+    "encoder_minimum_available_gib": 8
+  },
+  "tests": {
+    "passed": 338,
+    "skipped": 1,
+    "failed": 0,
+    "baseline_passed": 310,
+    "skip_reason": "WinError 1314: actual symlink creation unavailable; path-check regression independently passed",
+    "seconds": 10.568
+  },
+  "integration_probes": [
+    {
+      "probe": "exact preparation readback",
+      "passed": true,
+      "arms": 2,
+      "pairs": 374,
+      "train": 299,
+      "holdout": 75,
+      "manifest_sha256": "40f839500c4f790351c38c305c01cf947f59786ec053668644c1eaf82d6a9c6f"
+    },
+    {
+      "probe": "verified preparation readback",
+      "passed": true,
+      "arms": 5,
+      "pairs": 987,
+      "train": 788,
+      "holdout": 199,
+      "manifest_sha256": "89187ffa185f489ccd6dfa89d09e935e60104fcca917b6fef3a7b20561a6c41d"
+    },
+    {
+      "probe": "identity preparation readback",
+      "passed": true,
+      "arms": 8,
+      "pairs": 1558,
+      "train": 1245,
+      "holdout": 313,
+      "manifest_sha256": "9d1cc854c431ddce40bce59940d23d7bc0cd7de7db38c1d487121f6179c63c91"
+    },
+    {
+      "probe": "repeat existing preparation",
+      "passed": true,
+      "exit_code": 1,
+      "diagnostic": "FileExistsError: outputs\\local-pipeline-verification-20261029\\prepared-identity"
+    },
+    {
+      "probe": "reject full eleven-arm pool",
+      "passed": true,
+      "exit_code": 1,
+      "diagnostic": "ValueError: Unresolved model mappings: claude-v2, mistralai/mistral-7b-chat, mistralai/mixtral-8x7b-chat"
+    },
+    {
+      "probe": "all seven original data files unchanged",
+      "passed": true,
+      "files": 7
+    },
+    {
+      "probe": "toy persisted prior-learning-deployment",
+      "passed": true,
+      "learning": {
+        "rounds": 50,
+        "total_reward": 49.0,
+        "mean_reward": 0.98,
+        "total_actual_cost": 25.0,
+        "cumulative_empirical_oracle_regret": 1.0,
+        "action_counts": {
+          "large": 21,
+          "small": 29
+        }
+      },
+      "frozen_router": true
+    },
+    {
+      "probe": "RouterBench persisted 15 traces x 64 rounds",
+      "passed": true,
+      "synthetic_contexts": true
+    },
+    {
+      "probe": "RTX 5070 FP16 matrix operation",
+      "passed": true
+    },
+    {
+      "probe": "128-query real BGE-M3 encoding",
+      "passed": true
+    },
+    {
+      "probe": "Independent real-vector readback and norms",
+      "passed": true
+    },
+    {
+      "probe": "Completed real-cache resume without model",
+      "passed": true
+    },
+    {
+      "probe": "Changed-recipe real-cache resume rejection",
+      "passed": true
+    }
+  ],
+  "preparation": {
+    "exact_id": {
+      "arms": 2,
+      "pairs": 374,
+      "train": 299,
+      "holdout": 75
+    },
+    "verified_alias": {
+      "arms": 5,
+      "pairs": 987,
+      "train": 788,
+      "holdout": 199
+    },
+    "identity_match": {
+      "arms": 8,
+      "pairs": 1558,
+      "train": 1245,
+      "holdout": 313
+    }
+  },
+  "review": {
+    "important_findings": 4,
+    "fixed": 4,
+    "additional_windows_launcher_regression_fixed": true,
+    "actual_symlink_probe_not_executed": true
+  },
+  "gpu": {
+    "environment_installed": true,
+    "weights_downloaded": true,
+    "cuda_operation_verified": true,
+    "real_embedding_smoke_completed": true,
+    "installed_packages": 31,
+    "dependency_check": "all installed packages compatible",
+    "verification": {
+      "smoke": {
+        "output_dir": "outputs\\local-pipeline-verification-20261029\\bge-routing-128",
+        "rows": 128,
+        "dimension": 1024,
+        "cache_sha256": "66e87667b481b1a9ddc5e0e9bde0c40f6eb88982086b54922841fceb0fc22cc7",
+        "diagnostics": {
+          "encode_seconds": 53.99269870005082,
+          "input_recipe_sha256": "11f683bba3ae40ba8ad4fd0427755e44382311561a1a964b9bb70c4b9ce65ea0",
+          "max_observed_tokens": 493,
+          "recipe": {
+            "dimension": 1024,
+            "inference_dtype": "float16",
+            "max_length": 512,
+            "model": "BAAI/bge-m3",
+            "normalization": "l2",
+            "pooling": "cls",
+            "prompt_construction": "verbatim-no-instruction",
+            "revision": "5617a9f61b028005a4858fdac845db406aefb181"
+          },
+          "rows": 128,
+          "total_original_tokens": 23664,
+          "truncated_queries": 0
+        },
+        "runtime": {
+          "torch": "2.8.0+cu128",
+          "device": "cuda",
+          "device_name": "NVIDIA GeForce RTX 5070",
+          "peak_cuda_allocated_bytes": 1167440384,
+          "peak_cuda_reserved_bytes": 1191182336
+        }
+      },
+      "cuda_probe": {
+        "preflight": {
+          "heavy_jobs": [],
+          "available_gib": 10.00313949584961
+        },
+        "python": "3.11.18",
+        "torch": "2.8.0+cu128",
+        "transformers": "4.57.1",
+        "huggingface_hub": "0.36.0",
+        "cuda": "12.8",
+        "device": "NVIDIA GeForce RTX 5070",
+        "capability": [
+          12,
+          0
+        ],
+        "free_vram_bytes": 11503927296,
+        "total_vram_bytes": 12820480000,
+        "fp16_matmul": "passed"
+      },
+      "readback": {
+        "shape": [
+          128,
+          1024
+        ],
+        "dtype": "float32",
+        "finite": true,
+        "norm_min": 0.9999999403953552,
+        "norm_max": 1.0,
+        "cache_sha256": "66e87667b481b1a9ddc5e0e9bde0c40f6eb88982086b54922841fceb0fc22cc7",
+        "vector_file_sha256": "7451adfe771cca91bc3e3537f6391dc02788dd457a5de7c085775b3b43652e9f"
+      },
+      "resume_without_model": true,
+      "changed_recipe_rejected": true,
+      "changed_recipe_exit_code": 1,
+      "model_weights": {
+        "bytes": 2271145830,
+        "sha256": "b5e0ce3470abf5ef3831aa1bd5553b486803e83251590ab7ff35a117cf6aad38",
+        "revision": "5617a9f61b028005a4858fdac845db406aefb181",
+        "huggingface_etag_verified": true
+      },
+      "resource_after": {
+        "heavy_jobs": [],
+        "available_gib": 9.364723205566406
+      },
+      "timing_note": "encode_seconds includes first encoder initialization and any download; not pure inference throughput",
+      "paid_api_calls": 0,
+      "paper_equivalent": false
+    }
+  },
+  "resource_snapshot": {
+    "heavy_jobs": [],
+    "available_gib": 9.364723205566406
+  },
+  "memory_cleanup": {
+    "measured_at": "2026-10-29T17:49:49.6661945+07:00",
+    "proxy_private_before_mib": 2668.9,
+    "proxy_private_after_mib": 1802.5,
+    "proxy_commit_before_mib": 3013.9,
+    "proxy_commit_after_mib": 2192.9,
+    "proxy_gc": {
+      "pid": 23996,
+      "started_utc": "2026-10-29T10:45:41.9116635Z",
+      "baseline_models_http": 200,
+      "gc_requested": true,
+      "config_restored": true,
+      "profiler_closed": true,
+      "before": {
+        "HeapAlloc": 1833768200,
+        "HeapSys": 3365896192,
+        "HeapIdle": 1521721344,
+        "HeapInuse": 1844174848,
+        "HeapReleased": 596033536,
+        "NextGC": 2514850602,
+        "NumGC": 8485
+      },
+      "after": {
+        "HeapAlloc": 1192367240,
+        "HeapSys": 3366158336,
+        "HeapIdle": 2153480192,
+        "HeapInuse": 1212678144,
+        "HeapReleased": 757219328,
+        "NextGC": 2386338778,
+        "NumGC": 8488
+      },
+      "final_models_http": 200,
+      "same_process": true
+    },
+    "rea_verified_gc_pid": 26564,
+    "rea_gc_heap_reduction_bytes": 1276424,
+    "rea_target_25428": "Exited during inspection; collection result unverified and not counted",
+    "processes_force_stopped": 0,
+    "permanent_config_changes": 0,
+    "diagnostic_ports_closed": true,
+    "original_config_sha256": "D3F29A9612B252CA87792DA2FE1919CDEE4D0753306410433AF6ABFFB700D525",
+    "physical_available_after_gib": 12.13,
+    "attribution": "System free RAM also changed as other jobs ended; do not credit all of it to cleanup",
+    "diagnostic_limitation": "PowerShell text-profile consumption transiently reached about 11 GiB working set; helper completed and exited. Do not repeat unbounded profile reads."
+  },
+  "scientific_blockers": {
+    "version": 1,
+    "scope": "local development experiment, not paper-equivalent",
+    "data_variant": "routerbench_0shot",
+    "source_status": "provisional: authors exact revision and 0-shot/5-shot choice unconfirmed",
+    "paper_task_count": 64,
+    "observed_raw_task_count": 86,
+    "task_grouping": null,
+    "default_mapping_policy": "exact_id",
+    "development_mapping_policy": "identity_match",
+    "embedding_recipe": "configs/local_embedding.json",
+    "embedding_recipe_status": "512-token smoke cap; audit lengths before adopting final full-data recipe",
+    "historical_token_prices": null,
+    "triplet_cost_sizes": null,
+    "tuning_output_token_counts": null,
+    "deployment_input_token_counts": null,
+    "cost_bounds": null,
+    "baseline_deployment_protocol": null,
+    "paper_figures_ready": false
+  },
+  "paid_api_calls": 0,
+  "paper_equivalent": false,
+  "command_correction": "First RouterBench smoke supplied the prepared folder instead of data root, failed before output creation; rerun with --data-dir data passed.",
+  "implementation_sha256": {
+    "configs/local_embedding.json": "a9ca18722f5ebf01b1043065808c6eb4066104915f0df77559604c129a404dd2",
+    "configs/model_mapping.json": "ca00ca697ca0368d9438860e2e6378e419d20920df1dd2fa827c12e63dbaf7fd",
+    "configs/research_protocol.json": "3f4415bc92befd7981a08cf4a8e5dc40d3d43ce5f6cec3bad7cd0cc29cc773c7",
+    "requirements-embedding.in": "9720b0e47ac36b364bfaf80dc75a0ebc3d9384066197465378d2db3474ce315f",
+    "requirements-embedding.lock": "5570703c5bc4086febb12e0d3fbb2f36b1851ed276391d9c70bcc8e9866b8a9d",
+    "scripts/audit_data.py": "a7e50afb64b10d6312d988a1d1b34e6524e7d244f6f5b0bafa261707e17bd608",
+    "scripts/bandit_contracts.py": "99eb79f510ef37d85c5ec7d8ea37ae587716130302b8bc91b38281e927ababcf",
+    "scripts/cost_policy.py": "dcaadd871079be0fa90bc4b9bf77ffd1519f0a01356f05f1c6f1864a289e8a5a",
+    "scripts/data_gate.py": "84c250fa3594507ce0091c49bc366551b100af6e21b3ca5e392b9f3ed1b1ba23",
+    "scripts/data_io.py": "a9029eaef35804fd8d1202409cd7d0299030cba8f862ff4450e847e23852bf63",
+    "scripts/deployment.py": "29de9db33136bf2deb5cf1551520de471e2865f055d27c14c66c8b9a05837932",
+    "scripts/embedding_store.py": "013eae2303189415bc79ff1d324070f380491443fcea6194ab876f1b98c27787",
+    "scripts/evaluation.py": "c94c9a2cff061f32a6e29092cfa7fdf815d729fd10225a95e1f391e82ccac0cb",
+    "scripts/fetch_data.py": "b6a7deda384e51f2ba4c40e7483d2f759116eabae20164cc09cfe76096da4fe1",
+    "scripts/local_embeddings.py": "131c026646f5ca1528e4e01b0ea4bb4796333900b9adbb47bc280911adafa1b4",
+    "scripts/model_mapping.py": "ce9863bf3bbac30e208ea07c10f31dc030562b343e26f3add6c0ad695da17528",
+    "scripts/pilot.py": "742dc3638a59eaccce64f9104ec8ecc6021f812849f86b4b67394fddc50ef067",
+    "scripts/policies.py": "d4c7b95399ff54ab7686a361e3298473ad7f14d4682ec1b2f95d9215189406e8",
+    "scripts/preference_data.py": "26140e171f2dcb5dcdce0bfff6664a8edf2e0043f567cbc0ad66073dc1098521",
+    "scripts/pretraining.py": "3e5760538b39226fd03475e538034fdebe6dee65c19e293b7f0882b7943a2607",
+    "scripts/research_pipeline.py": "00e17401978bd0840a5a5b2d78dc7cdae1767c680be09074cace5c1bc9564a34",
+    "scripts/resources.py": "b5e84f616bc70c0cab104c60e4965ef1913aad97438f462c5e309e16387caf4d",
+    "scripts/run_baselines.py": "c1830421ca4e1876ad238e0fa14689097d7940b0f45c4d6fbb610fa84a4462e5",
+    "scripts/run_toy_pipeline.py": "b119bce11b420bb3b8e3425c4c67f06804c17b3ba1dddf52deb3a72c22bf8591",
+    "scripts/splits.py": "0479209e80b6947677991511f1e71c869d490f7e01fe1d06452ca0379ca2644e",
+    "tests/test_bandit_contracts.py": "f244516de1683be5398062921c882711ca37833e5dfe25bc8b5950363cca79bb",
+    "tests/test_baseline_runner.py": "73517f9b3dbfa26bb8cd9b90ecd99255b7a3d02681f2c3384cfc16d4c1809f35",
+    "tests/test_cost_policy.py": "9e76af45807b88f895ec155b986b845801db3e833f002cd5a9405419dcb7cd82",
+    "tests/test_data_gate.py": "b15d1e1fdf87a2f983332d806a6736fdb6d3bd992f14c1b65f1608a1dcd1118a",
+    "tests/test_deployment.py": "fa7adbc0ffbf3366257a5631b6785151b4437eba096a6127a64ff9c87c6b28bf",
+    "tests/test_embedding_store.py": "9db87a847e9eb26f2a5c682474eeb450ef03691cc3d6a69698bcb37a5ab71550",
+    "tests/test_evaluation.py": "e41c391a935d884b7eedd6bfd019bbe3b3a9f1f23d216b5b6de129d06ad4d15e",
+    "tests/test_local_embeddings.py": "3d5f78abd5d3a7d820b355da85382fa573fe9ce4ed1a626f4426e8932f54f1dd",
+    "tests/test_model_mapping.py": "f3b44db829c6f023ad3ee0435371d3e956b15977d17d8320fc1ce4ef6499cf52",
+    "tests/test_pilot.py": "609b8e63463086c7ec3a139a5dfe555b254f65ad10d6e8d34c439709f68cd9c2",
+    "tests/test_policies.py": "da9af54f0d0b395efce73c868a87055ede00d01f778693a1a360e2cc2e1d7de3",
+    "tests/test_preference_data.py": "426f855c14144bef243cfe3b3574b7b32d3778585e7dcbe38133587693885e53",
+    "tests/test_pretraining.py": "4537aaed41371a81f424e3011043d224948f3c01256ac408c22742018cda8c61",
+    "tests/test_pretraining_disk.py": "0241d4a4c38927dbd95101371c274348ed73acc0fdcd5b97134181d5e3342269",
+    "tests/test_research_pipeline.py": "e76ffae9188a0e742b5b6d19221a9531d8af866ab8fc41a325ea472a7c375324",
+    "tests/test_splits.py": "a0154fabae16b0f11329df64679dc2891a55c24be8f85210f32f2a1bb5990e9c",
+    "tests/test_toy_pipeline.py": "b5a1c53ca2cdd2c5290bfb1c8853fff547a34bb2ff3e37390e1a862a9fc1bf95",
+    "uv.lock": "808a62de80da88be15936373dae4d9d2a9c5f133002eb52d207c44ee667a6910"
+  },
+  "local_evidence_directory": "outputs/local-pipeline-verification-20261029",
+  "evidence_sha256": {
+    "pytest.xml": "2258af78d6584021b0170bd30bc7372ad0192f84ef3b201326ede77cbe250dcc",
+    "pytest.log": "d247301d6b311613f6434f7c66d6c7bcefa0d415c8e0e2cda5081971a155ce6e",
+    "probes.json": "aea562b46d2288b04d61ded9b50b3f13f6994c946e8ad91897d9a2af33418292",
+    "toy.log": "7c28bbc9639ad28dd29c75edaa99543fb77d88d4a211ab777ad19b08ace1a8d7",
+    "routerbench-corrected.log": "9f3f4c70f7684bd4f7d13fb01a994816997f1f675c195a0ae5cd32cfbe41a30b",
+    "embedding-verification.json": "a4ee21dbff1b051c022585fc69347a95db4df6cffc1ae4ab542bccc9630a548b",
+    "cuda-probe.json": "5f9cd97e3e527cc9d6c65e72715ea17ee5991934d04481d3b6ce0c80dc5ff6e7",
+    "bge-smoke.log": "fa529d1c89a6ee699ebf4c09401a7bf5855db92b6d7c8d0064a3f29a300309e9",
+    "bge-resume.log": "66e6a96a9381cc5e13c0472d4202ca6805e0bc32e12f7aee4c7b07cde68127a0",
+    "embedding-install.log": "e81cdafd4c7033d7db3f20368c7f3bee4030c7baf6f29a270030a2de5a7d8d3b"
+  },
+  "updated_at_utc": "2026-10-29T11:01:14.003872+00:00"
+}

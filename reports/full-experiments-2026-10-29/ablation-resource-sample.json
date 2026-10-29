@@ -1,0 +1,16 @@
+{
+  "Timestamp": "2026-10-29T23:04:04.3732111+07:00",
+  "AvailableGiB": 10.383365631103516,
+  "Processes": [
+    {
+      "IDProcess": 51860,
+      "WorkingSetPrivate": 585728
+    },
+    {
+      "IDProcess": 57148,
+      "WorkingSetPrivate": 422305792
+    }
+  ],
+  "CombinedPrivateWorkingSetBytes": 422891520.0,
+  "Interpretation": "One observed sample; not a peak or memory cap"
+}

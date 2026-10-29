@@ -1,0 +1,359 @@
+{
+  "kind": "full-embedding-prior-verification",
+  "version": 1,
+  "synthetic": false,
+  "paper_equivalent": false,
+  "preflight": {
+    "heavy_jobs": [],
+    "available_gib": 9.025501251220703
+  },
+  "caches": {
+    "preference": {
+      "rows": 1558,
+      "dimension": 1024,
+      "cache_sha256": "dc3a48c7f7f8e6deed3c317761baa72cf075051ce0e5ed11ba0bf7cea2758f8b",
+      "vector_sha256": "aabeebc1c4d45405a611aa3e0552acec5ee924fcb68b456bd7796280becabe56",
+      "input_recipe_sha256": "65dc8310a612db2765a2ca5580287f0ad8c94efc8dfee0368430f2f12d7068b8",
+      "total_original_tokens": 144402,
+      "truncated_inputs": 13,
+      "max_original_tokens": 3185,
+      "max_unit_norm_error": 8.669273166006519e-08,
+      "verified_chunks": 779,
+      "phase_counts": {
+        "preference:train": 1245,
+        "preference:holdout": 313
+      }
+    },
+    "routing": {
+      "rows": 36497,
+      "dimension": 1024,
+      "cache_sha256": "da4c06f8ad62999c7a187c2f08027b5bb7b378ac7a9c3a645830dc5bd94ea4ad",
+      "vector_sha256": "4dd003a0858c09f0fa6c3487ce18b9ccf511c0f3b0378457d0b59f070c538de9",
+      "input_recipe_sha256": "46cb425c56488c04a046b6ce8837734801d12f0b0583ba68df7698da707dea8d",
+      "total_original_tokens": 7187341,
+      "truncated_inputs": 0,
+      "max_original_tokens": 1119,
+      "max_unit_norm_error": 1.0578023501572886e-07,
+      "verified_chunks": 571,
+      "phase_counts": {
+        "routing:tuning": 1000,
+        "routing:learning": 32270,
+        "routing:deployment": 3227
+      }
+    }
+  },
+  "prior": {
+    "checkpoint_sha256": "e081310dc40103ebe9444af617b1d5a21399219dfc34f30fa78155b6e6c0986e",
+    "arms": [
+      "WizardLM/WizardLM-13B-V1.2",
+      "claude-instant-v1",
+      "claude-v1",
+      "gpt-3.5-turbo-1106",
+      "gpt-4-1106-preview",
+      "meta/code-llama-instruct-34b-chat",
+      "meta/llama-2-70b-chat",
+      "zero-one-ai/Yi-34B-Chat"
+    ],
+    "dimension": 8,
+    "train_pairs": 1245,
+    "holdout_pairs": 313,
+    "triplets": 1193,
+    "holdout_correct": 186,
+    "holdout_accuracy": 0.5942492012779552,
+    "per_arm": {
+      "WizardLM/WizardLM-13B-V1.2": {
+        "accuracy": 0.41935483870967744,
+        "correct": 13,
+        "lambda": 2.3846153846153846,
+        "support": 31
+      },
+      "claude-instant-v1": {
+        "accuracy": 0.5352112676056338,
+        "correct": 76,
+        "lambda": 1.868421052631579,
+        "support": 142
+      },
+      "claude-v1": {
+        "accuracy": 0.49056603773584906,
+        "correct": 26,
+        "lambda": 2.0384615384615383,
+        "support": 53
+      },
+      "gpt-3.5-turbo-1106": {
+        "accuracy": 0.6408450704225352,
+        "correct": 91,
+        "lambda": 1.5604395604395604,
+        "support": 142
+      },
+      "gpt-4-1106-preview": {
+        "accuracy": 0.7364341085271318,
+        "correct": 95,
+        "lambda": 1.3578947368421053,
+        "support": 129
+      },
+      "meta/code-llama-instruct-34b-chat": {
+        "accuracy": 0.6,
+        "correct": 30,
+        "lambda": 1.6666666666666667,
+        "support": 50
+      },
+      "meta/llama-2-70b-chat": {
+        "accuracy": 0.5,
+        "correct": 21,
+        "lambda": 2.0,
+        "support": 42
+      },
+      "zero-one-ai/Yi-34B-Chat": {
+        "accuracy": 0.5405405405405406,
+        "correct": 20,
+        "lambda": 1.85,
+        "support": 37
+      }
+    },
+    "protocol": {
+      "distinct_prompt_members": true,
+      "interpretation": "PAPER_INFERRED",
+      "learning_rate": 0.03,
+      "margin": 0.2,
+      "optimizer": "seeded shuffled SGD",
+      "prediction_ties": "incorrect",
+      "prior_epochs": 5,
+      "projection_epochs": 2,
+      "seed": 42,
+      "triplets_per_eligible_anchor": 1
+    },
+    "metrics": {
+      "prior_losses": [
+        0.6234590470672667,
+        0.5972100675405256,
+        0.5892059357422922,
+        0.5853134344090005,
+        0.5828302584759737,
+        0.5809890482534793
+      ],
+      "projection_losses": [
+        0.3114375002082262,
+        0.19556403203920683,
+        0.1329091496829739
+      ],
+      "validation": {
+        "all_lambdas_ready": true,
+        "blockers": {},
+        "per_arm": {
+          "WizardLM/WizardLM-13B-V1.2": {
+            "accuracy": 0.41935483870967744,
+            "correct": 13,
+            "lambda": 2.3846153846153846,
+            "support": 31
+          },
+          "claude-instant-v1": {
+            "accuracy": 0.5352112676056338,
+            "correct": 76,
+            "lambda": 1.868421052631579,
+            "support": 142
+          },
+          "claude-v1": {
+            "accuracy": 0.49056603773584906,
+            "correct": 26,
+            "lambda": 2.0384615384615383,
+            "support": 53
+          },
+          "gpt-3.5-turbo-1106": {
+            "accuracy": 0.6408450704225352,
+            "correct": 91,
+            "lambda": 1.5604395604395604,
+            "support": 142
+          },
+          "gpt-4-1106-preview": {
+            "accuracy": 0.7364341085271318,
+            "correct": 95,
+            "lambda": 1.3578947368421053,
+            "support": 129
+          },
+          "meta/code-llama-instruct-34b-chat": {
+            "accuracy": 0.6,
+            "correct": 30,
+            "lambda": 1.6666666666666667,
+            "support": 50
+          },
+          "meta/llama-2-70b-chat": {
+            "accuracy": 0.5,
+            "correct": 21,
+            "lambda": 2.0,
+            "support": 42
+          },
+          "zero-one-ai/Yi-34B-Chat": {
+            "accuracy": 0.5405405405405406,
+            "correct": 20,
+            "lambda": 1.85,
+            "support": 37
+          }
+        }
+      }
+    },
+    "projected_min_norm": {
+      "preference": 0.17044953328345946,
+      "routing": 0.15919684080625696
+    }
+  },
+  "resume": {
+    "preference": {
+      "encoder_calls": 0,
+      "negative_probes_passed": 3,
+      "artifacts_unchanged": true
+    },
+    "routing": {
+      "encoder_calls": 0,
+      "negative_probes_passed": 3,
+      "artifacts_unchanged": true
+    }
+  },
+  "encoder_libraries_imported": false,
+  "verified": true,
+  "verification_script_sha256": "aff42552a21ce769ae52e06bcdf04dcb964a6ca0e471cf04ceeab70d36886b9b",
+  "date": "2026-10-29",
+  "scope": "Complete local BGE-M3 caches and first eight-arm development prior; not full eleven-arm paper reproduction",
+  "branch": "codex/data-gate",
+  "head": "47ce94384f9c4a709f9bc85a02c7eb344cce75ae",
+  "working_tree": "uncommitted changes; source hashes below identify exercised code",
+  "source_sha256": {
+    "scripts/local_embeddings.py": "e69f965d765fd9ac91687311b15cf80a4ba0c37ed2d2bc1d60aa1ede18e974e4",
+    "scripts/embedding_store.py": "013eae2303189415bc79ff1d324070f380491443fcea6194ab876f1b98c27787",
+    "scripts/pretraining.py": "3e5760538b39226fd03475e538034fdebe6dee65c19e293b7f0882b7943a2607",
+    "scripts/research_pipeline.py": "00e17401978bd0840a5a5b2d78dc7cdae1767c680be09074cace5c1bc9564a34",
+    "tests/test_local_embeddings.py": "097fc29205f9709662b90f66c896135f9731335f00ddbde81753e8e5e5400b6b",
+    "configs/local_embedding_full.json": "fd9f8f83dc6271671f23bbf382c312be92d4d07eb827285e958a506a8fa4c5f3"
+  },
+  "independent_verification": {
+    "path": "outputs/research-embeddings-20261029/verification.json",
+    "sha256": "8f5b1bf2b96e0d61aa0bcc2211677830861a0e0970833c6e11b86f00b3f85bb9",
+    "command": ".venv/Scripts/python.exe outputs/research-embeddings-20261029/verify_full_artifacts.py",
+    "exit_code": 0
+  },
+  "regression": {
+    "command": ".venv/Scripts/python.exe -m pytest -q --basetemp outputs/pytest-full-embedding-20261029-a --junitxml outputs/research-embeddings-20261029/pytest.xml",
+    "passed": 362,
+    "skipped": 1,
+    "failed": 0,
+    "seconds": 6.19,
+    "skip_reason": "Windows denies symlink creation; injected path-classification regression still runs",
+    "preflight": {
+      "heavy_jobs": [],
+      "available_gib": 8.903602600097656
+    },
+    "workers": 1
+  },
+  "cli_resume": {
+    "preference": {
+      "exit_code": 0,
+      "runtime": {}
+    },
+    "routing": {
+      "exit_code": 0,
+      "runtime": {}
+    },
+    "environment": "base .venv without torch; no encoder was loaded; both fingerprints unchanged"
+  },
+  "gpu_runtime": {
+    "feasibility": {
+      "rows": 16,
+      "cache_sha256": "4c9d4f54c4d1c33ae1d83951ef35ebe9612ce6f9394fc98165372d01701980fa",
+      "encode_seconds": 12.13058810000075,
+      "torch": "2.8.0+cu128",
+      "device": "cuda",
+      "device_name": "NVIDIA GeForce RTX 5070",
+      "peak_cuda_allocated_bytes": 1236501504,
+      "peak_cuda_reserved_bytes": 1306525696
+    },
+    "preference": {
+      "rows": 1558,
+      "cache_sha256": "dc3a48c7f7f8e6deed3c317761baa72cf075051ce0e5ed11ba0bf7cea2758f8b",
+      "encode_seconds": 19.395817100186832,
+      "torch": "2.8.0+cu128",
+      "device": "cuda",
+      "device_name": "NVIDIA GeForce RTX 5070",
+      "peak_cuda_allocated_bytes": 1253278720,
+      "peak_cuda_reserved_bytes": 1325400064
+    },
+    "routing": {
+      "rows": 36497,
+      "cache_sha256": "da4c06f8ad62999c7a187c2f08027b5bb7b378ac7a9c3a645830dc5bd94ea4ad",
+      "encode_seconds": 232.32244650108623,
+      "torch": "2.8.0+cu128",
+      "device": "cuda",
+      "device_name": "NVIDIA GeForce RTX 5070",
+      "peak_cuda_allocated_bytes": 1201602560,
+      "peak_cuda_reserved_bytes": 1245708288
+    }
+  },
+  "checkpointing": {
+    "routing_gpu_batch_size": 2,
+    "routing_checkpoint_batches": 32,
+    "saved_rows_per_full_chunk": 64,
+    "prefix_integrity_checked": true,
+    "crash_behavior": "Rows after the last verified checkpoint are re-encoded; no hard cap on active work",
+    "targeted_regressions": "Changed interval, interrupted suffix overwrite, final partial chunk, invalid cadence; included in full suite"
+  },
+  "probes": [
+    {
+      "name": "All cache vector checksums, complete ID/hash order, verbatim recipe identity, finite values and unit norms",
+      "result": "pass",
+      "runs": 1
+    },
+    {
+      "name": "All 1350 saved chunk hashes and contiguous complete cursors",
+      "result": "pass",
+      "runs": 1
+    },
+    {
+      "name": "All 38055 length totals/phase identities compared against independent prior tokenizer audit",
+      "result": "pass",
+      "runs": 1
+    },
+    {
+      "name": "Prior checkpoint/preparation/cost lineage and train-only valid triplet membership",
+      "result": "pass",
+      "runs": 1
+    },
+    {
+      "name": "Independent cosine holdout calculation reproduces every per-arm count and inverse-accuracy coefficient",
+      "result": "pass",
+      "runs": 1
+    },
+    {
+      "name": "Both complete caches resume without loading encoder and leave every file unchanged",
+      "result": "pass",
+      "runs": 1
+    },
+    {
+      "name": "Changed recipe and changed verbatim text rejected in both caches without mutation",
+      "result": "pass",
+      "runs": 1
+    },
+    {
+      "name": "Existing output refused in both caches without mutation",
+      "result": "pass",
+      "runs": 1
+    },
+    {
+      "name": "Actual CLI completed resume succeeds for both caches in base environment without torch",
+      "result": "pass",
+      "runs": 1
+    },
+    {
+      "name": "All 38055 projected contexts have finite nonzero norms",
+      "result": "pass",
+      "runs": 1
+    }
+  ],
+  "limitations": [
+    "BGE-M3 replaces paper embeddings; projection dimension/epochs are development defaults, not tuned paper settings",
+    "13 preference inputs truncated at the training-selected 2048 cap: 8 train and 5 holdout; no routing truncation",
+    "8-model identity_match development pool; 3 checkpoint bridges unresolved",
+    "313 local preference holdout pairs differ from paper holdout; 186/313 pairwise accuracy is not a paper comparison",
+    "Frozen budget protocol, fair baseline deployment adapter, real full integration, multi-seed experiments and ablations still pending",
+    "Exact source releases, shot choice and 86-versus-64 task grouping remain unresolved",
+    "Historical preparation/fit manifests are immutable snapshots and still list some now-resolved blockers; this report supplies the later evidence"
+  ],
+  "paid_calls": 0
+}

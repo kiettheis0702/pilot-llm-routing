@@ -185,14 +185,19 @@ class BinnedCostPolicy:
     """Algorithm 3 with an explicit hard estimated-affordability intersection.
 
     select() consumes one query on success. Failure is terminal, as in the paper.
-    Rewards must be fixed-router cosine estimates, not exploration/UCB scores.
+    Scores are fixed-router predictions, not exploration/UCB bonuses. The default
+    cosine domain is bounded; the explicit linear domain keeps raw ridge means.
     Bounds are supplied assumptions on positive reward/cost ratios; zero or
     negative rewards and zero costs have defined behavior but not that guarantee.
     """
 
     def __init__(self, *, arm_catalog: Sequence[str], budget: float, query_count: int,
-                 bin_size: int, lower_bound: float, upper_bound: float):
+                 bin_size: int, lower_bound: float, upper_bound: float,
+                 score_domain: str = 'cosine'):
         self._arms = _catalog(arm_catalog)
+        if score_domain not in ('cosine', 'linear'):
+            raise ValueError('Score domain must be cosine or linear')
+        self._score_domain = score_domain
         self._budget = _fraction(_finite(budget, "Budget", minimum=0))
         self._query_count = _count(query_count, "Query count", minimum=1)
         self._bin_size = _count(bin_size, "Bin size", minimum=1)
@@ -214,14 +219,20 @@ class BinnedCostPolicy:
         return tuple(self._decisions)
 
     def select(self, predicted_rewards: Mapping[str, float],
-               estimated_costs: Mapping[str, float]) -> BudgetDecision:
+               estimated_costs: Mapping[str, float], *,
+               allowed_arms: Sequence[str] | None = None,
+               tie_break_order: Sequence[str] | None = None) -> BudgetDecision:
         if self._status != "ready":
             raise RuntimeError(f"Cost policy is terminal: {self._status}")
         _coverage(predicted_rewards, self._arms, "Predicted rewards")
         _coverage(estimated_costs, self._arms, "Estimated costs")
         rewards = {a: _finite(predicted_rewards[a], "Predicted reward") for a in self._arms}
-        if any(abs(r) > 1 for r in rewards.values()):
+        if self._score_domain == 'cosine' and any(abs(r) > 1 for r in rewards.values()):
             raise ValueError("Predicted cosine rewards must lie in [-1, 1]")
+        allowed = self._arms if allowed_arms is None else _catalog(allowed_arms)
+        order = self._arms if tie_break_order is None else _catalog(tie_break_order)
+        if not set(allowed) <= set(self._arms) or set(order) != set(self._arms):
+            raise ValueError('Allowed arms/order must match the model catalog')
         costs = {a: _fraction(_finite(estimated_costs[a], "Estimated cost", minimum=0))
                  for a in self._arms}
         completed = len(self._decisions)
@@ -249,12 +260,12 @@ class BinnedCostPolicy:
                 return False
             return math.log(reward) - math.log(float(cost)) >= log_phi
 
-        eligible = tuple(a for a in self._arms if threshold_eligible(a))
+        eligible = tuple(a for a in self._arms if a in allowed and threshold_eligible(a))
         branch = "threshold"
         if not eligible:
             branch = "fallback"
-            eligible = tuple(a for a in self._arms if costs[a] <= available / remaining)
-        arm = max(eligible, key=rewards.__getitem__) if eligible else None
+            eligible = tuple(a for a in self._arms if a in allowed and costs[a] <= available / remaining)
+        arm = max((a for a in order if a in eligible), key=rewards.__getitem__) if eligible else None
         cost = costs[arm] if arm is not None else Fraction(0)
         new_spent = self._spent + cost
         new_bin_spent = bin_spent + cost
@@ -297,7 +308,7 @@ class BinnedCostPolicy:
                 "remaining_total_budget": float(self._budget - self._spent),
                 "utilization": float(self._bin_spent / self._base) if self._base else 0.0,
                 "estimated_budget_violation": self._spent > self._budget,
-                "arm_catalog": list(self._arms)}
+                "arm_catalog": list(self._arms), "score_domain": self._score_domain}
 
 
 class ActualCostLedger:

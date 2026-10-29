@@ -1,0 +1,109 @@
+{
+  "verified": true,
+  "kind": "independent-full-condition-replay",
+  "domain": "routerbench",
+  "seed": 7,
+  "method": "fixed-07",
+  "variant": "main",
+  "learning_rounds": 32270,
+  "verified_deployment_runs": 11,
+  "verified_served_deployment_rounds": 32331,
+  "inventory": [
+    {
+      "id": "routerbench/seed-7/main/fixed-07/learn-0.1/budget-0.5",
+      "manifest_sha256": "249f7ff21478bbf52fd20760cfb69953676cd0e7e7c3673c3e4c91ce23647fc4",
+      "served": 3227,
+      "reward": 2079.5,
+      "actual_cost": 0.5928896,
+      "estimated_cost": 0.58971852
+    },
+    {
+      "id": "routerbench/seed-7/main/fixed-07/learn-0.25/budget-0.5",
+      "manifest_sha256": "f7d9f5d6c39c25def8657917b6b5ab4a8d9f129ac4da67879cfb34b211ce49d7",
+      "served": 3227,
+      "reward": 2079.5,
+      "actual_cost": 0.5928896,
+      "estimated_cost": 0.58971852
+    },
+    {
+      "id": "routerbench/seed-7/main/fixed-07/learn-0.5/budget-0.5",
+      "manifest_sha256": "aefdf93d7b96ac70e761ef60bdb00b2c5319297c3053102962dfaf22d923590f",
+      "served": 3227,
+      "reward": 2079.5,
+      "actual_cost": 0.5928896,
+      "estimated_cost": 0.58971852
+    },
+    {
+      "id": "routerbench/seed-7/main/fixed-07/learn-1/budget-0.05",
+      "manifest_sha256": "d5951710652d738481a491a3e6360997fbdbe518b8d028de94ec77cd21ca7ee1",
+      "served": 61,
+      "reward": 41.25,
+      "actual_cost": 0.013568,
+      "estimated_cost": 0.01230036
+    },
+    {
+      "id": "routerbench/seed-7/main/fixed-07/learn-1/budget-0.1",
+      "manifest_sha256": "f06b8355274b87ed1fecb59bf4644161362d558708dfa88e12e74ecaeeb00aa4",
+      "served": 3227,
+      "reward": 2079.5,
+      "actual_cost": 0.5928896,
+      "estimated_cost": 0.58971852
+    },
+    {
+      "id": "routerbench/seed-7/main/fixed-07/learn-1/budget-0.2",
+      "manifest_sha256": "9feb7ebddb67ea4549d3356f5e54fd8fc74509aef5a0dac607ae85eb6410c768",
+      "served": 3227,
+      "reward": 2079.5,
+      "actual_cost": 0.5928896,
+      "estimated_cost": 0.58971852
+    },
+    {
+      "id": "routerbench/seed-7/main/fixed-07/learn-1/budget-0.3",
+      "manifest_sha256": "709d1fe7934da7df99380c161ebae9f3c9ce313d3e4d852137f9dcca2c180042",
+      "served": 3227,
+      "reward": 2079.5,
+      "actual_cost": 0.5928896,
+      "estimated_cost": 0.58971852
+    },
+    {
+      "id": "routerbench/seed-7/main/fixed-07/learn-1/budget-0.5",
+      "manifest_sha256": "0384ee639653d980e0afb80b50bda3998fea16660459365799f0225accb273c2",
+      "served": 3227,
+      "reward": 2079.5,
+      "actual_cost": 0.5928896,
+      "estimated_cost": 0.58971852
+    },
+    {
+      "id": "routerbench/seed-7/main/fixed-07/learn-1/budget-0.75",
+      "manifest_sha256": "802bef71ef52ff48da8eb42a016010c49d9c5d04829a6948344c1b9681ce71fc",
+      "served": 3227,
+      "reward": 2079.5,
+      "actual_cost": 0.5928896,
+      "estimated_cost": 0.58971852
+    },
+    {
+      "id": "routerbench/seed-7/main/fixed-07/learn-1/budget-1",
+      "manifest_sha256": "52f2404012af5a085428bb13b8b989a719b2852cb6f124d85af6327d559f45e1",
+      "served": 3227,
+      "reward": 2079.5,
+      "actual_cost": 0.5928896,
+      "estimated_cost": 0.58971852
+    },
+    {
+      "id": "routerbench/seed-7/main/fixed-07/learn-1/budget-1.25",
+      "manifest_sha256": "cde4a9a563c3ebf574fb534bdb6ea9e45e2c152ef55c7742d88c7b954aeb902f",
+      "served": 3227,
+      "reward": 2079.5,
+      "actual_cost": 0.5928896,
+      "estimated_cost": 0.58971852
+    }
+  ],
+  "learning_manifest_sha256": "6a2f8573f20cd85ffecf332dcba2457572665cc4885ad689b9ada63f03c85d52",
+  "script_sha256": "a580f2f173dbb70d91a2a551b90a328ee39ff9ab4ae047c6445f5dbbb0089a85",
+  "preflight": {
+    "heavy_jobs": [],
+    "available_gib": 10.420101165771484
+  },
+  "synthetic": false,
+  "paper_equivalent": false
+}

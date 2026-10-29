@@ -1,0 +1,121 @@
+{
+  "version": 1,
+  "kind": "complete-declared-prior-replicates",
+  "verified": true,
+  "synthetic": false,
+  "paper_equivalent": false,
+  "priors": [
+    {
+      "seed": 7,
+      "dimension": 64,
+      "holdout_correct": 189,
+      "holdout_pairs": 313,
+      "holdout_accuracy": 0.6038338658146964,
+      "all_lambdas_ready": true,
+      "checkpoint": {
+        "path": "outputs/research-prior-20261029/identity-d64-s7/prior.json",
+        "sha256": "e23982cc628b800ef7e7ea0cbe027ebfa40c6a71d88b8d52010a8e33083650c0"
+      },
+      "verification": {
+        "path": "outputs/research-prior-20261029/verification-identity-d64-s7.json",
+        "sha256": "c698defa1faef85720355176459798415f1f4e7fe4ebbf1724430c4e40c9d720"
+      },
+      "final_projection_loss": 0.0,
+      "final_prior_loss": 0.5753876019118555
+    },
+    {
+      "seed": 42,
+      "dimension": 64,
+      "holdout_correct": 188,
+      "holdout_pairs": 313,
+      "holdout_accuracy": 0.6006389776357828,
+      "all_lambdas_ready": true,
+      "checkpoint": {
+        "path": "outputs/research-prior-20261029/identity-d64-s42/prior.json",
+        "sha256": "7f972a01dd6d70aeef4710c52f348c6806b3d25bea8105029b5cd27accd2e3a3"
+      },
+      "verification": {
+        "path": "outputs/research-prior-20261029/verification-d64.json",
+        "sha256": "1654a7d1d82512bf999889d0e9d11465b9d4635971aa347e6b44e887f92a24e1"
+      },
+      "final_projection_loss": 0.0,
+      "final_prior_loss": 0.5770694068424909
+    },
+    {
+      "seed": 2026,
+      "dimension": 64,
+      "holdout_correct": 193,
+      "holdout_pairs": 313,
+      "holdout_accuracy": 0.6166134185303515,
+      "all_lambdas_ready": true,
+      "checkpoint": {
+        "path": "outputs/research-prior-20261029/identity-d64-s2026/prior.json",
+        "sha256": "b378654964983c23d966a0f9c91ac9d32d8b1d426a83bbfaa0e241197624cb36"
+      },
+      "verification": {
+        "path": "outputs/research-prior-20261029/verification-identity-d64-s2026.json",
+        "sha256": "86e7adb1c52d71dc19a3e1b79f4fc482366fa68373b6e5138b314dd4a5c5ce80"
+      },
+      "final_projection_loss": 0.0,
+      "final_prior_loss": 0.578135496055086
+    },
+    {
+      "seed": 7,
+      "dimension": 8,
+      "holdout_correct": 183,
+      "holdout_pairs": 313,
+      "holdout_accuracy": 0.5846645367412141,
+      "all_lambdas_ready": true,
+      "checkpoint": {
+        "path": "outputs/research-prior-20261029/identity-d8-full-s7/prior.json",
+        "sha256": "a30f7a4fbe60f9c49edbbded3914bde4e5abef6eb5a6fca9e7d5bc8ffef94cdc"
+      },
+      "verification": {
+        "path": "outputs/research-prior-20261029/verification-identity-d8-full-s7.json",
+        "sha256": "066dc88c5bff69b11de0d0b0f91ff311a4bafbd4217db23e4fc7142687c90df8"
+      },
+      "final_projection_loss": 0.0,
+      "final_prior_loss": 0.5302080127822734
+    },
+    {
+      "seed": 42,
+      "dimension": 8,
+      "holdout_correct": 189,
+      "holdout_pairs": 313,
+      "holdout_accuracy": 0.6038338658146964,
+      "all_lambdas_ready": true,
+      "checkpoint": {
+        "path": "outputs/research-prior-20261029/identity-d8-full-s42/prior.json",
+        "sha256": "b38361c31d0a8ab91ff44645cebefd48adc554b7ee9d66436fa1cec469e50ed6"
+      },
+      "verification": {
+        "path": "outputs/research-prior-20261029/verification-identity-d8-full-s42.json",
+        "sha256": "a8063a6c9988c78b2df58944d84b829b654e33cc6df06bac8c9be4bdc9d1f843"
+      },
+      "final_projection_loss": 0.0,
+      "final_prior_loss": 0.5316441442779344
+    },
+    {
+      "seed": 2026,
+      "dimension": 8,
+      "holdout_correct": 197,
+      "holdout_pairs": 313,
+      "holdout_accuracy": 0.6293929712460063,
+      "all_lambdas_ready": true,
+      "checkpoint": {
+        "path": "outputs/research-prior-20261029/identity-d8-full-s2026/prior.json",
+        "sha256": "7fad27f53db44632349aa13cb8ba83dedcf63be11b8f6077a7b9ca49b45095cf"
+      },
+      "verification": {
+        "path": "outputs/research-prior-20261029/verification-identity-d8-full-s2026.json",
+        "sha256": "2a29e3e4f5725de9befb7f89a52fcfcc9c3e649b8b6ae27228d2f944853df037"
+      },
+      "final_projection_loss": 0.00015336995040712636,
+      "final_prior_loss": 0.543501051779683
+    }
+  ],
+  "prior_index_sha256": "078dfe202ce8fc238b415c809d7b0a2da0d65103677de92d18391948ad145572",
+  "protocol_sha256": "ae4e9e76e8ae34bb40b1391a55c6a05dd62aa5ee2c0bd7fa2df279f66d97e229",
+  "scope": "Six declared eight-arm local priors only; routing experiments and paper equivalence are separate",
+  "generation_requests": 0
+}

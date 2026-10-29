@@ -1,0 +1,215 @@
+{
+  "date": "2026-10-29",
+  "kind": "tuning-stage-progress",
+  "status": "implementation present; execution verification pending RAM",
+  "goal_turn_classification": "progress",
+  "branch": "codex/data-gate",
+  "head": "47ce94384f9c4a709f9bc85a02c7eb344cce75ae",
+  "source_sha256": {
+    "scripts/tuning.py": "9801b4e2efd985876cfe1081e644c2f43c80f6cf8a1edc80f4f39fd797f62e32",
+    "tests/test_tuning.py": "1853203ddc0571341bab64beda4bafb192dbe1cd7155ef9a05aa29dab596f58c",
+    "scripts/resources.py": "bc499e236ec4d5f8039b66f1948c9927554f14c2806d2854aeef1ed377fcd2e7",
+    "configs/tuning_grid.json": "5cadba21a8264cbbcad935da7ca2ce03353e85420b70ff000b7f7f522e66f4dd",
+    "configs/main_experiment_plan.json": "8ab826cf298713ffa70455e9f07930b9f85101599caeb90791d35dd864743a04",
+    "docs/tuning-protocol.md": "85af5ff686c661a3a3d30507f86b925e1f2fe9b9d1703e6a9e6714ec8137e33b"
+  },
+  "paid_api_calls": 0,
+  "prior_candidate": {
+    "path": "outputs/research-prior-20261029/identity-d64-s42/prior.json",
+    "sha256": "7f972a01dd6d70aeef4710c52f348c6806b3d25bea8105029b5cd27accd2e3a3",
+    "command": ".venv/Scripts/python.exe -m scripts.research_pipeline fit --prepared-dir outputs/local-pipeline-verification-20261029/prepared-identity --cache-dir outputs/research-embeddings-20261029/preference-identity --cost-sizes outputs/research-cost-inputs-20261029/cost-size-identity_match.json --output-dir outputs/research-prior-20261029/identity-d64-s42 --dimension 64 --projection-epochs 30 --prior-epochs 40 --seed 42",
+    "exit_code": 0,
+    "session_id": 39838,
+    "session_status": "terminal; do not rerun this fit",
+    "dimension": 64,
+    "protocol": {
+      "distinct_prompt_members": true,
+      "interpretation": "PAPER_INFERRED",
+      "learning_rate": 0.03,
+      "margin": 0.2,
+      "optimizer": "seeded shuffled SGD",
+      "prediction_ties": "incorrect",
+      "prior_epochs": 40,
+      "projection_epochs": 30,
+      "seed": 42,
+      "triplets_per_eligible_anchor": 1
+    },
+    "reported_metrics": {
+      "prior_losses": [
+        0.6709185372429806,
+        0.6624517263233826,
+        0.6548786268860218,
+        0.6481062156737211,
+        0.6420406725541512,
+        0.6366091366579537,
+        0.6317345242360468,
+        0.6273402603154142,
+        0.6233713088015684,
+        0.6197770162650265,
+        0.6165078178748978,
+        0.6135266305815155,
+        0.6107990194764278,
+        0.6082978568940063,
+        0.6059911787584963,
+        0.6038638524820228,
+        0.6018925165746813,
+        0.6000611482374409,
+        0.5983543034547881,
+        0.596758287928264,
+        0.5952640743513554,
+        0.5938604683563161,
+        0.592540193863854,
+        0.5912937043574965,
+        0.5901156362350541,
+        0.5889983799139159,
+        0.5879383368302016,
+        0.5869293209921185,
+        0.5859679722085921,
+        0.5850507548416264,
+        0.5841736705489519,
+        0.5833337384731347,
+        0.5825285168334932,
+        0.5817548995282849,
+        0.5810113806469507,
+        0.5802951123907888,
+        0.579604788228478,
+        0.5789384115650871,
+        0.5782947213706073,
+        0.5776721239022161,
+        0.5770694068424909
+      ],
+      "projection_losses": [
+        0.20871173603092164,
+        0.049190733418848935,
+        0.012550838388133683,
+        0.005345817856573852,
+        0.0029539996089654394,
+        0.0013488520067450676,
+        0.0017028954268395668,
+        0.0004112720292069058,
+        0.0002491712052267221,
+        0.0001707610288072907,
+        0.00020023883529966154,
+        0.0005255109909479646,
+        0.00018803943662434224,
+        0.000116931685731225,
+        0.00011838034152670533,
+        3.866812664558251e-06,
+        6.151256656181073e-05,
+        1.6864964861389062e-06,
+        5.63554931203475e-05,
+        0.00010338283135733922,
+        1.5528576151277526e-05,
+        5.753362787355881e-05,
+        5.860712770869087e-05,
+        3.9946187921583215e-05,
+        0.00010828337452056623,
+        0.0,
+        0.0,
+        0.0,
+        0.0,
+        0.0,
+        0.0
+      ],
+      "validation": {
+        "all_lambdas_ready": true,
+        "blockers": {},
+        "per_arm": {
+          "WizardLM/WizardLM-13B-V1.2": {
+            "accuracy": 0.41935483870967744,
+            "correct": 13,
+            "lambda": 2.3846153846153846,
+            "support": 31
+          },
+          "claude-instant-v1": {
+            "accuracy": 0.528169014084507,
+            "correct": 75,
+            "lambda": 1.8933333333333333,
+            "support": 142
+          },
+          "claude-v1": {
+            "accuracy": 0.5094339622641509,
+            "correct": 27,
+            "lambda": 1.962962962962963,
+            "support": 53
+          },
+          "gpt-3.5-turbo-1106": {
+            "accuracy": 0.6408450704225352,
+            "correct": 91,
+            "lambda": 1.5604395604395604,
+            "support": 142
+          },
+          "gpt-4-1106-preview": {
+            "accuracy": 0.7364341085271318,
+            "correct": 95,
+            "lambda": 1.3578947368421053,
+            "support": 129
+          },
+          "meta/code-llama-instruct-34b-chat": {
+            "accuracy": 0.64,
+            "correct": 32,
+            "lambda": 1.5625,
+            "support": 50
+          },
+          "meta/llama-2-70b-chat": {
+            "accuracy": 0.5476190476190477,
+            "correct": 23,
+            "lambda": 1.826086956521739,
+            "support": 42
+          },
+          "zero-one-ai/Yi-34B-Chat": {
+            "accuracy": 0.5405405405405406,
+            "correct": 20,
+            "lambda": 1.85,
+            "support": 37
+          }
+        }
+      }
+    },
+    "reported_triplets": 1193,
+    "independent_readback": "pending; reported metrics are not yet independently recomputed"
+  },
+  "tdd_red": {
+    "command": ".venv/Scripts/python.exe -m pytest tests/test_tuning.py -q --basetemp outputs/pytest-tuning-red-20261029-a --tb=short",
+    "failed": 17,
+    "reason": "scripts.tuning did not exist",
+    "available_gib": 9.134517669677734
+  },
+  "test_attempts_after_implementation": [
+    {
+      "label": "green-a",
+      "status": "not started",
+      "available_gib": 7.92
+    },
+    {
+      "label": "green-b",
+      "status": "not started",
+      "available_gib": 7.57
+    },
+    {
+      "label": "green-c",
+      "status": "not started",
+      "available_gib": 5.58
+    }
+  ],
+  "last_resource_snapshot": {
+    "available_gib": 5.91,
+    "known_heavy_jobs": []
+  },
+  "static_checks": {
+    "python_ast_parse": "passed",
+    "primary_inventory_arithmetic": "858 deployment runs, 312 prefix snapshots",
+    "does_not_replace_execution_tests": true
+  },
+  "completed_regression_before_this_stage": "390 passed, one skipped; not a claim about the new tuning edits",
+  "remaining": [
+    "Run targeted tests at >=8 GiB; fix any failures, then full regression",
+    "Independently verify the real dimension-64 prior",
+    "Run 24 candidates over full RouterBench tuning (1000 rows) and filtered MMLU tuning (398 rows)",
+    "Independently recompute scores, selected configurations and tuning-derived budget calibration",
+    "Verify held-out mutation invariance and immutable repeated-run behavior",
+    "Complete/freeze final protocol including ablations and measured resource estimates; task 2.3 remains open"
+  ],
+  "openspec_task_3_2": "unchecked",
+  "main_plan_status": "declared choices only; no numeric budget calibration or final experiment results"
+}

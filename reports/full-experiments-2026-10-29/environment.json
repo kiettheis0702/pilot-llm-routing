@@ -1,0 +1,24 @@
+{
+  "observed_at_utc": "2026-10-29T16:11:07.887727+00:00",
+  "python": "3.11.18 (main, Oct 26 2026, 14:08:50) [MSC v.1944 64 bit (AMD64)]",
+  "executable": "C:\\Users\\ADMIN\\Documents\\ChatGPT\\AI pilot\\.venv\\Scripts\\python.exe",
+  "platform": "Windows-10-10.0.26200-SP0",
+  "packages": {
+    "numpy": "2.4.6",
+    "pandas": "2.3.3",
+    "pyarrow": "26.0.0",
+    "matplotlib": "3.11.2",
+    "tiktoken": "0.5.2",
+    "pytest": "9.1.1"
+  },
+  "files": {
+    "pyproject.toml": "b56dcdb805bb38085fbeb64e57d8373254eccbca90fbce7285031bb921df26cb",
+    "uv.lock": "c30ba76791e4ae4088b58e040e1f015e3aaac2513e1614570fdeb62e31d03d41"
+  },
+  "numerical_threads": {
+    "OMP_NUM_THREADS": "1",
+    "MKL_NUM_THREADS": "1",
+    "OPENBLAS_NUM_THREADS": "1"
+  },
+  "interpretation": "Environment inventory captured during the sequential experiment queue; all recorded commands use this project virtual environment."
+}

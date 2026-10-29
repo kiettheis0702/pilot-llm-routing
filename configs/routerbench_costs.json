@@ -1,0 +1,24 @@
+{
+  "version": 1,
+  "currency": "USD as recorded in the pinned RouterBench dataset",
+  "source_url": "https://github.com/withmartian/routerbench/blob/30e0925ac07a45108b9ee82086040a5664ea83e6/routers/common.py",
+  "source_revision": "30e0925ac07a45108b9ee82086040a5664ea83e6",
+  "source_date": "2024-03-18",
+  "source_file_sha256": "27f853b177840036dbe2876c2fd0ac8fa68389f5d294fb73d94e30dd7c7105ec",
+  "source_divisor": 10000000,
+  "dataset_multiplier": 10,
+  "calibration_provenance": "All 1000 frozen tuning queries x 11 arms have recorded costs exactly 10 times the public-source formula within float tolerance; validated again by the cost-input export. No deployment response/cost is used for calibration. These are benchmark accounting rates, not a provider quote or invoice.",
+  "rates": {
+    "WizardLM/WizardLM-13B-V1.2": {"input": 0.3, "output": 0.3},
+    "claude-instant-v1": {"input": 0.8, "output": 2.4},
+    "claude-v1": {"input": 8.0, "output": 24.0},
+    "claude-v2": {"input": 8.0, "output": 24.0},
+    "gpt-3.5-turbo-1106": {"input": 1.0, "output": 2.0},
+    "gpt-4-1106-preview": {"input": 10.0, "output": 30.0},
+    "meta/code-llama-instruct-34b-chat": {"input": 0.776, "output": 0.776},
+    "meta/llama-2-70b-chat": {"input": 0.9, "output": 0.9},
+    "mistralai/mistral-7b-chat": {"input": 0.2, "output": 0.2},
+    "mistralai/mixtral-8x7b-chat": {"input": 0.6, "output": 0.6},
+    "zero-one-ai/Yi-34B-Chat": {"input": 0.8, "output": 0.8}
+  }
+}

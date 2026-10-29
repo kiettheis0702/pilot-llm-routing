@@ -1,0 +1,109 @@
+{
+  "verified": true,
+  "kind": "independent-full-condition-replay",
+  "domain": "routerbench",
+  "seed": 42,
+  "method": "epoch-greedy",
+  "variant": "main",
+  "learning_rounds": 32270,
+  "verified_deployment_runs": 11,
+  "verified_served_deployment_rounds": 29098,
+  "inventory": [
+    {
+      "id": "routerbench/seed-42/main/epoch-greedy/learn-0.1/budget-0.5",
+      "manifest_sha256": "16b721c9b88b5ba406bfc9a47a67b52f8a5b52a6f363210afe71394f53a3f4f9",
+      "served": 3227,
+      "reward": 2009.85,
+      "actual_cost": 3.7627979000000003,
+      "estimated_cost": 3.7545548556
+    },
+    {
+      "id": "routerbench/seed-42/main/epoch-greedy/learn-0.25/budget-0.5",
+      "manifest_sha256": "a556a66e1b731f6612b225a458f5776177b5e88087b2720dc38bb15a17f2696e",
+      "served": 3227,
+      "reward": 2205.75,
+      "actual_cost": 3.8386049,
+      "estimated_cost": 3.8628644464
+    },
+    {
+      "id": "routerbench/seed-42/main/epoch-greedy/learn-0.5/budget-0.5",
+      "manifest_sha256": "4348da9611e6aba70d714b1440d3fcb7e7e675ce9fa0052fdefcc84d364ede14",
+      "served": 3227,
+      "reward": 2244.0,
+      "actual_cost": 3.8045223,
+      "estimated_cost": 3.8091903919
+    },
+    {
+      "id": "routerbench/seed-42/main/epoch-greedy/learn-1/budget-0.05",
+      "manifest_sha256": "85711b2e0dd440538eb1f97dfd6b421030c395d2d610212e885bc73e4df41eba",
+      "served": 19,
+      "reward": 15.0,
+      "actual_cost": 0.0073104,
+      "estimated_cost": 0.0124956944
+    },
+    {
+      "id": "routerbench/seed-42/main/epoch-greedy/learn-1/budget-0.1",
+      "manifest_sha256": "21439390caec0290bff6e720d031cbe0709994b8c423d5532e24c83f42804a63",
+      "served": 36,
+      "reward": 23.25,
+      "actual_cost": 0.016260300000000002,
+      "estimated_cost": 0.0248085059
+    },
+    {
+      "id": "routerbench/seed-42/main/epoch-greedy/learn-1/budget-0.2",
+      "manifest_sha256": "d602d08854bed7874785cda558bd912fdb55686a3c5bf8e25808079fb2d11b57",
+      "served": 3227,
+      "reward": 2095.6,
+      "actual_cost": 2.071964264,
+      "estimated_cost": 2.0235801803
+    },
+    {
+      "id": "routerbench/seed-42/main/epoch-greedy/learn-1/budget-0.3",
+      "manifest_sha256": "550f1e4e7abf75d445356421f09ccd65ff8146e8cd533fcb711985f18d0e21cf",
+      "served": 3227,
+      "reward": 2159.0,
+      "actual_cost": 3.089220264,
+      "estimated_cost": 2.9868169593
+    },
+    {
+      "id": "routerbench/seed-42/main/epoch-greedy/learn-1/budget-0.5",
+      "manifest_sha256": "14f1e16676ee5086989398b09857bfe06db7b10f8edaf78f4fca57968fa2258b",
+      "served": 3227,
+      "reward": 2269.6,
+      "actual_cost": 3.8632461,
+      "estimated_cost": 3.7912223004
+    },
+    {
+      "id": "routerbench/seed-42/main/epoch-greedy/learn-1/budget-0.75",
+      "manifest_sha256": "c3a20c4bb04f708c28a1dba4e6bb7bb0f585adb086b3b4d685643ea6f92f339d",
+      "served": 3227,
+      "reward": 2328.6,
+      "actual_cost": 5.2184069,
+      "estimated_cost": 5.2497267727
+    },
+    {
+      "id": "routerbench/seed-42/main/epoch-greedy/learn-1/budget-1",
+      "manifest_sha256": "90ec78c844a8557374a13a0cafe6490827124e509b8fa8196e58333e51cb7d36",
+      "served": 3227,
+      "reward": 2388.35,
+      "actual_cost": 6.7659136,
+      "estimated_cost": 6.7344801596
+    },
+    {
+      "id": "routerbench/seed-42/main/epoch-greedy/learn-1/budget-1.25",
+      "manifest_sha256": "784b4d1dcda1d7b24a2ac64a6036a02938939c47fe939f82e434d187b9d34495",
+      "served": 3227,
+      "reward": 2433.6,
+      "actual_cost": 8.1487058,
+      "estimated_cost": 8.166105826
+    }
+  ],
+  "learning_manifest_sha256": "1a4b26ce57081666e65217b4d17dfc70f6eb4dbf771638a65a442e6dc6175c5b",
+  "script_sha256": "a580f2f173dbb70d91a2a551b90a328ee39ff9ab4ae047c6445f5dbbb0089a85",
+  "preflight": {
+    "heavy_jobs": [],
+    "available_gib": 10.579906463623047
+  },
+  "synthetic": false,
+  "paper_equivalent": false
+}

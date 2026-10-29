@@ -1,0 +1,339 @@
+FFFFFFFFFFFFFFF                                                          [100%]
+================================== FAILURES ===================================
+_ test_evidence_tool_rejects_optimized_python_before_io[flag-aggregate_results.py] _
+
+tmp_path = WindowsPath('C:/Users/ADMIN/Documents/ChatGPT/AI pilot/outputs/pytest-review-guard-red-20261029/test_evidence_tool_rejects_opt0')
+name = 'aggregate_results.py', mode = 'flag'
+
+    @pytest.mark.parametrize('name', NAMES)
+    @pytest.mark.parametrize('mode', ['flag', 'environment'])
+    def test_evidence_tool_rejects_optimized_python_before_io(tmp_path, name, mode):
+        target = tmp_path / 'tools/research' / name
+        target.parent.mkdir(parents=True)
+        shutil.copy2(TOOLS / name, target)
+        env = dict(os.environ, PYTHONOPTIMIZE='1' if mode == 'environment' else '0')
+        command = [sys.executable, '-S'] + (['-O'] if mode == 'flag' else [])
+        result = subprocess.run(command + [str(target), '--help'], env=env,
+                                capture_output=True, text=True, timeout=10)
+        assert result.returncode != 0
+>       assert 'Evidence verification requires Python assertions' in result.stderr
+E       assert 'Evidence verification requires Python assertions' in 'Traceback (most recent call last):\n  File "C:\\Users\\ADMIN\\Documents\\ChatGPT\\AI pilot\\outputs\\pytest-review-gu..., in <module>\n    from scripts.resources import require_resources\nModuleNotFoundError: No module named \'scripts\'\n'
+E        +  where 'Traceback (most recent call last):\n  File "C:\\Users\\ADMIN\\Documents\\ChatGPT\\AI pilot\\outputs\\pytest-review-gu..., in <module>\n    from scripts.resources import require_resources\nModuleNotFoundError: No module named \'scripts\'\n' = CompletedProcess(args=['C:\\Users\\ADMIN\\Documents\\ChatGPT\\AI pilot\\.venv\\Scripts\\python.exe', '-S', '-O', 'C:\\... in <module>\n    from scripts.resources import require_resources\nModuleNotFoundError: No module named \'scripts\'\n').stderr
+
+tests\test_research_tool_guards.py:27: AssertionError
+_ test_evidence_tool_rejects_optimized_python_before_io[flag-build_documents.py] _
+
+tmp_path = WindowsPath('C:/Users/ADMIN/Documents/ChatGPT/AI pilot/outputs/pytest-review-guard-red-20261029/test_evidence_tool_rejects_opt1')
+name = 'build_documents.py', mode = 'flag'
+
+    @pytest.mark.parametrize('name', NAMES)
+    @pytest.mark.parametrize('mode', ['flag', 'environment'])
+    def test_evidence_tool_rejects_optimized_python_before_io(tmp_path, name, mode):
+        target = tmp_path / 'tools/research' / name
+        target.parent.mkdir(parents=True)
+        shutil.copy2(TOOLS / name, target)
+        env = dict(os.environ, PYTHONOPTIMIZE='1' if mode == 'environment' else '0')
+        command = [sys.executable, '-S'] + (['-O'] if mode == 'flag' else [])
+        result = subprocess.run(command + [str(target), '--help'], env=env,
+                                capture_output=True, text=True, timeout=10)
+        assert result.returncode != 0
+>       assert 'Evidence verification requires Python assertions' in result.stderr
+E       assert 'Evidence verification requires Python assertions' in 'Traceback (most recent call last):\n  File "C:\\Users\\ADMIN\\Documents\\ChatGPT\\AI pilot\\outputs\\pytest-review-gu...y", line 8, in <module>\n    from reportlab.pdfgen import canvas\nModuleNotFoundError: No module named \'reportlab\'\n'
+E        +  where 'Traceback (most recent call last):\n  File "C:\\Users\\ADMIN\\Documents\\ChatGPT\\AI pilot\\outputs\\pytest-review-gu...y", line 8, in <module>\n    from reportlab.pdfgen import canvas\nModuleNotFoundError: No module named \'reportlab\'\n' = CompletedProcess(args=['C:\\Users\\ADMIN\\Documents\\ChatGPT\\AI pilot\\.venv\\Scripts\\python.exe', '-S', '-O', 'C:\\...", line 8, in <module>\n    from reportlab.pdfgen import canvas\nModuleNotFoundError: No module named \'reportlab\'\n').stderr
+
+tests\test_research_tool_guards.py:27: AssertionError
+__ test_evidence_tool_rejects_optimized_python_before_io[flag-probe_cli.py] ___
+
+tmp_path = WindowsPath('C:/Users/ADMIN/Documents/ChatGPT/AI pilot/outputs/pytest-review-guard-red-20261029/test_evidence_tool_rejects_opt2')
+name = 'probe_cli.py', mode = 'flag'
+
+    @pytest.mark.parametrize('name', NAMES)
+    @pytest.mark.parametrize('mode', ['flag', 'environment'])
+    def test_evidence_tool_rejects_optimized_python_before_io(tmp_path, name, mode):
+        target = tmp_path / 'tools/research' / name
+        target.parent.mkdir(parents=True)
+        shutil.copy2(TOOLS / name, target)
+        env = dict(os.environ, PYTHONOPTIMIZE='1' if mode == 'environment' else '0')
+        command = [sys.executable, '-S'] + (['-O'] if mode == 'flag' else [])
+        result = subprocess.run(command + [str(target), '--help'], env=env,
+                                capture_output=True, text=True, timeout=10)
+        assert result.returncode != 0
+>       assert 'Evidence verification requires Python assertions' in result.stderr
+E       assert 'Evidence verification requires Python assertions' in 'Traceback (most recent call last):\n  File "C:\\Users\\ADMIN\\Documents\\ChatGPT\\AI pilot\\outputs\\pytest-review-gu..., in <module>\n    from scripts.resources import require_resources\nModuleNotFoundError: No module named \'scripts\'\n'
+E        +  where 'Traceback (most recent call last):\n  File "C:\\Users\\ADMIN\\Documents\\ChatGPT\\AI pilot\\outputs\\pytest-review-gu..., in <module>\n    from scripts.resources import require_resources\nModuleNotFoundError: No module named \'scripts\'\n' = CompletedProcess(args=['C:\\Users\\ADMIN\\Documents\\ChatGPT\\AI pilot\\.venv\\Scripts\\python.exe', '-S', '-O', 'C:\\... in <module>\n    from scripts.resources import require_resources\nModuleNotFoundError: No module named \'scripts\'\n').stderr
+
+tests\test_research_tool_guards.py:27: AssertionError
+_ test_evidence_tool_rejects_optimized_python_before_io[flag-render_figures.py] _
+
+tmp_path = WindowsPath('C:/Users/ADMIN/Documents/ChatGPT/AI pilot/outputs/pytest-review-guard-red-20261029/test_evidence_tool_rejects_opt3')
+name = 'render_figures.py', mode = 'flag'
+
+    @pytest.mark.parametrize('name', NAMES)
+    @pytest.mark.parametrize('mode', ['flag', 'environment'])
+    def test_evidence_tool_rejects_optimized_python_before_io(tmp_path, name, mode):
+        target = tmp_path / 'tools/research' / name
+        target.parent.mkdir(parents=True)
+        shutil.copy2(TOOLS / name, target)
+        env = dict(os.environ, PYTHONOPTIMIZE='1' if mode == 'environment' else '0')
+        command = [sys.executable, '-S'] + (['-O'] if mode == 'flag' else [])
+        result = subprocess.run(command + [str(target), '--help'], env=env,
+                                capture_output=True, text=True, timeout=10)
+        assert result.returncode != 0
+>       assert 'Evidence verification requires Python assertions' in result.stderr
+E       assert 'Evidence verification requires Python assertions' in 'Traceback (most recent call last):\n  File "C:\\Users\\ADMIN\\Documents\\ChatGPT\\AI pilot\\outputs\\pytest-review-gu..., in <module>\n    from scripts.resources import require_resources\nModuleNotFoundError: No module named \'scripts\'\n'
+E        +  where 'Traceback (most recent call last):\n  File "C:\\Users\\ADMIN\\Documents\\ChatGPT\\AI pilot\\outputs\\pytest-review-gu..., in <module>\n    from scripts.resources import require_resources\nModuleNotFoundError: No module named \'scripts\'\n' = CompletedProcess(args=['C:\\Users\\ADMIN\\Documents\\ChatGPT\\AI pilot\\.venv\\Scripts\\python.exe', '-S', '-O', 'C:\\... in <module>\n    from scripts.resources import require_resources\nModuleNotFoundError: No module named \'scripts\'\n').stderr
+
+tests\test_research_tool_guards.py:27: AssertionError
+_ test_evidence_tool_rejects_optimized_python_before_io[flag-verify_deliverables.py] _
+
+tmp_path = WindowsPath('C:/Users/ADMIN/Documents/ChatGPT/AI pilot/outputs/pytest-review-guard-red-20261029/test_evidence_tool_rejects_opt4')
+name = 'verify_deliverables.py', mode = 'flag'
+
+    @pytest.mark.parametrize('name', NAMES)
+    @pytest.mark.parametrize('mode', ['flag', 'environment'])
+    def test_evidence_tool_rejects_optimized_python_before_io(tmp_path, name, mode):
+        target = tmp_path / 'tools/research' / name
+        target.parent.mkdir(parents=True)
+        shutil.copy2(TOOLS / name, target)
+        env = dict(os.environ, PYTHONOPTIMIZE='1' if mode == 'environment' else '0')
+        command = [sys.executable, '-S'] + (['-O'] if mode == 'flag' else [])
+        result = subprocess.run(command + [str(target), '--help'], env=env,
+                                capture_output=True, text=True, timeout=10)
+        assert result.returncode != 0
+>       assert 'Evidence verification requires Python assertions' in result.stderr
+E       assert 'Evidence verification requires Python assertions' in 'Traceback (most recent call last):\n  File "C:\\Users\\ADMIN\\Documents\\ChatGPT\\AI pilot\\outputs\\pytest-review-gu...fy_deliverables.py", line 9, in <module>\n    import pdfplumber\nModuleNotFoundError: No module named \'pdfplumber\'\n'
+E        +  where 'Traceback (most recent call last):\n  File "C:\\Users\\ADMIN\\Documents\\ChatGPT\\AI pilot\\outputs\\pytest-review-gu...fy_deliverables.py", line 9, in <module>\n    import pdfplumber\nModuleNotFoundError: No module named \'pdfplumber\'\n' = CompletedProcess(args=['C:\\Users\\ADMIN\\Documents\\ChatGPT\\AI pilot\\.venv\\Scripts\\python.exe', '-S', '-O', 'C:\\...y_deliverables.py", line 9, in <module>\n    import pdfplumber\nModuleNotFoundError: No module named \'pdfplumber\'\n').stderr
+
+tests\test_research_tool_guards.py:27: AssertionError
+_ test_evidence_tool_rejects_optimized_python_before_io[flag-verify_replicate.py] _
+
+tmp_path = WindowsPath('C:/Users/ADMIN/Documents/ChatGPT/AI pilot/outputs/pytest-review-guard-red-20261029/test_evidence_tool_rejects_opt5')
+name = 'verify_replicate.py', mode = 'flag'
+
+    @pytest.mark.parametrize('name', NAMES)
+    @pytest.mark.parametrize('mode', ['flag', 'environment'])
+    def test_evidence_tool_rejects_optimized_python_before_io(tmp_path, name, mode):
+        target = tmp_path / 'tools/research' / name
+        target.parent.mkdir(parents=True)
+        shutil.copy2(TOOLS / name, target)
+        env = dict(os.environ, PYTHONOPTIMIZE='1' if mode == 'environment' else '0')
+        command = [sys.executable, '-S'] + (['-O'] if mode == 'flag' else [])
+        result = subprocess.run(command + [str(target), '--help'], env=env,
+                                capture_output=True, text=True, timeout=10)
+>       assert result.returncode != 0
+E       AssertionError: assert 0 != 0
+E        +  where 0 = CompletedProcess(args=['C:\\Users\\ADMIN\\Documents\\ChatGPT\\AI pilot\\.venv\\Scripts\\python.exe', '-S', '-O', 'C:\\...          show this help message and exit\n  --fit-name FIT_NAME\n  --dimension DIMENSION\n  --seed SEED\n', stderr='').returncode
+
+tests\test_research_tool_guards.py:26: AssertionError
+_ test_evidence_tool_rejects_optimized_python_before_io[flag-verify_runs.py] __
+
+tmp_path = WindowsPath('C:/Users/ADMIN/Documents/ChatGPT/AI pilot/outputs/pytest-review-guard-red-20261029/test_evidence_tool_rejects_opt6')
+name = 'verify_runs.py', mode = 'flag'
+
+    @pytest.mark.parametrize('name', NAMES)
+    @pytest.mark.parametrize('mode', ['flag', 'environment'])
+    def test_evidence_tool_rejects_optimized_python_before_io(tmp_path, name, mode):
+        target = tmp_path / 'tools/research' / name
+        target.parent.mkdir(parents=True)
+        shutil.copy2(TOOLS / name, target)
+        env = dict(os.environ, PYTHONOPTIMIZE='1' if mode == 'environment' else '0')
+        command = [sys.executable, '-S'] + (['-O'] if mode == 'flag' else [])
+        result = subprocess.run(command + [str(target), '--help'], env=env,
+                                capture_output=True, text=True, timeout=10)
+>       assert result.returncode != 0
+E       AssertionError: assert 0 != 0
+E        +  where 0 = CompletedProcess(args=['C:\\Users\\ADMIN\\Documents\\ChatGPT\\AI pilot\\.venv\\Scripts\\python.exe', '-S', '-O', 'C:\\...ge and exit\n  --domain DOMAIN\n  --seed SEED\n  --method METHOD\n  --variant VARIANT\n  --output OUTPUT\n', stderr='').returncode
+
+tests\test_research_tool_guards.py:26: AssertionError
+_ test_evidence_tool_rejects_optimized_python_before_io[environment-aggregate_results.py] _
+
+tmp_path = WindowsPath('C:/Users/ADMIN/Documents/ChatGPT/AI pilot/outputs/pytest-review-guard-red-20261029/test_evidence_tool_rejects_opt7')
+name = 'aggregate_results.py', mode = 'environment'
+
+    @pytest.mark.parametrize('name', NAMES)
+    @pytest.mark.parametrize('mode', ['flag', 'environment'])
+    def test_evidence_tool_rejects_optimized_python_before_io(tmp_path, name, mode):
+        target = tmp_path / 'tools/research' / name
+        target.parent.mkdir(parents=True)
+        shutil.copy2(TOOLS / name, target)
+        env = dict(os.environ, PYTHONOPTIMIZE='1' if mode == 'environment' else '0')
+        command = [sys.executable, '-S'] + (['-O'] if mode == 'flag' else [])
+        result = subprocess.run(command + [str(target), '--help'], env=env,
+                                capture_output=True, text=True, timeout=10)
+        assert result.returncode != 0
+>       assert 'Evidence verification requires Python assertions' in result.stderr
+E       assert 'Evidence verification requires Python assertions' in 'Traceback (most recent call last):\n  File "C:\\Users\\ADMIN\\Documents\\ChatGPT\\AI pilot\\outputs\\pytest-review-gu..., in <module>\n    from scripts.resources import require_resources\nModuleNotFoundError: No module named \'scripts\'\n'
+E        +  where 'Traceback (most recent call last):\n  File "C:\\Users\\ADMIN\\Documents\\ChatGPT\\AI pilot\\outputs\\pytest-review-gu..., in <module>\n    from scripts.resources import require_resources\nModuleNotFoundError: No module named \'scripts\'\n' = CompletedProcess(args=['C:\\Users\\ADMIN\\Documents\\ChatGPT\\AI pilot\\.venv\\Scripts\\python.exe', '-S', 'C:\\Users\... in <module>\n    from scripts.resources import require_resources\nModuleNotFoundError: No module named \'scripts\'\n').stderr
+
+tests\test_research_tool_guards.py:27: AssertionError
+_ test_evidence_tool_rejects_optimized_python_before_io[environment-build_documents.py] _
+
+tmp_path = WindowsPath('C:/Users/ADMIN/Documents/ChatGPT/AI pilot/outputs/pytest-review-guard-red-20261029/test_evidence_tool_rejects_opt8')
+name = 'build_documents.py', mode = 'environment'
+
+    @pytest.mark.parametrize('name', NAMES)
+    @pytest.mark.parametrize('mode', ['flag', 'environment'])
+    def test_evidence_tool_rejects_optimized_python_before_io(tmp_path, name, mode):
+        target = tmp_path / 'tools/research' / name
+        target.parent.mkdir(parents=True)
+        shutil.copy2(TOOLS / name, target)
+        env = dict(os.environ, PYTHONOPTIMIZE='1' if mode == 'environment' else '0')
+        command = [sys.executable, '-S'] + (['-O'] if mode == 'flag' else [])
+        result = subprocess.run(command + [str(target), '--help'], env=env,
+                                capture_output=True, text=True, timeout=10)
+        assert result.returncode != 0
+>       assert 'Evidence verification requires Python assertions' in result.stderr
+E       assert 'Evidence verification requires Python assertions' in 'Traceback (most recent call last):\n  File "C:\\Users\\ADMIN\\Documents\\ChatGPT\\AI pilot\\outputs\\pytest-review-gu...y", line 8, in <module>\n    from reportlab.pdfgen import canvas\nModuleNotFoundError: No module named \'reportlab\'\n'
+E        +  where 'Traceback (most recent call last):\n  File "C:\\Users\\ADMIN\\Documents\\ChatGPT\\AI pilot\\outputs\\pytest-review-gu...y", line 8, in <module>\n    from reportlab.pdfgen import canvas\nModuleNotFoundError: No module named \'reportlab\'\n' = CompletedProcess(args=['C:\\Users\\ADMIN\\Documents\\ChatGPT\\AI pilot\\.venv\\Scripts\\python.exe', '-S', 'C:\\Users\...", line 8, in <module>\n    from reportlab.pdfgen import canvas\nModuleNotFoundError: No module named \'reportlab\'\n').stderr
+
+tests\test_research_tool_guards.py:27: AssertionError
+_ test_evidence_tool_rejects_optimized_python_before_io[environment-probe_cli.py] _
+
+tmp_path = WindowsPath('C:/Users/ADMIN/Documents/ChatGPT/AI pilot/outputs/pytest-review-guard-red-20261029/test_evidence_tool_rejects_opt9')
+name = 'probe_cli.py', mode = 'environment'
+
+    @pytest.mark.parametrize('name', NAMES)
+    @pytest.mark.parametrize('mode', ['flag', 'environment'])
+    def test_evidence_tool_rejects_optimized_python_before_io(tmp_path, name, mode):
+        target = tmp_path / 'tools/research' / name
+        target.parent.mkdir(parents=True)
+        shutil.copy2(TOOLS / name, target)
+        env = dict(os.environ, PYTHONOPTIMIZE='1' if mode == 'environment' else '0')
+        command = [sys.executable, '-S'] + (['-O'] if mode == 'flag' else [])
+        result = subprocess.run(command + [str(target), '--help'], env=env,
+                                capture_output=True, text=True, timeout=10)
+        assert result.returncode != 0
+>       assert 'Evidence verification requires Python assertions' in result.stderr
+E       assert 'Evidence verification requires Python assertions' in 'Traceback (most recent call last):\n  File "C:\\Users\\ADMIN\\Documents\\ChatGPT\\AI pilot\\outputs\\pytest-review-gu..., in <module>\n    from scripts.resources import require_resources\nModuleNotFoundError: No module named \'scripts\'\n'
+E        +  where 'Traceback (most recent call last):\n  File "C:\\Users\\ADMIN\\Documents\\ChatGPT\\AI pilot\\outputs\\pytest-review-gu..., in <module>\n    from scripts.resources import require_resources\nModuleNotFoundError: No module named \'scripts\'\n' = CompletedProcess(args=['C:\\Users\\ADMIN\\Documents\\ChatGPT\\AI pilot\\.venv\\Scripts\\python.exe', '-S', 'C:\\Users\... in <module>\n    from scripts.resources import require_resources\nModuleNotFoundError: No module named \'scripts\'\n').stderr
+
+tests\test_research_tool_guards.py:27: AssertionError
+_ test_evidence_tool_rejects_optimized_python_before_io[environment-render_figures.py] _
+
+tmp_path = WindowsPath('C:/Users/ADMIN/Documents/ChatGPT/AI pilot/outputs/pytest-review-guard-red-20261029/test_evidence_tool_rejects_opt10')
+name = 'render_figures.py', mode = 'environment'
+
+    @pytest.mark.parametrize('name', NAMES)
+    @pytest.mark.parametrize('mode', ['flag', 'environment'])
+    def test_evidence_tool_rejects_optimized_python_before_io(tmp_path, name, mode):
+        target = tmp_path / 'tools/research' / name
+        target.parent.mkdir(parents=True)
+        shutil.copy2(TOOLS / name, target)
+        env = dict(os.environ, PYTHONOPTIMIZE='1' if mode == 'environment' else '0')
+        command = [sys.executable, '-S'] + (['-O'] if mode == 'flag' else [])
+        result = subprocess.run(command + [str(target), '--help'], env=env,
+                                capture_output=True, text=True, timeout=10)
+        assert result.returncode != 0
+>       assert 'Evidence verification requires Python assertions' in result.stderr
+E       assert 'Evidence verification requires Python assertions' in 'Traceback (most recent call last):\n  File "C:\\Users\\ADMIN\\Documents\\ChatGPT\\AI pilot\\outputs\\pytest-review-gu..., in <module>\n    from scripts.resources import require_resources\nModuleNotFoundError: No module named \'scripts\'\n'
+E        +  where 'Traceback (most recent call last):\n  File "C:\\Users\\ADMIN\\Documents\\ChatGPT\\AI pilot\\outputs\\pytest-review-gu..., in <module>\n    from scripts.resources import require_resources\nModuleNotFoundError: No module named \'scripts\'\n' = CompletedProcess(args=['C:\\Users\\ADMIN\\Documents\\ChatGPT\\AI pilot\\.venv\\Scripts\\python.exe', '-S', 'C:\\Users\... in <module>\n    from scripts.resources import require_resources\nModuleNotFoundError: No module named \'scripts\'\n').stderr
+
+tests\test_research_tool_guards.py:27: AssertionError
+_ test_evidence_tool_rejects_optimized_python_before_io[environment-verify_deliverables.py] _
+
+tmp_path = WindowsPath('C:/Users/ADMIN/Documents/ChatGPT/AI pilot/outputs/pytest-review-guard-red-20261029/test_evidence_tool_rejects_opt11')
+name = 'verify_deliverables.py', mode = 'environment'
+
+    @pytest.mark.parametrize('name', NAMES)
+    @pytest.mark.parametrize('mode', ['flag', 'environment'])
+    def test_evidence_tool_rejects_optimized_python_before_io(tmp_path, name, mode):
+        target = tmp_path / 'tools/research' / name
+        target.parent.mkdir(parents=True)
+        shutil.copy2(TOOLS / name, target)
+        env = dict(os.environ, PYTHONOPTIMIZE='1' if mode == 'environment' else '0')
+        command = [sys.executable, '-S'] + (['-O'] if mode == 'flag' else [])
+        result = subprocess.run(command + [str(target), '--help'], env=env,
+                                capture_output=True, text=True, timeout=10)
+        assert result.returncode != 0
+>       assert 'Evidence verification requires Python assertions' in result.stderr
+E       assert 'Evidence verification requires Python assertions' in 'Traceback (most recent call last):\n  File "C:\\Users\\ADMIN\\Documents\\ChatGPT\\AI pilot\\outputs\\pytest-review-gu...fy_deliverables.py", line 9, in <module>\n    import pdfplumber\nModuleNotFoundError: No module named \'pdfplumber\'\n'
+E        +  where 'Traceback (most recent call last):\n  File "C:\\Users\\ADMIN\\Documents\\ChatGPT\\AI pilot\\outputs\\pytest-review-gu...fy_deliverables.py", line 9, in <module>\n    import pdfplumber\nModuleNotFoundError: No module named \'pdfplumber\'\n' = CompletedProcess(args=['C:\\Users\\ADMIN\\Documents\\ChatGPT\\AI pilot\\.venv\\Scripts\\python.exe', '-S', 'C:\\Users\...y_deliverables.py", line 9, in <module>\n    import pdfplumber\nModuleNotFoundError: No module named \'pdfplumber\'\n').stderr
+
+tests\test_research_tool_guards.py:27: AssertionError
+_ test_evidence_tool_rejects_optimized_python_before_io[environment-verify_replicate.py] _
+
+tmp_path = WindowsPath('C:/Users/ADMIN/Documents/ChatGPT/AI pilot/outputs/pytest-review-guard-red-20261029/test_evidence_tool_rejects_opt12')
+name = 'verify_replicate.py', mode = 'environment'
+
+    @pytest.mark.parametrize('name', NAMES)
+    @pytest.mark.parametrize('mode', ['flag', 'environment'])
+    def test_evidence_tool_rejects_optimized_python_before_io(tmp_path, name, mode):
+        target = tmp_path / 'tools/research' / name
+        target.parent.mkdir(parents=True)
+        shutil.copy2(TOOLS / name, target)
+        env = dict(os.environ, PYTHONOPTIMIZE='1' if mode == 'environment' else '0')
+        command = [sys.executable, '-S'] + (['-O'] if mode == 'flag' else [])
+        result = subprocess.run(command + [str(target), '--help'], env=env,
+                                capture_output=True, text=True, timeout=10)
+>       assert result.returncode != 0
+E       AssertionError: assert 0 != 0
+E        +  where 0 = CompletedProcess(args=['C:\\Users\\ADMIN\\Documents\\ChatGPT\\AI pilot\\.venv\\Scripts\\python.exe', '-S', 'C:\\Users\...          show this help message and exit\n  --fit-name FIT_NAME\n  --dimension DIMENSION\n  --seed SEED\n', stderr='').returncode
+
+tests\test_research_tool_guards.py:26: AssertionError
+_ test_evidence_tool_rejects_optimized_python_before_io[environment-verify_runs.py] _
+
+tmp_path = WindowsPath('C:/Users/ADMIN/Documents/ChatGPT/AI pilot/outputs/pytest-review-guard-red-20261029/test_evidence_tool_rejects_opt13')
+name = 'verify_runs.py', mode = 'environment'
+
+    @pytest.mark.parametrize('name', NAMES)
+    @pytest.mark.parametrize('mode', ['flag', 'environment'])
+    def test_evidence_tool_rejects_optimized_python_before_io(tmp_path, name, mode):
+        target = tmp_path / 'tools/research' / name
+        target.parent.mkdir(parents=True)
+        shutil.copy2(TOOLS / name, target)
+        env = dict(os.environ, PYTHONOPTIMIZE='1' if mode == 'environment' else '0')
+        command = [sys.executable, '-S'] + (['-O'] if mode == 'flag' else [])
+        result = subprocess.run(command + [str(target), '--help'], env=env,
+                                capture_output=True, text=True, timeout=10)
+>       assert result.returncode != 0
+E       AssertionError: assert 0 != 0
+E        +  where 0 = CompletedProcess(args=['C:\\Users\\ADMIN\\Documents\\ChatGPT\\AI pilot\\.venv\\Scripts\\python.exe', '-S', 'C:\\Users\...ge and exit\n  --domain DOMAIN\n  --seed SEED\n  --method METHOD\n  --variant VARIANT\n  --output OUTPUT\n', stderr='').returncode
+
+tests\test_research_tool_guards.py:26: AssertionError
+__ test_optimized_deliverable_verifier_cannot_publish_empty_invalid_evidence __
+
+tmp_path = WindowsPath('C:/Users/ADMIN/Documents/ChatGPT/AI pilot/outputs/pytest-review-guard-red-20261029/test_optimized_deliverable_ver0')
+
+    def test_optimized_deliverable_verifier_cannot_publish_empty_invalid_evidence(tmp_path):
+        target = tmp_path / 'tools/research/verify_deliverables.py'
+        target.parent.mkdir(parents=True)
+        shutil.copy2(TOOLS / target.name, target)
+        # The empty PDF list never uses this optional parser. Keep this probe stdlib-only.
+        (target.parent / 'pdfplumber.py').write_text('# unused optional dependency\n')
+        base = tmp_path / 'outputs/research-experiments-20261029'
+        for folder in ('aggregate', 'figures', 'deliverables', 'verification', 'verification-reproduction'):
+            (base / folder).mkdir(parents=True)
+        for name in ('per-seed.csv', 'learning-prefixes.csv'):
+            (base / 'aggregate' / name).write_text('invalid_header\n')
+        (base / 'figures/figure-data.json').write_text(json.dumps({'files': {}, 'source_files': {}, 'series': {}}))
+        (base / 'deliverables/manifest.json').write_text(json.dumps({
+            'aggregate_manifest_sha256': 'invalid', 'figure_manifest_sha256': 'invalid', 'files': {}}))
+        for folder in ('verification', 'verification-reproduction'):
+            (base / folder / 'routerbench-seed7-pilot-main.json').write_text(json.dumps({
+                'script_sha256': 'invalid', 'preflight': {}}))
+        result = subprocess.run([sys.executable, '-S', '-O', str(target)],
+                                capture_output=True, text=True, timeout=10)
+>       assert result.returncode != 0, result.stdout
+E       AssertionError: {"verified": true, "figures": 6, "plotted_points": 0, "source_rows": 0, "pdfs": {}, "independent_packaged_replay_matches": true, "synthetic": false, "paper_equivalent": false, "script_sha256": "6e90a25334eb8fb97b0554a6ec09faeb0e30cd0f274e0940e8348951e0532ffb"}
+E         
+E       assert 0 != 0
+E        +  where 0 = CompletedProcess(args=['C:\\Users\\ADMIN\\Documents\\ChatGPT\\AI pilot\\.venv\\Scripts\\python.exe', '-S', '-O', 'C:\\...equivalent": false, "script_sha256": "6e90a25334eb8fb97b0554a6ec09faeb0e30cd0f274e0940e8348951e0532ffb"}\n', stderr='').returncode
+
+tests\test_research_tool_guards.py:50: AssertionError
+=========================== short test summary info ===========================
+FAILED tests/test_research_tool_guards.py::test_evidence_tool_rejects_optimized_python_before_io[flag-aggregate_results.py]
+FAILED tests/test_research_tool_guards.py::test_evidence_tool_rejects_optimized_python_before_io[flag-build_documents.py]
+FAILED tests/test_research_tool_guards.py::test_evidence_tool_rejects_optimized_python_before_io[flag-probe_cli.py]
+FAILED tests/test_research_tool_guards.py::test_evidence_tool_rejects_optimized_python_before_io[flag-render_figures.py]
+FAILED tests/test_research_tool_guards.py::test_evidence_tool_rejects_optimized_python_before_io[flag-verify_deliverables.py]
+FAILED tests/test_research_tool_guards.py::test_evidence_tool_rejects_optimized_python_before_io[flag-verify_replicate.py]
+FAILED tests/test_research_tool_guards.py::test_evidence_tool_rejects_optimized_python_before_io[flag-verify_runs.py]
+FAILED tests/test_research_tool_guards.py::test_evidence_tool_rejects_optimized_python_before_io[environment-aggregate_results.py]
+FAILED tests/test_research_tool_guards.py::test_evidence_tool_rejects_optimized_python_before_io[environment-build_documents.py]
+FAILED tests/test_research_tool_guards.py::test_evidence_tool_rejects_optimized_python_before_io[environment-probe_cli.py]
+FAILED tests/test_research_tool_guards.py::test_evidence_tool_rejects_optimized_python_before_io[environment-render_figures.py]
+FAILED tests/test_research_tool_guards.py::test_evidence_tool_rejects_optimized_python_before_io[environment-verify_deliverables.py]
+FAILED tests/test_research_tool_guards.py::test_evidence_tool_rejects_optimized_python_before_io[environment-verify_replicate.py]
+FAILED tests/test_research_tool_guards.py::test_evidence_tool_rejects_optimized_python_before_io[environment-verify_runs.py]
+FAILED tests/test_research_tool_guards.py::test_optimized_deliverable_verifier_cannot_publish_empty_invalid_evidence
+15 failed in 2.30s

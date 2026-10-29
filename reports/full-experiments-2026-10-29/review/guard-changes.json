@@ -1,0 +1,44 @@
+[
+  {
+    "name": "aggregate_results.py",
+    "before_sha256": "ebc1df6fe2855207d7dda94e3c3478a1a003c98f1cf53a06167d552035ab516f",
+    "after_sha256": "9cee16584f362a3411c6081187a5f6082c2695ac4076a2aebf16678947133f86",
+    "change": "Only an explicit early optimization guard was added; assertion and numeric logic unchanged."
+  },
+  {
+    "name": "build_documents.py",
+    "before_sha256": "2034a72ac8b69e52968aec56dc8e4799ac066d635af2cb785a6f1d2aeeccd44f",
+    "after_sha256": "f1ac8f5fda262ef8da5177eb4d9a770ae94273c820f86fd07fb7135acefa2438",
+    "change": "Only an explicit early optimization guard was added; assertion and numeric logic unchanged."
+  },
+  {
+    "name": "probe_cli.py",
+    "before_sha256": "136b0bb18e1397d74510b800810d7fbd3e45ed0957b55459a77d040ee91ab5a8",
+    "after_sha256": "b6f701e910ebd9505dca5642e74d0d97100cc41abbe03c282c5bc2996bad93c6",
+    "change": "Only an explicit early optimization guard was added; assertion and numeric logic unchanged."
+  },
+  {
+    "name": "render_figures.py",
+    "before_sha256": "dd97dd7544a3046e1d4efb52b7ad84778fd19918b70602b8068fd60478ad5ed4",
+    "after_sha256": "8424058efe92505fb968695255162132f71b1c85cb502a3e1614b8271d54b20a",
+    "change": "Only an explicit early optimization guard was added; assertion and numeric logic unchanged."
+  },
+  {
+    "name": "verify_deliverables.py",
+    "before_sha256": "6e90a25334eb8fb97b0554a6ec09faeb0e30cd0f274e0940e8348951e0532ffb",
+    "after_sha256": "339b304698df963be2cdd71d7ce3718e11e27819dd2dedcb694629397aa80c39",
+    "change": "Only an explicit early optimization guard was added; assertion and numeric logic unchanged."
+  },
+  {
+    "name": "verify_replicate.py",
+    "before_sha256": "3b53bb1fb9ef04ee99fa2a2f0b345ea2182e57263ac82047e5f708e8c7e715c3",
+    "after_sha256": "e9fd66bee6ceba903815b3495aded378086df402622c2f9db6a0267b1ae8204c",
+    "change": "Only an explicit early optimization guard was added; assertion and numeric logic unchanged."
+  },
+  {
+    "name": "verify_runs.py",
+    "before_sha256": "893430b51a4cc84bb4b7b086c42afa0ad20ad5c077c7129d31757b4fa81c9c62",
+    "after_sha256": "b293f1fee9bf48062778a4ac6a493fa572cc122a4031fa40185d085b044fa44a",
+    "change": "Only an explicit early optimization guard was added; assertion and numeric logic unchanged."
+  }
+]

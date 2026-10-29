@@ -1,0 +1,109 @@
+{
+  "version": 1,
+  "kind": "verified-research-prior-index",
+  "protocol": {
+    "path": "configs/frozen_experiment_protocol.json",
+    "sha256": "ae4e9e76e8ae34bb40b1391a55c6a05dd62aa5ee2c0bd7fa2df279f66d97e229"
+  },
+  "fits": [
+    {
+      "dimension": 64,
+      "seed": 7,
+      "prior": {
+        "path": "outputs/research-prior-20261029/identity-d64-s7/prior.json",
+        "sha256": "e23982cc628b800ef7e7ea0cbe027ebfa40c6a71d88b8d52010a8e33083650c0"
+      },
+      "fit_manifest": {
+        "path": "outputs/research-prior-20261029/identity-d64-s7/fit-manifest.json",
+        "sha256": "c3cb0ba466add06c1f5e10cefba52b5f9729fcca2ca233b9363b76a1ce221c49"
+      },
+      "verification": {
+        "path": "outputs/research-prior-20261029/verification-identity-d64-s7.json",
+        "sha256": "c698defa1faef85720355176459798415f1f4e7fe4ebbf1724430c4e40c9d720"
+      }
+    },
+    {
+      "dimension": 64,
+      "seed": 42,
+      "prior": {
+        "path": "outputs/research-prior-20261029/identity-d64-s42/prior.json",
+        "sha256": "7f972a01dd6d70aeef4710c52f348c6806b3d25bea8105029b5cd27accd2e3a3"
+      },
+      "fit_manifest": {
+        "path": "outputs/research-prior-20261029/identity-d64-s42/fit-manifest.json",
+        "sha256": "dd65de48cd9a12db5e0c3458bc65ff7530554c147b8c3f55adafbc4e254fab42"
+      },
+      "verification": {
+        "path": "outputs/research-prior-20261029/verification-d64.json",
+        "sha256": "1654a7d1d82512bf999889d0e9d11465b9d4635971aa347e6b44e887f92a24e1"
+      }
+    },
+    {
+      "dimension": 64,
+      "seed": 2026,
+      "prior": {
+        "path": "outputs/research-prior-20261029/identity-d64-s2026/prior.json",
+        "sha256": "b378654964983c23d966a0f9c91ac9d32d8b1d426a83bbfaa0e241197624cb36"
+      },
+      "fit_manifest": {
+        "path": "outputs/research-prior-20261029/identity-d64-s2026/fit-manifest.json",
+        "sha256": "bed03d6af280141db73a48c537fdae9c7619fd896a107675c2956c7c01eac46f"
+      },
+      "verification": {
+        "path": "outputs/research-prior-20261029/verification-identity-d64-s2026.json",
+        "sha256": "86e7adb1c52d71dc19a3e1b79f4fc482366fa68373b6e5138b314dd4a5c5ce80"
+      }
+    },
+    {
+      "dimension": 8,
+      "seed": 7,
+      "prior": {
+        "path": "outputs/research-prior-20261029/identity-d8-full-s7/prior.json",
+        "sha256": "a30f7a4fbe60f9c49edbbded3914bde4e5abef6eb5a6fca9e7d5bc8ffef94cdc"
+      },
+      "fit_manifest": {
+        "path": "outputs/research-prior-20261029/identity-d8-full-s7/fit-manifest.json",
+        "sha256": "49992d21efa377435b4465407a558ac2abb45ba63efed54b828468a74e497aae"
+      },
+      "verification": {
+        "path": "outputs/research-prior-20261029/verification-identity-d8-full-s7.json",
+        "sha256": "066dc88c5bff69b11de0d0b0f91ff311a4bafbd4217db23e4fc7142687c90df8"
+      }
+    },
+    {
+      "dimension": 8,
+      "seed": 42,
+      "prior": {
+        "path": "outputs/research-prior-20261029/identity-d8-full-s42/prior.json",
+        "sha256": "b38361c31d0a8ab91ff44645cebefd48adc554b7ee9d66436fa1cec469e50ed6"
+      },
+      "fit_manifest": {
+        "path": "outputs/research-prior-20261029/identity-d8-full-s42/fit-manifest.json",
+        "sha256": "eed7a34cfc48da083251516caf3eff497cf6531d91b502d84351991a4435e1bd"
+      },
+      "verification": {
+        "path": "outputs/research-prior-20261029/verification-identity-d8-full-s42.json",
+        "sha256": "a8063a6c9988c78b2df58944d84b829b654e33cc6df06bac8c9be4bdc9d1f843"
+      }
+    },
+    {
+      "dimension": 8,
+      "seed": 2026,
+      "prior": {
+        "path": "outputs/research-prior-20261029/identity-d8-full-s2026/prior.json",
+        "sha256": "7fad27f53db44632349aa13cb8ba83dedcf63be11b8f6077a7b9ca49b45095cf"
+      },
+      "fit_manifest": {
+        "path": "outputs/research-prior-20261029/identity-d8-full-s2026/fit-manifest.json",
+        "sha256": "e04379a1353b6c925ffbbb21188b56ad3a0280cdf4347acc421f3d5a7cc5767a"
+      },
+      "verification": {
+        "path": "outputs/research-prior-20261029/verification-identity-d8-full-s2026.json",
+        "sha256": "2a29e3e4f5725de9befb7f89a52fcfcc9c3e649b8b6ae27228d2f944853df037"
+      }
+    }
+  ],
+  "synthetic": false,
+  "paper_equivalent": false,
+  "manifest_sha256": "27a53ad1ee9ddb3d80df9dda5d49ad79c487ad4cf865da706145e27048c9e74f"
+}

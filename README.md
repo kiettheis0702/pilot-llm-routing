@@ -23,11 +23,41 @@ router deployment with binning/rollover and separate actual-cost accounting.
 A single command runs the complete synthetic pipeline below.
 
 The [implementation status](docs/implementation-status.md) distinguishes completed
-engineering work from blocked research runs. Read the [Data Gate findings](docs/data-gate.md),
+local research from unresolved paper equivalence. Read the [Data Gate findings](docs/data-gate.md),
 [preference readiness](docs/preference-readiness.md), and [verification log](docs/reproduction-log.md).
-Actual eleven-arm training and Figure 3/4 experiments remain blocked by verified
-model mappings, real embeddings, token counts/prices and scientific protocol decisions.
+Actual eleven-arm training remains blocked by three unresolved model mappings.
+The [local experiment protocol](docs/experiment-protocol.md) and tuning-only
+parameter selection are verified; the complete declared local budget/regret
+experiments are now available in the [results package](reports/full-experiments-2026-10-29/README.md).
 Synthetic smoke results and the 64-row RouterBench plumbing comparison are not paper results.
+
+The [local embedding pipeline](docs/local-research-pipeline.md) adds evidence-aware
+2/5/8-model preparation, resumable disk caches and staged fit/learn commands.
+Latest completed regression: **441 tests passed, one Windows symlink test skipped**
+in a new locked Python environment. See the [final handoff](docs/final-research-handoff-2026-10-29.md).
+The [tuning stage](docs/tuning-handoff-2026-10-29.md) has independently verified all
+48 candidates across RouterBench/MMLU, including held-out mutation invariance.
+All six declared research priors (64D/8D, seeds 7/42/2026) passed independent
+readback. The [full experiment runner](docs/full-experiments.md) now executes
+immutable prefix snapshots, budget grids and controlled ablations sequentially;
+all **858 primary and 240 ablation runs** completed, with **108/108 groups**
+independently replayed. Six figures, a nine-page report and an A1 poster passed
+numeric and visual checks. Complete
+BGE-M3 caches now cover 36,497 routing queries and 1,558 preference inputs. The
+first real eight-arm development prior passed independent readback and holdout
+checks; no paid API was called. At half the reference budget, PILOT trails
+LinUCB on RouterBench and ExploreOnly on the nested MMLU subset. All budgets,
+seed ranges, paired ablations and recorded-cost overruns are reported.
+The [full input audit](docs/offline-research-experiments.md) covers 38,055 prompts
+and selects the verified 2,048-token recipe: no routing truncation and 13 preference
+inputs truncated. [Cache/prior evidence](reports/full-embedding-prior-2026-10-29.json)
+and [current handoff](docs/full-embedding-prior-handoff-2026-10-29.md).
+The [offline cost inputs](docs/cost-inputs.md) now cover all routing queries and
+reconstruct all 11,000 tuning costs with an explicit dataset/source scale factor.
+The [common deployment adapter](docs/common-deployment-protocol.md) now supports
+PILOT and all baseline families. Real integration passed 13 methods × three smoke
+budgets on 128 learning / 64 deployment queries, with independent arithmetic and
+state replay. [Integration evidence](reports/common-deployment-2026-10-29.json).
 
 ## Scope
 
@@ -62,6 +92,9 @@ Use new output directories for each run; existing results are never overwritten.
 These CPU commands generate synthetic data locally and make no model/API calls.
 Verified in a fresh clone and new Python environment: 310 tests passed and both
 commands completed; [execution evidence](reports/reproducibility-2026-10-29.json).
+That is the historical committed baseline. This implementation
+was additionally verified before committing from a byte-preserving source snapshot in a new
+environment: 441 passed, one skipped and both smokes succeeded. [Current evidence](reports/full-experiments-2026-10-29/reproduction-post-review/report.json).
 See [toy outputs and interpretation](docs/toy-pipeline.md), [baseline commands](docs/baselines.md),
 [pretraining](docs/pretraining-core.md), [PILOT](docs/pilot-core.md),
 [cost policy](docs/cost-policy.md), and [deployment](docs/deployment.md).

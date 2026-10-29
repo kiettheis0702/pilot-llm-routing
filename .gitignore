@@ -2,6 +2,7 @@
 __pycache__/
 *.py[cod]
 .venv/
+.venv-embedding/
 venv/
 env/
 .python-version

@@ -1,0 +1,31 @@
+{
+  "verified": true,
+  "reviewer": "primary agent",
+  "method": "Poppler PNG render plus direct visual inspection of every page",
+  "report_pages": [
+    1,
+    2,
+    3,
+    4,
+    5,
+    6,
+    7,
+    8,
+    9
+  ],
+  "poster_pages": [
+    1
+  ],
+  "findings": [],
+  "checked": [
+    "readable text and legends",
+    "no overlap or clipping",
+    "table alignment",
+    "captions and limitations",
+    "all six figure pages"
+  ],
+  "pdf_sha256": {
+    "research-poster.pdf": "f286c03f91491a234271654007a3dc65d2f404ac30ec904653078bca7c86e94b",
+    "research-report.pdf": "f6a31056090fba3f9fcd86b5dbddd292f9abb93ed8050f14707f8966324ac345"
+  }
+}

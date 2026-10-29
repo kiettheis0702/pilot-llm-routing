@@ -16,6 +16,7 @@ import pandas as pd
 
 from scripts.data_gate import query_hash
 from scripts.fetch_data import ROOT, sha256, verify
+from scripts.model_mapping import resolve_mappings
 
 
 PAIR_COLUMNS = ["battle_id", "prompt", "prompt_hash", "arm_a", "arm_b", "winner_arm", "loser_arm"]
@@ -65,7 +66,8 @@ def exact_mapping(mappings: list[dict]) -> dict[str, str]:
     return exact
 
 
-def prepare_preferences(frame: pd.DataFrame, mappings: list[dict]) -> tuple[pd.DataFrame, dict]:
+def prepare_preferences(frame: pd.DataFrame, mappings: list[dict], *,
+                        mapping_policy: str = 'exact_id') -> tuple[pd.DataFrame, dict]:
     """Filter strict, single-turn comparisons; count every reason and first reason."""
     required = {"id", "model_a", "model_b", *LABELS, *TEXT_COLUMNS}
     if not frame.columns.is_unique or not required <= set(frame):
@@ -76,7 +78,7 @@ def prepare_preferences(frame: pd.DataFrame, mappings: list[dict]) -> tuple[pd.D
         raise ValueError("Battle identities must be nonempty strings or integers")
     if ids.astype(str).duplicated().any():
         raise ValueError("Battle identities must be unique")
-    exact = exact_mapping(mappings)
+    exact = resolve_mappings(mappings, mapping_policy)
     reasons, primary, accepted = Counter(), Counter(), []
     exact_both_rows = 0
     for row in frame.to_dict("records"):
@@ -118,6 +120,7 @@ def prepare_preferences(frame: pd.DataFrame, mappings: list[dict]) -> tuple[pd.D
                          "winner_arm": exact[winner], "loser_arm": exact[loser]})
     pairs = pd.DataFrame(accepted, columns=PAIR_COLUMNS).sort_values("battle_id").reset_index(drop=True)
     return pairs, {
+        "mapping_policy": mapping_policy,
         "source_rows": len(frame), "exact_both_models_rows": exact_both_rows,
         "eligible_rows": len(pairs), "excluded_rows": len(frame) - len(pairs),
         "missing_cells_by_column": {k: int(v) for k, v in frame.isna().sum().items() if v},

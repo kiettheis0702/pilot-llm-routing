@@ -1,0 +1,435 @@
+{
+  "version": 1,
+  "kind": "frozen-local-experiment-protocol",
+  "declared_date": "2026-10-29",
+  "status": "frozen before full deployment outcomes; execution incomplete",
+  "synthetic": false,
+  "paper_equivalent": false,
+  "scope": "complete declared eight-arm local primary and ablation experiments; full eleven-arm reproduction remains unresolved",
+  "arms": [
+    "WizardLM/WizardLM-13B-V1.2",
+    "claude-instant-v1",
+    "claude-v1",
+    "gpt-3.5-turbo-1106",
+    "gpt-4-1106-preview",
+    "meta/code-llama-instruct-34b-chat",
+    "meta/llama-2-70b-chat",
+    "zero-one-ai/Yi-34B-Chat"
+  ],
+  "primary_plan": {
+    "version": 1,
+    "status": "choices frozen with verified tuning/calibration in configs/frozen_experiment_protocol.json; full experiments pending",
+    "scope": "eight-arm local development experiments; full eleven-arm reproduction remains a separate unresolved target",
+    "mapping_policy": "identity_match",
+    "datasets": [
+      "routerbench",
+      "mmlu"
+    ],
+    "split_manifest_sha256": "989d3663aa4051f6ccd80bedf62e6ef789ead57d744c87fd14c828ac9b08a8a5",
+    "stream_order": "preserve original stream_position within each existing phase; MMLU filters task prefix mmlu- without resplitting",
+    "frozen_counts": {
+      "routerbench": {
+        "tuning": 1000,
+        "learning": 32270,
+        "deployment": 3227
+      },
+      "mmlu": {
+        "tuning": 398,
+        "learning": 12369,
+        "deployment": 1275
+      }
+    },
+    "replicate_seeds": [
+      7,
+      42,
+      2026
+    ],
+    "replicate_interpretation": "retrain preference projection/prior per seed, then use common contexts for every method in that replicate; policy RNG also uses the replicate seed; partitions and stream order stay fixed",
+    "pretraining": {
+      "dimension": 64,
+      "projection_epochs": 30,
+      "prior_epochs": 40,
+      "learning_rate": 0.03,
+      "margin": 0.2,
+      "holdout_use": "initialization coefficients only; no parameter selection or early stopping"
+    },
+    "embedding_recipe": "configs/local_embedding_full.json",
+    "tuning_grid": "configs/tuning_grid.json",
+    "tuning_prior_seed": 42,
+    "tuning_scope": "select separately for routerbench and filtered MMLU tuning subsets, then reuse selected parameters across all replicate seeds",
+    "learning_fractions": [
+      0.1,
+      0.25,
+      0.5,
+      1.0
+    ],
+    "learning_fraction_rule": "ceil(fraction * learning_count), nested prefixes of the unchanged learning stream",
+    "budget_reference_arm": "gpt-4-1106-preview",
+    "budget_reference_rule": "mean estimated tuning query cost of reference arm multiplied by deployment query count",
+    "budget_fractions": [
+      0.05,
+      0.1,
+      0.2,
+      0.3,
+      0.5,
+      0.75,
+      1.0,
+      1.25
+    ],
+    "learning_size_budget_fraction": 0.5,
+    "bin_size": 100,
+    "ratio_bounds_rule": "shared per dataset: LB=0.5*minimum and UB=2*maximum positive prequential score/cost ratio from selected tuning candidates",
+    "methods": [
+      "pilot",
+      "linucb",
+      "epoch-greedy",
+      "explore-only",
+      "random",
+      "each-fixed-arm"
+    ],
+    "deployment_adapter_protocol": "docs/common-deployment-protocol.md",
+    "primary_inventory": {
+      "full_learning_streams": 78,
+      "prefix_snapshots": 312,
+      "full_learning_budget_runs": 624,
+      "additional_learning_size_runs": 234,
+      "total_deployment_runs": 858
+    },
+    "primary_metrics": [
+      "total_reward",
+      "reward_per_requested_query",
+      "mean_reward_served",
+      "served_fraction",
+      "estimated_cost",
+      "actual_recorded_cost",
+      "actual_budget_excess",
+      "learning_cumulative_empirical_oracle_regret"
+    ],
+    "aggregation": "paired per-seed summaries; seed variation is descriptive and not a confidence interval over new datasets",
+    "resource_policy": "one heavy command and one worker; require at least 8 GiB available physical RAM before start; no paid API requests",
+    "ablation_plan": "configs/ablation_plan.json",
+    "ablation_inventory_status": "five controlled variants frozen before full deployment outcomes; 240 additional runs, 1098 primary plus ablation runs; execution pending"
+  },
+  "ablation_plan": {
+    "version": 1,
+    "status": "choices frozen before full deployment outcomes in configs/frozen_experiment_protocol.json; execution pending",
+    "parent_plan": "configs/main_experiment_plan.json",
+    "protocol": "docs/ablation-protocol.md",
+    "scope": "controlled sensitivity of the eight-arm local experiment; not paper-equivalent",
+    "datasets": [
+      "routerbench",
+      "mmlu"
+    ],
+    "replicate_seeds": [
+      7,
+      42,
+      2026
+    ],
+    "learning_fraction": 1.0,
+    "budget_fractions": [
+      0.05,
+      0.1,
+      0.2,
+      0.3,
+      0.5,
+      0.75,
+      1.0,
+      1.25
+    ],
+    "reference_method": "pilot",
+    "parameter_selection": "reuse main per-domain alpha and ratio bounds; no ablation retuning",
+    "paired_controls": [
+      "arm catalog and frozen query order",
+      "preference train/holdout and routing tuning/learning/deployment splits",
+      "replicate seed and main per-domain selected alpha",
+      "tuning-only response estimates, token prices and absolute budget",
+      "common frozen deployment adapter, exhaustion rule and tie order"
+    ],
+    "variants": [
+      {
+        "id": "zero-prior-direction",
+        "change": "set every initial arm theta to a zero vector; retain the matched learned projection and holdout-derived lambdas",
+        "learning": "new full stream",
+        "interpretation": "effect of learned arm directions conditional on the learned projection and arm-specific initialization strengths; not removal of all preference information"
+      },
+      {
+        "id": "unit-initialization-strength",
+        "change": "set every lambda to 1; retain the matched learned projection and arm theta",
+        "learning": "new full stream",
+        "interpretation": "effect of inverse-holdout-accuracy initialization strengths conditional on learned arm directions"
+      },
+      {
+        "id": "prior-only",
+        "change": "freeze the matched initialized PILOT before any routing-learning feedback",
+        "learning": "none; snapshot rounds must be 0",
+        "interpretation": "effect of online routing updates relative to the same preference initialization; learning selection is an unused disjoint reference, not evidence of training"
+      },
+      {
+        "id": "single-budget-bin",
+        "change": "reuse the exact main full-learning snapshot; set bin_size to the number of deployment queries",
+        "learning": "reuse main full-learning snapshot",
+        "interpretation": "effect of bin partitioning; ratio threshold, estimated affordability, fallback and recorded-cost accounting remain enabled"
+      },
+      {
+        "id": "projection-dimension-8",
+        "change": "retrain projection and arm prior at dimension 8 using the main 30 projection epochs, 40 prior epochs, learning rate 0.03 and margin 0.2 for each replicate seed",
+        "learning": "new full stream with the matched 8-dimensional projection",
+        "interpretation": "sensitivity to projection dimension with BGE-M3 unchanged; does not compare BGE-M3 with the paper's embedding provider; do not use the 2/5-epoch smoke prior"
+      }
+    ],
+    "inventory": {
+      "variants": 5,
+      "additional_full_learning_streams": 18,
+      "new_learned_snapshots": 18,
+      "new_initial_snapshots": 6,
+      "reused_main_snapshots": 6,
+      "additional_prior_fits": 3,
+      "additional_deployment_runs": 240,
+      "primary_plus_ablation_deployment_runs": 1098,
+      "additional_learning_rounds": 401751,
+      "additional_requested_deployment_rounds": 540240
+    },
+    "learning_size_comparison": "reuse the 0.1/0.25/0.5/1.0 nested-prefix primary runs at budget fraction 0.5; no duplicated runs",
+    "aggregation": "pair by dataset, replicate seed and budget fraction; report every seed delta plus mean/min/max, without significance or confidence-interval claims",
+    "failure_rule": "missing or invalid required prior, candidate, trace, seed or budget marks the comparison incomplete; never substitute a seed, omit a failed arm or use an unvalidated lambda fallback",
+    "publication_rule": "report all declared variants, including unfavorable or identical results; annotate fixed-alpha, shared-bound and inherited model-identity limitations"
+  },
+  "tuning": {
+    "routerbench": {
+      "stage": {
+        "path": "outputs/research-tuning-20261029/routerbench-d64-s42/manifest.json",
+        "sha256": "4248401d731497cd45c826b39640fc365bc48c080d676e4e60f81f0d3875f26c"
+      },
+      "search": {
+        "path": "outputs/research-tuning-20261029/routerbench-d64-s42/search/manifest.json",
+        "sha256": "73b6e7d8ce32b882c45f7ef92ff773a532ecbe1b19b9c1b5807038aba6b1316a"
+      },
+      "estimator": {
+        "path": "outputs/research-tuning-20261029/routerbench-d64-s42/estimator.json",
+        "sha256": "2ea1bbd9a642989d6614e22cbcfefc6150dc93e19b677627b4edb7000322364e"
+      },
+      "calibration": {
+        "path": "outputs/research-tuning-20261029/routerbench-d64-s42/calibration.json",
+        "sha256": "3c93e20bb91c9a5cf444cecf161e861be1b6ce1717628a3dfc1ebe900eed6114"
+      },
+      "selected_parameters": {
+        "pilot": {
+          "alpha": 1.0
+        },
+        "linucb": {
+          "alpha": 5.0
+        },
+        "epoch-greedy": {
+          "window": 10
+        },
+        "explore-only": {},
+        "random": {},
+        "fixed-00": {
+          "arm_id": "WizardLM/WizardLM-13B-V1.2"
+        },
+        "fixed-01": {
+          "arm_id": "claude-instant-v1"
+        },
+        "fixed-02": {
+          "arm_id": "claude-v1"
+        },
+        "fixed-03": {
+          "arm_id": "gpt-3.5-turbo-1106"
+        },
+        "fixed-04": {
+          "arm_id": "gpt-4-1106-preview"
+        },
+        "fixed-05": {
+          "arm_id": "meta/code-llama-instruct-34b-chat"
+        },
+        "fixed-06": {
+          "arm_id": "meta/llama-2-70b-chat"
+        },
+        "fixed-07": {
+          "arm_id": "zero-one-ai/Yi-34B-Chat"
+        }
+      },
+      "bounds": {
+        "lower_bound": 0.039392639811913426,
+        "upper_bound": 108195.24914660997
+      },
+      "reference_estimated_cost_per_query": 0.00317064,
+      "absolute_reference_budget": 10.23165528
+    },
+    "mmlu": {
+      "stage": {
+        "path": "outputs/research-tuning-20261029/mmlu-d64-s42/manifest.json",
+        "sha256": "c1502a9bda157dd5cf353ad1a8cb01dc291e2d12030fda0185880e435b57a8f1"
+      },
+      "search": {
+        "path": "outputs/research-tuning-20261029/mmlu-d64-s42/search/manifest.json",
+        "sha256": "8ff3698460144036023be254547ac303513119182dd6bf3f3d59aa2ec6c90a09"
+      },
+      "estimator": {
+        "path": "outputs/research-tuning-20261029/mmlu-d64-s42/estimator.json",
+        "sha256": "fd276c2688d640cfb8a8511f41555371e7dfc76b91be1650f7bf4c740f66f8de"
+      },
+      "calibration": {
+        "path": "outputs/research-tuning-20261029/mmlu-d64-s42/calibration.json",
+        "sha256": "3cc50382a58355dc6789eba8a054ba962048646f757d645ec7d228df6eb708f5"
+      },
+      "selected_parameters": {
+        "pilot": {
+          "alpha": 1.0
+        },
+        "linucb": {
+          "alpha": 5.0
+        },
+        "epoch-greedy": {
+          "window": 10
+        },
+        "explore-only": {},
+        "random": {},
+        "fixed-00": {
+          "arm_id": "WizardLM/WizardLM-13B-V1.2"
+        },
+        "fixed-01": {
+          "arm_id": "claude-instant-v1"
+        },
+        "fixed-02": {
+          "arm_id": "claude-v1"
+        },
+        "fixed-03": {
+          "arm_id": "gpt-3.5-turbo-1106"
+        },
+        "fixed-04": {
+          "arm_id": "gpt-4-1106-preview"
+        },
+        "fixed-05": {
+          "arm_id": "meta/code-llama-instruct-34b-chat"
+        },
+        "fixed-06": {
+          "arm_id": "meta/llama-2-70b-chat"
+        },
+        "fixed-07": {
+          "arm_id": "zero-one-ai/Yi-34B-Chat"
+        }
+      },
+      "bounds": {
+        "lower_bound": 0.1433755409743282,
+        "upper_bound": 113008.78799494584
+      },
+      "reference_estimated_cost_per_query": 0.0014071105527638191,
+      "absolute_reference_budget": 1.7940659547738693
+    }
+  },
+  "input_and_protocol_files": [
+    {
+      "path": "configs/model_mapping.json",
+      "sha256": "ca00ca697ca0368d9438860e2e6378e419d20920df1dd2fa827c12e63dbaf7fd"
+    },
+    {
+      "path": "configs/local_embedding_full.json",
+      "sha256": "fd9f8f83dc6271671f23bbf382c312be92d4d07eb827285e958a506a8fa4c5f3"
+    },
+    {
+      "path": "configs/routerbench_costs.json",
+      "sha256": "87a78411730025d567d28b764f3946864d4a4211b6c3faa9c4e8c989f5b8f718"
+    },
+    {
+      "path": "configs/tuning_grid.json",
+      "sha256": "5cadba21a8264cbbcad935da7ca2ce03353e85420b70ff000b7f7f522e66f4dd"
+    },
+    {
+      "path": "configs/main_experiment_plan.json",
+      "sha256": "6b89fe73c4e7622a4fc36273da2c5a958fe02deda42c485e8787e0f9d500be17"
+    },
+    {
+      "path": "configs/ablation_plan.json",
+      "sha256": "0285e9742518f875b16d9a111d0986743f7d74f95d8fb18579428cdc485f57b9"
+    },
+    {
+      "path": "docs/common-deployment-protocol.md",
+      "sha256": "b252bc6d327fe85d29db21315ecca61f5bcef3b0d9bd7ecae53dbe06ba73f357"
+    },
+    {
+      "path": "docs/ablation-protocol.md",
+      "sha256": "5e830b627e46f9c07e4fe2248e509887dd7d4b910a50dba5f5d5aaf8e982cfd7"
+    },
+    {
+      "path": "docs/experiment-protocol.md",
+      "sha256": "3e9ee03b13dd0ba671ecb071eaa65dd071d64383f38cfb2557826de1952b2ddd"
+    },
+    {
+      "path": "data/processed/routerbench_0shot/queries.parquet",
+      "sha256": "14542cd83a43f7fb64655e21e0e1c8fec48b0753a7334015099b065e061a058a"
+    },
+    {
+      "path": "data/processed/routerbench_0shot/outcomes.parquet",
+      "sha256": "82eb9baeab0452d1b59ee053ae7205b641cb70e22deae5e71b86596ffcd87ca4"
+    },
+    {
+      "path": "data/processed/routerbench_0shot/splits.csv",
+      "sha256": "989d3663aa4051f6ccd80bedf62e6ef789ead57d744c87fd14c828ac9b08a8a5"
+    },
+    {
+      "path": "outputs/local-pipeline-verification-20261029/prepared-identity/manifest.json",
+      "sha256": "9d1cc854c431ddce40bce59940d23d7bc0cd7de7db38c1d487121f6179c63c91"
+    },
+    {
+      "path": "outputs/research-input-audit-20261029/inputs/manifest.json",
+      "sha256": "88b3fc0a5d46e772a4ea9e5ef805988083ce0929ce36ecd15858c56ef2d2cd63"
+    },
+    {
+      "path": "outputs/research-cost-inputs-20261029/manifest.json",
+      "sha256": "f42751bfc391385ce2cdbe1e69e99f9cf23eaba5e92a375979e224ad8dfb40a7"
+    },
+    {
+      "path": "outputs/research-embeddings-20261029/preference-identity/manifest.json",
+      "sha256": "97cec9959bb3f94ad45490d1e639333519cdb55d207256d66a19360abbf41926"
+    },
+    {
+      "path": "outputs/research-embeddings-20261029/routing-full/manifest.json",
+      "sha256": "5f78242b814dc68cb07a717c26b4c638fda27380329daaf40a2355c765e665d4"
+    }
+  ],
+  "seed42_prior": {
+    "path": "outputs/research-prior-20261029/identity-d64-s42/prior.json",
+    "sha256": "7f972a01dd6d70aeef4710c52f348c6806b3d25bea8105029b5cd27accd2e3a3"
+  },
+  "seed42_prior_verification": {
+    "path": "outputs/research-prior-20261029/verification-d64.json",
+    "sha256": "1654a7d1d82512bf999889d0e9d11465b9d4635971aa347e6b44e887f92a24e1"
+  },
+  "tuning_verification": {
+    "path": "outputs/research-tuning-20261029/verification.json",
+    "sha256": "93fb6d0d0a259613ce6f8d4f3e675a821bcbc55cc2d09019db47ae8b92c48270"
+  },
+  "tuning_isolation_verification": {
+    "path": "outputs/research-tuning-20261029/isolation-verification.json",
+    "sha256": "d79ab5a2c7ebbf05a7f55f2febe1b587d79acab9739ab448a7dc93ad02cf061a"
+  },
+  "resource_evidence": {
+    "sample_file": {
+      "path": "outputs/research-tuning-20261029/mmlu-resource-samples.json",
+      "sha256": "cad71e50308757433a11ca06bed725fd3e4e359c5d27a8383ea8ee7deea60271"
+    },
+    "sample_count": 7,
+    "maximum_observed_combined_private_working_set_bytes": 320962560,
+    "minimum_sampled_available_gib": 9.377372741699219,
+    "routerbench_tuning_wall_seconds": 13.6958804,
+    "mmlu_tuning_wall_seconds": 9.8870491,
+    "learning_only_extrapolation_seconds": 1222.7408103512,
+    "trace_storage_allowance_bytes": 14175037440,
+    "limitations": "sampled maximum is not exact peak; extrapolation excludes remaining preference fits, deployment and verification and assumes the tuning average despite different method mix"
+  },
+  "remaining_reproduction_blockers": [
+    "three unresolved model bridges and historical serving equivalence",
+    "authors exact RouterBench shot/release and 86-versus-64 task relationship",
+    "authors exact Arena release/preparation and 500-example holdout",
+    "BGE-M3 and declared numeric/selection/baseline adaptations differ from paper setup"
+  ],
+  "execution_rules": [
+    "one heavy job, one worker, >=8 GiB available physical RAM before start",
+    "no paid API without separate per-run approval",
+    "fail on mismatched pinned inputs or absent required condition; no silent drop/fallback",
+    "publish immutable complete manifests last; record runtime code hashes per job",
+    "report every seed/budget/variant and keep incomplete reports explicit"
+  ],
+  "manifest_sha256": "158569db26991e709c1ec5a45256c25d17ca6e6a81180c1c039734a36fd870c6"
+}

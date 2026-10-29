@@ -1,0 +1,9 @@
+# Windows CPython 3.11 / RTX 5070. Direct CUDA wheel from official index.
+torch @ https://download-r2.pytorch.org/whl/cu128/torch-2.8.0%2Bcu128-cp311-cp311-win_amd64.whl#sha256=34c55443aafd31046a7963b63d30bc3b628ee4a704f826796c865fdfd05bb596
+transformers==4.57.1
+huggingface-hub==0.36.0
+safetensors==0.6.2
+sentencepiece==0.2.1
+numpy==2.4.6
+pandas==2.3.3
+pyarrow==26.0.0

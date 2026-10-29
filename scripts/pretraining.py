@@ -2,6 +2,7 @@
 from __future__ import annotations
 
 import copy
+from collections import Counter
 import hashlib
 import json
 from pathlib import Path
@@ -163,8 +164,9 @@ class EmbeddingCache:
 
 
 def validate_comparisons(cache, comparisons, arms):
+    from scripts.embedding_store import DiskEmbeddingCache
     arms = _names(arms, "arm catalog")
-    if not isinstance(cache, EmbeddingCache) or not isinstance(comparisons, (list, tuple)) or not comparisons:
+    if not isinstance(cache, (EmbeddingCache, DiskEmbeddingCache)) or not isinstance(comparisons, (list, tuple)) or not comparisons:
         raise ValueError("Expected cache and nonempty comparisons")
     rows, battles, group_splits = [], set(), {}
     prompt_hashes = dict(zip(cache.ids, cache.prompt_hashes))
@@ -211,11 +213,25 @@ def sample_triplets(cache, comparisons, arms, sizes, size_provenance, seed=42):
         positive = [row for row in train if row["winner"] == winner and hashes[row["query_id"]] != hashes[aq]]
         negative = [row for row in train if row["loser"] == winner and sizes[row["winner"]] < sizes[winner]
                     and hashes[row["query_id"]] != hashes[aq]]
-        choices = [(p["query_id"], n["query_id"]) for p in positive for n in negative
-                   if hashes[p["query_id"]] != hashes[n["query_id"]]]
-        if choices:
-            pq, nq = choices[int(rng.integers(len(choices)))]
-            triplets.append((aq, pq, nq))
+        # One integer selects the same ordered uniform pair as an enumerated
+        # Cartesian product, but only candidate rows/counts are retained.
+        negative_groups = Counter(hashes[n['query_id']] for n in negative)
+        counts = [len(negative) - negative_groups[hashes[p['query_id']]] for p in positive]
+        total = sum(counts)
+        if total:
+            ticket = int(rng.integers(total))
+            for p, count in zip(positive, counts):
+                if ticket >= count:
+                    ticket -= count
+                    continue
+                for n in negative:
+                    if hashes[n['query_id']] == hashes[p['query_id']]:
+                        continue
+                    if ticket == 0:
+                        triplets.append((aq, p['query_id'], n['query_id']))
+                        break
+                    ticket -= 1
+                break
     if not triplets:
         raise ValueError("No valid preference triplets under the supplied strict size order")
     return {"triplets": triplets, "eligible_anchors": len(triplets), "unusable_anchors": len(train) - len(triplets),
@@ -289,13 +305,14 @@ def train_projection(cache, comparisons, arms, sizes, size_provenance, *, dimens
     rng = np.random.default_rng(seed)
     W = rng.normal(size=(dimension, cache.dimension)) / np.sqrt(cache.dimension)
     b = np.zeros(dimension)
-    triplets = [tuple(cache.get(q) for q in ids) for ids in sampled["triplets"]]
+    triplets = sampled["triplets"]
     def objective():
-        return float(np.mean([triplet_loss_grad(W, b, *vectors, margin=margin)[0] for vectors in triplets]))
+        return sum(triplet_loss_grad(W, b, *(cache.get(q) for q in ids), margin=margin)[0]
+                   for ids in triplets) / len(triplets)
     losses = [objective()]
     for _ in range(epochs):
         for index in rng.permutation(len(triplets)):
-            _, dW, db = triplet_loss_grad(W, b, *triplets[index], margin=margin)
+            _, dW, db = triplet_loss_grad(W, b, *(cache.get(q) for q in triplets[index]), margin=margin)
             W, b = _array(W - rate * dW, shape=W.shape), _array(b - rate * db, shape=b.shape)
         losses.append(objective())
     return {"W": W, "b": b, "losses": losses, "sampling": sampled}
@@ -474,7 +491,12 @@ def project_cache(checkpoint, cache):
     checkpoint = _validate_checkpoint(checkpoint)
     if cache.provenance != checkpoint["embedding"]["recipe"] or cache.dimension != checkpoint["input_dimension"]:
         raise ValueError("Embedding recipe/dimension differs from the trained projection")
-    result = cache.vectors @ checkpoint["W"].T + checkpoint["b"]
+    if hasattr(cache, 'iter_vectors'):
+        result = np.empty((len(cache.ids), checkpoint['dimension']), dtype=np.float64)
+        for start, vectors in cache.iter_vectors():
+            result[start:start + len(vectors)] = vectors @ checkpoint['W'].T + checkpoint['b']
+    else:
+        result = cache.vectors @ checkpoint["W"].T + checkpoint["b"]
     for vector in result:
         _unit(vector)
     return result

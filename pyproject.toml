@@ -10,6 +10,10 @@ dependencies = [
     "pyarrow>=18",
 ]
 
+[project.optional-dependencies]
+# Match the pinned RouterBench cost converter; no generation SDK is required.
+cost = ["tiktoken==0.5.2"]
+
 [dependency-groups]
 dev = ["pytest>=8,<10"]
 

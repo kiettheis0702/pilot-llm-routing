@@ -1,0 +1,291 @@
+{
+  "status": "Complete offline token and cost inputs; final evaluation protocol remains pending",
+  "manifest_sha256": "b81f3a49576ccd639ddeb14bae4d7c63dc0cd71328a924e77c2d6bc13d7b9ed5",
+  "source_hashes": {
+    "outcomes.parquet": "82eb9baeab0452d1b59ee053ae7205b641cb70e22deae5e71b86596ffcd87ca4",
+    "queries.parquet": "14542cd83a43f7fb64655e21e0e1c8fec48b0753a7334015099b065e061a058a",
+    "splits.csv": "989d3663aa4051f6ccd80bedf62e6ef789ead57d744c87fd14c828ac9b08a8a5"
+  },
+  "raw_source_sha256": "ba4f77f19517610a707c374e99322d7750c30fc4ae7ff5527888595a1e65d36d",
+  "price_spec_sha256": "3db96c4499546f1be56ca11247752fdc4206b254bcad7548ce4f75494b1e9682",
+  "price_spec": {
+    "version": 1,
+    "currency": "USD as recorded in the pinned RouterBench dataset",
+    "source_url": "https://github.com/withmartian/routerbench/blob/30e0925ac07a45108b9ee82086040a5664ea83e6/routers/common.py",
+    "source_revision": "30e0925ac07a45108b9ee82086040a5664ea83e6",
+    "source_date": "2024-03-18",
+    "source_file_sha256": "27f853b177840036dbe2876c2fd0ac8fa68389f5d294fb73d94e30dd7c7105ec",
+    "source_divisor": 10000000,
+    "dataset_multiplier": 10,
+    "calibration_provenance": "All 1000 frozen tuning queries x 11 arms have recorded costs exactly 10 times the public-source formula within float tolerance; validated again by the cost-input export. No deployment response/cost is used for calibration. These are benchmark accounting rates, not a provider quote or invoice.",
+    "rates": {
+      "WizardLM/WizardLM-13B-V1.2": {
+        "input": 0.3,
+        "output": 0.3
+      },
+      "claude-instant-v1": {
+        "input": 0.8,
+        "output": 2.4
+      },
+      "claude-v1": {
+        "input": 8.0,
+        "output": 24.0
+      },
+      "claude-v2": {
+        "input": 8.0,
+        "output": 24.0
+      },
+      "gpt-3.5-turbo-1106": {
+        "input": 1.0,
+        "output": 2.0
+      },
+      "gpt-4-1106-preview": {
+        "input": 10.0,
+        "output": 30.0
+      },
+      "meta/code-llama-instruct-34b-chat": {
+        "input": 0.776,
+        "output": 0.776
+      },
+      "meta/llama-2-70b-chat": {
+        "input": 0.9,
+        "output": 0.9
+      },
+      "mistralai/mistral-7b-chat": {
+        "input": 0.2,
+        "output": 0.2
+      },
+      "mistralai/mixtral-8x7b-chat": {
+        "input": 0.6,
+        "output": 0.6
+      },
+      "zero-one-ai/Yi-34B-Chat": {
+        "input": 0.8,
+        "output": 0.8
+      }
+    }
+  },
+  "tokenizer": {
+    "implementation": "tokencost 0.0.5 count_string_tokens semantics",
+    "tokenizer": "cl100k_base",
+    "tiktoken_version": "0.5.2",
+    "vocabulary_sha256": "223921b76ee99bde995b7ff738513eef100fb51d18c93597a113bcffe865b2a7",
+    "vocabulary_url": "https://openaipublic.blob.core.windows.net/encodings/cl100k_base.tiktoken",
+    "special_token_behavior": "reject reserved markers, matching encoding.encode defaults",
+    "segment_behavior": "count each original segment separately, then sum",
+    "limitation": "Benchmark fallback for non-OpenAI model names; not their native billing tokenizer",
+    "network": false,
+    "synthetic": false
+  },
+  "calibration": {
+    "all_matched": true,
+    "matched_pairs": 11000,
+    "tuning_queries": 1000,
+    "per_arm": {
+      "WizardLM/WizardLM-13B-V1.2": {
+        "pairs": 1000,
+        "matched": 1000,
+        "max_absolute_error": 2.710505431213761e-20
+      },
+      "claude-instant-v1": {
+        "pairs": 1000,
+        "matched": 1000,
+        "max_absolute_error": 1.0842021724855044e-19
+      },
+      "claude-v1": {
+        "pairs": 1000,
+        "matched": 1000,
+        "max_absolute_error": 8.673617379884035e-19
+      },
+      "claude-v2": {
+        "pairs": 1000,
+        "matched": 1000,
+        "max_absolute_error": 1.734723475976807e-18
+      },
+      "gpt-3.5-turbo-1106": {
+        "pairs": 1000,
+        "matched": 1000,
+        "max_absolute_error": 1.0842021724855044e-19
+      },
+      "gpt-4-1106-preview": {
+        "pairs": 1000,
+        "matched": 1000,
+        "max_absolute_error": 1.734723475976807e-18
+      },
+      "meta/code-llama-instruct-34b-chat": {
+        "pairs": 1000,
+        "matched": 1000,
+        "max_absolute_error": 1.0842021724855044e-19
+      },
+      "meta/llama-2-70b-chat": {
+        "pairs": 1000,
+        "matched": 1000,
+        "max_absolute_error": 1.0842021724855044e-19
+      },
+      "mistralai/mistral-7b-chat": {
+        "pairs": 1000,
+        "matched": 1000,
+        "max_absolute_error": 2.710505431213761e-20
+      },
+      "mistralai/mixtral-8x7b-chat": {
+        "pairs": 1000,
+        "matched": 1000,
+        "max_absolute_error": 5.421010862427522e-20
+      },
+      "zero-one-ai/Yi-34B-Chat": {
+        "pairs": 1000,
+        "matched": 1000,
+        "max_absolute_error": 1.0842021724855044e-19
+      }
+    },
+    "source_divisor": 10000000,
+    "dataset_multiplier": 10,
+    "relative_tolerance": 1e-10,
+    "absolute_tolerance": 1e-12
+  },
+  "verification": {
+    "probes": [
+      {
+        "name": "all file checksums and completed manifest readback",
+        "passed": true
+      },
+      {
+        "name": "source price constants and divisor verified by static AST without executing source",
+        "passed": true
+      },
+      {
+        "name": "all eleven historical model lookups resolve or fall back to cl100k",
+        "passed": true
+      },
+      {
+        "name": "independent native tokenizer agrees on sampled query segments",
+        "passed": true
+      },
+      {
+        "name": "tuning response means agree with prior independent raw-data probe",
+        "passed": true
+      },
+      {
+        "name": "reconstructed estimator matches saved artifact and accepts frozen deployment split",
+        "passed": true
+      },
+      {
+        "name": "complete input coverage and tuning-only output IDs",
+        "passed": true
+      },
+      {
+        "name": "repeat CLI refuses existing output before mutation",
+        "passed": true
+      },
+      {
+        "name": "real wrong-scale CLI rejects all 11000 mismatches before output creation",
+        "passed": true
+      }
+    ],
+    "independent_query_samples": 183,
+    "manifest_sha256": "b81f3a49576ccd639ddeb14bae4d7c63dc0cd71328a924e77c2d6bc13d7b9ed5",
+    "input_queries": 36497,
+    "calibration": {
+      "all_matched": true,
+      "matched_pairs": 11000,
+      "tuning_queries": 1000,
+      "per_arm": {
+        "WizardLM/WizardLM-13B-V1.2": {
+          "pairs": 1000,
+          "matched": 1000,
+          "max_absolute_error": 2.710505431213761e-20
+        },
+        "claude-instant-v1": {
+          "pairs": 1000,
+          "matched": 1000,
+          "max_absolute_error": 1.0842021724855044e-19
+        },
+        "claude-v1": {
+          "pairs": 1000,
+          "matched": 1000,
+          "max_absolute_error": 8.673617379884035e-19
+        },
+        "claude-v2": {
+          "pairs": 1000,
+          "matched": 1000,
+          "max_absolute_error": 1.734723475976807e-18
+        },
+        "gpt-3.5-turbo-1106": {
+          "pairs": 1000,
+          "matched": 1000,
+          "max_absolute_error": 1.0842021724855044e-19
+        },
+        "gpt-4-1106-preview": {
+          "pairs": 1000,
+          "matched": 1000,
+          "max_absolute_error": 1.734723475976807e-18
+        },
+        "meta/code-llama-instruct-34b-chat": {
+          "pairs": 1000,
+          "matched": 1000,
+          "max_absolute_error": 1.0842021724855044e-19
+        },
+        "meta/llama-2-70b-chat": {
+          "pairs": 1000,
+          "matched": 1000,
+          "max_absolute_error": 1.0842021724855044e-19
+        },
+        "mistralai/mistral-7b-chat": {
+          "pairs": 1000,
+          "matched": 1000,
+          "max_absolute_error": 2.710505431213761e-20
+        },
+        "mistralai/mixtral-8x7b-chat": {
+          "pairs": 1000,
+          "matched": 1000,
+          "max_absolute_error": 5.421010862427522e-20
+        },
+        "zero-one-ai/Yi-34B-Chat": {
+          "pairs": 1000,
+          "matched": 1000,
+          "max_absolute_error": 1.0842021724855044e-19
+        }
+      },
+      "source_divisor": 10000000,
+      "dataset_multiplier": 10,
+      "relative_tolerance": 1e-10,
+      "absolute_tolerance": 1e-12
+    },
+    "mean_output_tokens": {
+      "WizardLM/WizardLM-13B-V1.2": 53.617,
+      "claude-instant-v1": 33.085,
+      "claude-v1": 26.197,
+      "claude-v2": 36.465,
+      "gpt-3.5-turbo-1106": 25.801,
+      "gpt-4-1106-preview": 44.414,
+      "meta/code-llama-instruct-34b-chat": 33.85,
+      "meta/llama-2-70b-chat": 36.865,
+      "mistralai/mistral-7b-chat": 39.655,
+      "mistralai/mixtral-8x7b-chat": 36.116,
+      "zero-one-ai/Yi-34B-Chat": 43.45
+    }
+  },
+  "files": {
+    "input-counts.json": "8ce84e5066cd3a445929c462249c6ecf7da29000f62860e2930f5fdc70ad59b9",
+    "tuning-output-counts.json": "6ad9469a4b5f7401dec272a815932877c36661b0a08d1cf300432a6da95a0936",
+    "estimator.json": "ad9692e5befd9534c425eeca1cdf81af9694f01ff4a8f643579c37044f547fbd",
+    "cost-size-exact_id.json": "82303ebebd7fb262277f01ac71c35fc0ba3160ee61221b70287792d1db6fb24f",
+    "cost-size-verified_alias.json": "b54107a03dd939f6e914cb9ace00e3a9f87a1e2913fbef4202aa2a6e98c89cba",
+    "cost-size-identity_match.json": "1f6f2bd7160d223d53bfd79a4b854e298bd9760d96a2c527f092798071f48ec2"
+  },
+  "mapping_sha256": "ca00ca697ca0368d9438860e2e6378e419d20920df1dd2fa827c12e63dbaf7fd",
+  "limitations": [
+    "Source formula is scaled explicitly by tuning-only dataset calibration",
+    "cl100k_base is the historical benchmark fallback for non-OpenAI arms",
+    "Triplet scalar order uses a declared local 1:1 input/output mix",
+    "Exact PILOT data/shot release and three Arena model bridges remain unresolved"
+  ],
+  "tests": {
+    "passed": 360,
+    "skipped": 1,
+    "failed": 0,
+    "seconds": 6.27
+  },
+  "evidence_directory": "outputs\\research-cost-inputs-20261029",
+  "paid_api_requests": 0
+}

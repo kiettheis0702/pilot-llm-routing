@@ -1,0 +1,15 @@
+{
+  "version": 1,
+  "kind": "local-research-deliverables",
+  "aggregate_manifest_sha256": "2f699163f0a72844044e3b09eb026dacdbf2bcaeb0bc464b36426850a393feb2",
+  "figure_manifest_sha256": "8eb6c011ec06961b1637898e75d5ac73ae7f75ca7959696a01e5f6c3b7d7458c",
+  "report_pages": 9,
+  "poster_pages": 1,
+  "script_sha256": "b8b9c59982924fd48f4a45ddd12bd537b96af5454b346f825255f1b00a364fd0",
+  "synthetic": false,
+  "paper_equivalent": false,
+  "files": {
+    "research-poster.pdf": "f286c03f91491a234271654007a3dc65d2f404ac30ec904653078bca7c86e94b",
+    "research-report.pdf": "f6a31056090fba3f9fcd86b5dbddd292f9abb93ed8050f14707f8966324ac345"
+  }
+}

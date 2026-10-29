@@ -1,0 +1,451 @@
+{
+  "date": "2026-10-29",
+  "kind": "common-deployment-verification",
+  "scope": "Common adapter and bounded real integration; full research not complete",
+  "synthetic": false,
+  "paper_equivalent": false,
+  "paid_api_calls": 0,
+  "branch": "codex/data-gate",
+  "head": "47ce94384f9c4a709f9bc85a02c7eb344cce75ae",
+  "working_tree": "uncommitted local changes",
+  "source_sha256": {
+    "scripts/cost_policy.py": "56d9c5313060b5d08e353fc97ffeaa447f6caf81b1e5bf65dd7532bcd7b2e1e5",
+    "scripts/deployment.py": "775b174bb394e49fe944efa7aea78ee32946382dd64a68c823c2f96dc1b19935",
+    "scripts/deployment_adapter.py": "174823185e484f82192a983c53940fd196f1164d3bb842f532de813894e03ae1",
+    "tests/test_common_deployment.py": "04d8dc3800f826915ec656d0a8ec427158aaf0be81fa54da8c93282ecf9284e8",
+    "docs/common-deployment-protocol.md": "b252bc6d327fe85d29db21315ecca61f5bcef3b0d9bd7ecae53dbe06ba73f357"
+  },
+  "tests": {
+    "red": {
+      "command": ".venv/Scripts/python.exe -m pytest tests/test_common_deployment.py -q --basetemp outputs/pytest-common-deploy-red-20261029-a --tb=short",
+      "failed": 28,
+      "reason": "Missing domain/options, frozen adapter and explicit common runner",
+      "preflight_available_gib": 8.39261245727539
+    },
+    "targeted": {
+      "passed": 139,
+      "seconds": 0.81,
+      "preflight_available_gib": 8.313819885253906
+    },
+    "full": {
+      "command": ".venv/Scripts/python.exe -m pytest -q --basetemp outputs/pytest-common-deploy-full-20261029-a --junitxml outputs/common-deploy-regression-20261029.xml",
+      "passed": 390,
+      "skipped": 1,
+      "failed": 0,
+      "seconds": 6.88,
+      "preflight_available_gib": 8.261146545410156,
+      "workers": 1,
+      "baseline": "362 passed, 1 skipped before this adapter",
+      "junit_sha256": "b7474b135200fcecc4257f7f7f70a81522ab95b0c8d07a329210044f818ec16c"
+    }
+  },
+  "integration": {
+    "command": ".venv/Scripts/python.exe outputs/common-deployment-20261029/run_real_smoke.py",
+    "script_sha256": "917f46682b5cea40f83e0783d1f40555793687ce51bd793cb9e3df004c3aa6ec",
+    "exit_code": 0,
+    "elapsed_seconds": 4.512645699986024,
+    "methods": 13,
+    "budgets": [
+      0.0,
+      0.02,
+      1.0
+    ],
+    "bin_size": 16,
+    "lower_bound": 1.0,
+    "upper_bound": 100000.0,
+    "learning_rows": 128,
+    "deployment_rows": 64,
+    "tuning_rows": 1000,
+    "seed": 42,
+    "runs": 39,
+    "preflight": {
+      "heavy_jobs": [],
+      "available_gib": 8.175376892089844
+    },
+    "manifest_sha256": "b9fbee5fce1b5a5744d49a5fdaa629e86f9dc838c7a7c074ff554ebaa7a5c48c",
+    "prior_sha256": "e081310dc40103ebe9444af617b1d5a21399219dfc34f30fa78155b6e6c0986e",
+    "cache_sha256": "da4c06f8ad62999c7a187c2f08027b5bb7b378ac7a9c3a645830dc5bd94ea4ad",
+    "cost_manifest_sha256": "b81f3a49576ccd639ddeb14bae4d7c63dc0cd71328a924e77c2d6bc13d7b9ed5",
+    "source_hashes": {
+      "outcomes.parquet": "82eb9baeab0452d1b59ee053ae7205b641cb70e22deae5e71b86596ffcd87ca4",
+      "queries.parquet": "14542cd83a43f7fb64655e21e0e1c8fec48b0753a7334015099b065e061a058a",
+      "splits.csv": "989d3663aa4051f6ccd80bedf62e6ef789ead57d744c87fd14c828ac9b08a8a5"
+    },
+    "settings_status": "Declared smoke settings; not tuned or final experiment protocol"
+  },
+  "independent_verification": {
+    "command": ".venv/Scripts/python.exe outputs/common-deployment-20261029/verify_real_smoke.py",
+    "exit_code": 0,
+    "file_sha256": "9cc918872df09f2992dcc0e40187c805dc4321eb85ab5a1dd79982caea6459c1",
+    "verified": true,
+    "methods": 13,
+    "deployment_runs": 39,
+    "learning_rounds": 1664,
+    "verified_served_deployment_rounds": 1360,
+    "manifest_sha256": "b9fbee5fce1b5a5744d49a5fdaa629e86f9dc838c7a7c074ff554ebaa7a5c48c",
+    "preflight": {
+      "heavy_jobs": [],
+      "available_gib": 8.555366516113281
+    },
+    "inventory": [
+      {
+        "method": "pilot",
+        "budget": 0.0,
+        "served": 0,
+        "actual_cost": 0.0,
+        "estimated_cost": 0.0
+      },
+      {
+        "method": "pilot",
+        "budget": 0.02,
+        "served": 3,
+        "actual_cost": 0.0019747,
+        "estimated_cost": 0.0045650251
+      },
+      {
+        "method": "pilot",
+        "budget": 1.0,
+        "served": 64,
+        "actual_cost": 0.22428,
+        "estimated_cost": 0.20365488
+      },
+      {
+        "method": "linucb",
+        "budget": 0.0,
+        "served": 0,
+        "actual_cost": 0.0,
+        "estimated_cost": 0.0
+      },
+      {
+        "method": "linucb",
+        "budget": 0.02,
+        "served": 5,
+        "actual_cost": 0.0029771,
+        "estimated_cost": 0.0042330113
+      },
+      {
+        "method": "linucb",
+        "budget": 1.0,
+        "served": 64,
+        "actual_cost": 0.147528,
+        "estimated_cost": 0.134942592
+      },
+      {
+        "method": "explore-only",
+        "budget": 0.0,
+        "served": 0,
+        "actual_cost": 0.0,
+        "estimated_cost": 0.0
+      },
+      {
+        "method": "explore-only",
+        "budget": 0.02,
+        "served": 64,
+        "actual_cost": 0.0163569,
+        "estimated_cost": 0.0145112604
+      },
+      {
+        "method": "explore-only",
+        "budget": 1.0,
+        "served": 64,
+        "actual_cost": 0.019473,
+        "estimated_cost": 0.018950346
+      },
+      {
+        "method": "epoch-greedy",
+        "budget": 0.0,
+        "served": 0,
+        "actual_cost": 0.0,
+        "estimated_cost": 0.0
+      },
+      {
+        "method": "epoch-greedy",
+        "budget": 0.02,
+        "served": 64,
+        "actual_cost": 0.0047964,
+        "estimated_cost": 0.0045808464
+      },
+      {
+        "method": "epoch-greedy",
+        "budget": 1.0,
+        "served": 64,
+        "actual_cost": 0.0047964,
+        "estimated_cost": 0.0045808464
+      },
+      {
+        "method": "random",
+        "budget": 0.0,
+        "served": 0,
+        "actual_cost": 0.0,
+        "estimated_cost": 0.0
+      },
+      {
+        "method": "random",
+        "budget": 0.02,
+        "served": 5,
+        "actual_cost": 0.0026521,
+        "estimated_cost": 0.0039864604
+      },
+      {
+        "method": "random",
+        "budget": 1.0,
+        "served": 64,
+        "actual_cost": 0.049553996,
+        "estimated_cost": 0.0456530088
+      },
+      {
+        "method": "fixed-00",
+        "budget": 0.0,
+        "served": 0,
+        "actual_cost": 0.0,
+        "estimated_cost": 0.0
+      },
+      {
+        "method": "fixed-00",
+        "budget": 0.02,
+        "served": 64,
+        "actual_cost": 0.0047964,
+        "estimated_cost": 0.0045808464
+      },
+      {
+        "method": "fixed-00",
+        "budget": 1.0,
+        "served": 64,
+        "actual_cost": 0.0047964,
+        "estimated_cost": 0.0045808464
+      },
+      {
+        "method": "fixed-01",
+        "budget": 0.0,
+        "served": 0,
+        "actual_cost": 0.0,
+        "estimated_cost": 0.0
+      },
+      {
+        "method": "fixed-01",
+        "budget": 0.02,
+        "served": 64,
+        "actual_cost": 0.0159576,
+        "estimated_cost": 0.014552256
+      },
+      {
+        "method": "fixed-01",
+        "budget": 1.0,
+        "served": 64,
+        "actual_cost": 0.0159576,
+        "estimated_cost": 0.014552256
+      },
+      {
+        "method": "fixed-02",
+        "budget": 0.0,
+        "served": 0,
+        "actual_cost": 0.0,
+        "estimated_cost": 0.0
+      },
+      {
+        "method": "fixed-02",
+        "budget": 0.02,
+        "served": 2,
+        "actual_cost": 0.002888,
+        "estimated_cost": 0.004097456
+      },
+      {
+        "method": "fixed-02",
+        "budget": 1.0,
+        "served": 64,
+        "actual_cost": 0.147528,
+        "estimated_cost": 0.134942592
+      },
+      {
+        "method": "fixed-03",
+        "budget": 0.0,
+        "served": 0,
+        "actual_cost": 0.0,
+        "estimated_cost": 0.0
+      },
+      {
+        "method": "fixed-03",
+        "budget": 0.02,
+        "served": 64,
+        "actual_cost": 0.016916,
+        "estimated_cost": 0.015140528
+      },
+      {
+        "method": "fixed-03",
+        "budget": 1.0,
+        "served": 64,
+        "actual_cost": 0.016916,
+        "estimated_cost": 0.015140528
+      },
+      {
+        "method": "fixed-04",
+        "budget": 0.0,
+        "served": 0,
+        "actual_cost": 0.0,
+        "estimated_cost": 0.0
+      },
+      {
+        "method": "fixed-04",
+        "budget": 0.02,
+        "served": 1,
+        "actual_cost": 0.00111,
+        "estimated_cost": 0.00241242
+      },
+      {
+        "method": "fixed-04",
+        "budget": 1.0,
+        "served": 64,
+        "actual_cost": 0.22428,
+        "estimated_cost": 0.20365488
+      },
+      {
+        "method": "fixed-05",
+        "budget": 0.0,
+        "served": 0,
+        "actual_cost": 0.0,
+        "estimated_cost": 0.0
+      },
+      {
+        "method": "fixed-05",
+        "budget": 0.02,
+        "served": 64,
+        "actual_cost": 0.01120932,
+        "estimated_cost": 0.0108674144
+      },
+      {
+        "method": "fixed-05",
+        "budget": 1.0,
+        "served": 64,
+        "actual_cost": 0.01120932,
+        "estimated_cost": 0.0108674144
+      },
+      {
+        "method": "fixed-06",
+        "budget": 0.0,
+        "served": 0,
+        "actual_cost": 0.0,
+        "estimated_cost": 0.0
+      },
+      {
+        "method": "fixed-06",
+        "budget": 0.02,
+        "served": 64,
+        "actual_cost": 0.0133983,
+        "estimated_cost": 0.012777624
+      },
+      {
+        "method": "fixed-06",
+        "budget": 1.0,
+        "served": 64,
+        "actual_cost": 0.0133983,
+        "estimated_cost": 0.012777624
+      },
+      {
+        "method": "fixed-07",
+        "budget": 0.0,
+        "served": 0,
+        "actual_cost": 0.0,
+        "estimated_cost": 0.0
+      },
+      {
+        "method": "fixed-07",
+        "budget": 0.02,
+        "served": 64,
+        "actual_cost": 0.0115504,
+        "estimated_cost": 0.01169504
+      },
+      {
+        "method": "fixed-07",
+        "budget": 1.0,
+        "served": 64,
+        "actual_cost": 0.0115504,
+        "estimated_cost": 0.01169504
+      }
+    ],
+    "synthetic": false,
+    "paper_equivalent": false,
+    "script_sha256": "963c2b9bf4a47b7527c826918bd0ca1820aa562861a84c17ea55b4330dfe05f3"
+  },
+  "probes": [
+    {
+      "name": "Linear scores retain strict ranking above one and in negative fallback; legacy cosine range guard remains",
+      "result": "pass",
+      "runs": 1
+    },
+    {
+      "name": "Allowed-arm and tie-order validation occurs before reservation; fixed arm restriction applies in both branches",
+      "result": "pass",
+      "runs": 1
+    },
+    {
+      "name": "All six policy families snapshot, save/load, preserve source state and reject malformed state/checksums",
+      "result": "pass",
+      "runs": 1
+    },
+    {
+      "name": "Random ties use reproducible per-query seed without learned RNG consumption",
+      "result": "pass",
+      "runs": 1
+    },
+    {
+      "name": "All six families preserve decisions under deployment reward/cost mutation; actual overspend remains visible",
+      "result": "pass",
+      "runs": 1
+    },
+    {
+      "name": "Invalid future linear prediction fails before the first reservation",
+      "result": "pass",
+      "runs": 1
+    },
+    {
+      "name": "Independent replay reconstructs every real learning action, selected-only update, matrix and RNG state",
+      "result": "pass",
+      "runs": 1
+    },
+    {
+      "name": "Independent replay reconstructs all real cost eligibility, selected actions, rewards, coverage and spend across 39 runs",
+      "result": "pass",
+      "runs": 1
+    },
+    {
+      "name": "All real input/cache/prior/source and output checksums agree; no synthetic inputs admitted",
+      "result": "pass",
+      "runs": 1
+    },
+    {
+      "name": "Zero smoke budget serves none and budget one serves all 64 for every method",
+      "result": "pass",
+      "runs": 1
+    },
+    {
+      "name": "Real integration CLI refuses existing output and every original result checksum remains unchanged",
+      "result": "pass",
+      "runs": 1
+    }
+  ],
+  "repeat_cli_probe": {
+    "attempts": [
+      {
+        "result": "blocked_before_run",
+        "reason": "RAM preflight 7.97 GiB below 8 GiB",
+        "log": "outputs/common-deployment-20261029/repeat-probe.log"
+      },
+      {
+        "result": "pass",
+        "reason": "FileExistsError before any output mutation",
+        "log": "outputs/common-deployment-20261029/repeat-probe-2.log",
+        "python_exit_code": 1
+      }
+    ],
+    "existing_output_file_hashes_unchanged": true
+  },
+  "limitations": [
+    "Raw linear means and constant random/fixed utilities are declared local adaptations, not calibrated reward probabilities",
+    "Full source release/shot/task equivalence and three model bridges remain unresolved",
+    "Shared context projection, development dimensions/epochs and smoke settings are not final paper tuning",
+    "Smoke figures and scores cannot establish superiority; final seeds/budgets, MMLU, data-size and other ablations remain pending",
+    "Actual costs in artifacts are historical benchmark accounting, not API charges",
+    "Learning lineage remains caller-declared at the general API boundary; this concrete smoke has independent action/state replay",
+    "Historical preparation/fit manifests retain old status text; current evidence supersedes completed input blockers"
+  ]
+}

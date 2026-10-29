@@ -1,0 +1,32 @@
+{
+  "verified": true,
+  "probes": [
+    {
+      "path": "configs/model_mapping.json",
+      "git_clean_equals_raw": true,
+      "sha256": "ca00ca697ca0368d9438860e2e6378e419d20920df1dd2fa827c12e63dbaf7fd"
+    },
+    {
+      "path": "configs/frozen_experiment_protocol.json",
+      "git_clean_equals_raw": true,
+      "sha256": "ae4e9e76e8ae34bb40b1391a55c6a05dd62aa5ee2c0bd7fa2df279f66d97e229"
+    },
+    {
+      "path": "configs/research_prior_index.json",
+      "git_clean_equals_raw": true,
+      "sha256": "078dfe202ce8fc238b415c809d7b0a2da0d65103677de92d18391948ad145572"
+    },
+    {
+      "path": "tools/research/verify_replicate.py",
+      "git_clean_equals_raw": true,
+      "sha256": "3b53bb1fb9ef04ee99fa2a2f0b345ea2182e57263ac82047e5f708e8c7e715c3"
+    },
+    {
+      "path": "reports/full-experiments-2026-10-29/evidence-scripts/source-packaging.json",
+      "git_clean_equals_raw": true,
+      "sha256": "cc9a285a6af0af06bbea515ea6b30842adafb3a9d6ef0a418162d52ac997914c"
+    }
+  ],
+  "initial_model_mapping_clean": "8622b689daa52b5e255f2e7466c91068e0b1b351",
+  "initial_model_mapping_raw": "1e9559745f058f694acb495d5b5eacf9729d7548"
+}

@@ -1,0 +1,68 @@
+{
+  "version": 1,
+  "status": "choices frozen before full deployment outcomes in configs/frozen_experiment_protocol.json; execution pending",
+  "parent_plan": "configs/main_experiment_plan.json",
+  "protocol": "docs/ablation-protocol.md",
+  "scope": "controlled sensitivity of the eight-arm local experiment; not paper-equivalent",
+  "datasets": ["routerbench", "mmlu"],
+  "replicate_seeds": [7, 42, 2026],
+  "learning_fraction": 1.0,
+  "budget_fractions": [0.05, 0.1, 0.2, 0.3, 0.5, 0.75, 1.0, 1.25],
+  "reference_method": "pilot",
+  "parameter_selection": "reuse main per-domain alpha and ratio bounds; no ablation retuning",
+  "paired_controls": [
+    "arm catalog and frozen query order",
+    "preference train/holdout and routing tuning/learning/deployment splits",
+    "replicate seed and main per-domain selected alpha",
+    "tuning-only response estimates, token prices and absolute budget",
+    "common frozen deployment adapter, exhaustion rule and tie order"
+  ],
+  "variants": [
+    {
+      "id": "zero-prior-direction",
+      "change": "set every initial arm theta to a zero vector; retain the matched learned projection and holdout-derived lambdas",
+      "learning": "new full stream",
+      "interpretation": "effect of learned arm directions conditional on the learned projection and arm-specific initialization strengths; not removal of all preference information"
+    },
+    {
+      "id": "unit-initialization-strength",
+      "change": "set every lambda to 1; retain the matched learned projection and arm theta",
+      "learning": "new full stream",
+      "interpretation": "effect of inverse-holdout-accuracy initialization strengths conditional on learned arm directions"
+    },
+    {
+      "id": "prior-only",
+      "change": "freeze the matched initialized PILOT before any routing-learning feedback",
+      "learning": "none; snapshot rounds must be 0",
+      "interpretation": "effect of online routing updates relative to the same preference initialization; learning selection is an unused disjoint reference, not evidence of training"
+    },
+    {
+      "id": "single-budget-bin",
+      "change": "reuse the exact main full-learning snapshot; set bin_size to the number of deployment queries",
+      "learning": "reuse main full-learning snapshot",
+      "interpretation": "effect of bin partitioning; ratio threshold, estimated affordability, fallback and recorded-cost accounting remain enabled"
+    },
+    {
+      "id": "projection-dimension-8",
+      "change": "retrain projection and arm prior at dimension 8 using the main 30 projection epochs, 40 prior epochs, learning rate 0.03 and margin 0.2 for each replicate seed",
+      "learning": "new full stream with the matched 8-dimensional projection",
+      "interpretation": "sensitivity to projection dimension with BGE-M3 unchanged; does not compare BGE-M3 with the paper's embedding provider; do not use the 2/5-epoch smoke prior"
+    }
+  ],
+  "inventory": {
+    "variants": 5,
+    "additional_full_learning_streams": 18,
+    "new_learned_snapshots": 18,
+    "new_initial_snapshots": 6,
+    "reused_main_snapshots": 6,
+    "additional_prior_fits": 3,
+    "additional_deployment_runs": 240,
+    "primary_plus_ablation_deployment_runs": 1098,
+    "additional_learning_rounds": 401751,
+    "additional_requested_deployment_rounds": 540240
+  },
+  "learning_size_comparison": "reuse the 0.1/0.25/0.5/1.0 nested-prefix primary runs at budget fraction 0.5; no duplicated runs",
+  "aggregation": "pair by dataset, replicate seed and budget fraction; report every seed delta plus mean/min/max, without significance or confidence-interval claims",
+  "failure_rule": "missing or invalid required prior, candidate, trace, seed or budget marks the comparison incomplete; never substitute a seed, omit a failed arm or use an unvalidated lambda fallback",
+  "publication_rule": "report all declared variants, including unfavorable or identical results; annotate fixed-alpha, shared-bound and inherited model-identity limitations"
+}

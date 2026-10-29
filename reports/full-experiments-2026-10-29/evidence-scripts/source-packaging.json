@@ -1,0 +1,32 @@
+[
+  {
+    "name": "verify_runs.py",
+    "executed_source_sha256": "a580f2f173dbb70d91a2a551b90a328ee39ff9ab4ae047c6445f5dbbb0089a85",
+    "packaged_source_sha256": "893430b51a4cc84bb4b7b086c42afa0ad20ad5c077c7129d31757b4fa81c9c62",
+    "change": "Only BASE points to the existing run directory instead of the script parent; numerical logic unchanged."
+  },
+  {
+    "name": "aggregate_results.py",
+    "executed_source_sha256": "e4e4e11435d1ffb2a6c9fc1250d5fad21502389d7440361d964c8f49367b4174",
+    "packaged_source_sha256": "ebc1df6fe2855207d7dda94e3c3478a1a003c98f1cf53a06167d552035ab516f",
+    "change": "Only BASE points to the existing run directory instead of the script parent; numerical logic unchanged."
+  },
+  {
+    "name": "render_figures.py",
+    "executed_source_sha256": "871e4395ba97cbd0792699e7f721b48ccfbeeae6bf5f060540f8f4cc97b4a78f",
+    "packaged_source_sha256": "dd97dd7544a3046e1d4efb52b7ad84778fd19918b70602b8068fd60478ad5ed4",
+    "change": "Only BASE points to the existing run directory instead of the script parent; numerical logic unchanged."
+  },
+  {
+    "name": "build_documents.py",
+    "executed_source_sha256": "b8b9c59982924fd48f4a45ddd12bd537b96af5454b346f825255f1b00a364fd0",
+    "packaged_source_sha256": "2034a72ac8b69e52968aec56dc8e4799ac066d635af2cb785a6f1d2aeeccd44f",
+    "change": "Only BASE points to the existing run directory instead of the script parent; numerical logic unchanged."
+  },
+  {
+    "name": "probe_cli.py",
+    "executed_source_sha256": "ad5f1e3ee3560a098517302298232ff0b093fec9a8ac442435e26335b33cb112",
+    "packaged_source_sha256": "136b0bb18e1397d74510b800810d7fbd3e45ed0957b55459a77d040ee91ab5a8",
+    "change": "Only BASE points to the existing run directory instead of the script parent; numerical logic unchanged."
+  }
+]

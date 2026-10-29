@@ -1,0 +1,49 @@
+{
+  "version": 1,
+  "status": "choices frozen with verified tuning/calibration in configs/frozen_experiment_protocol.json; full experiments pending",
+  "scope": "eight-arm local development experiments; full eleven-arm reproduction remains a separate unresolved target",
+  "mapping_policy": "identity_match",
+  "datasets": ["routerbench", "mmlu"],
+  "split_manifest_sha256": "989d3663aa4051f6ccd80bedf62e6ef789ead57d744c87fd14c828ac9b08a8a5",
+  "stream_order": "preserve original stream_position within each existing phase; MMLU filters task prefix mmlu- without resplitting",
+  "frozen_counts": {
+    "routerbench": {"tuning": 1000, "learning": 32270, "deployment": 3227},
+    "mmlu": {"tuning": 398, "learning": 12369, "deployment": 1275}
+  },
+  "replicate_seeds": [7, 42, 2026],
+  "replicate_interpretation": "retrain preference projection/prior per seed, then use common contexts for every method in that replicate; policy RNG also uses the replicate seed; partitions and stream order stay fixed",
+  "pretraining": {
+    "dimension": 64,
+    "projection_epochs": 30,
+    "prior_epochs": 40,
+    "learning_rate": 0.03,
+    "margin": 0.2,
+    "holdout_use": "initialization coefficients only; no parameter selection or early stopping"
+  },
+  "embedding_recipe": "configs/local_embedding_full.json",
+  "tuning_grid": "configs/tuning_grid.json",
+  "tuning_prior_seed": 42,
+  "tuning_scope": "select separately for routerbench and filtered MMLU tuning subsets, then reuse selected parameters across all replicate seeds",
+  "learning_fractions": [0.1, 0.25, 0.5, 1.0],
+  "learning_fraction_rule": "ceil(fraction * learning_count), nested prefixes of the unchanged learning stream",
+  "budget_reference_arm": "gpt-4-1106-preview",
+  "budget_reference_rule": "mean estimated tuning query cost of reference arm multiplied by deployment query count",
+  "budget_fractions": [0.05, 0.1, 0.2, 0.3, 0.5, 0.75, 1.0, 1.25],
+  "learning_size_budget_fraction": 0.5,
+  "bin_size": 100,
+  "ratio_bounds_rule": "shared per dataset: LB=0.5*minimum and UB=2*maximum positive prequential score/cost ratio from selected tuning candidates",
+  "methods": ["pilot", "linucb", "epoch-greedy", "explore-only", "random", "each-fixed-arm"],
+  "deployment_adapter_protocol": "docs/common-deployment-protocol.md",
+  "primary_inventory": {
+    "full_learning_streams": 78,
+    "prefix_snapshots": 312,
+    "full_learning_budget_runs": 624,
+    "additional_learning_size_runs": 234,
+    "total_deployment_runs": 858
+  },
+  "primary_metrics": ["total_reward", "reward_per_requested_query", "mean_reward_served", "served_fraction", "estimated_cost", "actual_recorded_cost", "actual_budget_excess", "learning_cumulative_empirical_oracle_regret"],
+  "aggregation": "paired per-seed summaries; seed variation is descriptive and not a confidence interval over new datasets",
+  "resource_policy": "one heavy command and one worker; require at least 8 GiB available physical RAM before start; no paid API requests",
+  "ablation_plan": "configs/ablation_plan.json",
+  "ablation_inventory_status": "five controlled variants frozen before full deployment outcomes; 240 additional runs, 1098 primary plus ablation runs; execution pending"
+}

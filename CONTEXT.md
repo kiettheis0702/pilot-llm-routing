@@ -1,5 +1,14 @@
 # Project context
 
+Current status (2026-10-30): the complete declared eight-arm local experiment is
+implemented and verified: 1,098 deployment runs, 108 independently replayed
+groups, 441 passing tests and one Windows symlink skip, with report and poster.
+See [current implementation status](docs/implementation-status.md) and
+[final research handoff](docs/final-research-handoff-2026-10-29.md).
+The 2026-10-24 notes below are the original handoff context; their pending
+implementation items are historical. Exact eleven-arm paper equivalence and
+course submission requirements remain unresolved where the current handoff says so.
+
 Updated: 2026-10-24. This is a concise summary of the supplied project handoff; paper details and dataset choices still require direct verification before implementation.
 
 ## Agreed direction

@@ -1,0 +1,55 @@
+{
+  "date": "2026-10-29",
+  "kind": "ablation-design-progress",
+  "goal_turn_classification": "progress",
+  "status": "design declared; runtime checks pending RAM",
+  "files_sha256": {
+    "configs/main_experiment_plan.json": "01646e92f0c460a837b87931a38827942709f41dcd09cd1ce05bf6815463de6f",
+    "configs/ablation_plan.json": "c5e8c0ffef9e29815083bc29764f20d499ce27d9a0add6d95a19003aec0d7ba7",
+    "configs/research_protocol.json": "6f174fc65899a74d41d4f0930b51f7555538b547b0e717a924403ba6ade4af4c",
+    "docs/ablation-protocol.md": "5e830b627e46f9c07e4fe2248e509887dd7d4b910a50dba5f5d5aaf8e982cfd7",
+    "outputs/research-prior-20261029/verify_d64.py": "9653ffa8ed6dc2732130c29b4c61b78c97061db22fa54a585795fe8b052b815b"
+  },
+  "static_checks": {
+    "json_and_python_syntax": "parsed",
+    "inventory_arithmetic_matches_declared": true,
+    "computed": {
+      "primary_runs": 858,
+      "ablation_runs": 240,
+      "new_learning_streams": 18,
+      "primary_learning_rounds": 1740921,
+      "ablation_learning_rounds": 401751,
+      "primary_requested_deployment_rounds": 1931358,
+      "ablation_requested_deployment_rounds": 540240,
+      "combined_runs": 1098,
+      "combined_trace_rows": 4614270,
+      "trace_allowance_gib_at_3kib_per_row": 13.201532363891602
+    }
+  },
+  "runtime_validation": false,
+  "prior_verifier": "outputs/research-prior-20261029/verify_d64.py",
+  "prior_verifier_executed": false,
+  "test_attempt": {
+    "basetemp": "outputs/pytest-tuning-green-20261029-d",
+    "available_gib": 5.65,
+    "status": "preflight refused before pytest import"
+  },
+  "resources": {
+    "disk_c_free_gib_observed": 50.39,
+    "cliproxy_private_working_set_mib": 2337.3,
+    "cliproxy_established_connections": 89,
+    "processes_stopped": 0,
+    "note": "Connections are not proof of request activity; retained because inactivity is unproven and multiple chats are active."
+  },
+  "paid_api_calls": 0,
+  "openspec_complete": 8,
+  "openspec_total": 14,
+  "remaining": [
+    "targeted and full tests",
+    "independent prior-64 readback",
+    "real RouterBench/MMLU tuning and independent replay",
+    "measured resource estimate and numeric protocol freeze",
+    "complete primary/ablation runs",
+    "figures, research report, poster and final reproducibility checks"
+  ]
+}

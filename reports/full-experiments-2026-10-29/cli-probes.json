@@ -1,0 +1,42 @@
+{
+  "kind": "real-experiment-cli-negative-probes",
+  "passed": true,
+  "probes": [
+    {
+      "name": "existing output without resume",
+      "passed": true,
+      "error_type": "FileExistsError",
+      "message": "C:\\Users\\ADMIN\\Documents\\ChatGPT\\AI pilot\\outputs\\research-experiments-20261029\\learning\\routerbench\\seed-7\\main\\pilot"
+    },
+    {
+      "name": "changed protocol",
+      "passed": true,
+      "error_type": "ValueError",
+      "message": "Manifest checksum mismatch: C:\\Users\\ADMIN\\Documents\\ChatGPT\\AI pilot\\outputs\\research-experiments-20261029\\cli-probes\\bad-protocol.json"
+    },
+    {
+      "name": "interrupted artifact",
+      "passed": true,
+      "error_type": "ValueError",
+      "message": "Incomplete artifact: C:\\Users\\ADMIN\\Documents\\ChatGPT\\AI pilot\\outputs\\research-experiments-20261029\\cli-probes\\interrupted\\learning\\routerbench\\seed-7\\main\\pilot"
+    },
+    {
+      "name": "changed completed trace",
+      "passed": true,
+      "error_type": "ValueError",
+      "message": "Artifact checksum mismatch: trace.jsonl"
+    }
+  ],
+  "original_learning_files_unchanged": true,
+  "source_sha256": {
+    "manifest.json": "e9edac444c4c213cb045661878a701c401a35bc06011f30c0367efacf41c5e7d",
+    "prefix-000003227.json": "5268325253f304d64e4a9f415f1a5106119eb26664328f1512c10ee4f0c08ee8",
+    "prefix-000008068.json": "ec3545a68d8f418808c2cae83c5118a428fc063742bddcb3341a1a33b0e0148c",
+    "prefix-000016135.json": "1ec974833f3188f9196791f91d7cc6b83bae09ce43f562f9b151174894c2f837",
+    "prefix-000032270.json": "d51b5188978178df080201303631daa7200d52831eae2ada04265445051c785f",
+    "trace.jsonl": "f89845917325d91c46447f6b73b90e47e1fc67244fdd0f96c290450ca032628e"
+  },
+  "script_sha256": "ad5f1e3ee3560a098517302298232ff0b093fec9a8ac442435e26335b33cb112",
+  "synthetic": false,
+  "paper_equivalent": false
+}

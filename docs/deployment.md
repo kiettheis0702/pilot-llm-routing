@@ -1,6 +1,7 @@
 # Held-out deployment integration
 
-`scripts/deployment.py` connects a fixed `PILOT` model, query-only token inputs,
+`scripts/deployment.py` connects a fixed `PILOT` model or an explicitly frozen
+baseline adapter, query-only token inputs,
 `TuningTokenCostEstimator`, and fresh `BinnedCostPolicy`/`ActualCostLedger` instances.
 No model reset, UCB selection or feedback update runs during deployment.
 
@@ -46,14 +47,20 @@ to reject bad future inputs before any reservation.
 Every served round follows predict cosine → estimate query cost → budget select
 → reveal selected actual reward/cost → record actual cost and offline oracle
 metrics. Oracle values never enter the router or budget policy. The router gets
-only a fresh numeric context. LinearUCB, random and fixed policies are rejected;
-their scores are not silently converted into PILOT cosine predictions.
+only a fresh numeric context. Bare baseline objects are rejected by this entry
+point. Use `run_policy_deployment(policy, ..., deployment_seed=42)` to explicitly
+freeze a supported baseline; its remaining arguments match `run_deployment`.
+Linear means are not clipped or converted into cosine predictions. Full semantics
+and source distinctions are in [common-deployment-protocol.md](common-deployment-protocol.md).
 
 `DeploymentResult.trace` is a tuple of `DeploymentRound` objects containing
 `query_id`, a nested `BudgetDecision`, actual reward/cost, empirical oracle reward
 and regret, and cumulative reward/regret. `summary` includes requested, served and
 unserved counts; learning/deployment declarations; context/data/model fingerprints;
 token and price provenance; the full actual-cost ledger; and served-only metrics.
+`served_fraction` and `reward_per_requested_query` also report coverage and total
+reward divided by requested queries. The latter assigns zero service utility to
+unserved requests, without inventing observed outcome rows.
 Use `dataclasses.asdict(result)` for JSON serialization; this API does not write files.
 
 Insufficient budget terminates the stream. `terminal_decision` records the first
@@ -88,3 +95,21 @@ passed, bringing the targeted suite to **28 passed in 13.66s** (exit 0).
 Full workspace `python -B -m pytest -q -p no:cacheprovider` completed with
 **299 passed in 58.88s** (exit 0), including concurrently developed units.
 `openspec validate heldout-deployment --strict` reported the change valid.
+
+## Frozen baseline integration — 2026-10-29
+
+`FrozenDeploymentRouter` validates and copies learned matrices, parameters and RNG
+state, solves its frozen coefficients once, and supports checksummed save/load.
+No source-model method or RNG is called during adapted deployment. Random uses
+query/seed-derived permutations among eligible tied utilities. Fixed policies
+permit only their named arm, even in fallback. The default cost policy remains
+cosine-bounded; the adapter explicitly selects the linear domain for linear ridge
+baselines. Predictions are preflighted for all requested queries, and reports
+include out-of-range linear-score diagnostics and the declared adaptation.
+
+The complete regression suite passed 390 tests (one Windows symlink skip). Real
+integration used the verified BGE-M3/prior/cost artifacts, 128 learning queries,
+64 held-out deployment queries, 13 methods and three predeclared smoke budgets.
+Independent replay checked all 1,664 learning decisions and 1,360 served
+deployment decisions across 39 completed runs. This is integration evidence,
+not final tuned benchmark results. [Report](../reports/common-deployment-2026-10-29.json).

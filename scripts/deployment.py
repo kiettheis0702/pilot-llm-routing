@@ -16,6 +16,7 @@ from scripts.cost_policy import (ActualCostLedger, BinnedCostPolicy, BudgetDecis
                                  TuningTokenCostEstimator)
 from scripts.data_gate import OfflineBandit
 from scripts.pilot import PILOT
+from scripts.deployment_adapter import FrozenDeploymentRouter
 from scripts.splits import SplitSelection
 
 
@@ -65,7 +66,7 @@ def _tokens(value, arms):
     return int(value)
 
 
-def run_deployment(policy: PILOT, queries: pd.DataFrame, outcomes: pd.DataFrame,
+def run_deployment(policy: PILOT | FrozenDeploymentRouter, queries: pd.DataFrame, outcomes: pd.DataFrame,
                    contexts: ContextTable, learning_selection: SplitSelection,
                    deployment_selection: SplitSelection,
                    estimator: TuningTokenCostEstimator, input_tokens: Mapping, *,
@@ -76,8 +77,9 @@ def run_deployment(policy: PILOT, queries: pd.DataFrame, outcomes: pd.DataFrame,
     Learning split lineage and query-only token derivation are caller declarations,
     not attestations. No outcomes are supplied to the router, estimator or selector.
     """
-    if not isinstance(policy, PILOT):
-        raise ValueError("Deployment requires a fixed PILOT cosine predictor")
+    if not isinstance(policy, (PILOT, FrozenDeploymentRouter)):
+        raise ValueError("Deployment requires PILOT or an explicit frozen baseline adapter")
+    adapted = isinstance(policy,FrozenDeploymentRouter)
     if not isinstance(estimator, TuningTokenCostEstimator):
         raise ValueError("Deployment requires a tuning-only cost estimator")
     learned = _ids(learning_selection, "learning")
@@ -113,15 +115,18 @@ def run_deployment(policy: PILOT, queries: pd.DataFrame, outcomes: pd.DataFrame,
     # Stateless preflight catches invalid future estimates before any reservation.
     for q in ids:
         estimator.estimate(counts[q])
+    predictions_by_query = ({q:policy.predict_rewards(selected_contexts.get(q)) for q in ids}
+                            if adapted else None)
     cost_policy = BinnedCostPolicy(arm_catalog=policy.arms, budget=budget,
-        query_count=len(ids), bin_size=bin_size, lower_bound=lower_bound, upper_bound=upper_bound)
+        query_count=len(ids), bin_size=bin_size, lower_bound=lower_bound, upper_bound=upper_bound,
+        score_domain=policy.score_domain if adapted else 'cosine')
     ledger = ActualCostLedger(cost_policy)
     selected_outcomes = outcomes.loc[outcomes.query_id.isin(ids),
         ["query_id", "arm_id", "reward", "actual_cost"]].copy()
     selected_outcomes = selected_outcomes.astype({"reward": float, "actual_cost": float})
     evaluation = selected_outcomes.set_index(["query_id", "arm_id"])
     selected_queries = queries.set_index("query_id").loc[list(ids), ["query", "task"]].reset_index()
-    model_state = {"arms": list(policy.arms), "dimension": policy.dimension,
+    model_state = policy.source_state() if adapted else {"arms": list(policy.arms), "dimension": policy.dimension,
                    "A": policy.A.tolist(), "b": policy.b.tolist(), "rounds": policy.rounds,
                    "alpha": policy.alpha, "prior_provenance": policy.provenance}
     provenance = {"queries_sha256": _fingerprint(selected_queries.to_dict("records")),
@@ -134,9 +139,11 @@ def run_deployment(policy: PILOT, queries: pd.DataFrame, outcomes: pd.DataFrame,
     action_counts = dict.fromkeys(policy.arms, 0)
     terminal = None
     for query_id in ids:
-        predictions = policy.predict_rewards(selected_contexts.get(query_id))
+        predictions = (predictions_by_query[query_id] if adapted else
+                       policy.predict_rewards(selected_contexts.get(query_id)))
         estimates = estimator.estimate(counts[query_id])
-        decision = cost_policy.select(predictions, estimates)
+        options = policy.selection_options(query_id) if adapted else {}
+        decision = cost_policy.select(predictions, estimates, **options)
         if decision.status != "selected":
             terminal = {"query_id": query_id, "decision": asdict(decision)}
             break
@@ -165,9 +172,25 @@ def run_deployment(policy: PILOT, queries: pd.DataFrame, outcomes: pd.DataFrame,
         "estimator": estimator_metadata, "budget": ledger.report(),
         "metrics": {"total_reward": total_reward,
                     "mean_reward_served": total_reward / served if served else None,
+                    "served_fraction": served / len(ids),
+                    "reward_per_requested_query": total_reward / len(ids),
                     "empirical_oracle_regret_served": total_regret,
                     "action_counts": action_counts},
         "metric_interpretation": "unconstrained_empirical_oracle_on_served_stored_outcomes_only"}
+    if adapted:
+        summary['deployment_adapter'] = policy.metadata()
+        summary['model']['policy'] = model_state['policy_type']
+        all_scores = [score for predictions in predictions_by_query.values() for score in predictions.values()]
+        summary['prediction_diagnostics'] = dict(scope='all_requested_queries_before_budget_selection',
+            count=len(all_scores),below_zero=sum(v<0 for v in all_scores),above_one=sum(v>1 for v in all_scores),
+            minimum=min(all_scores),maximum=max(all_scores))
+    summary['service_utility_interpretation'] = 'total_observed_reward_divided_by_requested_count; unserved_service_utility_zero'
     result = DeploymentResult(tuple(trace), summary)
     json.dumps(asdict(result), allow_nan=False)
     return result
+
+
+def run_policy_deployment(policy, *args, deployment_seed=42, **kwargs) -> DeploymentResult:
+    """Explicitly snapshot a supported policy, then use the shared deployment runner."""
+    frozen = FrozenDeploymentRouter(policy,seed=deployment_seed)
+    return run_deployment(frozen,*args,**kwargs)

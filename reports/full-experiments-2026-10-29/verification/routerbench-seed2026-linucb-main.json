@@ -1,0 +1,109 @@
+{
+  "verified": true,
+  "kind": "independent-full-condition-replay",
+  "domain": "routerbench",
+  "seed": 2026,
+  "method": "linucb",
+  "variant": "main",
+  "learning_rounds": 32270,
+  "verified_deployment_runs": 11,
+  "verified_served_deployment_rounds": 29088,
+  "inventory": [
+    {
+      "id": "routerbench/seed-2026/main/linucb/learn-0.1/budget-0.5",
+      "manifest_sha256": "822f9d569d707a8fb817597e994aa61d5d1023c32dcdf0fd3bdda9e687d26576",
+      "served": 3227,
+      "reward": 2247.85,
+      "actual_cost": 3.298553,
+      "estimated_cost": 3.6505735635
+    },
+    {
+      "id": "routerbench/seed-2026/main/linucb/learn-0.25/budget-0.5",
+      "manifest_sha256": "ff0e71b7cfa57c4610fcfe0695c937bf2b7e88ec41e6f67d8a21af594cbff8f2",
+      "served": 3227,
+      "reward": 2264.25,
+      "actual_cost": 3.597556168,
+      "estimated_cost": 3.6391943807
+    },
+    {
+      "id": "routerbench/seed-2026/main/linucb/learn-0.5/budget-0.5",
+      "manifest_sha256": "79d7d92b1f7e1d05867f0628d6f00f5664f5a296cd81ab3ee8795107e0c58f1d",
+      "served": 3227,
+      "reward": 2262.25,
+      "actual_cost": 3.592332508,
+      "estimated_cost": 3.6496236355
+    },
+    {
+      "id": "routerbench/seed-2026/main/linucb/learn-1/budget-0.05",
+      "manifest_sha256": "7e613fe3fccbb92d26ae33ccabb2ddbc8b983ec64782e3fe996beb7eb5659154",
+      "served": 16,
+      "reward": 11.75,
+      "actual_cost": 0.0072186,
+      "estimated_cost": 0.0122039682
+    },
+    {
+      "id": "routerbench/seed-2026/main/linucb/learn-1/budget-0.1",
+      "manifest_sha256": "9a19cfb98d8a83b50d122a6266ab7665a4ae72404807cdba6102f65a5c2f21f6",
+      "served": 29,
+      "reward": 19.5,
+      "actual_cost": 0.0191134,
+      "estimated_cost": 0.0244214593
+    },
+    {
+      "id": "routerbench/seed-2026/main/linucb/learn-1/budget-0.2",
+      "manifest_sha256": "71540fd541d6442cd29829628062670e48d20be40b99a544a74b9e71f1d704af",
+      "served": 3227,
+      "reward": 2129.2,
+      "actual_cost": 1.953832952,
+      "estimated_cost": 2.0202034179
+    },
+    {
+      "id": "routerbench/seed-2026/main/linucb/learn-1/budget-0.3",
+      "manifest_sha256": "1f97db723bb6731273fe78e86782b952afa4b40da1b458fee4f3a0b9a50fd46b",
+      "served": 3227,
+      "reward": 2184.4,
+      "actual_cost": 2.809054996,
+      "estimated_cost": 2.9375680142
+    },
+    {
+      "id": "routerbench/seed-2026/main/linucb/learn-1/budget-0.5",
+      "manifest_sha256": "5d23e9ac2615039cbd33d061ffdcb9c085ceb05cff5b3d5718aadd2f86a91538",
+      "served": 3227,
+      "reward": 2273.2,
+      "actual_cost": 3.429121896,
+      "estimated_cost": 3.6394346165
+    },
+    {
+      "id": "routerbench/seed-2026/main/linucb/learn-1/budget-0.75",
+      "manifest_sha256": "13d14e3635bd363df941285724665870589ff62877e1137f856b50f3380b0ee2",
+      "served": 3227,
+      "reward": 2346.2,
+      "actual_cost": 4.786057872,
+      "estimated_cost": 5.0817291054
+    },
+    {
+      "id": "routerbench/seed-2026/main/linucb/learn-1/budget-1",
+      "manifest_sha256": "aa64e5fd8b450a4fd3c1ca534c7e812a792acd6e533ccefb1bdcdbd91e99a64e",
+      "served": 3227,
+      "reward": 2399.45,
+      "actual_cost": 6.004969872,
+      "estimated_cost": 6.4481963192
+    },
+    {
+      "id": "routerbench/seed-2026/main/linucb/learn-1/budget-1.25",
+      "manifest_sha256": "eb95e75f89c28d30d792611c4bb633ebb0240ad1e048bc04b7a4556948766063",
+      "served": 3227,
+      "reward": 2419.95,
+      "actual_cost": 6.7772615720000005,
+      "estimated_cost": 7.0991197556
+    }
+  ],
+  "learning_manifest_sha256": "69e74d55d625394225ad97956252bb1ee4a7d97fce32eed9af9c77666f281d41",
+  "script_sha256": "a580f2f173dbb70d91a2a551b90a328ee39ff9ab4ae047c6445f5dbbb0089a85",
+  "preflight": {
+    "heavy_jobs": [],
+    "available_gib": 10.630313873291016
+  },
+  "synthetic": false,
+  "paper_equivalent": false
+}

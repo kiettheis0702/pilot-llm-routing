@@ -1,0 +1,24 @@
+{
+  "verified": true,
+  "figures": 6,
+  "plotted_points": 912,
+  "source_rows": 1098,
+  "pdfs": {
+    "research-poster.pdf": {
+      "pages": 1,
+      "text_characters": 1672,
+      "words_outside_page": [],
+      "sha256": "f286c03f91491a234271654007a3dc65d2f404ac30ec904653078bca7c86e94b"
+    },
+    "research-report.pdf": {
+      "pages": 9,
+      "text_characters": 9246,
+      "words_outside_page": [],
+      "sha256": "f6a31056090fba3f9fcd86b5dbddd292f9abb93ed8050f14707f8966324ac345"
+    }
+  },
+  "independent_packaged_replay_matches": true,
+  "synthetic": false,
+  "paper_equivalent": false,
+  "script_sha256": "6e90a25334eb8fb97b0554a6ec09faeb0e30cd0f274e0940e8348951e0532ffb"
+}

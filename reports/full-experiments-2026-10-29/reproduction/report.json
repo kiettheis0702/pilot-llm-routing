@@ -1,0 +1,243 @@
+{
+  "kind": "clean-source-snapshot-reproduction",
+  "scope": "uncommitted source snapshot; not a Git clone or a full re-embedding",
+  "source_files": 406,
+  "source_manifest_sha256": "f0d2667b2f9d57acc9e3f5ba36dc3e9e449cb1434838d66b37d5db1802a7f598",
+  "base_commit": "47ce94384f9c4a709f9bc85a02c7eb344cce75ae",
+  "steps": [
+    {
+      "name": "uv-sync",
+      "command": [
+        "C:\\Users\\ADMIN\\AppData\\Local\\Microsoft\\WinGet\\Packages\\astral-sh.uv_Microsoft.Winget.Source_8wekyb3d8bbwe\\uv.exe",
+        "sync",
+        "--locked",
+        "--extra",
+        "cost",
+        "--offline",
+        "--python",
+        "C:\\Users\\ADMIN\\AppData\\Roaming\\uv\\python\\cpython-3.11.18-windows-x86_64-none\\python.exe",
+        "--project",
+        "C:\\Users\\ADMIN\\Documents\\ChatGPT\\AI pilot\\outputs\\final-reproduction-20261029\\source"
+      ],
+      "cwd": "C:\\Users\\ADMIN\\Documents\\ChatGPT\\AI pilot\\outputs\\final-reproduction-20261029\\source",
+      "exit_code": 0,
+      "seconds": 3.0005232999683358,
+      "preflight": {
+        "heavy_jobs": [],
+        "available_gib": 12.01846694946289
+      },
+      "log": "uv-sync.log"
+    },
+    {
+      "name": "baseline-pytest",
+      "command": [
+        "C:\\Users\\ADMIN\\Documents\\ChatGPT\\AI pilot\\outputs\\final-reproduction-20261029\\source\\.venv\\Scripts\\python.exe",
+        "-m",
+        "pytest",
+        "-q",
+        "--basetemp",
+        "C:\\Users\\ADMIN\\Documents\\ChatGPT\\AI pilot\\outputs\\final-reproduction-20261029\\baseline-tmp",
+        "--junitxml",
+        "C:\\Users\\ADMIN\\Documents\\ChatGPT\\AI pilot\\outputs\\final-reproduction-20261029\\baseline.xml"
+      ],
+      "cwd": "C:\\Users\\ADMIN\\Documents\\ChatGPT\\AI pilot\\outputs\\final-reproduction-20261029\\baseline",
+      "exit_code": 0,
+      "seconds": 10.06997940002475,
+      "preflight": {
+        "heavy_jobs": [],
+        "available_gib": 11.983783721923828
+      },
+      "log": "baseline-pytest.log"
+    },
+    {
+      "name": "snapshot-pytest",
+      "command": [
+        "C:\\Users\\ADMIN\\Documents\\ChatGPT\\AI pilot\\outputs\\final-reproduction-20261029\\source\\.venv\\Scripts\\python.exe",
+        "-m",
+        "pytest",
+        "-q",
+        "--basetemp",
+        "C:\\Users\\ADMIN\\Documents\\ChatGPT\\AI pilot\\outputs\\final-reproduction-20261029\\snapshot-tmp",
+        "--junitxml",
+        "C:\\Users\\ADMIN\\Documents\\ChatGPT\\AI pilot\\outputs\\final-reproduction-20261029\\snapshot.xml"
+      ],
+      "cwd": "C:\\Users\\ADMIN\\Documents\\ChatGPT\\AI pilot\\outputs\\final-reproduction-20261029\\source",
+      "exit_code": 0,
+      "seconds": 12.494764200004283,
+      "preflight": {
+        "heavy_jobs": [],
+        "available_gib": 11.909004211425781
+      },
+      "log": "snapshot-pytest.log"
+    },
+    {
+      "name": "toy-smoke",
+      "command": [
+        "C:\\Users\\ADMIN\\Documents\\ChatGPT\\AI pilot\\outputs\\final-reproduction-20261029\\source\\.venv\\Scripts\\python.exe",
+        "-m",
+        "scripts.run_toy_pipeline",
+        "--output-dir",
+        "C:\\Users\\ADMIN\\Documents\\ChatGPT\\AI pilot\\outputs\\final-reproduction-20261029\\toy-smoke"
+      ],
+      "cwd": "C:\\Users\\ADMIN\\Documents\\ChatGPT\\AI pilot\\outputs\\final-reproduction-20261029\\source",
+      "exit_code": 0,
+      "seconds": 0.7541902000084519,
+      "preflight": {
+        "heavy_jobs": [],
+        "available_gib": 12.502147674560547
+      },
+      "log": "toy-smoke.log"
+    },
+    {
+      "name": "baseline-smoke",
+      "command": [
+        "C:\\Users\\ADMIN\\Documents\\ChatGPT\\AI pilot\\outputs\\final-reproduction-20261029\\source\\.venv\\Scripts\\python.exe",
+        "-m",
+        "scripts.run_baselines",
+        "--source",
+        "toy",
+        "--rows",
+        "100",
+        "--output-dir",
+        "C:\\Users\\ADMIN\\Documents\\ChatGPT\\AI pilot\\outputs\\final-reproduction-20261029\\baseline-smoke"
+      ],
+      "cwd": "C:\\Users\\ADMIN\\Documents\\ChatGPT\\AI pilot\\outputs\\final-reproduction-20261029\\source",
+      "exit_code": 0,
+      "seconds": 1.2816209999728017,
+      "preflight": {
+        "heavy_jobs": [],
+        "available_gib": 12.507404327392578
+      },
+      "log": "baseline-smoke.log"
+    }
+  ],
+  "verified": true,
+  "synthetic_smokes": true,
+  "full_real_experiment_rerun": false,
+  "tests": {
+    "baseline": {
+      "name": "pytest",
+      "errors": "0",
+      "failures": "0",
+      "skipped": "0",
+      "tests": "310",
+      "time": "8.613",
+      "timestamp": "2026-10-29T23:37:00.053349+07:00",
+      "hostname": "EMPIRE-01"
+    },
+    "snapshot": {
+      "name": "pytest",
+      "errors": "0",
+      "failures": "0",
+      "skipped": "1",
+      "tests": "427",
+      "time": "12.024",
+      "timestamp": "2026-10-29T23:37:09.878034+07:00",
+      "hostname": "EMPIRE-01"
+    }
+  },
+  "runtime_source_files_unchanged": 60,
+  "verified_source_data": [
+    {
+      "relative_path": "arena_55k/train.csv",
+      "size_bytes": 184175071,
+      "sha256": "0692154aaf20fc6649090c3f49b6b5dd1e693a765ecb5f0856ae0da5946f5be2",
+      "verification": "existing source/prepared pin"
+    },
+    {
+      "relative_path": "download_manifest.json",
+      "size_bytes": 1468,
+      "sha256": "7833db3fb7518a5dd8fe2333b31d95a1a4c2a5066feb3986258d9ef279d1c5d7",
+      "verification": "snapshot of local download metadata"
+    },
+    {
+      "relative_path": "processed/routerbench_0shot/outcomes.parquet",
+      "size_bytes": 1094125,
+      "sha256": "82eb9baeab0452d1b59ee053ae7205b641cb70e22deae5e71b86596ffcd87ca4",
+      "verification": "existing source/prepared pin"
+    },
+    {
+      "relative_path": "processed/routerbench_0shot/queries.parquet",
+      "size_bytes": 23675459,
+      "sha256": "14542cd83a43f7fb64655e21e0e1c8fec48b0753a7334015099b065e061a058a",
+      "verification": "existing source/prepared pin"
+    },
+    {
+      "relative_path": "processed/routerbench_0shot/splits.csv",
+      "size_bytes": 4469018,
+      "sha256": "989d3663aa4051f6ccd80bedf62e6ef789ead57d744c87fd14c828ac9b08a8a5",
+      "verification": "existing source/prepared pin"
+    },
+    {
+      "relative_path": "routerbench_0shot/routerbench_0shot.pkl",
+      "size_bytes": 99567659,
+      "sha256": "ba4f77f19517610a707c374e99322d7750c30fc4ae7ff5527888595a1e65d36d",
+      "verification": "existing source/prepared pin"
+    },
+    {
+      "relative_path": "routerbench_5shot/routerbench_5shot.pkl",
+      "size_bytes": 171091324,
+      "sha256": "fbd7d3d16fba2759a18fa0ad44409d3e0e92ba80d03d90827eed1a6d084c9ffe",
+      "verification": "existing source/prepared pin"
+    }
+  ],
+  "verified_pins": {
+    "outputs/research-tuning-20261029/routerbench-d64-s42/manifest.json": "4248401d731497cd45c826b39640fc365bc48c080d676e4e60f81f0d3875f26c",
+    "outputs/research-tuning-20261029/routerbench-d64-s42/search/manifest.json": "73b6e7d8ce32b882c45f7ef92ff773a532ecbe1b19b9c1b5807038aba6b1316a",
+    "outputs/research-tuning-20261029/routerbench-d64-s42/estimator.json": "2ea1bbd9a642989d6614e22cbcfefc6150dc93e19b677627b4edb7000322364e",
+    "outputs/research-tuning-20261029/routerbench-d64-s42/calibration.json": "3c93e20bb91c9a5cf444cecf161e861be1b6ce1717628a3dfc1ebe900eed6114",
+    "outputs/research-tuning-20261029/mmlu-d64-s42/manifest.json": "c1502a9bda157dd5cf353ad1a8cb01dc291e2d12030fda0185880e435b57a8f1",
+    "outputs/research-tuning-20261029/mmlu-d64-s42/search/manifest.json": "8ff3698460144036023be254547ac303513119182dd6bf3f3d59aa2ec6c90a09",
+    "outputs/research-tuning-20261029/mmlu-d64-s42/estimator.json": "fd276c2688d640cfb8a8511f41555371e7dfc76b91be1650f7bf4c740f66f8de",
+    "outputs/research-tuning-20261029/mmlu-d64-s42/calibration.json": "3cc50382a58355dc6789eba8a054ba962048646f757d645ec7d228df6eb708f5",
+    "configs/model_mapping.json": "ca00ca697ca0368d9438860e2e6378e419d20920df1dd2fa827c12e63dbaf7fd",
+    "configs/local_embedding_full.json": "fd9f8f83dc6271671f23bbf382c312be92d4d07eb827285e958a506a8fa4c5f3",
+    "configs/routerbench_costs.json": "87a78411730025d567d28b764f3946864d4a4211b6c3faa9c4e8c989f5b8f718",
+    "configs/tuning_grid.json": "5cadba21a8264cbbcad935da7ca2ce03353e85420b70ff000b7f7f522e66f4dd",
+    "configs/main_experiment_plan.json": "6b89fe73c4e7622a4fc36273da2c5a958fe02deda42c485e8787e0f9d500be17",
+    "configs/ablation_plan.json": "0285e9742518f875b16d9a111d0986743f7d74f95d8fb18579428cdc485f57b9",
+    "docs/common-deployment-protocol.md": "b252bc6d327fe85d29db21315ecca61f5bcef3b0d9bd7ecae53dbe06ba73f357",
+    "docs/ablation-protocol.md": "5e830b627e46f9c07e4fe2248e509887dd7d4b910a50dba5f5d5aaf8e982cfd7",
+    "docs/experiment-protocol.md": "3e9ee03b13dd0ba671ecb071eaa65dd071d64383f38cfb2557826de1952b2ddd",
+    "data/processed/routerbench_0shot/queries.parquet": "14542cd83a43f7fb64655e21e0e1c8fec48b0753a7334015099b065e061a058a",
+    "data/processed/routerbench_0shot/outcomes.parquet": "82eb9baeab0452d1b59ee053ae7205b641cb70e22deae5e71b86596ffcd87ca4",
+    "data/processed/routerbench_0shot/splits.csv": "989d3663aa4051f6ccd80bedf62e6ef789ead57d744c87fd14c828ac9b08a8a5",
+    "outputs/local-pipeline-verification-20261029/prepared-identity/manifest.json": "9d1cc854c431ddce40bce59940d23d7bc0cd7de7db38c1d487121f6179c63c91",
+    "outputs/research-input-audit-20261029/inputs/manifest.json": "88b3fc0a5d46e772a4ea9e5ef805988083ce0929ce36ecd15858c56ef2d2cd63",
+    "outputs/research-cost-inputs-20261029/manifest.json": "f42751bfc391385ce2cdbe1e69e99f9cf23eaba5e92a375979e224ad8dfb40a7",
+    "outputs/research-embeddings-20261029/preference-identity/manifest.json": "97cec9959bb3f94ad45490d1e639333519cdb55d207256d66a19360abbf41926",
+    "outputs/research-embeddings-20261029/routing-full/manifest.json": "5f78242b814dc68cb07a717c26b4c638fda27380329daaf40a2355c765e665d4",
+    "outputs/research-prior-20261029/identity-d64-s42/prior.json": "7f972a01dd6d70aeef4710c52f348c6806b3d25bea8105029b5cd27accd2e3a3",
+    "outputs/research-prior-20261029/verification-d64.json": "1654a7d1d82512bf999889d0e9d11465b9d4635971aa347e6b44e887f92a24e1",
+    "outputs/research-tuning-20261029/verification.json": "93fb6d0d0a259613ce6f8d4f3e675a821bcbc55cc2d09019db47ae8b92c48270",
+    "outputs/research-tuning-20261029/isolation-verification.json": "d79ab5a2c7ebbf05a7f55f2febe1b587d79acab9739ab448a7dc93ad02cf061a",
+    "outputs/research-tuning-20261029/mmlu-resource-samples.json": "cad71e50308757433a11ca06bed725fd3e4e359c5d27a8383ea8ee7deea60271",
+    "configs/frozen_experiment_protocol.json": "ae4e9e76e8ae34bb40b1391a55c6a05dd62aa5ee2c0bd7fa2df279f66d97e229",
+    "outputs/research-prior-20261029/identity-d64-s7/prior.json": "e23982cc628b800ef7e7ea0cbe027ebfa40c6a71d88b8d52010a8e33083650c0",
+    "outputs/research-prior-20261029/identity-d64-s7/fit-manifest.json": "c3cb0ba466add06c1f5e10cefba52b5f9729fcca2ca233b9363b76a1ce221c49",
+    "outputs/research-prior-20261029/verification-identity-d64-s7.json": "c698defa1faef85720355176459798415f1f4e7fe4ebbf1724430c4e40c9d720",
+    "outputs/research-prior-20261029/identity-d64-s42/fit-manifest.json": "dd65de48cd9a12db5e0c3458bc65ff7530554c147b8c3f55adafbc4e254fab42",
+    "outputs/research-prior-20261029/identity-d64-s2026/prior.json": "b378654964983c23d966a0f9c91ac9d32d8b1d426a83bbfaa0e241197624cb36",
+    "outputs/research-prior-20261029/identity-d64-s2026/fit-manifest.json": "bed03d6af280141db73a48c537fdae9c7619fd896a107675c2956c7c01eac46f",
+    "outputs/research-prior-20261029/verification-identity-d64-s2026.json": "86e7adb1c52d71dc19a3e1b79f4fc482366fa68373b6e5138b314dd4a5c5ce80",
+    "outputs/research-prior-20261029/identity-d8-full-s7/prior.json": "a30f7a4fbe60f9c49edbbded3914bde4e5abef6eb5a6fca9e7d5bc8ffef94cdc",
+    "outputs/research-prior-20261029/identity-d8-full-s7/fit-manifest.json": "49992d21efa377435b4465407a558ac2abb45ba63efed54b828468a74e497aae",
+    "outputs/research-prior-20261029/verification-identity-d8-full-s7.json": "066dc88c5bff69b11de0d0b0f91ff311a4bafbd4217db23e4fc7142687c90df8",
+    "outputs/research-prior-20261029/identity-d8-full-s42/prior.json": "b38361c31d0a8ab91ff44645cebefd48adc554b7ee9d66436fa1cec469e50ed6",
+    "outputs/research-prior-20261029/identity-d8-full-s42/fit-manifest.json": "eed7a34cfc48da083251516caf3eff497cf6531d91b502d84351991a4435e1bd",
+    "outputs/research-prior-20261029/verification-identity-d8-full-s42.json": "a8063a6c9988c78b2df58944d84b829b654e33cc6df06bac8c9be4bdc9d1f843",
+    "outputs/research-prior-20261029/identity-d8-full-s2026/prior.json": "7fad27f53db44632349aa13cb8ba83dedcf63be11b8f6077a7b9ca49b45095cf",
+    "outputs/research-prior-20261029/identity-d8-full-s2026/fit-manifest.json": "e04379a1353b6c925ffbbb21188b56ad3a0280cdf4347acc421f3d5a7cc5767a",
+    "outputs/research-prior-20261029/verification-identity-d8-full-s2026.json": "2a29e3e4f5725de9befb7f89a52fcfcc9c3e649b8b6ae27228d2f944853df037"
+  },
+  "smoke_readback": {
+    "toy_learning_rounds": 50,
+    "toy_served": 6,
+    "frozen_deployed_state_unchanged": true,
+    "baseline_methods": 7,
+    "baseline_rounds_each": 100,
+    "metrics_independently_summed": true
+  },
+  "verifier_correction": "Initial one-off action-count assertion compared Counter to a dict with explicit zero arms; corrected to compare two Counters. Production outputs were unchanged.",
+  "source_snapshot_note": "Docs/status files may change after this snapshot; all runtime Python, test, config and dependency bytes matched at final check. No whole real grid or GPU embedding was rerun in this fresh environment."
+}

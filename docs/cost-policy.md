@@ -12,13 +12,19 @@ Call `validate_deployment(deployment_selection)` before using the fitted estimat
 
 ## Real-data readiness
 
-Prepared RouterBench outcomes contain historical `actual_cost` and null `estimated_cost`; query schemas do not supply model-specific input/output token counts. The standalone estimator is usable with explicit inputs. Real RouterBench A05/A08 integration remains blocked on verified tokenizer/prompt rules, per-arm tuning output counts, explicit historical prices in consistent units, chosen positive bounds and a fixed learned router with held-out deployment validation. Never infer these from actual deployment costs or outputs. No tokenizer, model, dataset or package was downloaded, and no API was called.
+Prepared RouterBench outcomes contain historical `actual_cost` and null `estimated_cost`; query schemas do not supply model-specific input/output token counts. The [offline cost export](cost-inputs.md) now provides verified historical token counts and calibrated benchmark prices. The first real learned-router integration has passed with declared smoke bounds. Final tuned bounds and the full experiment protocol remain open. Never infer them from actual deployment costs or outputs. Historical reports about earlier missing inputs remain stage-specific; no paid API was called.
 
 ## Independent budget decisions
 
 Construct `BinnedCostPolicy(arm_catalog=..., budget=B, query_count=Q, bin_size=S, lower_bound=LB, upper_bound=UB)`. Call `select(predicted_rewards, estimated_costs)` once per query. A successful immutable decision reserves the estimated cost immediately. A returned `insufficient_budget` decision terminates the stream; selection after failure or Q successes raises. Use a fresh instance for another run.
 
-The policy accepts no outcomes, actual cost, context provider, `observe` function or router object. The caller supplies fixed-router cosine predictions in [-1,1], separately from any UCB exploration scores. `report()` and `decisions` expose copies/immutable records for logging; the module does not write files.
+The policy accepts no outcomes, actual cost, context provider, `observe` function or router object. The caller supplies fixed-router cosine predictions in [-1,1] by default, separately from any UCB exploration scores. An explicit `score_domain="linear"` preserves finite raw ridge means for baseline comparisons; it does not make them calibrated probabilities. `report()` and `decisions` expose copies/immutable records for logging; the module does not write files.
+
+Optional `allowed_arms` restricts both threshold and fallback candidates, while
+`tie_break_order` must be a full catalog permutation and changes only exact ties.
+Both validate before any budget reservation. Omitted options preserve catalog
+ties and full eligibility. See [common deployment](common-deployment-protocol.md)
+for the random/fixed baseline interpretation and its limitations.
 
 The primary source is [Section 2.2.3 and Appendix C.2, Algorithm 3](https://aclanthology.org/2025.findings-emnlp.1301.pdf#page=13). For `N=ceil(Q/S)`, each bin gets `B_bin=B/N`; unused funds carry forward. Within a bin, the threshold denominator is
 
