@@ -1,0 +1,66 @@
+{
+  "gpu_rerun": false,
+  "input_counts": {
+    "preference:holdout": 313,
+    "preference:train": 1245,
+    "routing:deployment": 3227,
+    "routing:learning": 32270,
+    "routing:tuning": 1000
+  },
+  "kind": "course-hosted-input-reproduction",
+  "outcomes": 401467,
+  "paid_api_calls": 0,
+  "paper_equivalent": false,
+  "preference_pairs": 1558,
+  "preflight": {
+    "available_gib": 15.274044036865234,
+    "heavy_jobs": []
+  },
+  "processed_sha256": {
+    "outcomes.parquet": "82eb9baeab0452d1b59ee053ae7205b641cb70e22deae5e71b86596ffcd87ca4",
+    "queries.parquet": "14542cd83a43f7fb64655e21e0e1c8fec48b0753a7334015099b065e061a058a",
+    "splits.csv": "989d3663aa4051f6ccd80bedf62e6ef789ead57d744c87fd14c828ac9b08a8a5"
+  },
+  "routing_queries": 36497,
+  "source_cache_verified": true,
+  "source_pins": {
+    "arena_55k": {
+      "file": "train.csv",
+      "repo": "lmarena-ai/arena-human-preference-55k",
+      "revision": "18c298340948c0e7f7727399fd459cca6ce0ca6f",
+      "sha256": "0692154aaf20fc6649090c3f49b6b5dd1e693a765ecb5f0856ae0da5946f5be2",
+      "size": 184175071
+    },
+    "routerbench_0shot": {
+      "file": "routerbench_0shot.pkl",
+      "repo": "withmartian/routerbench",
+      "revision": "784021482c3f320c6619ed4b3bb3b41a21424fcb",
+      "sha256": "ba4f77f19517610a707c374e99322d7750c30fc4ae7ff5527888595a1e65d36d",
+      "size": 99567659
+    }
+  },
+  "source_records": [
+    {
+      "file": "routerbench_0shot.pkl",
+      "key": "routerbench_0shot",
+      "relative_path": "routerbench_0shot/routerbench_0shot.pkl",
+      "repo": "withmartian/routerbench",
+      "revision": "784021482c3f320c6619ed4b3bb3b41a21424fcb",
+      "sha256": "ba4f77f19517610a707c374e99322d7750c30fc4ae7ff5527888595a1e65d36d",
+      "size": 99567659,
+      "url": "https://huggingface.co/datasets/withmartian/routerbench/resolve/784021482c3f320c6619ed4b3bb3b41a21424fcb/routerbench_0shot.pkl"
+    },
+    {
+      "file": "train.csv",
+      "key": "arena_55k",
+      "relative_path": "arena_55k/train.csv",
+      "repo": "lmarena-ai/arena-human-preference-55k",
+      "revision": "18c298340948c0e7f7727399fd459cca6ce0ca6f",
+      "sha256": "0692154aaf20fc6649090c3f49b6b5dd1e693a765ecb5f0856ae0da5946f5be2",
+      "size": 184175071,
+      "url": "https://huggingface.co/datasets/lmarena-ai/arena-human-preference-55k/resolve/18c298340948c0e7f7727399fd459cca6ce0ca6f/train.csv"
+    }
+  ],
+  "synthetic": false,
+  "version": 1
+}

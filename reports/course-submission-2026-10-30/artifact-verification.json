@@ -1,0 +1,41 @@
+{
+  "artifacts": [
+    {
+      "bytes": 163750,
+      "file": "deliverables/midterm/8.pptx",
+      "native_charts": 6,
+      "native_powerpoint_opened": false,
+      "notes_max_words": 89,
+      "notes_min_words": 60,
+      "sha256": "c480f1fa34a13afc02913c57280915a8ac29765b597d56a187c0a4818a98b347",
+      "size_emu": [
+        12192000,
+        6858000
+      ],
+      "slides": 33
+    },
+    {
+      "bytes": 29452,
+      "file": "deliverables/poster/8.pptx",
+      "native_charts": 2,
+      "native_powerpoint_opened": false,
+      "notes_max_words": 129,
+      "notes_min_words": 129,
+      "sha256": "d66619dda2a251608de616578b9d5a112665502f0eb280c2c61e8c2a27f7b259",
+      "size_emu": [
+        15120000,
+        21384000
+      ],
+      "slides": 1
+    }
+  ],
+  "checked_aggregate_points": 128,
+  "original_package": {
+    "file_count": 184,
+    "manifest_sha256": "f369b77e40060eff743e5c8711a001d56f330fefa25603b16ba71b4eef877c47"
+  },
+  "paid_api_calls": 0,
+  "passed": true,
+  "public_wandb_urls_verified": false,
+  "source_csv_sha256": "b618bcd88e7d00d3cfe4d612bb019c2e96a9494e5672236c0ab00587faddc6e3"
+}

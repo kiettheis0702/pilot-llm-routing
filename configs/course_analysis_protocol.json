@@ -1,0 +1,32 @@
+{
+  "version": 1,
+  "declared_date": "2026-10-30",
+  "scope": "core-scope course supplement; not paper-equivalent",
+  "primary_source": "https://aclanthology.org/2025.findings-emnlp.1301.pdf",
+  "frozen_package": "reports/full-experiments-2026-10-29",
+  "synthetic_magnitude_stress": {
+    "hypothesis": "Cosine normalization discards positive arm magnitude when estimates remain collinear; a linear mean retains it.",
+    "context": [1.0, 0.0],
+    "arms": ["low", "high"],
+    "rewards": [0.2, 0.8],
+    "prior_vectors": [[0.2, 0.0], [0.8, 0.0]],
+    "lambda": 1.0,
+    "alphas": [0.5, 1.0, 2.0],
+    "horizons": [100, 500, 2000],
+    "seed": 42,
+    "interpretation": "deterministic assumption-violating construction, not a theorem counterexample or LLM benchmark"
+  },
+  "cost_sensitivity": {
+    "hypothesis": "Feasibility for estimated costs does not imply feasibility after selected realized costs increase.",
+    "factors": [0.8, 1.0, 1.1, 1.25, 1.5, 2.0],
+    "selection": "all 1098 existing conditions; separately report main PILOT full-learning conditions",
+    "intervention": "multiply total recorded selected costs by factor, hold choices and rewards fixed",
+    "interpretation": "counterfactual cost accounting, not rerouted traffic or paid API calls"
+  },
+  "paper_comparison": {
+    "routerbench_headline": {"gpt4_performance_fraction": 0.93, "gpt4_cost_fraction": 0.25, "source": "section 4 / Figure 3"},
+    "mmlu_headline": {"gpt4_performance_fraction": 0.86, "gpt4_cost_fraction": 0.27, "source": "section 4 / Figure 3"},
+    "preference_accuracy": {"pilot": 0.65, "routellm": 0.636, "holdout_pairs": 500, "source": "appendix D.3"},
+    "comparison_rule": "reported values versus local observations with explicit protocol differences; do not fabricate matched points or relative reproduction error"
+  }
+}

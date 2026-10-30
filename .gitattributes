@@ -10,6 +10,7 @@
 *.gif binary
 *.webp binary
 *.pdf binary
+*.pptx binary
 *.zip binary
 *.gz binary
 *.npy binary
@@ -30,3 +31,7 @@ configs/frozen_experiment_protocol.json -text
 configs/research_prior_index.json -text
 tools/research/verify_replicate.py -text
 reports/full-experiments-2026-10-29/** -text
+configs/course_analysis_protocol.json -text
+tools/course/** -text
+# Frozen course evidence includes CRLF; recognize it without changing bytes.
+reports/course-submission-2026-10-30/** -text whitespace=blank-at-eol,blank-at-eof,space-before-tab,cr-at-eol

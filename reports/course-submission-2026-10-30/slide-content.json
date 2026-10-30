@@ -1,0 +1,1681 @@
+{
+  "ablations": [
+    [
+      "main",
+      "0.6764",
+      "0.6675"
+    ],
+    [
+      "zero-prior-direction",
+      "0.6751",
+      "0.6701"
+    ],
+    [
+      "unit-initialization-strength",
+      "0.6836",
+      "0.6784"
+    ],
+    [
+      "prior-only",
+      "0.6032",
+      "0.5103"
+    ],
+    [
+      "single-budget-bin",
+      "0.6762",
+      "0.6774"
+    ],
+    [
+      "projection-dimension-8",
+      "0.6774",
+      "0.6750"
+    ]
+  ],
+  "analysis_sha256": "5ab88188c79e21c8a9d3b599d6082a46a3c59123df686c971f485c12be13a872",
+  "charts": {
+    "cost": {
+      "series": [
+        {
+          "name": "Main PILOT; 48 conditions",
+          "points": [
+            {
+              "mean": 0.0
+            },
+            {
+              "mean": 0.0
+            },
+            {
+              "mean": 52.083333333333336
+            },
+            {
+              "mean": 56.25
+            },
+            {
+              "mean": 64.58333333333333
+            },
+            {
+              "mean": 64.58333333333333
+            }
+          ]
+        }
+      ],
+      "x": [
+        0.8,
+        1.0,
+        1.1,
+        1.25,
+        1.5,
+        2.0
+      ],
+      "x_label": "Multiplier on recorded costs",
+      "y_label": "Conditions over budget (%)"
+    },
+    "magnitude": {
+      "series": [
+        {
+          "name": "pilot-cosine",
+          "points": [
+            {
+              "mean": 0.6000000000000001
+            },
+            {
+              "mean": 30.00000000000003
+            },
+            {
+              "mean": 75.0
+            },
+            {
+              "mean": 149.9999999999993
+            },
+            {
+              "mean": 299.99999999999994
+            },
+            {
+              "mean": 450.0000000000056
+            },
+            {
+              "mean": 600.0000000000113
+            }
+          ]
+        },
+        {
+          "name": "linear-prior-control",
+          "points": [
+            {
+              "mean": 0.0
+            },
+            {
+              "mean": 1.2000000000000002
+            },
+            {
+              "mean": 1.2000000000000002
+            },
+            {
+              "mean": 1.2000000000000002
+            },
+            {
+              "mean": 1.2000000000000002
+            },
+            {
+              "mean": 1.2000000000000002
+            },
+            {
+              "mean": 1.2000000000000002
+            }
+          ]
+        }
+      ],
+      "x": [
+        1,
+        100,
+        250,
+        500,
+        1000,
+        1500,
+        2000
+      ],
+      "x_label": "Learning rounds (synthetic)",
+      "y_label": "Cumulative regret"
+    },
+    "mmlu-budget": {
+      "series": [
+        {
+          "name": "PILOT",
+          "points": [
+            {
+              "maximum": 0.002352941176470588,
+              "mean": 0.002352941176470588,
+              "minimum": 0.002352941176470588,
+              "source_ids": [
+                "mmlu/seed-7/main/pilot/learn-1/budget-0.05",
+                "mmlu/seed-42/main/pilot/learn-1/budget-0.05",
+                "mmlu/seed-2026/main/pilot/learn-1/budget-0.05"
+              ]
+            },
+            {
+              "maximum": 0.004705882352941176,
+              "mean": 0.0044444444444444444,
+              "minimum": 0.00392156862745098,
+              "source_ids": [
+                "mmlu/seed-7/main/pilot/learn-1/budget-0.1",
+                "mmlu/seed-42/main/pilot/learn-1/budget-0.1",
+                "mmlu/seed-2026/main/pilot/learn-1/budget-0.1"
+              ]
+            },
+            {
+              "maximum": 0.05803921568627451,
+              "mean": 0.054901960784313725,
+              "minimum": 0.050980392156862744,
+              "source_ids": [
+                "mmlu/seed-7/main/pilot/learn-1/budget-0.2",
+                "mmlu/seed-42/main/pilot/learn-1/budget-0.2",
+                "mmlu/seed-2026/main/pilot/learn-1/budget-0.2"
+              ]
+            },
+            {
+              "maximum": 0.6125490196078431,
+              "mean": 0.312156862745098,
+              "minimum": 0.1592156862745098,
+              "source_ids": [
+                "mmlu/seed-7/main/pilot/learn-1/budget-0.3",
+                "mmlu/seed-42/main/pilot/learn-1/budget-0.3",
+                "mmlu/seed-2026/main/pilot/learn-1/budget-0.3"
+              ]
+            },
+            {
+              "maximum": 0.6729411764705883,
+              "mean": 0.6674509803921569,
+              "minimum": 0.6635294117647059,
+              "source_ids": [
+                "mmlu/seed-7/main/pilot/learn-1/budget-0.5",
+                "mmlu/seed-42/main/pilot/learn-1/budget-0.5",
+                "mmlu/seed-2026/main/pilot/learn-1/budget-0.5"
+              ]
+            },
+            {
+              "maximum": 0.7458823529411764,
+              "mean": 0.7435294117647059,
+              "minimum": 0.7419607843137255,
+              "source_ids": [
+                "mmlu/seed-7/main/pilot/learn-1/budget-0.75",
+                "mmlu/seed-42/main/pilot/learn-1/budget-0.75",
+                "mmlu/seed-2026/main/pilot/learn-1/budget-0.75"
+              ]
+            },
+            {
+              "maximum": 0.7945098039215687,
+              "mean": 0.7926797385620915,
+              "minimum": 0.7905882352941176,
+              "source_ids": [
+                "mmlu/seed-7/main/pilot/learn-1/budget-1",
+                "mmlu/seed-42/main/pilot/learn-1/budget-1",
+                "mmlu/seed-2026/main/pilot/learn-1/budget-1"
+              ]
+            },
+            {
+              "maximum": 0.8007843137254902,
+              "mean": 0.7966013071895425,
+              "minimum": 0.7937254901960784,
+              "source_ids": [
+                "mmlu/seed-7/main/pilot/learn-1/budget-1.25",
+                "mmlu/seed-42/main/pilot/learn-1/budget-1.25",
+                "mmlu/seed-2026/main/pilot/learn-1/budget-1.25"
+              ]
+            }
+          ]
+        },
+        {
+          "name": "LinUCB",
+          "points": [
+            {
+              "maximum": 0.007058823529411765,
+              "mean": 0.00392156862745098,
+              "minimum": 0.001568627450980392,
+              "source_ids": [
+                "mmlu/seed-7/main/linucb/learn-1/budget-0.05",
+                "mmlu/seed-42/main/linucb/learn-1/budget-0.05",
+                "mmlu/seed-2026/main/linucb/learn-1/budget-0.05"
+              ]
+            },
+            {
+              "maximum": 0.010980392156862745,
+              "mean": 0.007581699346405229,
+              "minimum": 0.004705882352941176,
+              "source_ids": [
+                "mmlu/seed-7/main/linucb/learn-1/budget-0.1",
+                "mmlu/seed-42/main/linucb/learn-1/budget-0.1",
+                "mmlu/seed-2026/main/linucb/learn-1/budget-0.1"
+              ]
+            },
+            {
+              "maximum": 0.11137254901960784,
+              "mean": 0.07790849673202614,
+              "minimum": 0.011764705882352941,
+              "source_ids": [
+                "mmlu/seed-7/main/linucb/learn-1/budget-0.2",
+                "mmlu/seed-42/main/linucb/learn-1/budget-0.2",
+                "mmlu/seed-2026/main/linucb/learn-1/budget-0.2"
+              ]
+            },
+            {
+              "maximum": 0.6525490196078432,
+              "mean": 0.48549019607843136,
+              "minimum": 0.16941176470588235,
+              "source_ids": [
+                "mmlu/seed-7/main/linucb/learn-1/budget-0.3",
+                "mmlu/seed-42/main/linucb/learn-1/budget-0.3",
+                "mmlu/seed-2026/main/linucb/learn-1/budget-0.3"
+              ]
+            },
+            {
+              "maximum": 0.6949019607843138,
+              "mean": 0.687843137254902,
+              "minimum": 0.6776470588235294,
+              "source_ids": [
+                "mmlu/seed-7/main/linucb/learn-1/budget-0.5",
+                "mmlu/seed-42/main/linucb/learn-1/budget-0.5",
+                "mmlu/seed-2026/main/linucb/learn-1/budget-0.5"
+              ]
+            },
+            {
+              "maximum": 0.7192156862745098,
+              "mean": 0.7137254901960784,
+              "minimum": 0.7098039215686275,
+              "source_ids": [
+                "mmlu/seed-7/main/linucb/learn-1/budget-0.75",
+                "mmlu/seed-42/main/linucb/learn-1/budget-0.75",
+                "mmlu/seed-2026/main/linucb/learn-1/budget-0.75"
+              ]
+            },
+            {
+              "maximum": 0.7521568627450981,
+              "mean": 0.7487581699346405,
+              "minimum": 0.7458823529411764,
+              "source_ids": [
+                "mmlu/seed-7/main/linucb/learn-1/budget-1",
+                "mmlu/seed-42/main/linucb/learn-1/budget-1",
+                "mmlu/seed-2026/main/linucb/learn-1/budget-1"
+              ]
+            },
+            {
+              "maximum": 0.7686274509803922,
+              "mean": 0.7644444444444445,
+              "minimum": 0.7607843137254902,
+              "source_ids": [
+                "mmlu/seed-7/main/linucb/learn-1/budget-1.25",
+                "mmlu/seed-42/main/linucb/learn-1/budget-1.25",
+                "mmlu/seed-2026/main/linucb/learn-1/budget-1.25"
+              ]
+            }
+          ]
+        },
+        {
+          "name": "ExploreOnly",
+          "points": [
+            {
+              "maximum": 0.007058823529411765,
+              "mean": 0.005751633986928104,
+              "minimum": 0.00392156862745098,
+              "source_ids": [
+                "mmlu/seed-7/main/explore-only/learn-1/budget-0.05",
+                "mmlu/seed-42/main/explore-only/learn-1/budget-0.05",
+                "mmlu/seed-2026/main/explore-only/learn-1/budget-0.05"
+              ]
+            },
+            {
+              "maximum": 0.00784313725490196,
+              "mean": 0.007058823529411765,
+              "minimum": 0.005490196078431373,
+              "source_ids": [
+                "mmlu/seed-7/main/explore-only/learn-1/budget-0.1",
+                "mmlu/seed-42/main/explore-only/learn-1/budget-0.1",
+                "mmlu/seed-2026/main/explore-only/learn-1/budget-0.1"
+              ]
+            },
+            {
+              "maximum": 0.11450980392156863,
+              "mean": 0.08052287581699347,
+              "minimum": 0.01411764705882353,
+              "source_ids": [
+                "mmlu/seed-7/main/explore-only/learn-1/budget-0.2",
+                "mmlu/seed-42/main/explore-only/learn-1/budget-0.2",
+                "mmlu/seed-2026/main/explore-only/learn-1/budget-0.2"
+              ]
+            },
+            {
+              "maximum": 0.6462745098039215,
+              "mean": 0.4841830065359477,
+              "minimum": 0.17019607843137255,
+              "source_ids": [
+                "mmlu/seed-7/main/explore-only/learn-1/budget-0.3",
+                "mmlu/seed-42/main/explore-only/learn-1/budget-0.3",
+                "mmlu/seed-2026/main/explore-only/learn-1/budget-0.3"
+              ]
+            },
+            {
+              "maximum": 0.7011764705882353,
+              "mean": 0.6899346405228758,
+              "minimum": 0.676078431372549,
+              "source_ids": [
+                "mmlu/seed-7/main/explore-only/learn-1/budget-0.5",
+                "mmlu/seed-42/main/explore-only/learn-1/budget-0.5",
+                "mmlu/seed-2026/main/explore-only/learn-1/budget-0.5"
+              ]
+            },
+            {
+              "maximum": 0.7270588235294118,
+              "mean": 0.7205228758169935,
+              "minimum": 0.7137254901960784,
+              "source_ids": [
+                "mmlu/seed-7/main/explore-only/learn-1/budget-0.75",
+                "mmlu/seed-42/main/explore-only/learn-1/budget-0.75",
+                "mmlu/seed-2026/main/explore-only/learn-1/budget-0.75"
+              ]
+            },
+            {
+              "maximum": 0.76,
+              "mean": 0.7576470588235295,
+              "minimum": 0.756078431372549,
+              "source_ids": [
+                "mmlu/seed-7/main/explore-only/learn-1/budget-1",
+                "mmlu/seed-42/main/explore-only/learn-1/budget-1",
+                "mmlu/seed-2026/main/explore-only/learn-1/budget-1"
+              ]
+            },
+            {
+              "maximum": 0.7843137254901961,
+              "mean": 0.7816993464052288,
+              "minimum": 0.779607843137255,
+              "source_ids": [
+                "mmlu/seed-7/main/explore-only/learn-1/budget-1.25",
+                "mmlu/seed-42/main/explore-only/learn-1/budget-1.25",
+                "mmlu/seed-2026/main/explore-only/learn-1/budget-1.25"
+              ]
+            }
+          ]
+        },
+        {
+          "name": "EpochGreedy",
+          "points": [
+            {
+              "maximum": 0.005490196078431373,
+              "mean": 0.00392156862745098,
+              "minimum": 0.002352941176470588,
+              "source_ids": [
+                "mmlu/seed-7/main/epoch-greedy/learn-1/budget-0.05",
+                "mmlu/seed-42/main/epoch-greedy/learn-1/budget-0.05",
+                "mmlu/seed-2026/main/epoch-greedy/learn-1/budget-0.05"
+              ]
+            },
+            {
+              "maximum": 0.009411764705882352,
+              "mean": 0.007320261437908497,
+              "minimum": 0.006274509803921568,
+              "source_ids": [
+                "mmlu/seed-7/main/epoch-greedy/learn-1/budget-0.1",
+                "mmlu/seed-42/main/epoch-greedy/learn-1/budget-0.1",
+                "mmlu/seed-2026/main/epoch-greedy/learn-1/budget-0.1"
+              ]
+            },
+            {
+              "maximum": 0.11372549019607843,
+              "mean": 0.11084967320261438,
+              "minimum": 0.10666666666666667,
+              "source_ids": [
+                "mmlu/seed-7/main/epoch-greedy/learn-1/budget-0.2",
+                "mmlu/seed-42/main/epoch-greedy/learn-1/budget-0.2",
+                "mmlu/seed-2026/main/epoch-greedy/learn-1/budget-0.2"
+              ]
+            },
+            {
+              "maximum": 0.6392156862745098,
+              "mean": 0.4776470588235294,
+              "minimum": 0.17098039215686275,
+              "source_ids": [
+                "mmlu/seed-7/main/epoch-greedy/learn-1/budget-0.3",
+                "mmlu/seed-42/main/epoch-greedy/learn-1/budget-0.3",
+                "mmlu/seed-2026/main/epoch-greedy/learn-1/budget-0.3"
+              ]
+            },
+            {
+              "maximum": 0.6823529411764706,
+              "mean": 0.6818300653594771,
+              "minimum": 0.6815686274509803,
+              "source_ids": [
+                "mmlu/seed-7/main/epoch-greedy/learn-1/budget-0.5",
+                "mmlu/seed-42/main/epoch-greedy/learn-1/budget-0.5",
+                "mmlu/seed-2026/main/epoch-greedy/learn-1/budget-0.5"
+              ]
+            },
+            {
+              "maximum": 0.7152941176470589,
+              "mean": 0.7142483660130718,
+              "minimum": 0.7129411764705882,
+              "source_ids": [
+                "mmlu/seed-7/main/epoch-greedy/learn-1/budget-0.75",
+                "mmlu/seed-42/main/epoch-greedy/learn-1/budget-0.75",
+                "mmlu/seed-2026/main/epoch-greedy/learn-1/budget-0.75"
+              ]
+            },
+            {
+              "maximum": 0.7568627450980392,
+              "mean": 0.7529411764705882,
+              "minimum": 0.7474509803921568,
+              "source_ids": [
+                "mmlu/seed-7/main/epoch-greedy/learn-1/budget-1",
+                "mmlu/seed-42/main/epoch-greedy/learn-1/budget-1",
+                "mmlu/seed-2026/main/epoch-greedy/learn-1/budget-1"
+              ]
+            },
+            {
+              "maximum": 0.779607843137255,
+              "mean": 0.7751633986928105,
+              "minimum": 0.7670588235294118,
+              "source_ids": [
+                "mmlu/seed-7/main/epoch-greedy/learn-1/budget-1.25",
+                "mmlu/seed-42/main/epoch-greedy/learn-1/budget-1.25",
+                "mmlu/seed-2026/main/epoch-greedy/learn-1/budget-1.25"
+              ]
+            }
+          ]
+        },
+        {
+          "name": "Random",
+          "points": [
+            {
+              "maximum": 0.009411764705882352,
+              "mean": 0.00784313725490196,
+              "minimum": 0.005490196078431373,
+              "source_ids": [
+                "mmlu/seed-7/main/random/learn-1/budget-0.05",
+                "mmlu/seed-42/main/random/learn-1/budget-0.05",
+                "mmlu/seed-2026/main/random/learn-1/budget-0.05"
+              ]
+            },
+            {
+              "maximum": 0.01803921568627451,
+              "mean": 0.017777777777777778,
+              "minimum": 0.017254901960784313,
+              "source_ids": [
+                "mmlu/seed-7/main/random/learn-1/budget-0.1",
+                "mmlu/seed-42/main/random/learn-1/budget-0.1",
+                "mmlu/seed-2026/main/random/learn-1/budget-0.1"
+              ]
+            },
+            {
+              "maximum": 0.4337254901960784,
+              "mean": 0.4211764705882353,
+              "minimum": 0.41019607843137257,
+              "source_ids": [
+                "mmlu/seed-7/main/random/learn-1/budget-0.2",
+                "mmlu/seed-42/main/random/learn-1/budget-0.2",
+                "mmlu/seed-2026/main/random/learn-1/budget-0.2"
+              ]
+            },
+            {
+              "maximum": 0.45176470588235296,
+              "mean": 0.4355555555555556,
+              "minimum": 0.4258823529411765,
+              "source_ids": [
+                "mmlu/seed-7/main/random/learn-1/budget-0.3",
+                "mmlu/seed-42/main/random/learn-1/budget-0.3",
+                "mmlu/seed-2026/main/random/learn-1/budget-0.3"
+              ]
+            },
+            {
+              "maximum": 0.48627450980392156,
+              "mean": 0.4666666666666667,
+              "minimum": 0.45647058823529413,
+              "source_ids": [
+                "mmlu/seed-7/main/random/learn-1/budget-0.5",
+                "mmlu/seed-42/main/random/learn-1/budget-0.5",
+                "mmlu/seed-2026/main/random/learn-1/budget-0.5"
+              ]
+            },
+            {
+              "maximum": 0.49254901960784314,
+              "mean": 0.47241830065359475,
+              "minimum": 0.4603921568627451,
+              "source_ids": [
+                "mmlu/seed-7/main/random/learn-1/budget-0.75",
+                "mmlu/seed-42/main/random/learn-1/budget-0.75",
+                "mmlu/seed-2026/main/random/learn-1/budget-0.75"
+              ]
+            },
+            {
+              "maximum": 0.49333333333333335,
+              "mean": 0.4726797385620915,
+              "minimum": 0.4603921568627451,
+              "source_ids": [
+                "mmlu/seed-7/main/random/learn-1/budget-1",
+                "mmlu/seed-42/main/random/learn-1/budget-1",
+                "mmlu/seed-2026/main/random/learn-1/budget-1"
+              ]
+            },
+            {
+              "maximum": 0.49333333333333335,
+              "mean": 0.4726797385620915,
+              "minimum": 0.4603921568627451,
+              "source_ids": [
+                "mmlu/seed-7/main/random/learn-1/budget-1.25",
+                "mmlu/seed-42/main/random/learn-1/budget-1.25",
+                "mmlu/seed-2026/main/random/learn-1/budget-1.25"
+              ]
+            }
+          ]
+        }
+      ],
+      "x": [
+        0.05,
+        0.1,
+        0.2,
+        0.3,
+        0.5,
+        0.75,
+        1.0,
+        1.25
+      ],
+      "x_label": "Local reference budget fraction",
+      "y_label": "Service utility"
+    },
+    "mmlu-learning": {
+      "series": [
+        {
+          "name": "PILOT",
+          "points": [
+            {
+              "maximum": 0.6494117647058824,
+              "mean": 0.643921568627451,
+              "minimum": 0.6337254901960784,
+              "source_ids": [
+                "mmlu/seed-7/main/pilot/learn-0.1/budget-0.5",
+                "mmlu/seed-42/main/pilot/learn-0.1/budget-0.5",
+                "mmlu/seed-2026/main/pilot/learn-0.1/budget-0.5"
+              ]
+            },
+            {
+              "maximum": 0.668235294117647,
+              "mean": 0.6541176470588235,
+              "minimum": 0.6384313725490196,
+              "source_ids": [
+                "mmlu/seed-7/main/pilot/learn-0.25/budget-0.5",
+                "mmlu/seed-42/main/pilot/learn-0.25/budget-0.5",
+                "mmlu/seed-2026/main/pilot/learn-0.25/budget-0.5"
+              ]
+            },
+            {
+              "maximum": 0.6713725490196079,
+              "mean": 0.6635294117647059,
+              "minimum": 0.659607843137255,
+              "source_ids": [
+                "mmlu/seed-7/main/pilot/learn-0.5/budget-0.5",
+                "mmlu/seed-42/main/pilot/learn-0.5/budget-0.5",
+                "mmlu/seed-2026/main/pilot/learn-0.5/budget-0.5"
+              ]
+            },
+            {
+              "maximum": 0.6729411764705883,
+              "mean": 0.6674509803921569,
+              "minimum": 0.6635294117647059,
+              "source_ids": [
+                "mmlu/seed-7/main/pilot/learn-1/budget-0.5",
+                "mmlu/seed-42/main/pilot/learn-1/budget-0.5",
+                "mmlu/seed-2026/main/pilot/learn-1/budget-0.5"
+              ]
+            }
+          ]
+        },
+        {
+          "name": "LinUCB",
+          "points": [
+            {
+              "maximum": 0.6980392156862745,
+              "mean": 0.6826143790849674,
+              "minimum": 0.6674509803921569,
+              "source_ids": [
+                "mmlu/seed-7/main/linucb/learn-0.1/budget-0.5",
+                "mmlu/seed-42/main/linucb/learn-0.1/budget-0.5",
+                "mmlu/seed-2026/main/linucb/learn-0.1/budget-0.5"
+              ]
+            },
+            {
+              "maximum": 0.6980392156862745,
+              "mean": 0.6847058823529412,
+              "minimum": 0.6729411764705883,
+              "source_ids": [
+                "mmlu/seed-7/main/linucb/learn-0.25/budget-0.5",
+                "mmlu/seed-42/main/linucb/learn-0.25/budget-0.5",
+                "mmlu/seed-2026/main/linucb/learn-0.25/budget-0.5"
+              ]
+            },
+            {
+              "maximum": 0.6901960784313725,
+              "mean": 0.6862745098039216,
+              "minimum": 0.68,
+              "source_ids": [
+                "mmlu/seed-7/main/linucb/learn-0.5/budget-0.5",
+                "mmlu/seed-42/main/linucb/learn-0.5/budget-0.5",
+                "mmlu/seed-2026/main/linucb/learn-0.5/budget-0.5"
+              ]
+            },
+            {
+              "maximum": 0.6949019607843138,
+              "mean": 0.687843137254902,
+              "minimum": 0.6776470588235294,
+              "source_ids": [
+                "mmlu/seed-7/main/linucb/learn-1/budget-0.5",
+                "mmlu/seed-42/main/linucb/learn-1/budget-0.5",
+                "mmlu/seed-2026/main/linucb/learn-1/budget-0.5"
+              ]
+            }
+          ]
+        },
+        {
+          "name": "ExploreOnly",
+          "points": [
+            {
+              "maximum": 0.6823529411764706,
+              "mean": 0.6820915032679739,
+              "minimum": 0.6815686274509803,
+              "source_ids": [
+                "mmlu/seed-7/main/explore-only/learn-0.1/budget-0.5",
+                "mmlu/seed-42/main/explore-only/learn-0.1/budget-0.5",
+                "mmlu/seed-2026/main/explore-only/learn-0.1/budget-0.5"
+              ]
+            },
+            {
+              "maximum": 0.6862745098039216,
+              "mean": 0.6781699346405229,
+              "minimum": 0.6690196078431373,
+              "source_ids": [
+                "mmlu/seed-7/main/explore-only/learn-0.25/budget-0.5",
+                "mmlu/seed-42/main/explore-only/learn-0.25/budget-0.5",
+                "mmlu/seed-2026/main/explore-only/learn-0.25/budget-0.5"
+              ]
+            },
+            {
+              "maximum": 0.6933333333333334,
+              "mean": 0.6836601307189543,
+              "minimum": 0.6729411764705883,
+              "source_ids": [
+                "mmlu/seed-7/main/explore-only/learn-0.5/budget-0.5",
+                "mmlu/seed-42/main/explore-only/learn-0.5/budget-0.5",
+                "mmlu/seed-2026/main/explore-only/learn-0.5/budget-0.5"
+              ]
+            },
+            {
+              "maximum": 0.7011764705882353,
+              "mean": 0.6899346405228758,
+              "minimum": 0.676078431372549,
+              "source_ids": [
+                "mmlu/seed-7/main/explore-only/learn-1/budget-0.5",
+                "mmlu/seed-42/main/explore-only/learn-1/budget-0.5",
+                "mmlu/seed-2026/main/explore-only/learn-1/budget-0.5"
+              ]
+            }
+          ]
+        }
+      ],
+      "x": [
+        0.1,
+        0.25,
+        0.5,
+        1.0
+      ],
+      "x_label": "Learning stream fraction",
+      "y_label": "Service utility at half budget"
+    },
+    "mmlu-regret": {
+      "series": [
+        {
+          "name": "PILOT",
+          "points": [
+            {
+              "maximum": 258.0,
+              "mean": 232.33333333333334,
+              "minimum": 192.0,
+              "source_ids": [
+                "mmlu/seed-7/main/pilot/learn-0.1/budget-0.5",
+                "mmlu/seed-42/main/pilot/learn-0.1/budget-0.5",
+                "mmlu/seed-2026/main/pilot/learn-0.1/budget-0.5"
+              ]
+            },
+            {
+              "maximum": 578.0,
+              "mean": 532.0,
+              "minimum": 454.0,
+              "source_ids": [
+                "mmlu/seed-7/main/pilot/learn-0.25/budget-0.5",
+                "mmlu/seed-42/main/pilot/learn-0.25/budget-0.5",
+                "mmlu/seed-2026/main/pilot/learn-0.25/budget-0.5"
+              ]
+            },
+            {
+              "maximum": 1067.0,
+              "mean": 996.6666666666666,
+              "minimum": 895.0,
+              "source_ids": [
+                "mmlu/seed-7/main/pilot/learn-0.5/budget-0.5",
+                "mmlu/seed-42/main/pilot/learn-0.5/budget-0.5",
+                "mmlu/seed-2026/main/pilot/learn-0.5/budget-0.5"
+              ]
+            },
+            {
+              "maximum": 1986.0,
+              "mean": 1865.3333333333333,
+              "minimum": 1720.0,
+              "source_ids": [
+                "mmlu/seed-7/main/pilot/learn-1/budget-0.5",
+                "mmlu/seed-42/main/pilot/learn-1/budget-0.5",
+                "mmlu/seed-2026/main/pilot/learn-1/budget-0.5"
+              ]
+            }
+          ]
+        },
+        {
+          "name": "LinUCB",
+          "points": [
+            {
+              "maximum": 277.0,
+              "mean": 263.6666666666667,
+              "minimum": 244.0,
+              "source_ids": [
+                "mmlu/seed-7/main/linucb/learn-0.1/budget-0.5",
+                "mmlu/seed-42/main/linucb/learn-0.1/budget-0.5",
+                "mmlu/seed-2026/main/linucb/learn-0.1/budget-0.5"
+              ]
+            },
+            {
+              "maximum": 730.0,
+              "mean": 716.6666666666666,
+              "minimum": 694.0,
+              "source_ids": [
+                "mmlu/seed-7/main/linucb/learn-0.25/budget-0.5",
+                "mmlu/seed-42/main/linucb/learn-0.25/budget-0.5",
+                "mmlu/seed-2026/main/linucb/learn-0.25/budget-0.5"
+              ]
+            },
+            {
+              "maximum": 1526.0,
+              "mean": 1514.6666666666667,
+              "minimum": 1498.0,
+              "source_ids": [
+                "mmlu/seed-7/main/linucb/learn-0.5/budget-0.5",
+                "mmlu/seed-42/main/linucb/learn-0.5/budget-0.5",
+                "mmlu/seed-2026/main/linucb/learn-0.5/budget-0.5"
+              ]
+            },
+            {
+              "maximum": 3171.0,
+              "mean": 3114.3333333333335,
+              "minimum": 3075.0,
+              "source_ids": [
+                "mmlu/seed-7/main/linucb/learn-1/budget-0.5",
+                "mmlu/seed-42/main/linucb/learn-1/budget-0.5",
+                "mmlu/seed-2026/main/linucb/learn-1/budget-0.5"
+              ]
+            }
+          ]
+        },
+        {
+          "name": "ExploreOnly",
+          "points": [
+            {
+              "maximum": 570.0,
+              "mean": 552.3333333333334,
+              "minimum": 534.0,
+              "source_ids": [
+                "mmlu/seed-7/main/explore-only/learn-0.1/budget-0.5",
+                "mmlu/seed-42/main/explore-only/learn-0.1/budget-0.5",
+                "mmlu/seed-2026/main/explore-only/learn-0.1/budget-0.5"
+              ]
+            },
+            {
+              "maximum": 1380.0,
+              "mean": 1374.6666666666667,
+              "minimum": 1370.0,
+              "source_ids": [
+                "mmlu/seed-7/main/explore-only/learn-0.25/budget-0.5",
+                "mmlu/seed-42/main/explore-only/learn-0.25/budget-0.5",
+                "mmlu/seed-2026/main/explore-only/learn-0.25/budget-0.5"
+              ]
+            },
+            {
+              "maximum": 2767.0,
+              "mean": 2757.6666666666665,
+              "minimum": 2739.0,
+              "source_ids": [
+                "mmlu/seed-7/main/explore-only/learn-0.5/budget-0.5",
+                "mmlu/seed-42/main/explore-only/learn-0.5/budget-0.5",
+                "mmlu/seed-2026/main/explore-only/learn-0.5/budget-0.5"
+              ]
+            },
+            {
+              "maximum": 5530.0,
+              "mean": 5505.333333333333,
+              "minimum": 5487.0,
+              "source_ids": [
+                "mmlu/seed-7/main/explore-only/learn-1/budget-0.5",
+                "mmlu/seed-42/main/explore-only/learn-1/budget-0.5",
+                "mmlu/seed-2026/main/explore-only/learn-1/budget-0.5"
+              ]
+            }
+          ]
+        }
+      ],
+      "x": [
+        0.1,
+        0.25,
+        0.5,
+        1.0
+      ],
+      "x_label": "Learning stream fraction",
+      "y_label": "Cumulative empirical oracle regret"
+    },
+    "routerbench-budget": {
+      "series": [
+        {
+          "name": "PILOT",
+          "points": [
+            {
+              "maximum": 0.0009296560272699101,
+              "mean": 0.0009296560272699101,
+              "minimum": 0.0009296560272699101,
+              "source_ids": [
+                "routerbench/seed-7/main/pilot/learn-1/budget-0.05",
+                "routerbench/seed-42/main/pilot/learn-1/budget-0.05",
+                "routerbench/seed-2026/main/pilot/learn-1/budget-0.05"
+              ]
+            },
+            {
+              "maximum": 0.004880694143167028,
+              "mean": 0.004467513686602624,
+              "minimum": 0.004260923458320421,
+              "source_ids": [
+                "routerbench/seed-7/main/pilot/learn-1/budget-0.1",
+                "routerbench/seed-42/main/pilot/learn-1/budget-0.1",
+                "routerbench/seed-2026/main/pilot/learn-1/budget-0.1"
+              ]
+            },
+            {
+              "maximum": 0.6212426402231175,
+              "mean": 0.6048497056089247,
+              "minimum": 0.5950573287883483,
+              "source_ids": [
+                "routerbench/seed-7/main/pilot/learn-1/budget-0.2",
+                "routerbench/seed-42/main/pilot/learn-1/budget-0.2",
+                "routerbench/seed-2026/main/pilot/learn-1/budget-0.2"
+              ]
+            },
+            {
+              "maximum": 0.641927486829873,
+              "mean": 0.6270839789277968,
+              "minimum": 0.6148125193678339,
+              "source_ids": [
+                "routerbench/seed-7/main/pilot/learn-1/budget-0.3",
+                "routerbench/seed-42/main/pilot/learn-1/budget-0.3",
+                "routerbench/seed-2026/main/pilot/learn-1/budget-0.3"
+              ]
+            },
+            {
+              "maximum": 0.6864735048032228,
+              "mean": 0.6763815721516372,
+              "minimum": 0.6689649829563061,
+              "source_ids": [
+                "routerbench/seed-7/main/pilot/learn-1/budget-0.5",
+                "routerbench/seed-42/main/pilot/learn-1/budget-0.5",
+                "routerbench/seed-2026/main/pilot/learn-1/budget-0.5"
+              ]
+            },
+            {
+              "maximum": 0.7294236132630926,
+              "mean": 0.725808284268154,
+              "minimum": 0.7219863650449333,
+              "source_ids": [
+                "routerbench/seed-7/main/pilot/learn-1/budget-0.75",
+                "routerbench/seed-42/main/pilot/learn-1/budget-0.75",
+                "routerbench/seed-2026/main/pilot/learn-1/budget-0.75"
+              ]
+            },
+            {
+              "maximum": 0.7693678339014565,
+              "mean": 0.7666924904452019,
+              "minimum": 0.7644096684226837,
+              "source_ids": [
+                "routerbench/seed-7/main/pilot/learn-1/budget-1",
+                "routerbench/seed-42/main/pilot/learn-1/budget-1",
+                "routerbench/seed-2026/main/pilot/learn-1/budget-1"
+              ]
+            },
+            {
+              "maximum": 0.7684536721413078,
+              "mean": 0.7674362152670179,
+              "minimum": 0.7654942671211652,
+              "source_ids": [
+                "routerbench/seed-7/main/pilot/learn-1/budget-1.25",
+                "routerbench/seed-42/main/pilot/learn-1/budget-1.25",
+                "routerbench/seed-2026/main/pilot/learn-1/budget-1.25"
+              ]
+            }
+          ]
+        },
+        {
+          "name": "LinUCB",
+          "points": [
+            {
+              "maximum": 0.003951038115897118,
+              "mean": 0.003305443652515236,
+              "minimum": 0.0023241400681747754,
+              "source_ids": [
+                "routerbench/seed-7/main/linucb/learn-1/budget-0.05",
+                "routerbench/seed-42/main/linucb/learn-1/budget-0.05",
+                "routerbench/seed-2026/main/linucb/learn-1/budget-0.05"
+              ]
+            },
+            {
+              "maximum": 0.006042764177254416,
+              "mean": 0.005836173948972213,
+              "minimum": 0.005500464828013635,
+              "source_ids": [
+                "routerbench/seed-7/main/linucb/learn-1/budget-0.1",
+                "routerbench/seed-42/main/linucb/learn-1/budget-0.1",
+                "routerbench/seed-2026/main/linucb/learn-1/budget-0.1"
+              ]
+            },
+            {
+              "maximum": 0.6599938022931516,
+              "mean": 0.6590279929759323,
+              "minimum": 0.6572823055469477,
+              "source_ids": [
+                "routerbench/seed-7/main/linucb/learn-1/budget-0.2",
+                "routerbench/seed-42/main/linucb/learn-1/budget-0.2",
+                "routerbench/seed-2026/main/linucb/learn-1/budget-0.2"
+              ]
+            },
+            {
+              "maximum": 0.6854044003718625,
+              "mean": 0.6803532692903627,
+              "minimum": 0.676913541989464,
+              "source_ids": [
+                "routerbench/seed-7/main/linucb/learn-1/budget-0.3",
+                "routerbench/seed-42/main/linucb/learn-1/budget-0.3",
+                "routerbench/seed-2026/main/linucb/learn-1/budget-0.3"
+              ]
+            },
+            {
+              "maximum": 0.7081809730399753,
+              "mean": 0.7056399132321042,
+              "minimum": 0.704307406259684,
+              "source_ids": [
+                "routerbench/seed-7/main/linucb/learn-1/budget-0.5",
+                "routerbench/seed-42/main/linucb/learn-1/budget-0.5",
+                "routerbench/seed-2026/main/linucb/learn-1/budget-0.5"
+              ]
+            },
+            {
+              "maximum": 0.7284009916330958,
+              "mean": 0.726634645181283,
+              "minimum": 0.7244499535171987,
+              "source_ids": [
+                "routerbench/seed-7/main/linucb/learn-1/budget-0.75",
+                "routerbench/seed-42/main/linucb/learn-1/budget-0.75",
+                "routerbench/seed-2026/main/linucb/learn-1/budget-0.75"
+              ]
+            },
+            {
+              "maximum": 0.7440502014254726,
+              "mean": 0.7430327445511827,
+              "minimum": 0.7414936473504804,
+              "source_ids": [
+                "routerbench/seed-7/main/linucb/learn-1/budget-1",
+                "routerbench/seed-42/main/linucb/learn-1/budget-1",
+                "routerbench/seed-2026/main/linucb/learn-1/budget-1"
+              ]
+            },
+            {
+              "maximum": 0.7531918190269601,
+              "mean": 0.7506249354405536,
+              "minimum": 0.748775952897428,
+              "source_ids": [
+                "routerbench/seed-7/main/linucb/learn-1/budget-1.25",
+                "routerbench/seed-42/main/linucb/learn-1/budget-1.25",
+                "routerbench/seed-2026/main/linucb/learn-1/budget-1.25"
+              ]
+            }
+          ]
+        },
+        {
+          "name": "ExploreOnly",
+          "points": [
+            {
+              "maximum": 0.003641152773473815,
+              "mean": 0.0029180869744861067,
+              "minimum": 0.0015494267121165168,
+              "source_ids": [
+                "routerbench/seed-7/main/explore-only/learn-1/budget-0.05",
+                "routerbench/seed-42/main/explore-only/learn-1/budget-0.05",
+                "routerbench/seed-2026/main/explore-only/learn-1/budget-0.05"
+              ]
+            },
+            {
+              "maximum": 0.006585063526495197,
+              "mean": 0.00640429707674827,
+              "minimum": 0.006120235512860242,
+              "source_ids": [
+                "routerbench/seed-7/main/explore-only/learn-1/budget-0.1",
+                "routerbench/seed-42/main/explore-only/learn-1/budget-0.1",
+                "routerbench/seed-2026/main/explore-only/learn-1/budget-0.1"
+              ]
+            },
+            {
+              "maximum": 0.6662844747443446,
+              "mean": 0.6584701993595703,
+              "minimum": 0.6478927796715216,
+              "source_ids": [
+                "routerbench/seed-7/main/explore-only/learn-1/budget-0.2",
+                "routerbench/seed-42/main/explore-only/learn-1/budget-0.2",
+                "routerbench/seed-2026/main/explore-only/learn-1/budget-0.2"
+              ]
+            },
+            {
+              "maximum": 0.6773473814688565,
+              "mean": 0.6749251110422477,
+              "minimum": 0.6723427331887202,
+              "source_ids": [
+                "routerbench/seed-7/main/explore-only/learn-1/budget-0.3",
+                "routerbench/seed-42/main/explore-only/learn-1/budget-0.3",
+                "routerbench/seed-2026/main/explore-only/learn-1/budget-0.3"
+              ]
+            },
+            {
+              "maximum": 0.706089246978618,
+              "mean": 0.7031453362255965,
+              "minimum": 0.7002943910753021,
+              "source_ids": [
+                "routerbench/seed-7/main/explore-only/learn-1/budget-0.5",
+                "routerbench/seed-42/main/explore-only/learn-1/budget-0.5",
+                "routerbench/seed-2026/main/explore-only/learn-1/budget-0.5"
+              ]
+            },
+            {
+              "maximum": 0.7272389215990084,
+              "mean": 0.7233911785972523,
+              "minimum": 0.7205144096684226,
+              "source_ids": [
+                "routerbench/seed-7/main/explore-only/learn-1/budget-0.75",
+                "routerbench/seed-42/main/explore-only/learn-1/budget-0.75",
+                "routerbench/seed-2026/main/explore-only/learn-1/budget-0.75"
+              ]
+            },
+            {
+              "maximum": 0.7514099783080261,
+              "mean": 0.7456254519161244,
+              "minimum": 0.7414316702819956,
+              "source_ids": [
+                "routerbench/seed-7/main/explore-only/learn-1/budget-1",
+                "routerbench/seed-42/main/explore-only/learn-1/budget-1",
+                "routerbench/seed-2026/main/explore-only/learn-1/budget-1"
+              ]
+            },
+            {
+              "maximum": 0.7649674620390456,
+              "mean": 0.7611713665943601,
+              "minimum": 0.758630306786489,
+              "source_ids": [
+                "routerbench/seed-7/main/explore-only/learn-1/budget-1.25",
+                "routerbench/seed-42/main/explore-only/learn-1/budget-1.25",
+                "routerbench/seed-2026/main/explore-only/learn-1/budget-1.25"
+              ]
+            }
+          ]
+        },
+        {
+          "name": "EpochGreedy",
+          "points": [
+            {
+              "maximum": 0.004648280136349551,
+              "mean": 0.0035378576593327136,
+              "minimum": 0.002014254725751472,
+              "source_ids": [
+                "routerbench/seed-7/main/epoch-greedy/learn-1/budget-0.05",
+                "routerbench/seed-42/main/epoch-greedy/learn-1/budget-0.05",
+                "routerbench/seed-2026/main/epoch-greedy/learn-1/budget-0.05"
+              ]
+            },
+            {
+              "maximum": 0.007204834211341804,
+              "mean": 0.006197706848466067,
+              "minimum": 0.004493337465137899,
+              "source_ids": [
+                "routerbench/seed-7/main/epoch-greedy/learn-1/budget-0.1",
+                "routerbench/seed-42/main/epoch-greedy/learn-1/budget-0.1",
+                "routerbench/seed-2026/main/epoch-greedy/learn-1/budget-0.1"
+              ]
+            },
+            {
+              "maximum": 0.6493957235822745,
+              "mean": 0.6468701580415246,
+              "minimum": 0.6454446854663775,
+              "source_ids": [
+                "routerbench/seed-7/main/epoch-greedy/learn-1/budget-0.2",
+                "routerbench/seed-42/main/epoch-greedy/learn-1/budget-0.2",
+                "routerbench/seed-2026/main/epoch-greedy/learn-1/budget-0.2"
+              ]
+            },
+            {
+              "maximum": 0.669042454291912,
+              "mean": 0.6632217746100609,
+              "minimum": 0.65731329408119,
+              "source_ids": [
+                "routerbench/seed-7/main/epoch-greedy/learn-1/budget-0.3",
+                "routerbench/seed-42/main/epoch-greedy/learn-1/budget-0.3",
+                "routerbench/seed-2026/main/epoch-greedy/learn-1/budget-0.3"
+              ]
+            },
+            {
+              "maximum": 0.7033157731639293,
+              "mean": 0.6973039975209173,
+              "minimum": 0.6865974589401922,
+              "source_ids": [
+                "routerbench/seed-7/main/epoch-greedy/learn-1/budget-0.5",
+                "routerbench/seed-42/main/epoch-greedy/learn-1/budget-0.5",
+                "routerbench/seed-2026/main/epoch-greedy/learn-1/budget-0.5"
+              ]
+            },
+            {
+              "maximum": 0.7215990083669043,
+              "mean": 0.7162586509658093,
+              "minimum": 0.7078246048961885,
+              "source_ids": [
+                "routerbench/seed-7/main/epoch-greedy/learn-1/budget-0.75",
+                "routerbench/seed-42/main/epoch-greedy/learn-1/budget-0.75",
+                "routerbench/seed-2026/main/epoch-greedy/learn-1/budget-0.75"
+              ]
+            },
+            {
+              "maximum": 0.7438332816857762,
+              "mean": 0.739500051647557,
+              "minimum": 0.7345522156801984,
+              "source_ids": [
+                "routerbench/seed-7/main/epoch-greedy/learn-1/budget-1",
+                "routerbench/seed-42/main/epoch-greedy/learn-1/budget-1",
+                "routerbench/seed-2026/main/epoch-greedy/learn-1/budget-1"
+              ]
+            },
+            {
+              "maximum": 0.7603346761698171,
+              "mean": 0.757044726784423,
+              "minimum": 0.7541369693213511,
+              "source_ids": [
+                "routerbench/seed-7/main/epoch-greedy/learn-1/budget-1.25",
+                "routerbench/seed-42/main/epoch-greedy/learn-1/budget-1.25",
+                "routerbench/seed-2026/main/epoch-greedy/learn-1/budget-1.25"
+              ]
+            }
+          ]
+        },
+        {
+          "name": "Random",
+          "points": [
+            {
+              "maximum": 0.004338394793926247,
+              "mean": 0.003951038115897118,
+              "minimum": 0.003408738766656337,
+              "source_ids": [
+                "routerbench/seed-7/main/random/learn-1/budget-0.05",
+                "routerbench/seed-42/main/random/learn-1/budget-0.05",
+                "routerbench/seed-2026/main/random/learn-1/budget-0.05"
+              ]
+            },
+            {
+              "maximum": 0.48215060427641776,
+              "mean": 0.4682109286230762,
+              "minimum": 0.4587697551905795,
+              "source_ids": [
+                "routerbench/seed-7/main/random/learn-1/budget-0.1",
+                "routerbench/seed-42/main/random/learn-1/budget-0.1",
+                "routerbench/seed-2026/main/random/learn-1/budget-0.1"
+              ]
+            },
+            {
+              "maximum": 0.49803222807561204,
+              "mean": 0.48471232310711704,
+              "minimum": 0.47533312674310507,
+              "source_ids": [
+                "routerbench/seed-7/main/random/learn-1/budget-0.2",
+                "routerbench/seed-42/main/random/learn-1/budget-0.2",
+                "routerbench/seed-2026/main/random/learn-1/budget-0.2"
+              ]
+            },
+            {
+              "maximum": 0.5169352339634335,
+              "mean": 0.5045449850222085,
+              "minimum": 0.4976448713975829,
+              "source_ids": [
+                "routerbench/seed-7/main/random/learn-1/budget-0.3",
+                "routerbench/seed-42/main/random/learn-1/budget-0.3",
+                "routerbench/seed-2026/main/random/learn-1/budget-0.3"
+              ]
+            },
+            {
+              "maximum": 0.5318407189339944,
+              "mean": 0.5207468236752402,
+              "minimum": 0.5133870467926868,
+              "source_ids": [
+                "routerbench/seed-7/main/random/learn-1/budget-0.5",
+                "routerbench/seed-42/main/random/learn-1/budget-0.5",
+                "routerbench/seed-2026/main/random/learn-1/budget-0.5"
+              ]
+            },
+            {
+              "maximum": 0.5350170436938333,
+              "mean": 0.5228127259580622,
+              "minimum": 0.5151688875116207,
+              "source_ids": [
+                "routerbench/seed-7/main/random/learn-1/budget-0.75",
+                "routerbench/seed-42/main/random/learn-1/budget-0.75",
+                "routerbench/seed-2026/main/random/learn-1/budget-0.75"
+              ]
+            },
+            {
+              "maximum": 0.5350170436938333,
+              "mean": 0.5228127259580622,
+              "minimum": 0.5151688875116207,
+              "source_ids": [
+                "routerbench/seed-7/main/random/learn-1/budget-1",
+                "routerbench/seed-42/main/random/learn-1/budget-1",
+                "routerbench/seed-2026/main/random/learn-1/budget-1"
+              ]
+            },
+            {
+              "maximum": 0.5350170436938333,
+              "mean": 0.5228127259580622,
+              "minimum": 0.5151688875116207,
+              "source_ids": [
+                "routerbench/seed-7/main/random/learn-1/budget-1.25",
+                "routerbench/seed-42/main/random/learn-1/budget-1.25",
+                "routerbench/seed-2026/main/random/learn-1/budget-1.25"
+              ]
+            }
+          ]
+        }
+      ],
+      "x": [
+        0.05,
+        0.1,
+        0.2,
+        0.3,
+        0.5,
+        0.75,
+        1.0,
+        1.25
+      ],
+      "x_label": "Local reference budget fraction",
+      "y_label": "Service utility"
+    },
+    "routerbench-learning": {
+      "series": [
+        {
+          "name": "PILOT",
+          "points": [
+            {
+              "maximum": 0.6633870467926867,
+              "mean": 0.6564197913438694,
+              "minimum": 0.6505422993492408,
+              "source_ids": [
+                "routerbench/seed-7/main/pilot/learn-0.1/budget-0.5",
+                "routerbench/seed-42/main/pilot/learn-0.1/budget-0.5",
+                "routerbench/seed-2026/main/pilot/learn-0.1/budget-0.5"
+              ]
+            },
+            {
+              "maximum": 0.6709792376820576,
+              "mean": 0.6630823262059704,
+              "minimum": 0.6585993182522467,
+              "source_ids": [
+                "routerbench/seed-7/main/pilot/learn-0.25/budget-0.5",
+                "routerbench/seed-42/main/pilot/learn-0.25/budget-0.5",
+                "routerbench/seed-2026/main/pilot/learn-0.25/budget-0.5"
+              ]
+            },
+            {
+              "maximum": 0.6755500464828014,
+              "mean": 0.6695640946183246,
+              "minimum": 0.6660210722032848,
+              "source_ids": [
+                "routerbench/seed-7/main/pilot/learn-0.5/budget-0.5",
+                "routerbench/seed-42/main/pilot/learn-0.5/budget-0.5",
+                "routerbench/seed-2026/main/pilot/learn-0.5/budget-0.5"
+              ]
+            },
+            {
+              "maximum": 0.6864735048032228,
+              "mean": 0.6763815721516372,
+              "minimum": 0.6689649829563061,
+              "source_ids": [
+                "routerbench/seed-7/main/pilot/learn-1/budget-0.5",
+                "routerbench/seed-42/main/pilot/learn-1/budget-0.5",
+                "routerbench/seed-2026/main/pilot/learn-1/budget-0.5"
+              ]
+            }
+          ]
+        },
+        {
+          "name": "LinUCB",
+          "points": [
+            {
+              "maximum": 0.7044623489308957,
+              "mean": 0.6988430947216197,
+              "minimum": 0.6954911682677409,
+              "source_ids": [
+                "routerbench/seed-7/main/linucb/learn-0.1/budget-0.5",
+                "routerbench/seed-42/main/linucb/learn-0.1/budget-0.5",
+                "routerbench/seed-2026/main/linucb/learn-0.1/budget-0.5"
+              ]
+            },
+            {
+              "maximum": 0.7016578865819647,
+              "mean": 0.699524842474951,
+              "minimum": 0.6978772854044004,
+              "source_ids": [
+                "routerbench/seed-7/main/linucb/learn-0.25/budget-0.5",
+                "routerbench/seed-42/main/linucb/learn-0.25/budget-0.5",
+                "routerbench/seed-2026/main/linucb/learn-0.25/budget-0.5"
+              ]
+            },
+            {
+              "maximum": 0.7036876355748374,
+              "mean": 0.7020039252143374,
+              "minimum": 0.7010381158971181,
+              "source_ids": [
+                "routerbench/seed-7/main/linucb/learn-0.5/budget-0.5",
+                "routerbench/seed-42/main/linucb/learn-0.5/budget-0.5",
+                "routerbench/seed-2026/main/linucb/learn-0.5/budget-0.5"
+              ]
+            },
+            {
+              "maximum": 0.7081809730399753,
+              "mean": 0.7056399132321042,
+              "minimum": 0.704307406259684,
+              "source_ids": [
+                "routerbench/seed-7/main/linucb/learn-1/budget-0.5",
+                "routerbench/seed-42/main/linucb/learn-1/budget-0.5",
+                "routerbench/seed-2026/main/linucb/learn-1/budget-0.5"
+              ]
+            }
+          ]
+        },
+        {
+          "name": "ExploreOnly",
+          "points": [
+            {
+              "maximum": 0.6974899287263713,
+              "mean": 0.692588575560376,
+              "minimum": 0.6848775952897428,
+              "source_ids": [
+                "routerbench/seed-7/main/explore-only/learn-0.1/budget-0.5",
+                "routerbench/seed-42/main/explore-only/learn-0.1/budget-0.5",
+                "routerbench/seed-2026/main/explore-only/learn-0.1/budget-0.5"
+              ]
+            },
+            {
+              "maximum": 0.7078710876975519,
+              "mean": 0.6977016837103606,
+              "minimum": 0.6858072513170127,
+              "source_ids": [
+                "routerbench/seed-7/main/explore-only/learn-0.25/budget-0.5",
+                "routerbench/seed-42/main/explore-only/learn-0.25/budget-0.5",
+                "routerbench/seed-2026/main/explore-only/learn-0.25/budget-0.5"
+              ]
+            },
+            {
+              "maximum": 0.7089556863960336,
+              "mean": 0.7041731226113005,
+              "minimum": 0.6984195847536412,
+              "source_ids": [
+                "routerbench/seed-7/main/explore-only/learn-0.5/budget-0.5",
+                "routerbench/seed-42/main/explore-only/learn-0.5/budget-0.5",
+                "routerbench/seed-2026/main/explore-only/learn-0.5/budget-0.5"
+              ]
+            },
+            {
+              "maximum": 0.706089246978618,
+              "mean": 0.7031453362255965,
+              "minimum": 0.7002943910753021,
+              "source_ids": [
+                "routerbench/seed-7/main/explore-only/learn-1/budget-0.5",
+                "routerbench/seed-42/main/explore-only/learn-1/budget-0.5",
+                "routerbench/seed-2026/main/explore-only/learn-1/budget-0.5"
+              ]
+            }
+          ]
+        }
+      ],
+      "x": [
+        0.1,
+        0.25,
+        0.5,
+        1.0
+      ],
+      "x_label": "Learning stream fraction",
+      "y_label": "Service utility at half budget"
+    },
+    "routerbench-regret": {
+      "series": [
+        {
+          "name": "PILOT",
+          "points": [
+            {
+              "maximum": 546.2,
+              "mean": 514.4,
+              "minimum": 460.5,
+              "source_ids": [
+                "routerbench/seed-7/main/pilot/learn-0.1/budget-0.5",
+                "routerbench/seed-42/main/pilot/learn-0.1/budget-0.5",
+                "routerbench/seed-2026/main/pilot/learn-0.1/budget-0.5"
+              ]
+            },
+            {
+              "maximum": 1246.9000000000003,
+              "mean": 1174.916666666667,
+              "minimum": 1065.5500000000002,
+              "source_ids": [
+                "routerbench/seed-7/main/pilot/learn-0.25/budget-0.5",
+                "routerbench/seed-42/main/pilot/learn-0.25/budget-0.5",
+                "routerbench/seed-2026/main/pilot/learn-0.25/budget-0.5"
+              ]
+            },
+            {
+              "maximum": 2289.0500000000006,
+              "mean": 2218.8000000000006,
+              "minimum": 2108.1500000000005,
+              "source_ids": [
+                "routerbench/seed-7/main/pilot/learn-0.5/budget-0.5",
+                "routerbench/seed-42/main/pilot/learn-0.5/budget-0.5",
+                "routerbench/seed-2026/main/pilot/learn-0.5/budget-0.5"
+              ]
+            },
+            {
+              "maximum": 4322.200000000001,
+              "mean": 4253.95,
+              "minimum": 4157.3,
+              "source_ids": [
+                "routerbench/seed-7/main/pilot/learn-1/budget-0.5",
+                "routerbench/seed-42/main/pilot/learn-1/budget-0.5",
+                "routerbench/seed-2026/main/pilot/learn-1/budget-0.5"
+              ]
+            }
+          ]
+        },
+        {
+          "name": "LinUCB",
+          "points": [
+            {
+              "maximum": 766.1999999999999,
+              "mean": 724.9,
+              "minimum": 681.85,
+              "source_ids": [
+                "routerbench/seed-7/main/linucb/learn-0.1/budget-0.5",
+                "routerbench/seed-42/main/linucb/learn-0.1/budget-0.5",
+                "routerbench/seed-2026/main/linucb/learn-0.1/budget-0.5"
+              ]
+            },
+            {
+              "maximum": 1894.8,
+              "mean": 1862.6,
+              "minimum": 1834.4999999999995,
+              "source_ids": [
+                "routerbench/seed-7/main/linucb/learn-0.25/budget-0.5",
+                "routerbench/seed-42/main/linucb/learn-0.25/budget-0.5",
+                "routerbench/seed-2026/main/linucb/learn-0.25/budget-0.5"
+              ]
+            },
+            {
+              "maximum": 3678.8999999999996,
+              "mean": 3661.0333333333333,
+              "minimum": 3647.3,
+              "source_ids": [
+                "routerbench/seed-7/main/linucb/learn-0.5/budget-0.5",
+                "routerbench/seed-42/main/linucb/learn-0.5/budget-0.5",
+                "routerbench/seed-2026/main/linucb/learn-0.5/budget-0.5"
+              ]
+            },
+            {
+              "maximum": 7299.049999999999,
+              "mean": 7234.366666666666,
+              "minimum": 7179.800000000001,
+              "source_ids": [
+                "routerbench/seed-7/main/linucb/learn-1/budget-0.5",
+                "routerbench/seed-42/main/linucb/learn-1/budget-0.5",
+                "routerbench/seed-2026/main/linucb/learn-1/budget-0.5"
+              ]
+            }
+          ]
+        },
+        {
+          "name": "ExploreOnly",
+          "points": [
+            {
+              "maximum": 1210.85,
+              "mean": 1182.2833333333333,
+              "minimum": 1150.8500000000001,
+              "source_ids": [
+                "routerbench/seed-7/main/explore-only/learn-0.1/budget-0.5",
+                "routerbench/seed-42/main/explore-only/learn-0.1/budget-0.5",
+                "routerbench/seed-2026/main/explore-only/learn-0.1/budget-0.5"
+              ]
+            },
+            {
+              "maximum": 2932.4999999999995,
+              "mean": 2913.0666666666666,
+              "minimum": 2902.1000000000004,
+              "source_ids": [
+                "routerbench/seed-7/main/explore-only/learn-0.25/budget-0.5",
+                "routerbench/seed-42/main/explore-only/learn-0.25/budget-0.5",
+                "routerbench/seed-2026/main/explore-only/learn-0.25/budget-0.5"
+              ]
+            },
+            {
+              "maximum": 5919.0,
+              "mean": 5864.583333333334,
+              "minimum": 5831.0,
+              "source_ids": [
+                "routerbench/seed-7/main/explore-only/learn-0.5/budget-0.5",
+                "routerbench/seed-42/main/explore-only/learn-0.5/budget-0.5",
+                "routerbench/seed-2026/main/explore-only/learn-0.5/budget-0.5"
+              ]
+            },
+            {
+              "maximum": 11828.4,
+              "mean": 11793.699999999999,
+              "minimum": 11769.9,
+              "source_ids": [
+                "routerbench/seed-7/main/explore-only/learn-1/budget-0.5",
+                "routerbench/seed-42/main/explore-only/learn-1/budget-0.5",
+                "routerbench/seed-2026/main/explore-only/learn-1/budget-0.5"
+              ]
+            }
+          ]
+        }
+      ],
+      "x": [
+        0.1,
+        0.25,
+        0.5,
+        1.0
+      ],
+      "x_label": "Learning stream fraction",
+      "y_label": "Cumulative empirical oracle regret"
+    }
+  },
+  "comparison": [
+    {
+      "best_bandit": "linucb",
+      "domain": "routerbench",
+      "local_budget_fraction": 0.5,
+      "local_method_means": {
+        "epoch-greedy": 0.6973039975209172,
+        "explore-only": 0.7031453362255965,
+        "fixed-00": 0.4306941431670282,
+        "fixed-01": 0.5932135110009297,
+        "fixed-02": 0.00914161760148745,
+        "fixed-03": 0.6091881004028509,
+        "fixed-04": 0.0064301208552835455,
+        "fixed-05": 0.19862101022621634,
+        "fixed-06": 0.3274248528044623,
+        "fixed-07": 0.6444065695692593,
+        "linucb": 0.7056399132321042,
+        "pilot": 0.6763815721516373,
+        "random": 0.5207468236752403
+      },
+      "matched_reproduction": false,
+      "paper_relative_error": null,
+      "pilot_relative_to_best": -0.04146355744880181,
+      "published_headline": {
+        "gpt4_cost_fraction": 0.25,
+        "gpt4_performance_fraction": 0.93,
+        "source": "section 4 / Figure 3"
+      },
+      "reason": "Different arm pool, embedding, preparation, budgets and reference-cost definition"
+    },
+    {
+      "best_bandit": "explore-only",
+      "domain": "mmlu",
+      "local_budget_fraction": 0.5,
+      "local_method_means": {
+        "epoch-greedy": 0.6818300653594771,
+        "explore-only": 0.6899346405228758,
+        "fixed-00": 0.4368627450980392,
+        "fixed-01": 0.5835294117647059,
+        "fixed-02": 0.021176470588235293,
+        "fixed-03": 0.6211764705882353,
+        "fixed-04": 0.01647058823529412,
+        "fixed-05": 0.003137254901960784,
+        "fixed-06": 0.028235294117647063,
+        "fixed-07": 0.6454901960784314,
+        "linucb": 0.687843137254902,
+        "pilot": 0.6674509803921569,
+        "random": 0.46666666666666673
+      },
+      "matched_reproduction": false,
+      "paper_relative_error": null,
+      "pilot_relative_to_best": -0.03258810155361869,
+      "published_headline": {
+        "gpt4_cost_fraction": 0.27,
+        "gpt4_performance_fraction": 0.86,
+        "source": "section 4 / Figure 3"
+      },
+      "reason": "Different arm pool, embedding, preparation, budgets and reference-cost definition"
+    }
+  ],
+  "public_wandb_urls_pending": true,
+  "publication": {
+    "complete": false,
+    "project_url": null,
+    "total_count": 1128,
+    "urls": {},
+    "verified_count": 0
+  },
+  "source_csv_sha256": "b618bcd88e7d00d3cfe4d612bb019c2e96a9494e5672236c0ab00587faddc6e3",
+  "version": 1
+}

@@ -1,0 +1,84 @@
+{
+  "branch": "codex/course-submission",
+  "base_commit": "ba6f6a698e43c4eaf4c57b98c546b210aa1d6594",
+  "tests": {
+    "passed": 472,
+    "skipped": 1,
+    "seconds": 13.32,
+    "workers": 1,
+    "log_sha256": "2e70623b9ead8f37d53b6d6148bb8075e55e8d4a3bb9dfe6024e21c082a4c3bd"
+  },
+  "toy_smoke": {
+    "output_dir": "outputs\\course-20261030\\toy-final",
+    "learning_rounds": 50,
+    "deployment_served": 6,
+    "elapsed_seconds": 0.095
+  },
+  "routerbench_smoke": {
+    "output_dir": "outputs\\course-20261030\\routerbench-smoke-final",
+    "methods": 15,
+    "rows_per_method": 64,
+    "elapsed_seconds": 4.779
+  },
+  "wandb_offline": {
+    "id": "pilot-c4ecc52e446a6995038b6dfb",
+    "mode": "offline",
+    "status": "finished",
+    "url": null,
+    "writer_version": 2
+  },
+  "wandb_offline_plot_tables": 1,
+  "paid_api_calls": 0,
+  "source": {
+    "url": "https://aclanthology.org/2025.findings-emnlp.1301.pdf",
+    "sha256": "d1fef52668da3eb7cb6220e8f714553017df43f37a6b44ac657cf7e0a09cd548",
+    "version": "final ACL PDF"
+  },
+  "rendering": {
+    "slides_inspected": 33,
+    "poster_inspected": 1,
+    "final_import_png_bytes_match_authoring": true,
+    "native_powerpoint_opened": false
+  },
+  "remaining": [
+    "W&B account and public upload",
+    "public repository visibility/submission branch",
+    "Moodle submission",
+    "fresh-machine complete GPU/grid rerun unverified"
+  ],
+  "pre_review_tests": {
+    "passed": 456,
+    "skipped": 1,
+    "seconds": 13.62,
+    "workers": 1,
+    "log_sha256": "ae9763656834dda3d9245f9664c5898354c3e3e601c27fe99e42af29a9b2a767"
+  },
+  "transient_failure": {
+    "error": "WinError 5 replacing progress.tmp with progress.json in unchanged embedding test",
+    "source_change": false,
+    "cause_confirmed": false,
+    "targeted_rerun_passed": true,
+    "full_rerun_passed": true,
+    "public_log_redacted": true,
+    "original_private_log_sha256": "07c98bcca19ae52754dbb9c83d043ac584c3b923e556e9990c9117ee8a6a2d66",
+    "public_log_sha256": "56c8e8a1d6f4b8a19f25699d6f091ddeb559ca57f8d3370317f1121c25b31659"
+  },
+  "post_review_supplement_numeric_identity": true,
+  "default_tracking_payload_identity_unchanged": true,
+  "publication_fixture_only": {
+    "native_export_passed": true,
+    "online_requests": 0,
+    "delivered": false
+  },
+  "artifact_receipt": "artifact-verification-final.json",
+  "course_source_sha256": {
+    "tools/course/analyze.py": "3d6b3c157c38f5837ca14908beef5ab0f9fa4f1b78cd686adf59534a5cdd9bda",
+    "tools/course/build_slides.mjs": "14ccbf9bf05e3238161778590b15513b08ff22f0587e31086b588f44d050b474",
+    "tools/course/prepare_inputs.py": "84f446326fcd81d45c42b4be4caecb023d5d39c597b35bb7f282d70b6d5e8ebd",
+    "tools/course/prepare_presentation.py": "4951a0503af27f5cf33e6a8fbc69969484a97fa2fc28612d83aa2c42e81f37ad",
+    "tools/course/publication.py": "16d7029c8b4f523643e4297572fd04628be4c9fcb4c8a1e6e497c9bfb1e2329b",
+    "tools/course/render_slides.mjs": "5ef4bc8579c3c35ab0593cf74a5afaeaffaa5cddc9ba0c025cea5322a6d8d9fd",
+    "tools/course/tracking.py": "9158a1367cae68727c4fa39aa32d1fa6fe29d24fa31f3a2b84728eab8efdee5a",
+    "tools/course/verify_artifacts.py": "fe74179f27ba8d7a501afc4072e7b7288f750cefbad418fc65a79699ad5e6908"
+  }
+}

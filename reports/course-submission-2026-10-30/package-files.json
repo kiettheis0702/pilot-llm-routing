@@ -1,0 +1,20 @@
+{
+  "files": {
+    "README.md": "c4811c976b9768d0534fd2c71ea2927fee19d1f7050ca3b249a55d4e106c1675",
+    "analysis/analysis.json": "5ab88188c79e21c8a9d3b599d6082a46a3c59123df686c971f485c12be13a872",
+    "analysis/figures/cost-sensitivity.png": "f308d88b35a4b54186eac0e360730554fd820d68d515e15747eb4e2fe727a85d",
+    "analysis/figures/magnitude-stress.png": "99740c7e7d20e45e4d9e98c2f8cd4428a2485d5ffd8e7b80554ac51967d12bdc",
+    "analysis/package-files.json": "119107928eb81f0973686cda7f92437c6813d932277daa6d2a91b82380f710a2",
+    "artifact-verification-final.json": "ce799d708ce28f956031124e06278b2b00c6fc4c0e7e26249c7579a814adc00f",
+    "artifact-verification.json": "537841f2615f93268420670ca37d7cb26a6e8dfcfedc939eeb91adccbee612cd",
+    "experiment-map.csv": "83ec988d96aa174dd424aaf6bc4caf1ae3a16debd5ef8f76d30efdc2d6c39e95",
+    "hosted-input-verification.json": "f96c382de42fcff8e29fd981198c2419c41fd378bb100c50b7f6813716618162",
+    "independent-review.md": "33ea8367ffccaf9f934c9f401afcd342a3b157cd892e54521921ec92346cd242",
+    "slide-content.json": "add79561bebae8032f8403a80ecccd5787202274cfbe67f6ed8df10581581c73",
+    "tests-final.txt": "ae9763656834dda3d9245f9664c5898354c3e3e601c27fe99e42af29a9b2a767",
+    "tests-post-review-final.txt": "2e70623b9ead8f37d53b6d6148bb8075e55e8d4a3bb9dfe6024e21c082a4c3bd",
+    "tests-post-review-transient-failure.txt": "56c8e8a1d6f4b8a19f25699d6f091ddeb559ca57f8d3370317f1121c25b31659",
+    "tracking-payloads.json": "301bc86e840a0c352ce66bf18e839643bb10f86c1af7082bf288d231a7869f18",
+    "verification-summary.json": "36926b63dd4eee0fd0768913c5c7d3bf63a352152266e074e57e1d59d4bdf68e"
+  }
+}

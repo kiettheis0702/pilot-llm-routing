@@ -41,6 +41,7 @@ credentials*.json
 /checkpoints/
 /artifacts/
 /outputs/
+/.chart-data-*/
 /runs/
 /results/runs/
 /results/raw/

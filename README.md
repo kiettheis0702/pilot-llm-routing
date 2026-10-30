@@ -14,6 +14,17 @@ Pranoy Panda, Raghav Magazine, Chaitanya Devaguptapu, Sho Takemori, and Vishal S
 
 ## Current status
 
+**Course package (30 October 2026):** [33-slide editable midterm and A2 portrait
+poster](reports/course-submission-2026-10-30/README.md), source-linked paper
+critique, two supplementary analyses, hosted-input reconstruction, and 1,128
+prepared historical W&B records. W&B account `kiettheis` and team
+`kiettheis-university-of-science-vnu-hcm` are identified; project setup and public
+upload are pending. No upload or Moodle submission has occurred.
+[Reproduce and publish checklist](docs/course-reproduce.md). The frozen course
+report records the earlier, pre-login snapshot; this paragraph is the current status.
+Latest course regression: **472 passed, one Windows symlink test skipped**;
+toy pipeline and 64-row RouterBench baseline smoke passed sequentially.
+
 The paper has been accepted for the course project, according to the project handoff. The first **Data Gate audit is conditional**: pinned RouterBench 0-shot data is prepared for offline development, deterministic splits and a one-step feedback smoke check run, and Arena preference coverage has been measured. The exact paper dataset choices and several model aliases remain unresolved.
 
 Implemented and tested: validated offline evaluation, Random/fixed/LinUCB/
@@ -33,7 +44,7 @@ Synthetic smoke results and the 64-row RouterBench plumbing comparison are not p
 
 The [local embedding pipeline](docs/local-research-pipeline.md) adds evidence-aware
 2/5/8-model preparation, resumable disk caches and staged fit/learn commands.
-Latest completed regression: **441 tests passed, one Windows symlink test skipped**
+Previous research regression: **441 tests passed, one Windows symlink test skipped**
 in a new locked Python environment. See the [final handoff](docs/final-research-handoff-2026-10-29.md).
 The [tuning stage](docs/tuning-handoff-2026-10-29.md) has independently verified all
 48 candidates across RouterBench/MMLU, including held-out mutation invariance.
