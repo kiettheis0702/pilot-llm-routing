@@ -17,9 +17,46 @@ Preparation downloads pinned RouterBench 0-shot and Arena 55K from Hugging Face,
 
 The analysis command verifies all 184 files in the frozen research package before using any aggregate; it then executes the declared synthetic and counterfactual supplement. Tracking exports 1,128 sanitized conditions with deterministic IDs and original execution dates. These are historical imports, not 1,128 new live LLM runs.
 
-## W&B — prepared, not published
+## W&B — uploaded, verified and public
 
-The logged-in W&B account is `kiettheis`, with team `kiettheis-university-of-science-vnu-hcm`, confirmed in Chrome on 30 October 2026. The home page shows an Academic trial with 29 days left and an unfinished Academic application; no project is listed. The intended project name is `pilot-llm-routing-team8`. Check the current plan limits before upload; do not enable paid features. Browser login does not establish SDK authentication. Authenticate locally with `wandb login`; never paste a key into chat or Git. Inspect `reports/course-submission-2026-10-30/tracking-payloads.json` first. Public visibility and upload require the user's final approval. The immutable report package retains the earlier pre-login snapshot.
+On 30 October 2026, the user authorized uploading the existing experiment
+results. [The project](https://forge.coreweave.com/wandb/kiettheis-university-of-science-vnu-hcm/pilot-llm-routing-team8)
+contains 1,128 finished runs: 1,098 historical deployment conditions, 18 synthetic
+magnitude cases and 12 cost-accounting cases. All 13,314 metric values were
+checked after upload. The [verified artifact](https://forge.coreweave.com/wandb/kiettheis-university-of-science-vnu-hcm/pilot-llm-routing-team8/artifacts/evaluation-results/pilot-team8-verified-results/v0)
+contains 19 files, including eight figures and the research report/poster.
+Visibility is Public. Anonymous readback verified all 1,128 configs and 13,314
+metrics without credentials, and a signed-out browser displayed the project.
+Use the [current mapping and evidence](../reports/publication-2026-10-30/README.md).
+See [verification and limits](wandb-upload-2026-10-30.md).
+
+### Local SDK login on Windows
+
+Run from the repository root. In **Command Prompt (CMD)**:
+
+```cmd
+.venv\Scripts\wandb.exe login --cloud --verify
+```
+
+In **PowerShell**:
+
+```powershell
+& .\.venv\Scripts\wandb.exe login --cloud --verify
+```
+
+Paste the API key only into the CLI's interactive prompt, never into chat,
+scripts, or Git. A command containing spaces needs double quotes in CMD;
+PowerShell's leading `&` is not valid CMD syntax. If the launcher reports
+`No Python at ...`, follow the [Windows runtime repair notes](windows-python-runtime.md).
+On this workstation the Python 3.11.18 repair was verified from outside Codex;
+the user subsequently completed SDK login successfully.
+
+The authenticated account is `kiettheis`, with team
+`kiettheis-university-of-science-vnu-hcm`. No payment method or pay-as-you-go
+was enabled for this upload; the reviewed storage allowance covered the small
+evidence package. Recheck limits before any future upload that could exceed
+the allowance. The immutable report package retains the earlier pre-login
+snapshot, so its historical upload status is not the current project status.
 
 The real SDK offline smoke has succeeded for one actual aggregate. Default execution makes no online W&B run:
 
@@ -27,18 +64,37 @@ The real SDK offline smoke has succeeded for one actual aggregate. Default execu
 .venv/Scripts/python.exe -m tools.course.tracking --record --limit 1
 ```
 
-Only after approval, substitute the real entity and use `--mode online --entity NAME --approve-public-upload`. Receipts are stored immediately with a content-derived run ID. A finished current-version receipt is skipped on continuation. After upload, verify public run access while signed out, then record the actual URLs in `reports/course-submission-2026-10-30/public-run-links.json`. A local ID or SDK URL is not proof of public access.
+The approved bulk import uses the pinned W&B SDK's authenticated transport,
+serial batches of at most 20 records, and W&B's file stream completion protocol.
+It records one aggregate history row per condition; it does not reconstruct
+training trajectories. Source checksums and deterministic IDs prevent silent
+replacement or duplicate imports. Finished matching runs are verified and skipped.
 
-Publication evidence has `version: 1` and a `runs` array. Each row requires exactly
-`id`, `url`, `public_verified: true`, `verified_at` (actual ISO timestamp with
-timezone), and `verification_method: "signed-out-browser"`. Use IDs from the
-prepared payload and URLs of the form `https://wandb.ai/ENTITY/PROJECT/runs/ID`.
-Do not create this evidence before checking access. The reader validates supplied
-records; it does not perform the signed-out check. It rejects unknown IDs, wrong
-destinations, duplicates and missing verification. Never manually edit the derived
-CSV: `prepare_presentation` joins this source by ID and preserves verified links
-on every rebuild. Partial publication retains known URLs and pending rows; only
-complete verified coverage changes the deck/poster to public-project references.
+```powershell
+.venv/Scripts/python.exe -m tools.course.import_summaries --entity kiettheis-university-of-science-vnu-hcm --approve-upload --verification outputs/course-20261030/wandb-publication/upload-verification.json
+```
+
+Receipts retain destination, payload hash and server identity. The final readback
+checks run state, every expected config field and every metric. Float configs
+allow one representable floating-point step for JSON serialization rounding;
+other scalar types/values remain exact. The regular SDK writer uses a shorter
+local working directory to avoid Windows path-length errors while keeping
+receipts organized by entity/project/run.
+
+Public sharing was separately authorized and enabled on 30 October 2026.
+`reports/publication-2026-10-30/public-verification.json` records the actual
+anonymous GraphQL check; `experiment-map.csv` joins those IDs to the frozen
+experiment map. A local ID or SDK URL alone is not proof of public access.
+The frozen course package is intentionally unchanged. Its old map has empty
+URLs and its publication flag is historical; use the new publication folder.
+
+The original `tools.course.publication` reader accepts only `wandb.ai` URLs
+and a per-run signed-out-browser proof schema. It does not understand this
+new Forge-domain anonymous-API evidence. Do not pass the new manifest into
+that legacy reader or relabel API checks as browser checks. The current
+presentation task is handed to Claude using [CLAUDE_HANDOFF.md](CLAUDE_HANDOFF.md),
+the verified numeric sources and the new public mapping. Existing PPTX files
+are references and retain their earlier publication footer until revised.
 
 ## Rebuilding embeddings, fitting and tuning
 

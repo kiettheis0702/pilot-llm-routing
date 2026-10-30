@@ -132,6 +132,9 @@ def record_run(payload, receipt_dir, *, mode='offline', entity=None,
         raise ValueError('Explicit W&B entity is required')
     if not re.fullmatch(r'[A-Za-z0-9_-]+', project) or (entity and not re.fullmatch(r'[A-Za-z0-9_-]+', entity)):
         raise ValueError('Invalid W&B destination')
+    # W&B appends long run/media filenames. Keep its working directory short
+    # while retaining destination-qualified receipts for safe continuation.
+    sdk_dir = Path(receipt_dir)/'_sdk'/mode
     receipt_dir = Path(receipt_dir)/mode/(entity or 'local')/project
     receipt_path = receipt_dir/(payload['id']+'.json')
     if receipt_path.exists():
@@ -141,6 +144,7 @@ def record_run(payload, receipt_dir, *, mode='offline', entity=None,
         if old['status'] == 'finished' and old.get('writer_version') == 2:
             return old
     receipt_dir.mkdir(parents=True, exist_ok=True)
+    sdk_dir.mkdir(parents=True, exist_ok=True)
     receipt = dict(id=payload['id'], payload_sha256=payload['payload_sha256'], mode=mode,
                    entity=entity, project=project, status='planned', url=None, writer_version=2)
     _save_receipt(receipt_path, receipt)
@@ -152,7 +156,7 @@ def record_run(payload, receipt_dir, *, mode='offline', entity=None,
     kwargs = dict(entity=entity, project=project, id=payload['id'], name=payload['config']['source_run_id'],
         group=payload['lab'], job_type=payload['config']['experiment_family'],
         tags=[payload['lab'], 'historical-import', 'local-eight-arm'],
-        config=payload['config'], mode=mode, dir=str(receipt_dir),
+        config=payload['config'], mode=mode, dir=str(sdk_dir),
         save_code=False, settings=settings,
         notes='Imported from verified local evidence. Original execution date is in config. No raw prompts uploaded.')
     if mode == 'online':

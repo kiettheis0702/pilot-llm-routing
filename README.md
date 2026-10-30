@@ -16,13 +16,21 @@ Pranoy Panda, Raghav Magazine, Chaitanya Devaguptapu, Sho Takemori, and Vishal S
 
 **Course package (30 October 2026):** [33-slide editable midterm and A2 portrait
 poster](reports/course-submission-2026-10-30/README.md), source-linked paper
-critique, two supplementary analyses, hosted-input reconstruction, and 1,128
-prepared historical W&B records. W&B account `kiettheis` and team
-`kiettheis-university-of-science-vnu-hcm` are identified; project setup and public
-upload are pending. No upload or Moodle submission has occurred.
+critique, two supplementary analyses, hosted-input reconstruction, and **1,128
+verified historical runs uploaded to [W&B](https://forge.coreweave.com/wandb/kiettheis-university-of-science-vnu-hcm/pilot-llm-routing-team8)**.
+All 13,314 metric values were checked against local evidence. The
+[results artifact](https://forge.coreweave.com/wandb/kiettheis-university-of-science-vnu-hcm/pilot-llm-routing-team8/artifacts/evaluation-results/pilot-team8-verified-results/v0)
+contains eight figures, the research report/poster and aggregate data (19 files).
+Project visibility is **Public**. An anonymous connection verified all 1,128
+finished runs, configs and 13,314 metrics; the signed-out browser shows the project.
+The complete implementation is on **main**. No Moodle submission has occurred.
+[Public experiment → script → run mapping](reports/publication-2026-10-30/experiment-map.csv).
+[Claude handoff for slides and poster](docs/CLAUDE_HANDOFF.md) contains the current
+results, source links, course requirements and remaining presentation work.
+[Upload verification](docs/wandb-upload-2026-10-30.md).
 [Reproduce and publish checklist](docs/course-reproduce.md). The frozen course
 report records the earlier, pre-login snapshot; this paragraph is the current status.
-Latest course regression: **472 passed, one Windows symlink test skipped**;
+Latest course regression: **490 passed, one Windows symlink test skipped**;
 toy pipeline and 64-row RouterBench baseline smoke passed sequentially.
 
 The paper has been accepted for the course project, according to the project handoff. The first **Data Gate audit is conditional**: pinned RouterBench 0-shot data is prepared for offline development, deterministic splits and a one-step feedback smoke check run, and Arena preference coverage has been measured. The exact paper dataset choices and several model aliases remain unresolved.
@@ -89,10 +97,10 @@ git clone https://github.com/kiettheis0702/pilot-llm-routing.git
 cd pilot-llm-routing
 ```
 
-Python 3.11–3.13 and `uv` are required. The implemented branch is `codex/data-gate`:
+Python 3.11–3.13 and `uv` are required. The complete implementation is on `main`:
 
 ```sh
-git switch codex/data-gate
+git switch main
 uv sync --locked
 uv run --locked python -m pytest -q
 uv run --locked python -m scripts.run_toy_pipeline --output-dir outputs/toy

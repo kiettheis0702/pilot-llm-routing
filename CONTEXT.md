@@ -1,5 +1,11 @@
 # Project context
 
+Publication update (2026-10-30): GitHub `main` is the complete submission branch.
+W&B is Public; anonymous readback verified all 1,128 finished runs and 13,314
+metrics. The current [Claude handoff](docs/CLAUDE_HANDOFF.md) supersedes historical
+pending-publication notes. The user will have Claude author the final slide/poster;
+no Moodle submission has been made. [Public links](reports/publication-2026-10-30/README.md).
+
 Current status (2026-10-30): the complete declared eight-arm local experiment is
 implemented and verified: 1,098 deployment runs, 108 independently replayed
 groups, 441 passing tests and one Windows symlink skip, with report and poster.
@@ -8,6 +14,21 @@ See [current implementation status](docs/implementation-status.md) and
 The 2026-10-24 notes below are the original handoff context; their pending
 implementation items are historical. Exact eleven-arm paper equivalence and
 course submission requirements remain unresolved where the current handoff says so.
+
+W&B update (2026-10-30): 1,128 historical runs are uploaded and finished;
+13,314 metric values were independently read back. Eight figures, the research
+report/poster and aggregate data are attached as the verified results artifact.
+Visibility was Team at upload; it is now Public. See [upload evidence](docs/wandb-upload-2026-10-30.md).
+Latest regression: 490 passed, one Windows symlink skip. No paid model calls.
+
+Windows runtime lesson (2026-10-30): a Python installed under AppData from
+packaged Codex can be visible only inside Codex, while an ordinary CMD reports
+`No Python at ...`. Both local environments now use Python 3.11.18 under
+`%USERPROFILE%\.local\share\uv\python`, with an ignored local `.python-version`
+pin. Before handing over CLI commands, verify the interpreter's physical path
+and execute from an ordinary desktop process; checking file existence or a child
+CMD that inherits Codex's virtualized filesystem is insufficient. See
+[repair and verification](docs/windows-python-runtime.md).
 
 Updated: 2026-10-24. This is a concise summary of the supplied project handoff; paper details and dataset choices still require direct verification before implementation.
 

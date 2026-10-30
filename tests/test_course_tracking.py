@@ -69,6 +69,12 @@ def test_offline_default_and_finished_receipt_do_not_reinitialize(tmp_path):
     assert first['status'] == 'finished' and first['url'] is None
     init = [value for kind,value in calls if kind == 'init']
     assert len(init) == 1 and init[0]['mode'] == 'offline'
+    # SDK media names add ~130 characters. Do not repeat long destination names
+    # in its working directory: ordinary Windows defaults to MAX_PATH=260.
+    sdk_dir = Path(init[0]['dir'])
+    assert sdk_dir.is_relative_to(tmp_path)
+    assert 'pilot-llm-routing-team8' not in sdk_dir.relative_to(tmp_path).parts
+    assert len(str(sdk_dir.relative_to(tmp_path))) <= 16
     assert init[0]['settings']['disable_git']
     assert init[0]['settings']['x_disable_meta']
     assert init[0]['settings']['x_disable_stats']

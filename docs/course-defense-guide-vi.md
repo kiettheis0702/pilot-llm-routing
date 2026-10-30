@@ -67,8 +67,11 @@ confidence interval, không bịa p-value. MMLU nằm trong RouterBench, không 
 ridge đã sửa; phân biệt lỗi in thiếu reward/inverse với chứng minh sai. Không
 phóng đại kết luận.
 
-**W&B nằm đâu?** Chưa có tài khoản, payload và offline smoke đã chuẩn bị. Cần
-tạo tài khoản, duyệt upload/công khai, rồi bổ sung URL thật. Không nói đã public.
+**W&B nằm đâu?** [Project công khai](https://forge.coreweave.com/wandb/kiettheis-university-of-science-vnu-hcm/pilot-llm-routing-team8)
+có 1.128 run lịch sử, đã đọc lại không đăng nhập đủ 13.314 chỉ số. Dùng
+[mapping hiện tại](../reports/publication-2026-10-30/experiment-map.csv) để đi từ
+thí nghiệm sang script và run. Đây là historical aggregates, không phải các
+lượt gọi LLM mới. GitHub `main` là bản đầy đủ; chưa nộp Moodle.
 
 ## Tập thao tác trước buổi bảo vệ
 

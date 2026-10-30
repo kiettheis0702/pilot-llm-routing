@@ -1,5 +1,12 @@
 # Bàn giao bộ bài nộp — 30/10/2026
 
+> **Đây là snapshot bàn giao local trước upload.** Trạng thái mới: W&B đã Public,
+> 1.128 run và 13.314 metric đã kiểm không đăng nhập; GitHub `main` là bản đầy đủ.
+> Xem [bàn giao hiện tại cho Claude](CLAUDE_HANDOFF.md) và
+> [mapping public](../reports/publication-2026-10-30/README.md). Các mục “chưa có
+> project/chưa online/chờ duyệt công khai” phía dưới đã được xử lý. Người dùng
+> giao Claude hoàn thiện slide/poster; chưa nộp Moodle. Giữ phần dưới làm lịch sử QA.
+
 **Phần chuẩn bị local đã có đủ để bạn xem và quyết định công khai. Bài chưa nộp
 và chưa đủ điều kiện public W&B của môn học.**
 
