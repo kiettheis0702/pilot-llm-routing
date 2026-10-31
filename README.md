@@ -17,8 +17,12 @@ Pranoy Panda, Raghav Magazine, Chaitanya Devaguptapu, Sho Takemori, and Vishal S
 Start with the [current OpenAI evidence](docs/openai-followup-status.md),
 [offline restore and clean-checkout replay](docs/openai-reproduce.md), and
 [Claude slide/poster update map](docs/CLAUDE_UPDATE_OPENAI_2026-10-31.md).
+The [follow-up reproduction guide](docs/followup-reproduce.md) supplies the
+remaining preparation steps and command order for all reported study families.
+Supplementary validation: **714 passed** on a fresh Windows runner, with real
+follow-up fits and independent trace replay; [exact coverage and limits](docs/followup-reproduction-validation-2026-10-31.md).
 Older BGE handoffs are historical; their counts must not be relabelled OpenAI.
-Release verification: **700 passed, 1 skipped** in a new locked environment;
+Original release verification: **700 passed, 1 skipped** in a new locked environment;
 the separate 139-file archive supports a verified clean-checkout core replay.
 The [verification record](docs/release-readiness-2026-10-31.md) states its limits.
 
@@ -40,7 +44,7 @@ all configs/expected metrics; the separate70-file11MB artifact has exact remote
 manifest and anonymous access checks. These counts are not live LLM calls or
 independent datasets. The old19-file artifact is preserved.
 
-Final serial regression: **681 passed,1 skipped**; origin/main baseline490 passed
+Research-checkpoint regression: **681 passed,1 skipped**; its origin/main baseline490 passed
 with the same Windows symlink-privilege skip. Fourteen frozen packages and235
 pinned references verify; their bytes also survive a clean Git-index export,
 which rebuilds the identical2498-record payload without ignored caches.
@@ -92,8 +96,8 @@ The complete implementation is on **main**. No Moodle submission has occurred.
 results, source links, course requirements and remaining presentation work.
 [Upload verification](docs/wandb-upload-2026-10-30.md).
 [Reproduce and publish checklist](docs/course-reproduce.md). The frozen course
-report records the earlier, pre-login snapshot; this paragraph is the current status.
-Latest course regression: **490 passed, one Windows symlink test skipped**;
+report records the earlier, pre-login snapshot; this paragraph records the later BGE checkpoint.
+BGE course-checkpoint regression: **490 passed, one Windows symlink test skipped**;
 toy pipeline and 64-row RouterBench baseline smoke passed sequentially.
 
 The paper has been accepted for the course project, according to the project handoff. The first **Data Gate audit is conditional**: pinned RouterBench 0-shot data is prepared for offline development, deterministic splits and a one-step feedback smoke check run, and Arena preference coverage has been measured. The exact paper dataset choices and several model aliases remain unresolved.

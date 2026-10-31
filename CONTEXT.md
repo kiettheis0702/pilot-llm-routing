@@ -1,6 +1,6 @@
 # Project context
 
-**Current entrypoint (31 October 2026):** [OpenAI evidence and limits](docs/openai-followup-status.md), [current Claude handoff](docs/CLAUDE_UPDATE_OPENAI_2026-10-31.md), and [offline restore/replay guide](docs/openai-reproduce.md). The measured OpenAI core has 858 conditions plus 240 controlled ablations, separate from the historical 1098 BGE conditions. The expanded registry has 2498 new summary views and preserves 1128 old records; these are not independent datasets or live API calls. Slides/poster still await Claude edits; Moodle submission is unconfirmed.
+**Current entrypoint (31 October 2026):** [OpenAI evidence and limits](docs/openai-followup-status.md), [current Claude handoff](docs/CLAUDE_UPDATE_OPENAI_2026-10-31.md), [offline restore/replay guide](docs/openai-reproduce.md), and [follow-up reproduction commands](docs/followup-reproduce.md). The measured OpenAI core has 858 conditions plus 240 controlled ablations, separate from the historical 1098 BGE conditions. The expanded registry has 2498 new summary views and preserves 1128 old records; these are not independent datasets or live API calls. The later local presentation update records a 24-slide deck and one A2 poster; the Claude handoff identifies their hashes and supplementary note changes. Moodle submission is unconfirmed.
 
 ## Historical context through 30 October 2026
 

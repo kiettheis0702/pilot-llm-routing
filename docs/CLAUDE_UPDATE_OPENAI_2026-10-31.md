@@ -3,10 +3,34 @@
 User request: Codex completes research and provides this update map; Claude
 edits presentations. Codex must not edit the PPTX/PDF/preview files.
 
-**Status: final research handoff.** All declared local research extensions,
+**Status: research handoff; original presentation map already applied locally.** All declared local research extensions,
 independent checks and public W&B readbacks are complete. This file directs
 Claude's presentation edits; Codex preserved the original PPTX/PDF/preview files.
 Author/model/release prerequisites still listed below remain unresolved facts.
+
+## Later local presentation revision
+
+The local `docs/presentation-update-2026-10-31.md` records the completed OpenAI
+presentation edit: **24 slides** and one A2 poster. The actual files match that
+log's hashes:
+
+- `midterm/8.pptx`: `5002638b52f6b18c8840fa971597a4e7417708d2269c6035cb2d37a4b68276ab`.
+- `poster/8.pptx`: `051348291acac416d0e14a343726e2d4a7c5e3f1ba31201b19ff5cb14f01b8cf`.
+
+The 22-slide numbering and baseline hashes farther below describe the original
+inputs to that completed edit. **Do not reapply that map to the 24-slide deck.**
+Inspect the latest file before locating any note to change. The presentation
+log/files are local working artifacts, not guaranteed to exist in a Git clone.
+This follow-up checked file identity only; it did not repeat the presentation
+editor's content/layout QA or edit the PPTX/PDF files.
+
+Supplementary reproduction commands are now collected in
+[followup-reproduce.md](followup-reproduce.md). Update reproducibility wording
+only from the completed validation record linked there. Keep the published
+scientific values, run counts and W&B registry unchanged: replayed experiments
+are not additional independent evidence or new published W&B runs. The local
+presentation log reports notes as long as497 words, so replace an existing
+sentence if adding reproducibility evidence; do not exceed500 words.
 
 ## Source precedence and release-readiness update
 
@@ -19,19 +43,33 @@ checkpoint metadata from the current navigation/status documents.
 
 The [offline restore guide](openai-reproduce.md) and
 [release verification](release-readiness-2026-10-31.md) cover a separate
-139-file cache/input ZIP and a clean-checkout core replay. If reproducibility
-is mentioned on a slide, say exactly what ran: a fresh seed-7 prior refit,
+139-file cache/input ZIP and an earlier clean-checkout core replay: a seed-7 prior refit,
 32,270 RouterBench learning rounds, 11 PILOT deployment conditions, independent
-trace replay and byte-identical resume. Do not claim all OpenAI/Instructor/
-Hybrid studies were retrained in a fresh environment. Cache reuse required no
-new paid request. Never equate code merged into `main` with Moodle submission
-or an approved final presentation.
+trace replay and byte-identical resume. The later
+[fresh-machine validation](followup-reproduction-validation-2026-10-31.md)
+adds 714 passing tests, Preference500 refits at three seeds and actual test-label
+mutation, six PILOT groups, five ablations,40 budget cases, two noise levels,
+all seven binary methods at seed7 with fresh tuning, and 18 cost cases.
 
-## Inspect these exact files
+Locate the current slide's reproducibility/repository discussion by its content,
+not the original slide numbers. If useful, replace one note sentence with:
 
-Current deck is **midterm/8.pptx,22 slides**, SHA-256
+> A fresh Windows runner restored the pinned offline inputs and passed 714 tests.
+> Selected core and follow-up experiments were rerun and independently checked
+> against their traces and published tables. The validation record states the
+> exact coverage; full-grid and fresh CUDA/neural retraining were not repeated.
+
+Link that sentence to the validation record. Keep poster space for the research
+claims; a repository link is enough unless it already discusses reproduction.
+Do not claim all OpenAI/Instructor/Hybrid studies were retrained in a fresh
+environment. Cache reuse required no new paid request. Never equate code merged
+into `main` with Moodle submission or an approved final presentation.
+
+## Original input files for the completed presentation edit
+
+The original deck was **midterm/8.pptx,22 slides**, SHA-256
 `38176f6266c5eb7cef5ef64ec7e8fbd8b2f9e8122cd1133a4b45d4f6e3e1f5d5`.
-Current poster is **poster/8.pptx,1 slide**, SHA-256
+The original poster was **poster/8.pptx,1 slide**, SHA-256
 `9c2806ab98863e5c8149f31f2215bc745087ac2bbd4a30d62299acd0bea0c737`.
 `deliverables/midterm/8.pptx` is the historical33-slide version; do not apply
 the current slide numbers to that file. Preserve the current design, editable
