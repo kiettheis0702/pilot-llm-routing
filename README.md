@@ -14,6 +14,55 @@ Pranoy Panda, Raghav Magazine, Chaitanya Devaguptapu, Sho Takemori, and Vishal S
 
 ## Current status
 
+**OpenAI follow-up completed (31 October2026):** real cached
+`text-embedding-3-small` vectors now feed858 main conditions and240 controlled
+ablations: **1098 OpenAI conditions**, separate from historical1098 BGE.
+[Current evidence and limits](docs/openai-followup-status.md) cover preference500,
+RouteLLM-MF, budget/allocation and cost shocks, feedback noise, verified binary
+routing, Instructor-XL858 conditions and MMLU-to-GSM8K task shift. Both separate
+source-based Hybrid classifiers have complete independent neural readback.
+All reported adverse results remain; this is an eight-arm local adaptation.
+
+The [new public registry](reports/openai-publication-2026-10-31/README.md) maps
+**2498 new condition/summary views and35402 verified metrics** to source CSVs,
+producer scripts and public W&B URLs. All1128 old records were verified and
+preserved, giving3626 current project records. Anonymous API readback verified
+all configs/expected metrics; the separate70-file11MB artifact has exact remote
+manifest and anonymous access checks. These counts are not live LLM calls or
+independent datasets. The old19-file artifact is preserved.
+
+Final serial regression: **681 passed,1 skipped**; origin/main baseline490 passed
+with the same Windows symlink-privilege skip. Fourteen frozen packages and235
+pinned references verify; their bytes also survive a clean Git-index export,
+which rebuilds the identical2498-record payload without ignored caches.
+The [Claude update map](docs/CLAUDE_UPDATE_OPENAI_2026-10-31.md) is ready for the
+actual22-slide deck and one-slide poster. All7 presentation/reference hashes
+remain unchanged. [QA and validation limits](docs/openai-followup-qa-2026-10-31.md).
+No additional paid model API requests, billing/visibility changes or Moodle
+submission were made by this follow-up. Three model identities and author
+release/task/split/settings details remain unverified; no exact-paper claim.
+
+**OpenAI core completed (31 October 2026):** real `text-embedding-3-small`
+1536D caches now feed three retrained 64D priors and fresh tuning. All **858 core
+conditions, 78 learning streams and 312 snapshots** completed; all 78 groups
+independently replayed. [Vietnamese results and QA](reports/openai-core-2026-10-31/KET_QUA_VI.md)
+include four SVG/PNG figures, same-query GPT-4 normalization and paired BGE data.
+At 50% estimated allocation, PILOT reaches 86.60% GPT-4 quality at 46.23% recorded
+cost on RouterBench; OpenAI does not improve all conditions. Low-budget MMLU
+stops early under the declared bin/fallback rule; six cases were diagnosed and
+retained. The original core checkpoint made no additional paid requests and retains its
+eight-arm scope. Core-checkpoint regression: **596 passed, 1 skipped**, with the transient Windows file-denial
+invocation and successful reruns retained. [Frozen execution evidence](reports/openai-core-2026-10-31/assembly.json).
+
+**Offline OpenAI workflow (30 October 2026):** downloaded Batch outputs can now
+be imported with partial recovery into verified 1,536D caches and the existing
+training pipeline. Separate train/calibration/test fitting is tested, including
+final-test mutation invariance. The [core migration protocol](configs/openai_core_protocol.json)
+keeps the old preference split; the 500-pair study is supplementary. A bounded
+real BGE check scored 326/500 on the new local split; this is not an OpenAI or
+matched-paper result. [Workflow and evidence](docs/openai-workflow.md).
+This workflow made no provider requests and preserves the frozen BGE study.
+
 **Course package (30 October 2026):** [33-slide editable midterm and A2 portrait
 poster](reports/course-submission-2026-10-30/README.md), source-linked paper
 critique, two supplementary analyses, hosted-input reconstruction, and **1,128

@@ -1,0 +1,42 @@
+{
+  "adaptations": [
+    "matched847/211/500 instead of upstream95/5",
+    "validation forward uses test=True (no Gaussian evaluation noise)",
+    "best calibration loss checkpoint is saved, whereas upstream example only reports progress",
+    "shared verified8-arm data; preserve64-row official model table",
+    "local cached text-embedding-3-small only; no remote inference"
+  ],
+  "files": {
+    "README.md": "8b3355577810a75a71b6025ff4665b2718f8b14a067246b52bdfd76aa2819db5",
+    "paired-preference500.csv": "ed46e4f8420e20c815a897657079de9dbf8adbf7192bd93a4872f7f90f0447a8",
+    "preference500-comparison.png": "b5b25535448957fb96b37c7ca05d2a3bef41ae102cb7f4da22c462d601c979a6",
+    "preference500-comparison.svg": "fb380e53d6c23b2ce8ac7933df6c44d3b6ae4224eb2f985c49fae6054db89344"
+  },
+  "independent_verification_sha256": "63c6f6bd4eba687379422a3e7201ad8db98fdd73602a01c41f8839e09e3e2034",
+  "kind": "routellm-mf-local-matched500",
+  "manifest_sha256": "5976918a50225a28ac05b8715646f23592a5b1adaa993fa8079caf9362d3f96c",
+  "mean_accuracy": {
+    "pilot": 0.6353333333333334,
+    "routellm": 0.6806666666666668
+  },
+  "new_api_calls": 0,
+  "primary_sources": {
+    "model.py": {
+      "path": "outputs\\openai-followup-20261031\\sources\\lm-sys__RouteLLM\\code\\routellm\\routers\\matrix_factorization\\model.py",
+      "sha256": "81072b840e6dd389888e9f7a7198342693beab37b06aeab690083d67663da7ba",
+      "url": "https://raw.githubusercontent.com/lm-sys/RouteLLM/0b64fdafe049e596a3f5657c219329f24af24198/routellm/routers/matrix_factorization/model.py"
+    },
+    "train_matrix_factorization.py": {
+      "path": "outputs\\openai-followup-20261031\\sources\\lm-sys__RouteLLM\\code\\routellm\\routers\\matrix_factorization\\train_matrix_factorization.py",
+      "sha256": "36633e67a0104a2483cee37a73d49a2528c865ca41f6eb4ad3ed6e092bc60c75",
+      "url": "https://raw.githubusercontent.com/lm-sys/RouteLLM/0b64fdafe049e596a3f5657c219329f24af24198/routellm/routers/matrix_factorization/train_matrix_factorization.py"
+    }
+  },
+  "protocol_sha256": "4eb31296fbb416c54452a5b70321871e1aa08ab198a4eb6cc4031b3124759f0a",
+  "seeds": [
+    7,
+    42,
+    2026
+  ],
+  "test_identity_limit": "500 re-split historical rows, not author-identical or project-wide unseen"
+}

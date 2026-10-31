@@ -1,0 +1,34 @@
+{
+  "additional_paid_api_calls": 0,
+  "complete": true,
+  "files": {
+    "README.md": "d733bb4bb5a262c88621059c4bc8bc9ad3398bfe0e4a6e75c2bc20e0bbbe0988",
+    "allocation-comparison.png": "332eec3788e9d2cb5402ba271556608e4aea980b404d2a944dfe12ee25bb04e8",
+    "allocation-comparison.svg": "d716d758a5935b9a2a93bc27723b7af1dfa0dc5f7bd8ed955eb85b2a08e00abf",
+    "means.csv": "47bab4c92bfeb8afddd62233bd1369e1e767c1de46b5b6da30a6269bc7c21ea5",
+    "paired-main.csv": "0cb23408e205773f140e5a6b356061a7a013ff4e4ddfaa358a5a568989af714d",
+    "per-seed.csv": "e19410e8cd54c01f79c1a7cfaef58b50173264b19221d0423e15b97fb7954537"
+  },
+  "independent_verified": true,
+  "manifest_sha256": "59125f6c92e977b9a8519e8dc636baaf976f9c249877376ae3e59bbca7a96132",
+  "new_conditions": 240,
+  "paper_equivalent": false,
+  "protocol": {
+    "path": "outputs/openai-followup-20261031/budget/protocol.json",
+    "sha256": "22c16f77a1b7ad1e0e9fc689d17d81515a016428cc3e925048143b2e9005b4a0"
+  },
+  "reused_conditions": 48,
+  "script_sha256": "d57dd8347aae782dddd369129610ee9550c010515146c7e2893b80291229bfce",
+  "source_main": {
+    "path": "reports/openai-core-2026-10-31/package-files.json",
+    "sha256": "16ba2a3bf0b1bb2128fb1868d5e929a04b5da99d4dbbf2b4a2ad20f18a2b9abb"
+  },
+  "source_onebin": {
+    "path": "reports/openai-ablations-2026-10-31/package-files.json",
+    "sha256": "4d7429a9bf661fe5f0acd85c28dce6b24767d775c32ab3a86200636aca12140c"
+  },
+  "verification": {
+    "path": "outputs/openai-followup-20261031/budget/independent-verification.json",
+    "sha256": "f048c699dcbf7cdbaf0376a55ddd61f13ed12245b8062899cf5fbd9059e25d90"
+  }
+}

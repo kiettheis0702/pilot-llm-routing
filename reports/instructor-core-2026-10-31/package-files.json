@@ -1,0 +1,15 @@
+{
+  "files": {
+    "README.md": "80ff8f663d7668e42170ace2e0805e99fce7a5ef215f50c3dedd1854dc61bac9",
+    "gpt4-reference.json": "cbc777ef9d8f5c1801759433b2f78f04636a600304da80b4d493f30cd7968278",
+    "instructor-routing.png": "0c1ced960253d4bd74a0352da3ed79102d37b2df290939d2d401864342a03310",
+    "instructor-routing.svg": "463b83d9cf76b4144d3f219d8eb6aadf155ef3ce4231eea5f877db366c56462f",
+    "learning-prefixes.csv": "effc68bffe52f2e623a8b8255f024ee40d207a97d7b8c9ceb78d8d911035a127",
+    "manifest.json": "221a5fb7687735201259656d4a229028f45fe06f44884fa549b3c7147dea897b",
+    "mean-min-max.csv": "d7288a8b30bc46f332a1e543b5dacbee40392269cc22d7623e03167be05ad6c3",
+    "paired-recipes.csv": "5eb717b2421e35f82375cfdadda9e7bf4509c8228a04ad326604f69adc303121",
+    "per-seed.csv": "bded1c8b1b1f87e2ff41335fe491a9345566e8087e43b10be7000afebb06bd70",
+    "recipe-comparison.png": "ea06488ad6d3296fc5f26211781ebb5d1a2133d0d0ba9506ccb0fb47f23ede6e",
+    "recipe-comparison.svg": "718b5f8903356007262b2f106bb18ff24a0d7ccf8f666f9300517e8fd7bef48c"
+  }
+}

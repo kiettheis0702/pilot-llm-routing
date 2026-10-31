@@ -1,0 +1,135 @@
+{
+  "api_calls_performed": 0,
+  "checks": [
+    {
+      "dimension": 1536,
+      "name": "exact_vector_and_id_readback_routing-inputs.json",
+      "passed": true,
+      "rows": 16
+    },
+    {
+      "dimension": 1536,
+      "name": "exact_vector_and_id_readback_preference-inputs.json",
+      "passed": true,
+      "rows": 16
+    },
+    {
+      "name": "synthetic_import_request_ids_preserved",
+      "passed": true
+    },
+    {
+      "name": "synthetic_import_usage_not_duplicated",
+      "passed": true
+    },
+    {
+      "name": "two_cli_runs_same_contract_results",
+      "passed": true
+    },
+    {
+      "name": "real_bge_repeat_identical_candidate-current.json",
+      "passed": true
+    },
+    {
+      "name": "real_bge_repeat_identical_selected-prior.json",
+      "passed": true
+    },
+    {
+      "name": "real_bge_repeat_identical_final-test.json",
+      "passed": true
+    },
+    {
+      "name": "real_bge_repeat_identical_manifest.json",
+      "passed": true
+    },
+    {
+      "name": "real_training_calibration_support",
+      "passed": true
+    },
+    {
+      "name": "real_final_test_is_separate",
+      "passed": true
+    },
+    {
+      "name": "real_fit_uses_all_eight_calibrated_arms",
+      "passed": true
+    },
+    {
+      "name": "real_fit_is_not_synthetic",
+      "passed": true
+    },
+    {
+      "name": "invalid_cli_does_not_publish_cache",
+      "passed": true
+    },
+    {
+      "name": "corrected_output_recovers_without_generation",
+      "passed": true
+    },
+    {
+      "name": "synthetic_cli_requires_explicit_flag",
+      "passed": true
+    },
+    {
+      "name": "old_frozen_research_intact",
+      "passed": true
+    },
+    {
+      "name": "old_preflight_report_intact",
+      "passed": true
+    },
+    {
+      "name": "core_keeps_main_split_and_paid_gate",
+      "passed": true
+    }
+  ],
+  "external_response_authenticity_tested": false,
+  "failed": 0,
+  "kind": "independent-offline-workflow-readback",
+  "passed": 19,
+  "preflight": {
+    "available_gib": 9.345100402832031,
+    "heavy_jobs": []
+  },
+  "real_openai_vectors_tested": false,
+  "regression": {
+    "baseline_snapshot_passed": 517,
+    "added_scope_cases": 23,
+    "concurrent_setup_cases": 24,
+    "final_passed": 564,
+    "skipped": 1,
+    "failed": 0,
+    "execution": "serial, one BLAS thread",
+    "log_sha256": "a294b500e7544cae5ff8bfe971a727c3a65e455d7a429596ca3de8e2eb93164f"
+  },
+  "code_sha256": {
+    "scripts/openai_cache.py": "3898269e0101696616d52fd5a7cb05c837f636fed5267bfb40fcb204cb3e4ac8",
+    "scripts/research_pipeline.py": "f4493cb20969979b74c72ed9126a483f78bebd03209265284cea7baab41736da",
+    "scripts/resources.py": "56bbc95c5f94e71102a2d66d363de5d41e2eebafd02b611f0c1d15ef72b51be9",
+    "tools/paper_preflight/import_embeddings.py": "303c2ea52cc5697f5bb172a9659c416e1f2447a905b32568043075a7a09246c6",
+    "tools/paper_preflight/train.py": "beff4bb62dc67d56c741a4b137e1a832e87e98e63aee66ce322b6ef188baa2a0",
+    "tests/test_openai_workflow.py": "c6c7c2708d5760d1edf1d4a8a29aaa1b527143d65147339802a1b3be2378a9a8",
+    "tests/test_paper_preflight.py": "3da7d85763c4301a39872b163e3c76deb19f978d7961db5fe6f4fa25e4062bdd",
+    "configs/openai_core_protocol.json": "8c95256001cb97dde193d0efa3599e3f2934a3b6e67a36f4b58bed997ea09b57"
+  },
+  "review": {
+    "material_findings": 1,
+    "fixed": 1,
+    "unresolved_material_findings": 0,
+    "regression_red_failures": 2,
+    "regression_green_passes": 2
+  },
+  "real_source_fingerprints": {
+    "preference_cache_manifest": "97cec9959bb3f94ad45490d1e639333519cdb55d207256d66a19360abbf41926",
+    "three_way_comparisons": "d78956d9687822df8dcb4d0043f9f6e0de96889dc91412f9cc3f13700430963c",
+    "cost_sizes": "1f6f2bd7160d223d53bfd79a4b854e298bd9760d96a2c527f092798071f48ec2",
+    "fit_protocol": "9095e4224e3798c3e73154953fea5ecfc2a26a9a58af9071c04cd4f125d822ce"
+  },
+  "concurrent_work_preserved": [
+    "pyproject.toml",
+    "uv.lock",
+    ".env.openai.example",
+    "tools/openai_embeddings.py",
+    "tests/test_openai_embedding_setup.py",
+    "docs/openai-embedding-setup.md"
+  ]
+}

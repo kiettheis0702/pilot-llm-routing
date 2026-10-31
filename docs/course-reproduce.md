@@ -2,6 +2,97 @@
 
 Run from repository root, one command at a time. Use a new output directory for every immutable stage. No paid API is needed.
 
+**31 October followup:** commands below reconstruct the historical BGE course
+package. Current OpenAI core/ablations, budget, preference500, MF and noise
+results have separate immutable packages linked from the repository README.
+They reuse previously approved/completed OpenAI caches; they do not regenerate
+paid embeddings. New publication is verified in the [2498-view registry](../reports/openai-publication-2026-10-31/README.md);
+the1,128-run mapping in the dated section below is historical. See the [followup status](openai-followup-status.md)
+and each report README for the current exact command sequence.
+
+Pinned free follow-up assets can now be reconstructed with the tracked helper:
+
+```powershell
+.venv/Scripts/python.exe -m tools.openai_followup_assets --sources
+.venv/Scripts/python.exe -m tools.openai_followup_assets --model deberta
+.venv/Scripts/python.exe -m tools.openai_followup_assets --model instructor
+```
+
+The neural stages used a separate Python3.11.18 environment. Preserve an existing
+verified environment. On a fresh Windows/CUDA128 checkout only:
+
+```powershell
+if (Test-Path -LiteralPath .venv-embedding) { throw 'Use the existing verified environment; do not replace it.' }
+$env:UV_CONCURRENT_DOWNLOADS='1'
+$env:UV_CONCURRENT_INSTALLS='1'
+$env:UV_CONCURRENT_BUILDS='1'
+uv venv .venv-embedding --python 3.11.18
+uv pip install --python .venv-embedding/Scripts/python.exe torch==2.8.0 --index-url https://download.pytorch.org/whl/cu128
+uv pip install --python .venv-embedding/Scripts/python.exe -e '.[cost]' -r configs/followup-neural-requirements.txt
+```
+
+The requirements record observed versions; no environment upgrade is needed for
+the completed run. This is a reconstruction recipe, not a claim that a second
+fresh environment installation has been tested. Check local CUDA compatibility
+with the real offline probe before starting a long neural job.
+
+These commands perform public HTTPS downloads only, one file at a time, with
+expected SHA256 checks. Instructor weights require about5GB download/storage;
+DeBERTa weights about0.87GB. Existing mismatched or interrupted assets are
+retained for inspection. The tracked source manifest is a historical audit
+record; dynamic GitHub/HF API responses are not claimed to be reproducible byte
+for byte. This reconstructs external source/model assets, not ignored paid
+OpenAI vectors, raw study artifacts, or the entire frozen experiment lineage.
+After downloading Instructor assets, run the real offline compatibility probe
+with `.venv-embedding/Scripts/python.exe -m tools.openai_study_instructor_probe`
+before encoder preparation. This creates the checked input required by the
+encoder; a downloaded checkpoint alone is insufficient.
+See [Instructor recipe/status](instructor-sensitivity.md) and the prospective
+[Hybrid/drift protocol](hybrid-drift-protocol.md). Follow workstation sequencing
+and RAM guards before starting the neural stages.
+
+The completed drift recipe and the full-RouterBench binary recipe are separate.
+For a fresh lineage with the required existing parent inputs, run the following
+stages serially, stopping on any failed command. They refuse completed output
+paths; these are not commands to rerun over the saved evidence:
+
+```powershell
+$env:OMP_NUM_THREADS='1'
+$env:MKL_NUM_THREADS='1'
+$env:OPENBLAS_NUM_THREADS='1'
+$env:TOKENIZERS_PARALLELISM='false'
+.venv-embedding/Scripts/python.exe -m tools.openai_study_hybrid_default_batch probe
+.venv-embedding/Scripts/python.exe -m tools.openai_study_hybrid_default_batch audit
+.venv/Scripts/python.exe -m tools.openai_study_hybrid_default_batch declare
+.venv-embedding/Scripts/python.exe -m tools.openai_study_hybrid_default_batch train
+.venv-embedding/Scripts/python.exe -m tools.openai_study_hybrid_default_batch verify
+.venv/Scripts/python.exe -m tools.openai_study_hybrid_report binary
+```
+
+The default-batch adapter requires its pinned hardware-only feasibility record,
+immutable parent producers, source downloads, model verification and parent core
+protocol/partitions. The saved operational hardware profile is not in a clone.
+It is an evidence-preserving continuation adapter, not a standalone clean-clone
+benchmark builder. Do not bypass these guards or copy a protocol while changing
+inputs. The full-clone reproducibility limit for ignored paid caches and raw
+lineage remains explicit. Drift uses the original2/64 producer; binary uses8/16
+with eval8. See [declared recipes and limitations](hybrid-drift-protocol.md).
+
+Offline follow-up publication preparation requires all11 verified report packages:
+
+```powershell
+.venv/Scripts/python.exe -m tools.openai_followup_tracking
+.venv/Scripts/python.exe -m tools.openai_followup_publish
+.venv/Scripts/python.exe -m tools.openai_followup_artifact
+```
+
+These defaults perform no external writes. Online actions require the separate
+explicit upload flag and current authorization for the existing project. The
+publisher checks included storage with automatic upgrade disabled, protects the
+old1128 runs, persists accepted identities before metric validation and uses new
+recipe/family IDs. After a network interruption, rerun only after inspecting
+receipts and fresh remote state; do not recreate unknown accepted requests.
+
 ```powershell
 uv sync --locked --extra cost --extra tracking
 $env:OMP_NUM_THREADS='1'
@@ -119,3 +210,35 @@ then `python -m tools.course.verify_artifacts --folder NEW_OUTPUT --output NEW_R
 and `node tools/course/render_slides.mjs NEW_OUTPUT`. Inspect the final renders
 before replacing a reviewed deliverable. Chart snapshots intentionally round to
 eight decimals; `slide-content.json` retains the unrounded evidence.
+
+## Final follow-up validation and recovery
+
+A clean export of the reviewed Git index verifies all14 scientific report
+packages and rebuilds byte-identical2498 tracking payloads without ignored paid
+caches. This validates derived-evidence reconstruction; it does not claim a
+second clean neural environment or a new end-to-end GPU fit. The artifact
+metadata and every expected run value were checked anonymously after upload.
+
+For Windows QA in a new checkout, create the parent before a short, fresh
+pytest basetemp (the parent is not created by pytest):
+
+```powershell
+New-Item -ItemType Directory -Path outputs -Force | Out-Null
+.venv/Scripts/python.exe -m pytest -q -rs --basetemp=outputs/qa-NEW
+```
+
+Use a new temp name for each invocation. Current681pass/1skip and baseline
+490pass/1skip share the OS symlink-privilege limit; no admin/registry change was
+made. A first baseline invocation with a missing parent is retained in the
+operational logs, separate from the successful baseline.
+
+The artifact wrapper follows W&B's [existing-run artifact recipe](https://docs.wandb.ai/support/models/articles/how-do-i-log-an-artifact-to-an-existing-)
+with resume='allow', after proving that the exact aggregate ID/config/metrics
+already exists. GraphQL imports can lack SDK initialization metadata, so must
+can fail despite the public API run existing. The wrapper carries the same
+canonical values/labels and verifies the source run is finished afterwards.
+Schema2 receipts distinguish no submission from uncertain/accepted submission;
+a failed/unknown artifact lookup never authorizes another artifact generation.
+The new70-file artifact and all2498 summary views have actual readback proofs
+in the publication folder. A real post-acceptance lost-reply probe resumed the
+same server ID; an idempotent repeat added no run. No model API charges.

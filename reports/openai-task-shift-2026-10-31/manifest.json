@@ -1,0 +1,22 @@
+{
+  "evaluation_queries": 10000,
+  "files": {
+    "README.md": "c6cc7a2d5920541d5a8bfb08ffb1470b0bf62d73e6f360234449dcb0a0796cc3",
+    "per-query.csv": "caf25446bacf9fdd8228d9ea6c19ef21b8391dabf0d121f9ca81ffe2b68b73a3",
+    "task-shift.png": "d0a74ca9f117943b9f7d19511add25bc0c3564d6b5147fb63a88a81c7bd8cca7",
+    "task-shift.svg": "fadd6d2bec4d55b2b9453d85a70d4bf6cbc5c0ea0176666db3162acccaeca1f4",
+    "window-metrics.csv": "7fe8e63f2bebaeac212f70e7d171a3bddd061d5b6552eff524f1e145694b40e7"
+  },
+  "hybrid_proof_sha256": "e461ab757a3b011ce8be872ed24b7020ab56fa94a2a2b0b0a540544703d0bab1",
+  "hybrid_protocol_sha256": "bc7456c4d249a28b32a9b0b3d903f01f06f26bd8e492ebec4424cebb0f15e994",
+  "kind": "verified-local-task-shift",
+  "manifest_sha256": "93a25507482f51428581ebd9d1cb64701b30a0a00acd9a7381931868db296a30",
+  "paid_api_calls": 0,
+  "paper_equivalent": false,
+  "pilot_proof_sha256": "4b0dc3403145aa86619e1dd87f541ef4ed89a09e051645f7d3e23eb2a74ed6a2",
+  "prompt_groups": 15000,
+  "report_source_sha256": "8f20f802755a0c6f8688dd83918eda7570626a64a817f0ccb3d1bc7711e9b8aa",
+  "seed": 42,
+  "warm_queries": 5000,
+  "window_rows": 12
+}

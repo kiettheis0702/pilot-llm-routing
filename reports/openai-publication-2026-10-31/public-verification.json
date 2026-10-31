@@ -1,0 +1,15 @@
+{
+  "authentication": "none; trust_env=False; no Authorization or Cookie headers",
+  "legacy_runs_preserved": 1128,
+  "metrics_verified": 35402,
+  "pages": 37,
+  "paid_api_calls": 0,
+  "payload_sha256": "04a1e6731adf8f609c925bda8b916a37302d1a600890ab06761895da897f49c5",
+  "project_url": "https://forge.coreweave.com/wandb/kiettheis-university-of-science-vnu-hcm/pilot-llm-routing-team8",
+  "public_verified": true,
+  "read_only_for_anonymous": true,
+  "server_runs": 3626,
+  "verification_method": "anonymous-graphql-readback",
+  "verified_at": "2026-10-31T08:32:28.903747+00:00",
+  "verified_runs": 2498
+}

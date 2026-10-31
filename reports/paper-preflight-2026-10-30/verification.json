@@ -1,0 +1,118 @@
+{
+  "kind": "independent-free-preparation-verification",
+  "checks": [
+    {
+      "name": "old_frozen_package_unchanged",
+      "passed": true
+    },
+    {
+      "name": "input-audit_repeat_identical",
+      "passed": true
+    },
+    {
+      "name": "embedding-plan_repeat_identical",
+      "passed": true
+    },
+    {
+      "name": "payload_shape_and_token_limits",
+      "passed": true
+    },
+    {
+      "name": "all_original_texts_recovered_exactly",
+      "passed": true
+    },
+    {
+      "name": "cost_estimate_independent_arithmetic",
+      "passed": true
+    },
+    {
+      "name": "embedding_file_integrity",
+      "passed": true
+    },
+    {
+      "name": "three_way_split_disjoint",
+      "passed": true,
+      "sizes": {
+        "train": 847,
+        "test": 500,
+        "calibration": 211
+      }
+    },
+    {
+      "name": "test_excluded_from_fit",
+      "passed": true
+    },
+    {
+      "name": "independent_budget_arithmetic_replay",
+      "passed": true,
+      "conditions": 96
+    },
+    {
+      "name": "guarded_actions_match_all_old_traces",
+      "passed": true,
+      "conditions": 48
+    },
+    {
+      "name": "real_cli_rejects_overwrite_and_malformed_json",
+      "passed": true,
+      "rejected": 4
+    },
+    {
+      "name": "repeat_budget-comparison.csv",
+      "passed": true
+    },
+    {
+      "name": "repeat_paired-differences.csv",
+      "passed": true
+    },
+    {
+      "name": "repeat_historical-gpt4-relative.csv",
+      "passed": true
+    },
+    {
+      "name": "raw_sources_and_existing_mapping_unchanged",
+      "passed": true,
+      "source_count": 3
+    },
+    {
+      "name": "full_corpus_preparation_with_network_denied",
+      "passed": true,
+      "network_connections_attempted": 0
+    },
+    {
+      "name": "windows_other_preparation_processes_detected",
+      "passed": true,
+      "red_failures": 3,
+      "green_passes": 3
+    }
+  ],
+  "passed": 18,
+  "failed": 0,
+  "paid_api_calls": 0,
+  "api_submission_tested": false,
+  "api_submission_reason": "not implemented and not authorized; only offline preparation tested",
+  "regression": {
+    "baseline_passed": 490,
+    "final_passed": 517,
+    "skipped": 1,
+    "failed": 0,
+    "execution": "serial; one BLAS thread",
+    "log_sha256": "058be4059c763d3fc83cb6b0f83d0cc6ec05a73d7467a34cf3f8d697f964d4ec"
+  },
+  "code_sha256": {
+    "scripts/cost_policy.py": "1269a1e51b8de51f9c1e902a4552a1dfcb3acec094c276c2888a74545c1968bd",
+    "scripts/resources.py": "650e244df1260c1218d915cb1fce21255daf68f9e6eb998454744a21657aaa11",
+    "tests/test_paper_preflight.py": "36ab8fa73d882c0eda41532a74bac81ea386a7d92c04bcb6f8270ffb29b47740",
+    "tools/paper_preflight/audit.py": "2cfc5e726c6cc559f4502e5c9e95cce0e63b8d3b31afea3e6cf1e8c014945a74",
+    "tools/paper_preflight/common.py": "e0abd48cf436c11cf433116e4bb7d884cbccb05d53a2e447f2dbd6dba11d7e34",
+    "tools/paper_preflight/compare.py": "28c8e1283ac686ee3cfc2a138e63567600dc1a5b49906eb679791481106e89d1",
+    "tools/paper_preflight/embedding_plan.py": "4b4d3f17e7c179999daa5b2e0b36bedcff7c1344ce55046f02f5cd538ef2f5b7"
+  },
+  "repeat_budget_comparison_manifest_sha256": "31fc0f48f860e18868303e9473a8247e7783d136356ef45a742bfef09c02041f",
+  "protocol_sha256": "116ef1ad548b8f45682cd339e941e2afeb734d149e0a83c8e50a8edb0bb9bd95",
+  "review": {
+    "material_findings": 1,
+    "fixed": 1,
+    "unresolved_material_findings": 0
+  }
+}

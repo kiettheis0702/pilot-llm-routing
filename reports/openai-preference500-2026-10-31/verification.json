@@ -1,0 +1,72 @@
+{
+  "author_test_identity_verified": false,
+  "counts": {
+    "calibration": 211,
+    "test": 500,
+    "train": 847
+  },
+  "historical_test_partitions": {
+    "holdout": 100,
+    "train": 400
+  },
+  "mean_accuracy": 0.6353333333333334,
+  "paid_api_calls": 0,
+  "preflight": {
+    "available_gib": 9.744274139404297,
+    "heavy_jobs": []
+  },
+  "real_final_test_mutation_invariance": true,
+  "records": [
+    {
+      "accuracy": 0.638,
+      "correct": 319,
+      "manifest": {
+        "path": "outputs/openai-followup-20261031/preference500/seed-7/manifest.json",
+        "sha256": "af28f651ba92461035fd59613053da8778f85d8642e597dca04c4d7deeb7c206"
+      },
+      "pairs": 500,
+      "seed": 7,
+      "verification": {
+        "path": "outputs/openai-followup-20261031/preference500/seed-7/independent-verification.json",
+        "sha256": "9b7d168dc28dc3342154b0fba36fd35b2ea62b35db852b784e9998fc0c51b579"
+      }
+    },
+    {
+      "accuracy": 0.626,
+      "correct": 313,
+      "manifest": {
+        "path": "outputs/openai-followup-20261031/preference500/seed-42/manifest.json",
+        "sha256": "4323c9710ba160e2bdb1310337accc12fc68c92111b2db9d938709e1b88a8189"
+      },
+      "pairs": 500,
+      "seed": 42,
+      "verification": {
+        "path": "outputs/openai-followup-20261031/preference500/seed-42/independent-verification.json",
+        "sha256": "cb2c4678012e96345c9671fccf0e6b42780984f62577617fba89345e05796972"
+      }
+    },
+    {
+      "accuracy": 0.642,
+      "correct": 321,
+      "manifest": {
+        "path": "outputs/openai-followup-20261031/preference500/seed-2026/manifest.json",
+        "sha256": "82bb5a9f17cf7b1eddfcc53e4191c0a85fcb4c7347df5416e8c2f1fb06155a1d"
+      },
+      "pairs": 500,
+      "seed": 2026,
+      "verification": {
+        "path": "outputs/openai-followup-20261031/preference500/seed-2026/independent-verification.json",
+        "sha256": "0ac4e0f03765f08014cd137e2d97e35e0d34fc225a112affb3a095f735830f58"
+      }
+    }
+  ],
+  "script_sha256": "c3f5983506d3e19a1b0973c0659727a5429ea94be7bfffe0a891a1e7f0d7e48a",
+  "selected_configuration": {
+    "dimension": 64,
+    "id": "short",
+    "prior_epochs": 20,
+    "projection_epochs": 15
+  },
+  "selection": "seed42 calibration only; ties fewer epochs; reuse choice across seeds",
+  "verified": true
+}

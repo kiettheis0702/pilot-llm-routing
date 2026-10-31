@@ -182,7 +182,11 @@ class BudgetDecision:
 
 
 class BinnedCostPolicy:
-    """Algorithm 3 with an explicit hard estimated-affordability intersection.
+    """Algorithm 3 with a default hard estimated-affordability intersection.
+
+    Explicit affordability_mode='paper_literal' removes ONLY the threshold
+    intersection; fallback, bin accounting and termination stay the same.
+    This offline research interpretation may overspend even estimated budgets.
 
     select() consumes one query on success. Failure is terminal, as in the paper.
     Scores are fixed-router predictions, not exploration/UCB bonuses. The default
@@ -193,8 +197,11 @@ class BinnedCostPolicy:
 
     def __init__(self, *, arm_catalog: Sequence[str], budget: float, query_count: int,
                  bin_size: int, lower_bound: float, upper_bound: float,
-                 score_domain: str = 'cosine'):
+                 score_domain: str = 'cosine', affordability_mode: str = 'guarded'):
         self._arms = _catalog(arm_catalog)
+        if affordability_mode not in ('guarded', 'paper_literal'):
+            raise ValueError('Unknown affordability mode')
+        self._affordability_mode = affordability_mode
         if score_domain not in ('cosine', 'linear'):
             raise ValueError('Score domain must be cosine or linear')
         self._score_domain = score_domain
@@ -250,7 +257,7 @@ class BinnedCostPolicy:
 
         def threshold_eligible(arm: str) -> bool:
             reward, cost = rewards[arm], costs[arm]
-            if cost > available:  # Explicit safety deviation from Algorithm 3.
+            if self._affordability_mode == 'guarded' and cost > available:
                 return False
             if reward < 0:
                 return False
@@ -296,7 +303,7 @@ class BinnedCostPolicy:
         return decision
 
     def report(self) -> dict:
-        return {"status": self._status, "budget": float(self._budget),
+        result = {"status": self._status, "budget": float(self._budget),
                 "query_count": self._query_count, "bin_size": self._bin_size,
                 "bin_count": self._bins, "base_bin_budget": float(self._base),
                 "lower_bound": self._lb, "upper_bound": self._ub,
@@ -309,6 +316,10 @@ class BinnedCostPolicy:
                 "utilization": float(self._bin_spent / self._base) if self._base else 0.0,
                 "estimated_budget_violation": self._spent > self._budget,
                 "arm_catalog": list(self._arms), "score_domain": self._score_domain}
+        # Keep existing default report bytes/schema stable for frozen artifacts.
+        if self._affordability_mode != 'guarded':
+            result['affordability_mode'] = self._affordability_mode
+        return result
 
 
 class ActualCostLedger:

@@ -1,0 +1,63 @@
+{
+  "accuracy": 0.652,
+  "correct": 326,
+  "pairs": 500,
+  "role": "final_test_only",
+  "selected_candidate": "current",
+  "statistics": {
+    "all_lambdas_ready": true,
+    "blockers": {},
+    "per_arm": {
+      "WizardLM/WizardLM-13B-V1.2": {
+        "accuracy": 0.5555555555555556,
+        "correct": 30,
+        "lambda": 1.8,
+        "support": 54
+      },
+      "claude-instant-v1": {
+        "accuracy": 0.5205479452054794,
+        "correct": 114,
+        "lambda": 1.9210526315789473,
+        "support": 219
+      },
+      "claude-v1": {
+        "accuracy": 0.5882352941176471,
+        "correct": 50,
+        "lambda": 1.7,
+        "support": 85
+      },
+      "gpt-3.5-turbo-1106": {
+        "accuracy": 0.7123893805309734,
+        "correct": 161,
+        "lambda": 1.4037267080745341,
+        "support": 226
+      },
+      "gpt-4-1106-preview": {
+        "accuracy": 0.8229665071770335,
+        "correct": 172,
+        "lambda": 1.2151162790697674,
+        "support": 209
+      },
+      "meta/code-llama-instruct-34b-chat": {
+        "accuracy": 0.6338028169014085,
+        "correct": 45,
+        "lambda": 1.5777777777777777,
+        "support": 71
+      },
+      "meta/llama-2-70b-chat": {
+        "accuracy": 0.6233766233766234,
+        "correct": 48,
+        "lambda": 1.6041666666666667,
+        "support": 77
+      },
+      "zero-one-ai/Yi-34B-Chat": {
+        "accuracy": 0.5423728813559322,
+        "correct": 32,
+        "lambda": 1.84375,
+        "support": 59
+      }
+    }
+  },
+  "synthetic": false,
+  "used_for_selection": false
+}

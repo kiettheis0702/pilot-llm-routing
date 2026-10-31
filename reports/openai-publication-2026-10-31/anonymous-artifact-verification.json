@@ -1,0 +1,11 @@
+{
+  "all_files_downloaded_again": false,
+  "artifact_id": "QXJ0aWZhY3Q6NDMwNTY1NzMxNQ==",
+  "authentication": "none; trust_env=False; no Authorization or Cookie headers",
+  "manifest_entries_verified": 70,
+  "manifest_sha256": "fc8fb5f7a7518348aa4479d5ecb941816cce37effb998e7f222385bb807e6e96",
+  "paid_api_calls": 0,
+  "public_verified": true,
+  "verification_method": "anonymous-graphql-and-manifest-fetch",
+  "verified_at": "2026-10-31T08:32:31.246915+00:00"
+}

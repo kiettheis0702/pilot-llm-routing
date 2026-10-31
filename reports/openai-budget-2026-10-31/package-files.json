@@ -1,0 +1,11 @@
+{
+  "files": {
+    "README.md": "d733bb4bb5a262c88621059c4bc8bc9ad3398bfe0e4a6e75c2bc20e0bbbe0988",
+    "allocation-comparison.png": "332eec3788e9d2cb5402ba271556608e4aea980b404d2a944dfe12ee25bb04e8",
+    "allocation-comparison.svg": "d716d758a5935b9a2a93bc27723b7af1dfa0dc5f7bd8ed955eb85b2a08e00abf",
+    "manifest.json": "365405ba50a71f9fcc2926a945bda0a674126cb24bd5cf1dba76de8286c7ed09",
+    "means.csv": "47bab4c92bfeb8afddd62233bd1369e1e767c1de46b5b6da30a6269bc7c21ea5",
+    "paired-main.csv": "0cb23408e205773f140e5a6b356061a7a013ff4e4ddfaa358a5a568989af714d",
+    "per-seed.csv": "e19410e8cd54c01f79c1a7cfaef58b50173264b19221d0423e15b97fb7954537"
+  }
+}

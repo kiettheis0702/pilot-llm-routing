@@ -13,6 +13,7 @@ dependencies = [
 [project.optional-dependencies]
 # Match the pinned RouterBench cost converter; no generation SDK is required.
 cost = ["tiktoken==0.5.2"]
+openai = ["openai>=2,<3"]
 tracking = [
     "wandb==0.31.0",
 ]

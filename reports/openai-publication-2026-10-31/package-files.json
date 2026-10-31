@@ -1,0 +1,10 @@
+{
+  "files": {
+    "README.md": "908e5b3836f856a3bd78ed3e432355030cca07e498c6bc4c67ae6351f47077f3",
+    "anonymous-artifact-verification.json": "aa164e5ee482299aa1d0cce3b0d860ed6408715f64032f591887a193b695ec25",
+    "artifact-verification.json": "9f5a8dc215404b0b363284daa2129b3a695f7f9583e16b1a0d6c3554109877ad",
+    "derived-reconstruction.json": "97e32ebf8de042cb98b861a3dcd18bb685c27336373a9c0549827ee98e632004",
+    "experiment-map.csv": "92350466d91b47cc553b08a8b86449a5422303d841a815d07b8fa5974c6008c9",
+    "public-verification.json": "fe6ec67ad80041de00ae59797cfb71fc4a9ca7bc763e005bd845e0c693d9c50b"
+  }
+}

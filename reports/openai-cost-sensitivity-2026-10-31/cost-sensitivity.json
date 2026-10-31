@@ -1,0 +1,182 @@
+[
+  {
+    "choices_unchanged": true,
+    "conditions": 48,
+    "counterfactual": true,
+    "factor": 0.8,
+    "maximum_excess": 0.0,
+    "over_budget_count": 0,
+    "population": "pilot-full",
+    "total_excess": 0.0
+  },
+  {
+    "choices_unchanged": true,
+    "conditions": 48,
+    "counterfactual": false,
+    "factor": 1.0,
+    "maximum_excess": 0.0,
+    "over_budget_count": 0,
+    "population": "pilot-full",
+    "total_excess": 0.0
+  },
+  {
+    "choices_unchanged": true,
+    "conditions": 48,
+    "counterfactual": true,
+    "factor": 1.1,
+    "maximum_excess": 0.6765033616000018,
+    "over_budget_count": 23,
+    "population": "pilot-full",
+    "total_excess": 4.266248934076394
+  },
+  {
+    "choices_unchanged": true,
+    "conditions": 48,
+    "counterfactual": true,
+    "factor": 1.25,
+    "maximum_excess": 2.1639795400000015,
+    "over_budget_count": 25,
+    "population": "pilot-full",
+    "total_excess": 18.001819601809053
+  },
+  {
+    "choices_unchanged": true,
+    "conditions": 48,
+    "counterfactual": true,
+    "factor": 1.5,
+    "maximum_excess": 4.643106504,
+    "over_budget_count": 30,
+    "population": "pilot-full",
+    "total_excess": 46.95163476087438
+  },
+  {
+    "choices_unchanged": true,
+    "conditions": 48,
+    "counterfactual": true,
+    "factor": 2.0,
+    "maximum_excess": 9.601360432000002,
+    "over_budget_count": 30,
+    "population": "pilot-full",
+    "total_excess": 109.80803164287435
+  },
+  {
+    "choices_unchanged": true,
+    "conditions": 858,
+    "counterfactual": true,
+    "factor": 0.8,
+    "maximum_excess": 0.0,
+    "over_budget_count": 0,
+    "population": "all-core",
+    "total_excess": 0.0
+  },
+  {
+    "choices_unchanged": true,
+    "conditions": 858,
+    "counterfactual": false,
+    "factor": 1.0,
+    "maximum_excess": 0.0,
+    "over_budget_count": 0,
+    "population": "all-core",
+    "total_excess": 0.0
+  },
+  {
+    "choices_unchanged": true,
+    "conditions": 858,
+    "counterfactual": true,
+    "factor": 1.1,
+    "maximum_excess": 0.6765033616000018,
+    "over_budget_count": 88,
+    "population": "all-core",
+    "total_excess": 10.023716002412078
+  },
+  {
+    "choices_unchanged": true,
+    "conditions": 858,
+    "counterfactual": true,
+    "factor": 1.25,
+    "maximum_excess": 2.1639795400000015,
+    "over_budget_count": 115,
+    "population": "all-core",
+    "total_excess": 42.80527372376885
+  },
+  {
+    "choices_unchanged": true,
+    "conditions": 858,
+    "counterfactual": true,
+    "factor": 1.5,
+    "maximum_excess": 4.643106504,
+    "over_budget_count": 185,
+    "population": "all-core",
+    "total_excess": 127.08988628888443
+  },
+  {
+    "choices_unchanged": true,
+    "conditions": 858,
+    "counterfactual": true,
+    "factor": 2.0,
+    "maximum_excess": 9.601360432000002,
+    "over_budget_count": 256,
+    "population": "all-core",
+    "total_excess": 415.1465724543719
+  },
+  {
+    "choices_unchanged": true,
+    "conditions": 1098,
+    "counterfactual": true,
+    "factor": 0.8,
+    "maximum_excess": 0.0,
+    "over_budget_count": 0,
+    "population": "all-openai",
+    "total_excess": 0.0
+  },
+  {
+    "choices_unchanged": true,
+    "conditions": 1098,
+    "counterfactual": false,
+    "factor": 1.0,
+    "maximum_excess": 0.5212412239999988,
+    "over_budget_count": 7,
+    "population": "all-openai",
+    "total_excess": 1.1301587399999984
+  },
+  {
+    "choices_unchanged": true,
+    "conditions": 1098,
+    "counterfactual": true,
+    "factor": 1.1,
+    "maximum_excess": 1.3407394923999991,
+    "over_budget_count": 158,
+    "population": "all-openai",
+    "total_excess": 23.722551992042252
+  },
+  {
+    "choices_unchanged": true,
+    "conditions": 1098,
+    "counterfactual": true,
+    "factor": 1.25,
+    "maximum_excess": 2.5699868949999978,
+    "over_budget_count": 210,
+    "population": "all-openai",
+    "total_excess": 95.41167807146232
+  },
+  {
+    "choices_unchanged": true,
+    "conditions": 1098,
+    "counterfactual": true,
+    "factor": 1.5,
+    "maximum_excess": 4.945397376000001,
+    "over_budget_count": 320,
+    "population": "all-openai",
+    "total_excess": 270.70029800273363
+  },
+  {
+    "choices_unchanged": true,
+    "conditions": 1098,
+    "counterfactual": true,
+    "factor": 2.0,
+    "maximum_excess": 10.004414928000001,
+    "over_budget_count": 415,
+    "population": "all-openai",
+    "total_excess": 795.48446904007
+  }
+]

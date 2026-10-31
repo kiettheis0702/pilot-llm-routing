@@ -1,0 +1,17 @@
+{
+  "files": {
+    "budget-comparison.csv": "8dbc319e4a1675c714381c2b29bdadd56cf5c64723e18d913250f8c229fb6be6",
+    "comparison-manifest.json": "249eecdf73c9a064349225c0b1fc8a1c1dfcd9b8848f16f3ecfbe2d632e31f0a",
+    "embedding-plan-summary.json": "8fb163251fc55e1338fa8b66ef8c012effce927163cfab0cfd3bab1cb8873200",
+    "historical-gpt4-relative.csv": "74a8fe97a17e69f8a4334e85d1f1074536b8fb13c857603284349f6d840541a0",
+    "independent-review.md": "3b94f3e59686670f27db57b7c80bc3df00f19a870bfd366cbec8561803dd4f11",
+    "input-audit.json": "7368d6ff4a23ba989d943dd4c73b3064ae0fc0e067d0842baf490196efb69e14",
+    "network-denied-probe.json": "aca35306fff49bd8b850eecb1980ab39bb9461dcd8916137506ed1115eec2300",
+    "paired-differences.csv": "58239730b3e34d9d92854a0ad2724b1765276074bef885c1e59b98bbd2998c28",
+    "qa-handoff.md": "9f06f76da3ea1cdc511243a88f276d5a0d6798be4feb0b65bc0bcca03ef45502",
+    "README.md": "c104c53843a7533081453762d27e6d557d6d10f11cd3c0953d2be9bd8c3058e1",
+    "sources.json": "650d39d1d88866f5d4cf0dfad652b063539ed1ebfcbc6586b63641ac55c7147a",
+    "tests-final.txt": "058be4059c763d3fc83cb6b0f83d0cc6ec05a73d7467a34cf3f8d697f964d4ec",
+    "verification.json": "c9fb72aeee8e7e7d9dbd446565f1947c4dd708abf2e1e69a5a84b4a618ecdcdc"
+  }
+}

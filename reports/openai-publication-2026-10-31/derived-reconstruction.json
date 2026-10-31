@@ -1,0 +1,11 @@
+{
+  "fresh_neural_environment_reinstalled": false,
+  "ignored_caches_required": false,
+  "paid_api_calls": 0,
+  "payload_file_sha256": "8cdf5c74b75b5564821db4d640230e12232bc1771c3f41e15565f43177dd4e45",
+  "payload_sha256": "04a1e6731adf8f609c925bda8b916a37302d1a600890ab06761895da897f49c5",
+  "scientific_packages": 14,
+  "source": "fresh export of reviewed Git index",
+  "summary_views": 2498,
+  "verified": true
+}

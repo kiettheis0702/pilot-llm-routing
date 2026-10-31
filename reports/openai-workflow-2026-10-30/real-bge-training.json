@@ -1,0 +1,43 @@
+{
+  "api_calls_performed": 0,
+  "cache_fingerprint": "dc3a48c7f7f8e6deed3c317761baa72cf075051ce0e5ed11ba0bf7cea2758f8b",
+  "candidates": [
+    {
+      "all_lambdas_ready": true,
+      "calibration": {
+        "accuracy": 0.6682464454976303,
+        "correct": 141,
+        "pairs": 211
+      },
+      "checkpoint": "candidate-current.json",
+      "dimension": 64,
+      "id": "current",
+      "prior_epochs": 40,
+      "projection_epochs": 30,
+      "sha256": "3f75d8ce7d345e4842a3fed230ec873fcf27b64a33888c7d985fb036e9aefa3c"
+    }
+  ],
+  "counts": {
+    "calibration": 211,
+    "test": 500,
+    "train": 847
+  },
+  "final_test_sha256": "59b16709e76401968b0a4bb73b8632a337f1a0ba84063fa78c247911b7035924",
+  "interpretation": "local training protocol; not recovered author settings",
+  "kind": "three-way-preference-training",
+  "lambda_source": "calibration only; final-test accuracy never replaces checkpoint lambda",
+  "learning_rate": 0.03,
+  "margin": 0.2,
+  "paper_equivalent": false,
+  "seed": 42,
+  "selected_candidate": "current",
+  "selected_checkpoint_sha256": "3f75d8ce7d345e4842a3fed230ec873fcf27b64a33888c7d985fb036e9aefa3c",
+  "selection": "calibration accuracy; ties fewer total epochs then candidate ID",
+  "source_sha256": {
+    "comparisons": "d78956d9687822df8dcb4d0043f9f6e0de96889dc91412f9cc3f13700430963c",
+    "sizes": "1f6f2bd7160d223d53bfd79a4b854e298bd9760d96a2c527f092798071f48ec2"
+  },
+  "status": "ready",
+  "synthetic": false,
+  "version": 1
+}

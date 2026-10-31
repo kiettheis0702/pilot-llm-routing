@@ -35,3 +35,24 @@ configs/course_analysis_protocol.json -text
 tools/course/** -text
 # Frozen course evidence includes CRLF; recognize it without changing bytes.
 reports/course-submission-2026-10-30/** -text whitespace=blank-at-eol,blank-at-eof,space-before-tab,cr-at-eol
+
+# Preserve the byte identities of the new frozen OpenAI/Instructor evidence.
+configs/openai_core_protocol.json -text whitespace=blank-at-eol,blank-at-eof,space-before-tab,cr-at-eol
+configs/paper_preflight_protocol.json -text whitespace=blank-at-eol,blank-at-eof,space-before-tab,cr-at-eol
+configs/followup_assets.json -text whitespace=blank-at-eol,blank-at-eof,space-before-tab,cr-at-eol
+configs/followup_source_audit_manifest.json -text whitespace=blank-at-eol,blank-at-eof,space-before-tab,cr-at-eol
+configs/followup-neural-requirements.txt -text whitespace=blank-at-eol,blank-at-eof,space-before-tab,cr-at-eol
+reports/openai-*/** -text whitespace=blank-at-eol,blank-at-eof,space-before-tab,cr-at-eol
+reports/instructor-*/** -text whitespace=blank-at-eol,blank-at-eof,space-before-tab,cr-at-eol
+reports/paper-preflight-*/** -text whitespace=blank-at-eol,blank-at-eof,space-before-tab,cr-at-eol
+tools/frozen_sources/** -text whitespace=blank-at-eol,blank-at-eof,space-before-tab,cr-at-eol
+
+# Generated SVG paths and captured tracebacks retain their producer formatting.
+reports/openai-*/**/*.svg -text -whitespace
+reports/instructor-*/**/*.svg -text -whitespace
+reports/openai-core-2026-10-31/evidence/*.log -text -whitespace
+
+# Keep generated scientific evidence collapsed in GitHub reviews.
+reports/openai-*/** linguist-generated=true
+reports/instructor-*/** linguist-generated=true
+reports/paper-preflight-*/** linguist-generated=true

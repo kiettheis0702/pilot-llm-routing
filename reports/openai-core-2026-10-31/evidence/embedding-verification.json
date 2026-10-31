@@ -1,0 +1,35 @@
+{
+  "status": "verified",
+  "model": "text-embedding-3-small",
+  "synthetic": false,
+  "source_rows": 38055,
+  "unique_texts": 38018,
+  "completed_requests": 437,
+  "dimensions": 1536,
+  "provider_declared_total_tokens": 6867235,
+  "price_calculated_usd": 0.13734470000000001,
+  "billing_note": "Calculated from provider-declared usage and posted Standard price; excludes taxes, not an invoice readback",
+  "elapsed_seconds": 648.6325018405914,
+  "paid_retries": 0,
+  "every_vector_compared_to_saved_provider_response": true,
+  "source_caches": [
+    {
+      "source": "routing-inputs.json",
+      "rows": 36497,
+      "dimension": 1536,
+      "fingerprint": "59f9090db4e92fcc0eaa545fe925d8ec43156073da2b399c779f8f301e3f46fc",
+      "vector_sha256": "7ecb92f6bbc66f10eb8f26b2f40639b9136bcfaea6d42b93a566d8b3eb98f9c1"
+    },
+    {
+      "source": "preference-inputs.json",
+      "rows": 1558,
+      "dimension": 1536,
+      "fingerprint": "474857af6dcf4b259ea1a8aeb0758bae67fc9e6023e1c43dadc2415bd4c4c713",
+      "vector_sha256": "9e846876f509d1edd9cf03eaaaf8c6237b2890fb78e76697b82c056f48485952"
+    }
+  ],
+  "resource_snapshot": {
+    "heavy_jobs": [],
+    "available_gib": 10.370391845703125
+  }
+}

@@ -1,0 +1,4 @@
+seed,correct_pilot,pairs_pilot,accuracy_pilot,selected_epoch,correct_routellm,pairs_routellm,accuracy_routellm,accuracy_delta_pp
+7,319,500,0.638,84,338,500,0.676,3.8000000000000034
+42,313,500,0.626,88,340,500,0.68,5.400000000000005
+2026,321,500,0.642,100,343,500,0.686,4.400000000000004

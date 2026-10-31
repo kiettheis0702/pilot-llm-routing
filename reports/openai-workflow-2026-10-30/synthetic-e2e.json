@@ -1,0 +1,27 @@
+{
+  "accepted_after_resume": 8,
+  "accepted_before_resume": 3,
+  "api_calls_performed": 0,
+  "child_cli_network_blocked": true,
+  "deployment_requested": 8,
+  "deployment_served": 8,
+  "embedding_requests": 8,
+  "input_dimension": 1536,
+  "kind": "synthetic-offline-openai-contract-check",
+  "learning_rounds": 8,
+  "preference_counts": {
+    "calibration": 4,
+    "test": 4,
+    "train": 8
+  },
+  "preflight": {
+    "available_gib": 9.33035659790039,
+    "heavy_jobs": []
+  },
+  "real_openai_results": false,
+  "router_state_unchanged": true,
+  "selected_prior_ready": true,
+  "source_rows": 32,
+  "synthetic": true,
+  "unique_texts": 31
+}

@@ -1,0 +1,99 @@
+{
+  "version": 1,
+  "kind": "proposed-openai-core-reproduction-protocol",
+  "status": "free_preparation_complete_pending_scientific_gates_and_paid_approval",
+  "paid_api_approved": false,
+  "paid_requests_submitted": 0,
+  "paper_equivalent": false,
+  "preserve_existing_results": true,
+  "model_pool": {
+    "admitted": "configs/frozen_experiment_protocol.json:arms",
+    "admitted_count": 8,
+    "target_count": 11,
+    "unresolved": ["claude-v2", "mistralai/mistral-7b-chat", "mistralai/mixtral-8x7b-chat"],
+    "mapping_source": "configs/model_mapping.json",
+    "promotion_rule": "primary evidence of the actual RouterBench version; shared pricing is insufficient",
+    "eleven_arm_training_ready": false
+  },
+  "routing_data": {
+    "source": "configs/data_sources.json:routerbench_0shot",
+    "rows": 36497,
+    "raw_task_labels": 86,
+    "raw_mmlu_labels": 57,
+    "paper_64_task_relationship": "unresolved; retain every row and raw label",
+    "tuning": 1000,
+    "learning": 32270,
+    "deployment": 3227,
+    "seed": 42,
+    "order": "preserve existing stream_position, including MMLU filtering",
+    "author_split_equivalence": false,
+    "label_access": "tuning for selection; selected-arm learning feedback; deployment evaluation only"
+  },
+  "preference_data": {
+    "source": "configs/data_sources.json:arena_55k",
+    "current_admitted_pairs": 1558,
+    "proposed_eight_arm_partition": {"train": 847, "calibration": 211, "test": 500},
+    "partition_source": "outputs/paper-preflight-20261030/input-audit/preference-three-way.json",
+    "grouping": "normalized prompt hash; whole groups only",
+    "all_eight_arms_have_support_in_each_partition": true,
+    "calibration_use": "candidate selection and per-arm inverse-accuracy initialization coefficients",
+    "test_use": "one evaluation after choices freeze; no selection, early stopping or lambda estimation",
+    "historical_caveat": "resplit of previously used corpus: 400 proposed test rows were old train and 100 old holdout",
+    "author_500_pair_identity_confirmed": false,
+    "eleven_arm_partition_status": "must regenerate after verified model promotion"
+  },
+  "embedding": {
+    "model": "text-embedding-3-small",
+    "dimensions": 1536,
+    "dimensions_source": "OpenAI default, not independently established as author setting",
+    "dimensions_parameter": "omit",
+    "text": "verbatim exported prompt without extra instruction or truncation",
+    "comparison_to_legacy_bge": "representation recipe comparison: old BGE truncated 13 preference inputs at 2048 BGE tokens; pure model-effect attribution requires matching actual input text",
+    "deduplication": "exact UTF-8 text SHA256, not normalized prompt grouping",
+    "current_prepared_unique_texts": 38018,
+    "current_prepared_tokens": 6867235,
+    "prepared_http_requests": 298,
+    "max_inputs_per_request": 128,
+    "max_tokens_per_request": 50000,
+    "max_tokens_per_input": 8191,
+    "reuse": "all seeds, baselines, budgets and ablations use the same immutable base vectors",
+    "budget_note": "Standard-price estimate 0.1373447 USD for this eight-arm input snapshot; not an approved eleven-arm request",
+    "submission_tool_available": false
+  },
+  "pretraining": {
+    "author_exact_settings_found": false,
+    "candidates_are_local_assumptions": true,
+    "candidates": [
+      {"id": "short", "dimension": 64, "projection_epochs": 15, "prior_epochs": 20},
+      {"id": "current", "dimension": 64, "projection_epochs": 30, "prior_epochs": 40},
+      {"id": "long", "dimension": 64, "projection_epochs": 60, "prior_epochs": 80}
+    ],
+    "learning_rate": 0.03,
+    "margin": 0.2,
+    "candidate_seed": 42,
+    "selection": "maximum calibration pair accuracy; ties choose fewer total epochs; never use final test",
+    "replicate_seeds": [7, 42, 2026],
+    "zero_accuracy_arm": "explicit blocker; no fabricated lambda or substituted prior",
+    "projection_prior_reuse_from_bge": false,
+    "triplet_sampling": "train-only strict-cost negative condition in scripts/pretraining.py; fixed seeded sampled triplets"
+  },
+  "routing_selection": {
+    "alpha_grid": [1, 1.5, 2, 5, 10],
+    "epoch_greedy_windows": [10, 50, 100, 500],
+    "selection": "tuning-only prequential reward; start learning from fresh state",
+    "cost_estimation": "query input tokens plus per-arm tuning mean output tokens",
+    "bounds": "recalibrate on tuning predictions/cost estimates after new embedding or arm pool; no deployment-derived tuning"
+  },
+  "experiments": {
+    "core": ["budget_quality", "learning_size_and_regret"],
+    "baselines": ["pilot", "linucb", "epoch-greedy", "explore-only", "random", "each-fixed-arm"],
+    "budget_interpretations": ["guarded", "paper_literal"],
+    "policy_fairness": "same budget controller for every method within each comparison",
+    "metrics": ["quality_fraction_gpt4", "cost_fraction_gpt4", "coverage", "estimated_overspend", "actual_overspend"],
+    "reference": "gpt-4-1106-preview historical outcomes on all requested evaluation queries",
+    "budget_grid": "predeclare from tuning reference; never select budget points using deployment reward",
+    "denominator": "unserved requests stay in quality/coverage population; never replace recorded cost by allocated budget",
+    "extension_order": ["budget_uncertainty", "verified_binary_routing", "matched_routellm_or_hybridllm", "drift_or_noise", "instructor_xl"]
+  },
+  "execution": {"parallel_jobs": 1, "blas_threads": 1, "minimum_free_physical_gib": 8}
+}

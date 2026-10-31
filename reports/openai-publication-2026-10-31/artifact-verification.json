@@ -1,0 +1,19 @@
+{
+  "artifact_id": "QXJ0aWZhY3Q6NDMwNTY1NzMxNQ==",
+  "artifact_name": "pilot-team8-openai-followup-results",
+  "bytes": 11037886,
+  "files": 70,
+  "manifest_sha256": "fc8fb5f7a7518348aa4479d5ecb941816cce37effb998e7f222385bb807e6e96",
+  "paid_api_calls": 0,
+  "qualified_name": "kiettheis-university-of-science-vnu-hcm/pilot-llm-routing-team8/pilot-team8-openai-followup-results:v0",
+  "remote_manifest_verified": true,
+  "run_id": "p2-725f658b2ec02fc5a167a528",
+  "run_payload_sha256": "725f658b2ec02fc5a167a528374327bd1d7a70160844fafebab07ac926265e7a",
+  "schema_version": 2,
+  "status": "finished",
+  "submission_attempted": true,
+  "summary_run_verified_finished": true,
+  "url": "https://forge.coreweave.com/wandb/kiettheis-university-of-science-vnu-hcm/pilot-llm-routing-team8/artifacts/evaluation-results/pilot-team8-openai-followup-results/v0",
+  "verified_at": "2026-10-31T08:32:09.619100+00:00",
+  "version": "v0"
+}
