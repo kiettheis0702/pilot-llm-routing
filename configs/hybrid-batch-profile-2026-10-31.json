@@ -1,0 +1,29 @@
+{
+  "synthetic_hardware_only": true,
+  "no_binary_outcomes_used": true,
+  "results": [
+    {
+      "microbatch": 2,
+      "success": true,
+      "measured_seconds_per128": [
+        10.921786100007012,
+        10.930475100001786
+      ],
+      "median_seconds_per128": 10.926130600004399,
+      "peak_cuda_allocated_bytes": 4915237376
+    },
+    {
+      "microbatch": 8,
+      "success": true,
+      "measured_seconds_per128": [
+        3.992627600004198,
+        4.080138199991779
+      ],
+      "median_seconds_per128": 4.036382899997989,
+      "peak_cuda_allocated_bytes": 7028448768
+    }
+  ],
+  "network_attempts": 0,
+  "paid_api_calls": 0,
+  "parent_trainer_sha256": "e692d57e187902d3a3f50b355fd05356c3ddf6adb79170b135af9ca77a2a1ef2"
+}

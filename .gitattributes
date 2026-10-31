@@ -42,6 +42,7 @@ configs/paper_preflight_protocol.json -text whitespace=blank-at-eol,blank-at-eof
 configs/followup_assets.json -text whitespace=blank-at-eol,blank-at-eof,space-before-tab,cr-at-eol
 configs/followup_source_audit_manifest.json -text whitespace=blank-at-eol,blank-at-eof,space-before-tab,cr-at-eol
 configs/followup-neural-requirements.txt -text whitespace=blank-at-eol,blank-at-eof,space-before-tab,cr-at-eol
+configs/hybrid-batch-profile-2026-10-31.json -text whitespace=blank-at-eol,blank-at-eof,space-before-tab,cr-at-eol
 reports/openai-*/** -text whitespace=blank-at-eol,blank-at-eof,space-before-tab,cr-at-eol
 reports/instructor-*/** -text whitespace=blank-at-eol,blank-at-eof,space-before-tab,cr-at-eol
 reports/paper-preflight-*/** -text whitespace=blank-at-eol,blank-at-eof,space-before-tab,cr-at-eol
