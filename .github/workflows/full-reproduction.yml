@@ -7,13 +7,15 @@ on:
         required: true
         type: choice
         default: all
-        options: [all, core, followups, mf]
+        options: [all, core, followups, mf, gate]
   push:
     branches: [codex/full-reproduction]
 permissions:
   contents: read
 concurrency:
-  group: offline-reproduction
+  # A regression-only dispatch uses a separate remote standard runner. It
+  # never starts a local job or interrupts the long scientific replay.
+  group: ${{ github.event_name == 'workflow_dispatch' && inputs.scope == 'gate' && 'offline-regression' || 'offline-reproduction' }}
   cancel-in-progress: false
 env:
   OMP_NUM_THREADS: '1'
@@ -57,7 +59,7 @@ jobs:
           if ($LASTEXITCODE -ne 0) { exit $LASTEXITCODE }
   reproduce:
     needs: gate
-    if: github.event.repository.private == false
+    if: github.event.repository.private == false && inputs.scope != 'gate'
     runs-on: windows-2025
     timeout-minutes: 360
     strategy:
