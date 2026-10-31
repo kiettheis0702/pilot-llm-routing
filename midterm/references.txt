@@ -1,0 +1,13 @@
+[1] P. Panda et al., “Adaptive LLM routing under budget constraints,” in Findings Assoc. Comput. Linguistics: EMNLP 2025, 2025, pp. 23934–23949.
+[2] L. Li, W. Chu, J. Langford, and R. E. Schapire, “A contextual-bandit approach to personalized news article recommendation,” in Proc. 19th Int. Conf. World Wide Web, 2010, pp. 661–670.
+[3] D. Ding et al., “Hybrid LLM: Cost-efficient and quality-aware query routing,” in Proc. Int. Conf. Learn. Represent. (ICLR), 2024.
+[4] W.-L. Chiang et al., “Chatbot Arena: An open platform for evaluating LLMs by human preference,” arXiv:2403.04132, 2024.
+[5] OpenAI, “New embedding models and API updates,” OpenAI, Jan. 25, 2024. [Online]. Available: openai.com/index/new-embedding-models-and-api-updates
+[6] Y. Zhou, D. Chakrabarty, and R. Lukose, “Budget constrained bidding in keyword auctions and online knapsack problems,” in Proc. 17th Int. Conf. World Wide Web, 2008, pp. 1243–1244.
+[7] Y. Abbasi-Yadkori, D. Pál, and C. Szepesvári, “Improved algorithms for linear stochastic bandits,” in Adv. Neural Inf. Process. Syst., vol. 24, 2011, pp. 2312–2320.
+[8] Q. J. Hu et al., “RouterBench: A benchmark for multi-LLM routing system,” arXiv:2403.12031, 2024.
+[9] J. Chen et al., “BGE M3-Embedding: Multi-lingual, multi-functionality, multi-granularity text embeddings through self-knowledge distillation,” arXiv:2402.03216, 2024.
+[10] Team 8, “pilot-llm-routing-team8,” Weights & Biases public project, 3,626 runs, Oct. 2026. [Online]. Available: forge.coreweave.com/wandb/kiettheis-university-of-science-vnu-hcm/pilot-llm-routing-team8
+[11] Team 8, “pilot-llm-routing,” GitHub repository, Oct. 2026. [Online]. Available: github.com/kiettheis0702/pilot-llm-routing
+[12] I. Ong et al., “RouteLLM: Learning to route LLMs with preference data,” arXiv:2406.18665, 2024.
+[13] H. Su et al., “One embedder, any task: Instruction-finetuned text embeddings,” in Findings Assoc. Comput. Linguistics: ACL 2023, 2023, pp. 1102–1121.

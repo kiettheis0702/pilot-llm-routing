@@ -1,5 +1,9 @@
 # Reproduce the reported follow-up studies
 
+For the later complete CPU inventories and fresh refits, see
+[full-reproduce.md](full-reproduce.md) and its current validation record in README.
+The bounded workflow below retains its original coverage.
+
 Use a separate checkout of `openai-followup-reproduction-2026-10-31` for the
 supplementary entrypoints. This later tag preserves the tested source and guides.
 See the [completed fresh-machine validation](followup-reproduction-validation-2026-10-31.md)

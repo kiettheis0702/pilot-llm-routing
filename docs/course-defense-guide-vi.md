@@ -1,10 +1,11 @@
 # Hướng dẫn bảo vệ — Team 8
 
 Hai thành viên đều cần hiểu toàn bộ bài. Chia người trình bày không thay thế việc
-đọc và chạy thử. File hiện tại `midterm/8.pptx` có22 slide; bộ đóng gói lịch sử
-có33 slide. Poster hiện tại có1 slide. Dùng
-[bản cập nhật cho Claude](CLAUDE_UPDATE_OPENAI_2026-10-31.md) để sửa nội dung và
-notes; bản này đã chốt từ các kết quả đọc lại công khai, giữ cả kết quả bất lợi.
+đọc và chạy thử. Bắt đầu bằng [hướng dẫn đọc toàn dự án](project-reading-guide-vi.md).
+File hiện tại `midterm/8.pptx` có24 slide; bộ đóng gói lịch sử có33 slide.
+Poster hiện tại có1 slide A2. Bản OpenAI đã được cập nhật;
+[yêu cầu rà cuối cho Claude](CLAUDE_FINAL_REVIEW_2026-10-31.md) thu hẹp cách
+diễn đạt ở slide22. Giữ các số liệu công khai và cả kết quả bất lợi.
 
 ## Mạch trình bày đề xuất
 
@@ -129,7 +130,8 @@ Dùng [registry mới](../reports/openai-publication-2026-10-31/experiment-map.c
 cho OpenAI/Instructor/Hybrid; [registry cũ](../reports/publication-2026-10-30/experiment-map.csv)
 chỉ minh chứng số BGE/synthetic/cost cũ. Đây là các điều kiện/tổng hợp có cửa sổ
 chồng lấn, không phải2498 lần gọi LLM hoặc dataset độc lập. Artifact mới70 file
-bảng/biểu đồ; artifact cũ19 file giữ nguyên. Chưa nộp Moodle.
+bảng/biểu đồ; artifact cũ19 file giữ nguyên. Trạng thái Moodle cần xác nhận
+trên tài khoản đang đăng nhập; không suy ra từ trạng thái lần kiểm30/10.
 
 ## Tập thao tác trước buổi bảo vệ
 
@@ -138,7 +140,8 @@ bảng/biểu đồ; artifact cũ19 file giữ nguyên. Chưa nộp Moodle.
 - Chạy toy smoke, giải thích vì sao synthetic không phải kết quả paper.
 - Tự giải thích cả hai poster tests và một cách kiểm chứng cải tiến tương ứng.
 - Mở cả hai PPTX bằng PowerPoint trên máy trình chiếu, kiểm font/chart/notes;
-  bản hiện tại đã kiểm cấu trúc và render, chưa xác nhận bằng ứng dụng PowerPoint.
+  bản hiện tại đã xuất bằng PowerPoint trên máy soạn theo nhật ký cập nhật,
+  chưa xác nhận trên máy trình chiếu/in khác.
 
 Mốc trên Moodle khi kiểm 30/10: GitHub công khai trước 23:59 07/11/2026;
 slide giữa kỳ 21/11; poster cuối kỳ 05/12. Kiểm lại Moodle trước khi nộp.
