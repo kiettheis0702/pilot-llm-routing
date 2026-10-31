@@ -7,7 +7,9 @@ for exact coverage; these repeated checks do not add new scientific/W&B records.
 Completed31 October2026: all declared local scientific studies, final review,
 public W&B readbacks and Claude research handoff are complete. Completed
 scientific packages below retain their exact hashes and adverse results.
-Poster, slides, PDFs and previews are outside the editing scope.
+That research pass did not edit presentations. The later OpenAI presentation
+revision is now [documented separately](presentation-update-2026-10-31.md):
+24 slides and one A2 poster. Start with the [Vietnamese reading guide](project-reading-guide-vi.md).
 
 **Current reading order:** this status page, the
 [OpenAI core results](../reports/openai-core-2026-10-31/KET_QUA_VI.md),
@@ -87,9 +89,10 @@ The original batch decision record is now packaged with a checksum; actual
 new-machine Hybrid probes remain required. Preference splits are regenerated
 from the restored inputs instead of requiring the old course output directory.
 
-[Claude's update map](CLAUDE_UPDATE_OPENAI_2026-10-31.md) targets the actual
-22-slide deck and one-slide poster, with exact figures, numeric replacements and
-claims to qualify. It is ready for Claude's presentation edits. Old public W&B links support
+[Claude's original update map](CLAUDE_UPDATE_OPENAI_2026-10-31.md) described the
+then-current22-slide input; that edit has produced24 slides locally. Use the
+[final wording review](CLAUDE_FINAL_REVIEW_2026-10-31.md) for remaining edits.
+Old public W&B links support
 historical BGE claims; use the new registry for new research claims.
 
 The default Hybrid threshold0.5 yields81.6664% GPT4 quality at23.1174%

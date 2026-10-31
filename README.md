@@ -14,6 +14,13 @@ Pranoy Panda, Raghav Magazine, Chaitanya Devaguptapu, Sho Takemori, and Vishal S
 
 ## Current status
 
+For the team: [read the complete project in Vietnamese](docs/project-reading-guide-vi.md),
+then open the current [24-slide midterm](midterm/8.pptx) and [A2 poster](poster/8.pptx).
+Their [editing/QA record](docs/presentation-update-2026-10-31.md) identifies exact
+file hashes. [Claude's final wording review](docs/CLAUDE_FINAL_REVIEW_2026-10-31.md)
+is separate from the completed original OpenAI update. The historical33-slide
+package under `deliverables/` is preserved.
+
 Start with the [current OpenAI evidence](docs/openai-followup-status.md),
 [offline restore and clean-checkout replay](docs/openai-reproduce.md), and
 [Claude slide/poster update map](docs/CLAUDE_UPDATE_OPENAI_2026-10-31.md).
@@ -21,6 +28,10 @@ The [follow-up reproduction guide](docs/followup-reproduce.md) supplies the
 remaining preparation steps and command order for all reported study families.
 Supplementary validation: **714 passed** on a fresh Windows runner, with real
 follow-up fits and independent trace replay; [exact coverage and limits](docs/followup-reproduction-validation-2026-10-31.md).
+Latest regression: **729 passed** after full-inventory and preservation/device
+guard probes. [Full replay commands](docs/full-reproduce.md) and the
+[live validation record](docs/full-reproduction-validation-2026-10-31.md)
+distinguish completed checks from the full CPU/GPU work still pending.
 Older BGE handoffs are historical; their counts must not be relabelled OpenAI.
 Original release verification: **700 passed, 1 skipped** in a new locked environment;
 the separate 139-file archive supports a verified clean-checkout core replay.
@@ -48,9 +59,10 @@ Research-checkpoint regression: **681 passed,1 skipped**; its origin/main baseli
 with the same Windows symlink-privilege skip. Fourteen frozen packages and235
 pinned references verify; their bytes also survive a clean Git-index export,
 which rebuilds the identical2498-record payload without ignored caches.
-The [Claude update map](docs/CLAUDE_UPDATE_OPENAI_2026-10-31.md) is ready for the
-actual22-slide deck and one-slide poster. All7 presentation/reference hashes
-remain unchanged. [QA and validation limits](docs/openai-followup-qa-2026-10-31.md).
+At that research checkpoint the presentation files were preserved and the
+[Claude update map](docs/CLAUDE_UPDATE_OPENAI_2026-10-31.md) targeted the then-current
+22-slide deck. The later24-slide edit is linked above.
+[Research-checkpoint QA and limits](docs/openai-followup-qa-2026-10-31.md).
 No additional paid model API requests, billing/visibility changes or Moodle
 submission were made by this follow-up. Three model identities and author
 release/task/split/settings details remain unverified; no exact-paper claim.

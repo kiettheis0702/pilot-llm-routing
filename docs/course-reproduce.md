@@ -37,13 +37,36 @@ $env:UV_CONCURRENT_INSTALLS='1'
 $env:UV_CONCURRENT_BUILDS='1'
 uv venv .venv-embedding --python 3.11.18
 uv pip install --python .venv-embedding/Scripts/python.exe torch==2.8.0 --index-url https://download.pytorch.org/whl/cu128
-uv pip install --python .venv-embedding/Scripts/python.exe -e '.[cost]' -r configs/followup-neural-requirements.txt
+uv pip install --python .venv-embedding/Scripts/python.exe -r pyproject.toml --extra cost -r configs/followup-neural-requirements.txt
+```
+
+`-r pyproject.toml --extra cost` installs dependencies only. Run the repository's
+modules from its checkout; it is not configured as an installable flat-layout
+package, so an editable `-e '.[cost]'` installation fails package discovery.
+
+If streaming the Windows CPython3.11 torch wheel from the index fails, the
+following alternative downloads the same official3.2GiB wheel first. Its
+SHA256 was checked against the official index and verified during the fresh
+CUDA installation. After this succeeds, continue with the dependency command
+above; retain the same torch/CUDA version.
+
+```powershell
+New-Item -ItemType Directory -Path .cache -Force | Out-Null
+$wheel='.cache/torch-2.8.0+cu128-cp311-cp311-win_amd64.whl'
+curl.exe --fail --location --output $wheel 'https://download.pytorch.org/whl/cu128/torch-2.8.0%2Bcu128-cp311-cp311-win_amd64.whl'
+if ($LASTEXITCODE -ne 0) { throw 'Official wheel download failed' }
+if ((Get-FileHash -LiteralPath $wheel -Algorithm SHA256).Hash.ToLowerInvariant() -ne '34c55443aafd31046a7963b63d30bc3b628ee4a704f826796c865fdfd05bb596') {
+    throw 'Torch wheel checksum differs'
+}
+uv pip install --python .venv-embedding/Scripts/python.exe $wheel --index-url https://download.pytorch.org/whl/cu128
+if ($LASTEXITCODE -ne 0) { throw 'Pinned torch installation failed' }
 ```
 
 The requirements record observed versions; no environment upgrade is needed for
-the completed run. This is a reconstruction recipe, not a claim that a second
-fresh environment installation has been tested. Check local CUDA compatibility
-with the real offline probe before starting a long neural job.
+the completed run. A second fresh environment has now been installed and checked
+on RTX5070; the [full validation record](full-reproduction-validation-2026-10-31.md)
+states which fits and readers have finished. On another machine, check CUDA
+compatibility with the real offline probe before starting a long neural job.
 
 These commands perform public HTTPS downloads only, one file at a time, with
 expected SHA256 checks. Instructor weights require about5GB download/storage;
