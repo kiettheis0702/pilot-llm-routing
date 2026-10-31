@@ -159,6 +159,15 @@ kiểm tra hoàn thành nằm trong [reproduction guide](followup-reproduce.md).
 Test phần mềm, replay trace, refit và neural inference là các mức bằng chứng
 khác nhau; test xanh không tự chứng minh đã chạy lại toàn bộ grid GPU.
 
+[Biên bản kiểm chứng mới nhất](full-reproduction-validation-2026-10-31.md)
+ghi từng phần đã hoàn thành. Ví dụ thực tế: MF chạy lại trên CPU đạt
+338/338/340 câu đúng, còn CUDA đạt338/340/343 đúng bản công bố. Vì vậy,
+không dùng việc trace được kiểm chứng để khẳng định mọi thiết bị đều tạo
+checkpoint hoặc điểm số giống hệt; giữ kết quả CPU riêng khỏi bảng CUDA gốc.
+Instructor mới cũng đã kiểm đủ858 điều kiện:855 khớp,3 baseline MMLU lệch
+nhẹ về reward/chi phí; toàn bộ PILOT khớp. Biên bản ghi rõ khác biệt cache,
+hiệu chỉnh ngưỡng và trace; bảng khoa học gốc được giữ nguyên.
+
 ## 8. Việc hai thành viên phải tự làm
 
 Mỗi người tự giải thích một round cập nhật A,b; phân biệt prior/calibration/test;

@@ -31,8 +31,14 @@ hiện có slide tới 497 từ; luôn giữ tối đa 500 từ. Không đổi s
 ## Chỉ cập nhật sau khi có bằng chứng hoàn thành
 
 Phần tái lập dùng đúng tài liệu validation mới nhất được dẫn trong README.
-729 test phần mềm đã qua trong CI tại commit `a13a0d0`; full core/followups/MF
-là các stage riêng. Không gọi CPU MF là CUDA replay, không cộng replay vào
+729 test phần mềm đã qua trong CI tại commit `6a58f962`; full core/followups/MF
+là các stage riêng. Full core858 và followups723 điều kiện khớp bảng công bố.
+MF CPU đạt338/338/340, còn CUDA tái chạy đạt338/340/343 đúng bản gốc; đây là
+bằng chứng thực tế cần giữ giới hạn về libraries/hardware ở slide22.
+Instructor mới đã chạy/kiểm đủ858 điều kiện:855 khớp,3 baseline MMLU lệch
+nhẹ; toàn bộ PILOT khớp. Giữ nguyên bảng công bố, chỉ ghi đúng giới hạn của
+lần dựng lại trong notes nếu cần. Không
+gọi CPU MF là CUDA replay, không cộng replay vào
 1.098 điều kiện OpenAI hoặc 3.626 run W&B, không ghi toàn bộ GPU đã chạy lại
 khi còn chờ RAM/probe/fit. Kiểm trạng thái mới nhất trước khi sửa notes.
 
