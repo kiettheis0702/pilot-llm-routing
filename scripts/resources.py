@@ -24,7 +24,7 @@ if ($parent.Name -match '^python(w)?\.exe$' -and
 }
 $jobs = @($processes | Where-Object {
   $_.ProcessId -notin $ignored -and $_.Name -match '^(python|pythonw|node|pytest|uv)\.exe$' -and
-  $_.CommandLine -match '(pytest|vitest|jest|playwright|torchrun|run_baselines|run_toy_pipeline|research_pipeline|local_embeddings|input_audit|cost_inputs|scripts\.(?:tuning|experiments)|\buv(?:\.exe)?["\s]+(?:sync|pip (?:install|sync)))'
+  $_.CommandLine -match '(pytest|vitest|jest|playwright|torchrun|run_baselines|run_toy_pipeline|research_pipeline|local_embeddings|openai_embeddings_standard|input_audit|cost_inputs|scripts\.(?:tuning|experiments)|tools\.openai_study(?:_report)?|tools[/\\]research[/\\]verify_runs\.py|tools\.paper_preflight\.(?:compare|audit|embedding_plan|import_embeddings|train)|\buv(?:\.exe)?["\s]+(?:sync|pip (?:install|sync)))'
 } | Select-Object @{n='pid';e={$_.ProcessId}},@{n='parent_pid';e={$_.ParentProcessId}},Name)
 @{available_gib=$ram.FreePhysicalMemory/1MB;heavy_jobs=$jobs} | ConvertTo-Json -Depth 4 -Compress
 """.replace('OWN_PID', str(os.getpid()))

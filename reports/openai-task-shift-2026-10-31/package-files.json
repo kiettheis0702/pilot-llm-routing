@@ -1,0 +1,10 @@
+{
+  "files": {
+    "README.md": "c6cc7a2d5920541d5a8bfb08ffb1470b0bf62d73e6f360234449dcb0a0796cc3",
+    "manifest.json": "860d0e6436624dff81aaf5446745a53249397ad93b73fc187b851e235e7e7653",
+    "per-query.csv": "caf25446bacf9fdd8228d9ea6c19ef21b8391dabf0d121f9ca81ffe2b68b73a3",
+    "task-shift.png": "d0a74ca9f117943b9f7d19511add25bc0c3564d6b5147fb63a88a81c7bd8cca7",
+    "task-shift.svg": "fadd6d2bec4d55b2b9453d85a70d4bf6cbc5c0ea0176666db3162acccaeca1f4",
+    "window-metrics.csv": "7fe8e63f2bebaeac212f70e7d171a3bddd061d5b6552eff524f1e145694b40e7"
+  }
+}

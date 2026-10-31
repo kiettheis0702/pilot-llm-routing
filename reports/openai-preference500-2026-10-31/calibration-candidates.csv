@@ -1,0 +1,4 @@
+id,projection_epochs,prior_epochs,calibration_correct,calibration_pairs
+short,15,20,146,211
+current,30,40,146,211
+long,60,80,144,211

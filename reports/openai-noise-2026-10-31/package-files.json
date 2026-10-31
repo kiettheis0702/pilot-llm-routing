@@ -1,0 +1,10 @@
+{
+  "files": {
+    "README.md": "2b02b33fd090fc547cd3bab0d23350b114c93cf3561ad5d9abb25359f46d48f5",
+    "manifest.json": "0f4e63c8ab60ee71c557d882a669d40f5bf639610eecc33dd9896c3980734d15",
+    "means.csv": "8b53448fcb66a2634d1653bb64719d572bd27214f8c7ab63b3fa2fba507d4091",
+    "noise-sensitivity.png": "5125317c78bcf6929857b867658bfd943699878963368591341b70fcf9d293b9",
+    "noise-sensitivity.svg": "a0ee7557dfe280688a255fb6286de6e4263bb137f9892a9a6c7bbf5c6d1cb5e1",
+    "per-seed.csv": "cda7e6f3cd27e5165730c740ee3214745691117e2c40862a12ed9edf5a5165ae"
+  }
+}

@@ -131,10 +131,14 @@ def _aligned_cache(cache_path, inputs, *, allow_synthetic=False):
     if cache.provenance['synthetic'] and not allow_synthetic:
         raise ValueError('Real stage refuses synthetic vectors')
     if not cache.provenance['synthetic']:
-        recipe = validate_recipe(cache.metadata.get('recipe'))
-        if (cache.metadata.get('input_recipe_sha256') != _digest({'rows':inputs,'recipe':recipe})
-                or cache.provenance != provenance(recipe)):
-            raise ValueError('Cache verbatim inputs or recipe differ from preparation')
+        if cache.provenance['model'] == 'text-embedding-3-small':
+            from scripts.openai_cache import validate_inputs
+            validate_inputs(cache, inputs)
+        else:
+            recipe = validate_recipe(cache.metadata.get('recipe'))
+            if (cache.metadata.get('input_recipe_sha256') != _digest({'rows':inputs,'recipe':recipe})
+                    or cache.provenance != provenance(recipe)):
+                raise ValueError('Cache verbatim inputs or recipe differ from preparation')
     return cache
 
 

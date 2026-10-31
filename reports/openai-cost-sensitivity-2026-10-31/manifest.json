@@ -1,0 +1,22 @@
+{
+  "additional_paid_api_calls": 0,
+  "choices_unchanged": true,
+  "complete": true,
+  "files": {
+    "README.md": "9a9ed39d0e6099501bd539e6bf39bb765f94250d92cad21dec97a3f61d4bc70f",
+    "cost-sensitivity.csv": "7ad25a0e158481f596a0dc600e4cc1e95a122bde21ba2cef78cf9e134fbb4ca3",
+    "cost-sensitivity.json": "f4b6970f628a598b767ade98ecac54691b6b008a650fa51ae614c4685c648505"
+  },
+  "independent_crosscheck": true,
+  "manifest_sha256": "afd9ae6a59650e213cfb2643b2763ab0f7ebbeafbded35dd50039f055e72d655",
+  "records": 18,
+  "script_sha256": "c1cbec2f399bf7c9f0210f692e02d7f26cb9feb3814ae327f1e7e3384e164c61",
+  "source_ablations": {
+    "path": "reports/openai-ablations-2026-10-31/package-files.json",
+    "sha256": "4d7429a9bf661fe5f0acd85c28dce6b24767d775c32ab3a86200636aca12140c"
+  },
+  "source_core": {
+    "path": "reports/openai-core-2026-10-31/package-files.json",
+    "sha256": "16ba2a3bf0b1bb2128fb1868d5e929a04b5da99d4dbbf2b4a2ad20f18a2b9abb"
+  }
+}

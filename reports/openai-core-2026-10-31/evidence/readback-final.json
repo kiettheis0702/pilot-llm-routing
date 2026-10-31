@@ -1,0 +1,38 @@
+{
+  "actual_overspend_conditions": 0,
+  "actual_overspend_pilot_full": 0,
+  "additional_paid_api_calls": 0,
+  "changed_pin_and_partial_and_missing_inventory": true,
+  "conditions": 858,
+  "corrupt_copy_probe": {
+    "error": "Artifact checksum mismatch: summary.json",
+    "passed": true,
+    "source_unchanged": true
+  },
+  "full_tests": "596 passed,1 skipped",
+  "historical_packages": {
+    "full-experiments-2026-10-29": {
+      "file_count": 184,
+      "manifest_sha256": "f369b77e40060eff743e5c8711a001d56f330fefa25603b16ba71b4eef877c47"
+    },
+    "openai-workflow-2026-10-30": {
+      "file_count": 8,
+      "manifest_sha256": "ab3f04a9ac5a0716fef2b570bbfbf8bff6a5d85b120475a8e96054ec283439bd"
+    },
+    "paper-preflight-2026-10-30": {
+      "file_count": 13,
+      "manifest_sha256": "cdedc598512af85cdef9a1cc2edf2f34a764cd0893948b5bc35a60068dfefbea"
+    }
+  },
+  "independent_replays": 78,
+  "learning_snapshots": 312,
+  "learning_streams": 78,
+  "preflight": {
+    "available_gib": 11.132904052734375,
+    "heavy_jobs": []
+  },
+  "script_sha256": "1d67d731634efc8ceb016ce7c01ad1c420d8a4e74643b9c67c4418584edaa05a",
+  "served_deployment_rounds": 1450207,
+  "unique_observed_learning_rounds": 1740921,
+  "verified": true
+}

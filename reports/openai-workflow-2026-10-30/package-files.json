@@ -1,0 +1,12 @@
+{
+  "files": {
+    "independent-review.md": "c5540e9aa58b913c36b89c613fb8bdff5b2e92016017ef278ee9f52853013456",
+    "qa-handoff.md": "70487baf08a95a14b728ff560ad74141aaf596f4c565e64e840f91108dd34f4b",
+    "README.md": "b5c35427be5e97767fcb78cd6fb29bf58688b0d4b15fe3f0831170da98c2e021",
+    "real-bge-final-test.json": "59b16709e76401968b0a4bb73b8632a337f1a0ba84063fa78c247911b7035924",
+    "real-bge-training.json": "c3c423bea53fe5e2ad5c89a40f9f67fadac6422d7b02c944279195d4ae16eafa",
+    "synthetic-e2e.json": "d19cfd02b87c511f014e706bbd656ead8bf4d9bc942a19f8ab497958c6fa98eb",
+    "tests-final.txt": "a294b500e7544cae5ff8bfe971a727c3a65e455d7a429596ca3de8e2eb93164f",
+    "verification.json": "6a6eb2424dd49caad4cc17572b66fb86d8f185d901ca2df6860e453c1c0273b0"
+  }
+}

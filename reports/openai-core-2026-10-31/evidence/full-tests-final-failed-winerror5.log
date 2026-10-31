@@ -1,0 +1,59 @@
+........................................................................ [ 12%]
+........................................................................ [ 24%]
+........................................................................ [ 36%]
+........................................................................ [ 48%]
+.....s...F.............................................................. [ 60%]
+........................................................................ [ 72%]
+........................................................................ [ 84%]
+........................................................................ [ 96%]
+.....................                                                    [100%]
+================================== FAILURES ===================================
+_________ test_grouped_checkpoints_resume_from_last_published_prefix __________
+
+tmp_path = WindowsPath('C:/Users/ADMIN/Documents/ChatGPT/AI pilot/outputs/openai-core-20261031/full-tests-final/test_grouped_checkpoints_resum0')
+
+    def test_grouped_checkpoints_resume_from_last_published_prefix(tmp_path):
+        from scripts.local_embeddings import encode_rows
+        inputs = [dict(query_id=f'q{i}', text=f'text {i}',
+                       prompt_hash=hashlib.sha256(f'text {i}'.encode()).hexdigest()) for i in range(9)]
+        out = tmp_path/'cache'
+        with pytest.raises(RuntimeError, match='interrupted'):
+            encode_rows(inputs, out, recipe(), Encoder(fail_after=3), batch_size=2, checkpoint_batches=2)
+        state = json.loads((out/'progress.json').read_text())
+        assert state['completed'] == 4
+        assert [(c['start'], c['end']) for c in state['chunks']] == [(0,4)]
+        # Bytes written after the last checkpoint are deliberately not trusted.
+        vectors = np.load(out/'vectors.npy', mmap_mode='r+')
+        vectors[4:6] = 99; vectors.flush(); del vectors
+        resumed_encoder = Encoder()
+>       actual = encode_rows(inputs, out, recipe(), resumed_encoder, batch_size=2,
+                             checkpoint_batches=2, resume=True)
+
+tests\test_local_embeddings.py:144: 
+_ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _
+scripts\local_embeddings.py:120: in encode_rows
+    _save_progress(path,state)
+scripts\local_embeddings.py:60: in _save_progress
+    temporary.replace(path/'progress.json')
+_ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _
+
+self = WindowsPath('C:/Users/ADMIN/Documents/ChatGPT/AI pilot/outputs/openai-core-20261031/full-tests-final/test_grouped_checkpoints_resum0/cache/progress.tmp')
+target = WindowsPath('C:/Users/ADMIN/Documents/ChatGPT/AI pilot/outputs/openai-core-20261031/full-tests-final/test_grouped_checkpoints_resum0/cache/progress.json')
+
+    def replace(self, target):
+        """
+        Rename this path to the target path, overwriting if that path exists.
+    
+        The target path may be absolute or relative. Relative paths are
+        interpreted relative to the current working directory, *not* the
+        directory of the Path object.
+    
+        Returns the new Path instance pointing to the target path.
+        """
+>       os.replace(self, target)
+E       PermissionError: [WinError 5] Access is denied: 'C:\\Users\\ADMIN\\Documents\\ChatGPT\\AI pilot\\outputs\\openai-core-20261031\\full-tests-final\\test_grouped_checkpoints_resum0\\cache\\progress.tmp' -> 'C:\\Users\\ADMIN\\Documents\\ChatGPT\\AI pilot\\outputs\\openai-core-20261031\\full-tests-final\\test_grouped_checkpoints_resum0\\cache\\progress.json'
+
+..\..\..\.local\share\uv\python\cpython-3.11.18-windows-x86_64-none\Lib\pathlib.py:1188: PermissionError
+=========================== short test summary info ===========================
+FAILED tests/test_local_embeddings.py::test_grouped_checkpoints_resume_from_last_published_prefix
+1 failed, 595 passed, 1 skipped in 24.39s

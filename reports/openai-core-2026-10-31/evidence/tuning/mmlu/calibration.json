@@ -1,0 +1,15 @@
+{
+  "estimator_sha256": "7d1a695708e8c7f617aa52a195b2ddb46e2dcfeaea9c63230ef65c7260cbec4e",
+  "excluded_nonpositive_or_zero_cost": 27676,
+  "input_counts_sha256": "ab12f4cca249140de01d946c286a9faba973069d2aef43f3dc2a0e1aeeec1baa",
+  "interpretation": "empirical tuning assumptions; no deployment ratio guarantee",
+  "lower_bound": 0.004677426551507574,
+  "positive_ratio_count": 13716,
+  "reference_arm": "gpt-4-1106-preview",
+  "reference_estimated_cost_per_query": 0.0014071105527638191,
+  "rule": "pooled_selected_prequential_positive_ratios; LB=0.5*min; UB=2*max",
+  "search_manifest_sha256": "0c2601d4efcd7b837936bfb0fc89325bebf14c920d3242f032a74a14e9387dab",
+  "tuning_query_count": 398,
+  "upper_bound": 113008.78799494584,
+  "version": 1
+}

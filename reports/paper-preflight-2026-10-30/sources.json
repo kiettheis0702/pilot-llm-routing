@@ -1,0 +1,124 @@
+{
+  "checked_at": "2026-10-30T15:43:20.186252+00:00",
+  "records": [
+    {
+      "file": "routerbench-tree.json",
+      "url": "https://api.github.com/repos/withmartian/routerbench/git/trees/30e0925ac07a45108b9ee82086040a5664ea83e6?recursive=1",
+      "sha256": "8572c7cdb904c7ca09f4cae40eceeeae2913b270ffc5793a5c84438ef9864b72",
+      "bytes": 8972,
+      "status": "fetched"
+    },
+    {
+      "file": "routerbench-common.py",
+      "url": "https://raw.githubusercontent.com/withmartian/routerbench/30e0925ac07a45108b9ee82086040a5664ea83e6/routers/common.py",
+      "sha256": "27f853b177840036dbe2876c2fd0ac8fa68389f5d294fb73d94e30dd7c7105ec",
+      "bytes": 4350,
+      "status": "fetched"
+    },
+    {
+      "file": "routerbench-README.md",
+      "url": "https://raw.githubusercontent.com/withmartian/routerbench/30e0925ac07a45108b9ee82086040a5664ea83e6/README.md",
+      "sha256": "770318a998e9b892105230ecb0a05aa8cc85a8713f991a3e78ff88541cb806de",
+      "bytes": 2687,
+      "status": "fetched"
+    },
+    {
+      "file": "routerbench-hf-README.md",
+      "url": "https://huggingface.co/datasets/withmartian/routerbench/raw/784021482c3f320c6619ed4b3bb3b41a21424fcb/README.md",
+      "sha256": "93b0ba00aaaa24834e21a56b76656cf5bd506543af321898aecf695ec943eb31",
+      "bytes": 1027,
+      "status": "fetched"
+    },
+    {
+      "file": "authors-site.html",
+      "url": "https://ast-fri.github.io/contextual-bandit-routing-of-llms/",
+      "sha256": "80db16872e3aef8302d18a231da2a7308ee3c95011284d64938d31df2f54ef40",
+      "bytes": 12528,
+      "status": "fetched"
+    },
+    {
+      "file": "arena-models.csv",
+      "url": "https://huggingface.co/spaces/lmarena-ai/arena-leaderboard/raw/6f2eeeba09bf42144dbc118fe1a8e12e4c533f9d/leaderboard_table_20240426.csv",
+      "sha256": "c064c458371c66dab0dd6c82fe33ee9678e4cf4a03e635b8057dae792fe51cf8",
+      "bytes": 13023,
+      "status": "fetched"
+    },
+    {
+      "file": "convertors-common.py",
+      "url": "https://raw.githubusercontent.com/withmartian/routerbench/30e0925ac07a45108b9ee82086040a5664ea83e6/convertors/common.py",
+      "sha256": "5ad7798643c3c3ad47b28623d5bfba76a85180dbc83d998e4e7d15198ab075d2",
+      "bytes": 4509,
+      "status": "fetched"
+    },
+    {
+      "file": "convertors-openai_evals_convertor.py",
+      "url": "https://raw.githubusercontent.com/withmartian/routerbench/30e0925ac07a45108b9ee82086040a5664ea83e6/convertors/openai_evals_convertor.py",
+      "sha256": "429216f38180ad03083373a006db4a1403e2dedf4ee0ec554a7ab0bb32ff824f",
+      "bytes": 1102,
+      "status": "fetched"
+    },
+    {
+      "file": "convertors-martian_evals_convertor.py",
+      "url": "https://raw.githubusercontent.com/withmartian/routerbench/30e0925ac07a45108b9ee82086040a5664ea83e6/convertors/martian_evals_convertor.py",
+      "sha256": "3322e22c38398814cd18ddfe6f330bd05a97800a666cdbbd8b6ce98134030c09",
+      "bytes": 7139,
+      "status": "fetched"
+    },
+    {
+      "file": "configs-convert_data.yaml",
+      "url": "https://raw.githubusercontent.com/withmartian/routerbench/30e0925ac07a45108b9ee82086040a5664ea83e6/configs/convert_data.yaml",
+      "sha256": "b9b70cff25c476ec102b1059a0cdde8bb51be003c3b3e7e65dd346cf10e6c1ee",
+      "bytes": 134,
+      "status": "fetched"
+    },
+    {
+      "file": "martian-evals-commit.json",
+      "url": "https://api.github.com/repos/withmartian/martian-evals/commits/main",
+      "sha256": "1ccb6bc953f3ee26a036625a1f0a9649c7e8025b070c3a5ac86c690a5f631cfe",
+      "bytes": 4866,
+      "status": "fetched"
+    },
+    {
+      "file": "martian-evals-tree.json",
+      "url": "https://api.github.com/repos/withmartian/martian-evals/git/trees/00377e7ccb1395af1a489bd54e17699b4474f22d?recursive=1",
+      "sha256": "1f625e929881fad7fd038361b053e1f49f6bf7d3264f3de9b55b3f40426c90c1",
+      "bytes": 475104,
+      "status": "fetched"
+    },
+    {
+      "file": "martian-evals-branches.json",
+      "url": "https://api.github.com/repos/withmartian/martian-evals/branches?per_page=100",
+      "sha256": "e6932fc30500b0261aef0ec6e77d33287371581d2abf1dc3cfcb156a4fe6aa6e",
+      "bytes": 1575,
+      "status": "fetched"
+    },
+    {
+      "file": "martian-api-tree.json",
+      "url": "https://api.github.com/repos/withmartian/martian-evals/git/trees/34441027b661dbe3eefd7f1c91eb6ce0e1e5f2f9?recursive=1",
+      "sha256": "16de5f642069c7a3ae524971c18f1ba4e3e1a62a74c4642bf14dc159961f6e20",
+      "bytes": 472362,
+      "status": "fetched"
+    },
+    {
+      "file": "martian-dataset-tree.json",
+      "url": "https://api.github.com/repos/withmartian/martian-evals/git/trees/b0a258358e3e286939fea69215029ea974df4e44?recursive=1",
+      "sha256": "285c0cd7fa15b4db4dc190bbd2d09ad9d785bfc8719b57f139f0722044814e50",
+      "bytes": 475099,
+      "status": "fetched"
+    },
+    {
+      "file": "martian-api-docs-running-evals-on-martian.md",
+      "url": "https://raw.githubusercontent.com/withmartian/martian-evals/34441027b661dbe3eefd7f1c91eb6ce0e1e5f2f9/docs/running-evals-on-martian.md",
+      "sha256": "7ea2a30fff6f83a577eac6dd64653423037908eddc9b0523d1389342dc848ab3",
+      "bytes": 231,
+      "status": "fetched"
+    },
+    {
+      "file": "martian-api-evals-completion_fns-openai.py",
+      "url": "https://raw.githubusercontent.com/withmartian/martian-evals/34441027b661dbe3eefd7f1c91eb6ce0e1e5f2f9/evals/completion_fns/openai.py",
+      "sha256": "bf5bd82ad615460052ff62a862a5dfc6d2c0d0d24cce86a1db229dafaf779e4f",
+      "bytes": 4917,
+      "status": "fetched"
+    }
+  ]
+}

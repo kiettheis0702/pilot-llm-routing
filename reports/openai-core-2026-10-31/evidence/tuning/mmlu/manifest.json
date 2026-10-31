@@ -1,0 +1,100 @@
+{
+  "calibration": {
+    "path": "outputs/openai-core-20261031/tuning/mmlu/calibration.json",
+    "sha256": "5b7894bbecb367b85d9864f9b6c2ecd7b6fb9a82c379be6e4f0eb22fbc7bd60e"
+  },
+  "domain": "mmlu",
+  "estimator": {
+    "path": "outputs/openai-core-20261031/tuning/mmlu/estimator.json",
+    "sha256": "e2324ce0226f9e1a49bfe70c8a9d490390374934cbe1df00013856ffb41a9151"
+  },
+  "kind": "openai-core-tuning",
+  "lineage": {
+    "code_sha256": {
+      "scripts/audit_data.py": "a7e50afb64b10d6312d988a1d1b34e6524e7d244f6f5b0bafa261707e17bd608",
+      "scripts/bandit_contracts.py": "99eb79f510ef37d85c5ec7d8ea37ae587716130302b8bc91b38281e927ababcf",
+      "scripts/cost_inputs.py": "ed150fd62f42cc0c3cae024919498af79de7e7f08007f985c75c98ee98105936",
+      "scripts/cost_policy.py": "1269a1e51b8de51f9c1e902a4552a1dfcb3acec094c276c2888a74545c1968bd",
+      "scripts/data_gate.py": "84c250fa3594507ce0091c49bc366551b100af6e21b3ca5e392b9f3ed1b1ba23",
+      "scripts/data_io.py": "a9029eaef35804fd8d1202409cd7d0299030cba8f862ff4450e847e23852bf63",
+      "scripts/deployment.py": "775b174bb394e49fe944efa7aea78ee32946382dd64a68c823c2f96dc1b19935",
+      "scripts/deployment_adapter.py": "174823185e484f82192a983c53940fd196f1164d3bb842f532de813894e03ae1",
+      "scripts/embedding_store.py": "013eae2303189415bc79ff1d324070f380491443fcea6194ab876f1b98c27787",
+      "scripts/evaluation.py": "c94c9a2cff061f32a6e29092cfa7fdf815d729fd10225a95e1f391e82ccac0cb",
+      "scripts/experiments.py": "87bf55174075f4fd560018b96514ba3b21360c93b0c1bafaaf1acbac8afb9f0a",
+      "scripts/fetch_data.py": "b6a7deda384e51f2ba4c40e7483d2f759116eabae20164cc09cfe76096da4fe1",
+      "scripts/input_audit.py": "a58a61c8bc7d083162aa9a89b445e491ee445466af0019b4aa57037de694b757",
+      "scripts/local_embeddings.py": "e69f965d765fd9ac91687311b15cf80a4ba0c37ed2d2bc1d60aa1ede18e974e4",
+      "scripts/model_mapping.py": "ce9863bf3bbac30e208ea07c10f31dc030562b343e26f3add6c0ad695da17528",
+      "scripts/openai_cache.py": "3898269e0101696616d52fd5a7cb05c837f636fed5267bfb40fcb204cb3e4ac8",
+      "scripts/pilot.py": "742dc3638a59eaccce64f9104ec8ecc6021f812849f86b4b67394fddc50ef067",
+      "scripts/policies.py": "d4c7b95399ff54ab7686a361e3298473ad7f14d4682ec1b2f95d9215189406e8",
+      "scripts/preference_data.py": "26140e171f2dcb5dcdce0bfff6664a8edf2e0043f567cbc0ad66073dc1098521",
+      "scripts/pretraining.py": "3e5760538b39226fd03475e538034fdebe6dee65c19e293b7f0882b7943a2607",
+      "scripts/research_pipeline.py": "f4493cb20969979b74c72ed9126a483f78bebd03209265284cea7baab41736da",
+      "scripts/resources.py": "d77b7f09cfabd2820ac34646132183c46cded56eb8323d6778b268d0de38c7d9",
+      "scripts/run_baselines.py": "c1830421ca4e1876ad238e0fa14689097d7940b0f45c4d6fbb610fa84a4462e5",
+      "scripts/run_toy_pipeline.py": "b119bce11b420bb3b8e3425c4c67f06804c17b3ba1dddf52deb3a72c22bf8591",
+      "scripts/splits.py": "0479209e80b6947677991511f1e71c869d490f7e01fe1d06452ca0379ca2644e",
+      "scripts/tuning.py": "9801b4e2efd985876cfe1081e644c2f43c80f6cf8a1edc80f4f39fd797f62e32"
+    },
+    "cost_manifest_sha256": "b81f3a49576ccd639ddeb14bae4d7c63dc0cd71328a924e77c2d6bc13d7b9ed5",
+    "input_bundle_sha256": "21c0bd2d2a0a3c201f1af3c62b3802bef27fa5c16e12cdba9fa7a0f1c0450a5c",
+    "paper_equivalent": false,
+    "preference_cache_sha256": "474857af6dcf4b259ea1a8aeb0758bae67fc9e6023e1c43dadc2415bd4c4c713",
+    "prior_file_sha256": "e7d1edb0e10bd48bbc5c100a0558ea2f73416d0376e707ebc3fdbc15d9e27d0c",
+    "prior_verification_sha256": "e88f9ae33cd8d9d89d0d66d28dbe9d3471257a8f9a02c57ca0cd81f753f69473",
+    "routing_cache_sha256": "59f9090db4e92fcc0eaa545fe925d8ec43156073da2b399c779f8f301e3f46fc",
+    "source_hashes": {
+      "outcomes.parquet": "82eb9baeab0452d1b59ee053ae7205b641cb70e22deae5e71b86596ffcd87ca4",
+      "queries.parquet": "14542cd83a43f7fb64655e21e0e1c8fec48b0753a7334015099b065e061a058a",
+      "splits.csv": "989d3663aa4051f6ccd80bedf62e6ef789ead57d744c87fd14c828ac9b08a8a5"
+    },
+    "synthetic": false
+  },
+  "manifest_sha256": "ae83ade3e75b9d164f35a41081d5beef27f37de705898e1de7961163ea1ce357",
+  "search": {
+    "path": "outputs/openai-core-20261031/tuning/mmlu/search/manifest.json",
+    "sha256": "235438f3e2e4f3a5c36aefe683a61fae91360f1304f025fe6963b93b76a0ba57"
+  },
+  "selected_parameters": {
+    "epoch-greedy": {
+      "window": 10
+    },
+    "explore-only": {},
+    "fixed-00": {
+      "arm_id": "WizardLM/WizardLM-13B-V1.2"
+    },
+    "fixed-01": {
+      "arm_id": "claude-instant-v1"
+    },
+    "fixed-02": {
+      "arm_id": "claude-v1"
+    },
+    "fixed-03": {
+      "arm_id": "gpt-3.5-turbo-1106"
+    },
+    "fixed-04": {
+      "arm_id": "gpt-4-1106-preview"
+    },
+    "fixed-05": {
+      "arm_id": "meta/code-llama-instruct-34b-chat"
+    },
+    "fixed-06": {
+      "arm_id": "meta/llama-2-70b-chat"
+    },
+    "fixed-07": {
+      "arm_id": "zero-one-ai/Yi-34B-Chat"
+    },
+    "linucb": {
+      "alpha": 5.0
+    },
+    "pilot": {
+      "alpha": 1.0
+    },
+    "random": {}
+  },
+  "synthetic": false,
+  "tuning_count": 398,
+  "version": 1
+}

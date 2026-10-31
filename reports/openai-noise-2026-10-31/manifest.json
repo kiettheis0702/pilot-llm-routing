@@ -1,0 +1,17 @@
+{
+  "conditions": 12,
+  "files": {
+    "README.md": "2b02b33fd090fc547cd3bab0d23350b114c93cf3561ad5d9abb25359f46d48f5",
+    "means.csv": "8b53448fcb66a2634d1653bb64719d572bd27214f8c7ab63b3fa2fba507d4091",
+    "noise-sensitivity.png": "5125317c78bcf6929857b867658bfd943699878963368591341b70fcf9d293b9",
+    "noise-sensitivity.svg": "a0ee7557dfe280688a255fb6286de6e4263bb137f9892a9a6c7bbf5c6d1cb5e1",
+    "per-seed.csv": "cda7e6f3cd27e5165730c740ee3214745691117e2c40862a12ed9edf5a5165ae"
+  },
+  "inference_api_calls": 0,
+  "kind": "openai-local-mmlu-noise",
+  "manifest_sha256": "bc0f33da78bec44d1e835e53e43852ae23ff67c155e36df61983147169c78b76",
+  "paper_equivalent": false,
+  "protocol_sha256": "b4746326306a8d8009a98de225d1ef508ece684e0036e305229a85f8146d2e75",
+  "verification_sha256": "c8237b6583b366e52cf79d557fdcef0593fa724775b3bcd9c6867623b73de722",
+  "zero_noise_matches_main": true
+}

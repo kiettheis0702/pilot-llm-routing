@@ -1,0 +1,386 @@
+{
+  "ablation_plan": {
+    "budget_fractions": [],
+    "inventory": {
+      "primary_plus_ablation_deployment_runs": 858
+    },
+    "variants": []
+  },
+  "arms": [
+    "WizardLM/WizardLM-13B-V1.2",
+    "claude-instant-v1",
+    "claude-v1",
+    "gpt-3.5-turbo-1106",
+    "gpt-4-1106-preview",
+    "meta/code-llama-instruct-34b-chat",
+    "meta/llama-2-70b-chat",
+    "zero-one-ai/Yi-34B-Chat"
+  ],
+  "code_pins": [
+    {
+      "path": "scripts/audit_data.py",
+      "sha256": "a7e50afb64b10d6312d988a1d1b34e6524e7d244f6f5b0bafa261707e17bd608"
+    },
+    {
+      "path": "scripts/bandit_contracts.py",
+      "sha256": "99eb79f510ef37d85c5ec7d8ea37ae587716130302b8bc91b38281e927ababcf"
+    },
+    {
+      "path": "scripts/cost_inputs.py",
+      "sha256": "ed150fd62f42cc0c3cae024919498af79de7e7f08007f985c75c98ee98105936"
+    },
+    {
+      "path": "scripts/cost_policy.py",
+      "sha256": "1269a1e51b8de51f9c1e902a4552a1dfcb3acec094c276c2888a74545c1968bd"
+    },
+    {
+      "path": "scripts/data_gate.py",
+      "sha256": "84c250fa3594507ce0091c49bc366551b100af6e21b3ca5e392b9f3ed1b1ba23"
+    },
+    {
+      "path": "scripts/data_io.py",
+      "sha256": "a9029eaef35804fd8d1202409cd7d0299030cba8f862ff4450e847e23852bf63"
+    },
+    {
+      "path": "scripts/deployment.py",
+      "sha256": "775b174bb394e49fe944efa7aea78ee32946382dd64a68c823c2f96dc1b19935"
+    },
+    {
+      "path": "scripts/deployment_adapter.py",
+      "sha256": "174823185e484f82192a983c53940fd196f1164d3bb842f532de813894e03ae1"
+    },
+    {
+      "path": "scripts/embedding_store.py",
+      "sha256": "013eae2303189415bc79ff1d324070f380491443fcea6194ab876f1b98c27787"
+    },
+    {
+      "path": "scripts/evaluation.py",
+      "sha256": "c94c9a2cff061f32a6e29092cfa7fdf815d729fd10225a95e1f391e82ccac0cb"
+    },
+    {
+      "path": "scripts/experiments.py",
+      "sha256": "87bf55174075f4fd560018b96514ba3b21360c93b0c1bafaaf1acbac8afb9f0a"
+    },
+    {
+      "path": "scripts/fetch_data.py",
+      "sha256": "b6a7deda384e51f2ba4c40e7483d2f759116eabae20164cc09cfe76096da4fe1"
+    },
+    {
+      "path": "scripts/input_audit.py",
+      "sha256": "a58a61c8bc7d083162aa9a89b445e491ee445466af0019b4aa57037de694b757"
+    },
+    {
+      "path": "scripts/local_embeddings.py",
+      "sha256": "e69f965d765fd9ac91687311b15cf80a4ba0c37ed2d2bc1d60aa1ede18e974e4"
+    },
+    {
+      "path": "scripts/model_mapping.py",
+      "sha256": "ce9863bf3bbac30e208ea07c10f31dc030562b343e26f3add6c0ad695da17528"
+    },
+    {
+      "path": "scripts/openai_cache.py",
+      "sha256": "3898269e0101696616d52fd5a7cb05c837f636fed5267bfb40fcb204cb3e4ac8"
+    },
+    {
+      "path": "scripts/pilot.py",
+      "sha256": "742dc3638a59eaccce64f9104ec8ecc6021f812849f86b4b67394fddc50ef067"
+    },
+    {
+      "path": "scripts/policies.py",
+      "sha256": "d4c7b95399ff54ab7686a361e3298473ad7f14d4682ec1b2f95d9215189406e8"
+    },
+    {
+      "path": "scripts/preference_data.py",
+      "sha256": "26140e171f2dcb5dcdce0bfff6664a8edf2e0043f567cbc0ad66073dc1098521"
+    },
+    {
+      "path": "scripts/pretraining.py",
+      "sha256": "3e5760538b39226fd03475e538034fdebe6dee65c19e293b7f0882b7943a2607"
+    },
+    {
+      "path": "scripts/research_pipeline.py",
+      "sha256": "f4493cb20969979b74c72ed9126a483f78bebd03209265284cea7baab41736da"
+    },
+    {
+      "path": "scripts/resources.py",
+      "sha256": "d77b7f09cfabd2820ac34646132183c46cded56eb8323d6778b268d0de38c7d9"
+    },
+    {
+      "path": "scripts/run_baselines.py",
+      "sha256": "c1830421ca4e1876ad238e0fa14689097d7940b0f45c4d6fbb610fa84a4462e5"
+    },
+    {
+      "path": "scripts/run_toy_pipeline.py",
+      "sha256": "b119bce11b420bb3b8e3425c4c67f06804c17b3ba1dddf52deb3a72c22bf8591"
+    },
+    {
+      "path": "scripts/splits.py",
+      "sha256": "0479209e80b6947677991511f1e71c869d490f7e01fe1d06452ca0379ca2644e"
+    },
+    {
+      "path": "scripts/tuning.py",
+      "sha256": "9801b4e2efd985876cfe1081e644c2f43c80f6cf8a1edc80f4f39fd797f62e32"
+    },
+    {
+      "path": "tools/openai_study.py",
+      "sha256": "f2b24617534d63422216018b194b1184e233fdfc093ab525bf8afbeb44939b15"
+    },
+    {
+      "path": "tools/openai_study_report.py",
+      "sha256": "1a7bb85addea2e902731f0b42a931e1c76d4ab1da78308c2c9e11c14f3b0cf9b"
+    },
+    {
+      "path": "tools/research/verify_runs.py",
+      "sha256": "8cec19439a77b94bb5a4e14e7e59ee53e734edb2a308425b08df4aec9b40cfd9"
+    },
+    {
+      "path": "tools/paper_preflight/compare.py",
+      "sha256": "28c8e1283ac686ee3cfc2a138e63567600dc1a5b49906eb679791481106e89d1"
+    }
+  ],
+  "embedding_verification": {
+    "path": "outputs/openai-core-20261031/embedding-verification.json",
+    "sha256": "a9aa11c9d69abf14118d35f5ef8586490c88ca04826e9890fa91f70952ff3fad"
+  },
+  "kind": "frozen-openai-core-study",
+  "manifest_sha256": "44a3e6a436c8bb9b3ff59f9b84aa9a069a64d8e8bc4e3d655e98464d43ceaa2f",
+  "paper_equivalent": false,
+  "primary_plan": {
+    "ablation_inventory_status": "excluded from this858-condition core study",
+    "ablation_plan": "configs/ablation_plan.json",
+    "aggregation": "paired per-seed summaries; seed variation is descriptive and not a confidence interval over new datasets",
+    "bin_size": 100,
+    "budget_fractions": [
+      0.05,
+      0.1,
+      0.2,
+      0.3,
+      0.5,
+      0.75,
+      1.0,
+      1.25
+    ],
+    "budget_reference_arm": "gpt-4-1106-preview",
+    "budget_reference_rule": "mean estimated tuning query cost of reference arm multiplied by deployment query count",
+    "datasets": [
+      "routerbench",
+      "mmlu"
+    ],
+    "deployment_adapter_protocol": "docs/common-deployment-protocol.md",
+    "embedding_recipe": "completed OpenAI text-embedding-3-small1536D; full-text",
+    "frozen_counts": {
+      "mmlu": {
+        "deployment": 1275,
+        "learning": 12369,
+        "tuning": 398
+      },
+      "routerbench": {
+        "deployment": 3227,
+        "learning": 32270,
+        "tuning": 1000
+      }
+    },
+    "learning_fraction_rule": "ceil(fraction * learning_count), nested prefixes of the unchanged learning stream",
+    "learning_fractions": [
+      0.1,
+      0.25,
+      0.5,
+      1.0
+    ],
+    "learning_size_budget_fraction": 0.5,
+    "mapping_policy": "identity_match",
+    "methods": [
+      "pilot",
+      "linucb",
+      "epoch-greedy",
+      "explore-only",
+      "random",
+      "each-fixed-arm"
+    ],
+    "pretraining": {
+      "dimension": 64,
+      "holdout_use": "initialization coefficients only; no parameter selection or early stopping",
+      "learning_rate": 0.03,
+      "margin": 0.2,
+      "prior_epochs": 40,
+      "projection_epochs": 30
+    },
+    "primary_inventory": {
+      "additional_learning_size_runs": 234,
+      "full_learning_budget_runs": 624,
+      "full_learning_streams": 78,
+      "prefix_snapshots": 312,
+      "total_deployment_runs": 858
+    },
+    "primary_metrics": [
+      "total_reward",
+      "reward_per_requested_query",
+      "mean_reward_served",
+      "served_fraction",
+      "estimated_cost",
+      "actual_recorded_cost",
+      "actual_budget_excess",
+      "learning_cumulative_empirical_oracle_regret"
+    ],
+    "ratio_bounds_rule": "shared per dataset: LB=0.5*minimum and UB=2*maximum positive prequential score/cost ratio from selected tuning candidates",
+    "replicate_interpretation": "retrain preference projection/prior per seed, then use common contexts for every method in that replicate; policy RNG also uses the replicate seed; partitions and stream order stay fixed",
+    "replicate_seeds": [
+      7,
+      42,
+      2026
+    ],
+    "resource_policy": "one heavy command and one worker; require at least 8 GiB available physical RAM before start; no paid API requests",
+    "scope": "OpenAI eight-arm core study; no new ablation or eleven-arm equivalence claim",
+    "split_manifest_sha256": "989d3663aa4051f6ccd80bedf62e6ef789ead57d744c87fd14c828ac9b08a8a5",
+    "status": "choices frozen with verified tuning/calibration in configs/frozen_experiment_protocol.json; full experiments pending",
+    "stream_order": "preserve original stream_position within each existing phase; MMLU filters task prefix mmlu- without resplitting",
+    "tuning_grid": "configs/tuning_grid.json",
+    "tuning_prior_seed": 42,
+    "tuning_scope": "select separately for routerbench and filtered MMLU tuning subsets, then reuse selected parameters across all replicate seeds",
+    "version": 1
+  },
+  "prior_index": {
+    "path": "outputs/openai-core-20261031/prior-index.json",
+    "sha256": "b50734277a6f74997d4b347ef044c43e1efba244ef745ca78f8a4961b106dd25"
+  },
+  "source_pins": [
+    {
+      "path": "configs/model_mapping.json",
+      "sha256": "ca00ca697ca0368d9438860e2e6378e419d20920df1dd2fa827c12e63dbaf7fd"
+    },
+    {
+      "path": "configs/tuning_grid.json",
+      "sha256": "5cadba21a8264cbbcad935da7ca2ce03353e85420b70ff000b7f7f522e66f4dd"
+    },
+    {
+      "path": "outputs/local-pipeline-verification-20261029/prepared-identity/manifest.json",
+      "sha256": "9d1cc854c431ddce40bce59940d23d7bc0cd7de7db38c1d487121f6179c63c91"
+    },
+    {
+      "path": "outputs/research-input-audit-20261029/inputs/manifest.json",
+      "sha256": "88b3fc0a5d46e772a4ea9e5ef805988083ce0929ce36ecd15858c56ef2d2cd63"
+    },
+    {
+      "path": "outputs/research-cost-inputs-20261029/manifest.json",
+      "sha256": "f42751bfc391385ce2cdbe1e69e99f9cf23eaba5e92a375979e224ad8dfb40a7"
+    },
+    {
+      "path": "outputs/openai-standard-20261030/imported/caches/source-0/manifest.json",
+      "sha256": "8e256fd7664efa6582a9d29043ccf0fea26dd67712d8eae830e6be77214def03"
+    },
+    {
+      "path": "outputs/openai-standard-20261030/imported/caches/source-0/vectors.npy",
+      "sha256": "7ecb92f6bbc66f10eb8f26b2f40639b9136bcfaea6d42b93a566d8b3eb98f9c1"
+    },
+    {
+      "path": "outputs/openai-standard-20261030/imported/caches/source-1/manifest.json",
+      "sha256": "6c85a7e2f962494dfb0434574d2752eabcf35f862c7801444be69525e6467b3d"
+    },
+    {
+      "path": "outputs/openai-standard-20261030/imported/caches/source-1/vectors.npy",
+      "sha256": "9e846876f509d1edd9cf03eaaaf8c6237b2890fb78e76697b82c056f48485952"
+    }
+  ],
+  "synthetic": false,
+  "tuning": {
+    "mmlu": {
+      "absolute_reference_budget": 1.7940659547738693,
+      "bounds": {
+        "lower_bound": 0.004677426551507574,
+        "upper_bound": 113008.78799494584
+      },
+      "reference_estimated_cost_per_query": 0.0014071105527638191,
+      "selected_parameters": {
+        "epoch-greedy": {
+          "window": 10
+        },
+        "explore-only": {},
+        "fixed-00": {
+          "arm_id": "WizardLM/WizardLM-13B-V1.2"
+        },
+        "fixed-01": {
+          "arm_id": "claude-instant-v1"
+        },
+        "fixed-02": {
+          "arm_id": "claude-v1"
+        },
+        "fixed-03": {
+          "arm_id": "gpt-3.5-turbo-1106"
+        },
+        "fixed-04": {
+          "arm_id": "gpt-4-1106-preview"
+        },
+        "fixed-05": {
+          "arm_id": "meta/code-llama-instruct-34b-chat"
+        },
+        "fixed-06": {
+          "arm_id": "meta/llama-2-70b-chat"
+        },
+        "fixed-07": {
+          "arm_id": "zero-one-ai/Yi-34B-Chat"
+        },
+        "linucb": {
+          "alpha": 5.0
+        },
+        "pilot": {
+          "alpha": 1.0
+        },
+        "random": {}
+      },
+      "stage": {
+        "path": "outputs/openai-core-20261031/tuning/mmlu/manifest.json",
+        "sha256": "04ef301e4141f14811b82227f6af7badd5854fcaf6186201c6452a19aeb9b9df"
+      }
+    },
+    "routerbench": {
+      "absolute_reference_budget": 10.23165528,
+      "bounds": {
+        "lower_bound": 0.06800403239135101,
+        "upper_bound": 108195.24914660997
+      },
+      "reference_estimated_cost_per_query": 0.00317064,
+      "selected_parameters": {
+        "epoch-greedy": {
+          "window": 10
+        },
+        "explore-only": {},
+        "fixed-00": {
+          "arm_id": "WizardLM/WizardLM-13B-V1.2"
+        },
+        "fixed-01": {
+          "arm_id": "claude-instant-v1"
+        },
+        "fixed-02": {
+          "arm_id": "claude-v1"
+        },
+        "fixed-03": {
+          "arm_id": "gpt-3.5-turbo-1106"
+        },
+        "fixed-04": {
+          "arm_id": "gpt-4-1106-preview"
+        },
+        "fixed-05": {
+          "arm_id": "meta/code-llama-instruct-34b-chat"
+        },
+        "fixed-06": {
+          "arm_id": "meta/llama-2-70b-chat"
+        },
+        "fixed-07": {
+          "arm_id": "zero-one-ai/Yi-34B-Chat"
+        },
+        "linucb": {
+          "alpha": 5.0
+        },
+        "pilot": {
+          "alpha": 1.0
+        },
+        "random": {}
+      },
+      "stage": {
+        "path": "outputs/openai-core-20261031/tuning/routerbench/manifest.json",
+        "sha256": "b65927c48c9f9aaa96611a2b2c79426e160d38811f2bce55262185a5df09f687"
+      }
+    }
+  },
+  "version": 1
+}

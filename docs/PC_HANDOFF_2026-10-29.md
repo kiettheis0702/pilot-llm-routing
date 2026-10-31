@@ -1,5 +1,7 @@
 # PILOT — bàn giao sang PC, 29/10/2026
 
+> **TÀI LIỆU LỊCH SỬ — BGE / mốc 29–30/10/2026.** Các số liệu, trạng thái “hiện tại/current”, nhánh Git và việc còn chờ bên dưới chỉ đúng tại mốc ghi nhận. Không dùng làm kết quả OpenAI hiện hành. Đọc [trạng thái OpenAI](openai-followup-status.md), [bản giao việc hiện hành cho Claude](CLAUDE_UPDATE_OPENAI_2026-10-31.md) và [khôi phục từ checkout sạch](openai-reproduce.md). Giữ nội dung cũ để truy vết, không ghi đè bằng kết quả mới.
+
 Tài liệu này dùng cho người dùng và Codex trên PC mới. Đây là trạng thái đã kiểm
 chứng và hướng dẫn chuyển máy, không thay thế các proposal/design/spec/tasks trong
 `openspec/changes/`.

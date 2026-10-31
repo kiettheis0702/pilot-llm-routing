@@ -1,0 +1,21 @@
+{
+  "files": {
+    "README.md": "731917802761c1998ffbbcbae65814ced040c3bc82191842d64eacb52ebc4157",
+    "fixed-models.csv": "bbac1f9664b3ebec92b26b8bfe5a69f081a5649db1edc7f9403aa22501119373",
+    "hybrid-binary.png": "38064fec22adfcfeb0669292ec9d6b2271b591183545d77e9662b67b78c34af7",
+    "hybrid-binary.svg": "faec35cf1113f03daf37fa913971dcaa5001e3c3a57c32b7108aa500787ee20c",
+    "matched-seed42-pilot.csv": "efbf79019c1aac121ac02cf2ffae75a25c066829a655cbd1edb653f0da812e0c",
+    "native-threshold-front.csv": "241359cf12a0c0b2ecc13d3fdc1331d0675dd3ba2ec1f7b055b2e264193c355e"
+  },
+  "independent_proof_sha256": "0bd58a28a1f47a4a2f496e331a2ebd2804f461c1e357b26551a008cdfa9e7f21",
+  "kind": "verified-local-native-hybrid-binary",
+  "manifest_sha256": "aa86ceb6fdbd2bd68cebbda4a1d460919571f9bbd65e428e18434365295f9c59",
+  "matched_pilot_allocation_points": 8,
+  "native_thresholds": 21,
+  "paid_api_calls": 0,
+  "paper_equivalent": false,
+  "protocol_sha256": "07ba7c7b2289497a91335a8c497bd108cd88c3c1846ac8c347c6b55d2756e06c",
+  "report_source_sha256": "99264270709be33fb898d7156e6e8268f6d161086d6fa6230f041a7ab2af474e",
+  "seed": 42,
+  "test_queries": 3227
+}

@@ -1,0 +1,6 @@
+Traceback (most recent call last):
+  File "<string>", line 1, in <module>
+  File "outputs/openai-core-20261031/readback.py", line 53, in <module>
+    script_sha256=sha256(__file__),preflight=preflight,additional_paid_api_calls=0)
+                         ^^^^^^^^
+NameError: name '__file__' is not defined. Did you mean: '__name__'?

@@ -1,0 +1,193 @@
+"""Publish only independently verified native Hybrid and online shift results."""
+from __future__ import annotations
+
+import argparse
+import hashlib
+import json
+import math
+from pathlib import Path
+
+ROOT=Path(__file__).resolve().parents[1]
+FOLLOWUP=ROOT/'outputs/openai-followup-20261031'
+
+
+def read(path):
+    return json.loads(Path(path).read_text(encoding='utf-8'))
+
+
+def sha(path):
+    with Path(path).open('rb') as stream:
+        return hashlib.file_digest(stream,'sha256').hexdigest()
+
+
+def verified_hybrid(kind):
+    base=FOLLOWUP/('hybrid-default-batch' if kind=='binary' else 'hybrid')/kind
+    verifier=ROOT/('tools/openai_study_hybrid_default_batch.py' if kind=='binary' else 'tools/openai_study_hybrid_verify.py')
+    protocol=read(base/'protocol.json'); selection=read(base/'selection.json'); proof=read(base/'independent-verification.json')
+    if (not proof['verified'] or proof['protocol_sha256']!=sha(base/'protocol.json')
+            or proof['selection_sha256']!=sha(base/'selection.json')
+            or proof['verifier_sha256']!=sha(verifier)
+            or not proof['all_test_logits_neurally_replayed']
+            or proof['native_front_sha256']!=sha(base/'native-front.csv')
+            or selection['protocol_sha256']!=sha(base/'protocol.json')
+            or protocol['config']['seed']!=42):
+        raise ValueError('Complete current independent Hybrid proof required')
+    for record in protocol['source_pins']+list(protocol['official_sources'].values())+[selection['predictions'],selection['checkpoint']]:
+        if sha(ROOT/record['path'])!=record['sha256']:
+            raise ValueError('Hybrid report source/weight identity differs')
+    return base,protocol,selection,proof
+
+
+def truth_for(protocol):
+    import pandas as pd
+    from scripts.research_pipeline import load_routing
+    folder,_,_,hashes=load_routing(ROOT/'data')
+    if hashes!=protocol['source_hashes']:
+        raise ValueError('Historical source changed after Hybrid verification')
+    values=pd.read_parquet(folder/'outcomes.parquet',columns=['query_id','arm_id','reward','actual_cost'])
+    return {(r.query_id,r.arm_id):(float(r.reward),float(r.actual_cost)) for r in values.itertuples(index=False) if r.arm_id in protocol['arms']}
+
+
+def recipe_text(protocol,selection):
+    counts=', '.join(f'{key}={len(ids)}' for key,ids in protocol['partitions'].items())
+    audits='; '.join(f'{phase}: clipped{row["clipped"]}/{row["rows"]}, unknown-token rows{row["rows_with_unknown_token"]}' for phase,row in protocol['token_audit'].items())
+    return [
+        f'Local verified Llama2-70B-chat/GPT4-1106-preview pair, seed42 only; {counts}.',
+        'Pinned official Microsoft NClassReranker/NClassCollator and DeBERTa-v3-large; actual added source-token head, deterministic cheap-match labels (ties cheap), source cap128 and fixed padding. AutoTokenizer fast implementation and library versions are recorded.',
+        f'Input audit (rows retained): {audits}. The fast SentencePiece conversion warns that byte fallback is unavailable; unknown-token counts are disclosed rather than filtering questions.',
+        f'Five epochs; lr1e-5, Adafactor/weight decay0.1, linear scheduler/warmup5%, FP32 parameters with FP16 autocast and gradient scaling. Training microbatch{protocol["config"]["microbatch"]}/accumulation{protocol["config"]["accumulation"]} preserves effective128; inference batch{protocol["config"].get("eval_microbatch",2)}. Final partial optimizer blocks average over actual examples. Wrapper details are declared local adaptations.',
+        f'Checkpoint chosen only by minimum validation CE (earliest tie), selected epoch{selection["selected_epoch"]}; attempted optimizer steps{selection["attempted_optimizer_steps"]}, applied{selection["optimizer_steps"]}, AMP overflow skips{selection["overflow_skipped_steps"]}.',
+        'Independent verification replays validation inference for all five saved candidates and every test logit with a separately constructed source-token/head path, reconstructs all threshold accounting, and mutates held-out outcomes through the actual input extractor. The mutation checks identical training/validation input arrays; it is not a second full neural refit.',
+        'Supervised Hybrid training sees both arms\' historical training outcomes; PILOT sees selected-arm feedback and retains a separate human-preference prior. Raw-text cap128 versus learned OpenAI vectors also differs. These comparisons do not isolate a single algorithmic factor.',
+        'No new LLM answers, reward-model judgments or paid embedding/API calls. Historical model costs are accounting units, not charges incurred by these runs.',
+        'Eight-versus-eleven model identity, author release/split/order and author baseline hyperparameters remain unresolved. This is a declared local adaptation, not the paper\'s exact Mistral/Mixtral D.1 comparison. No multi-seed significance claim from this single-seed baseline.'
+    ]
+
+
+def binary():
+    import pandas as pd
+    from tools.course.analyze import verify_package
+    from tools.openai_study_followup_report import finish
+    base,protocol,selection,proof=verified_hybrid('binary');truth=truth_for(protocol)
+    verify_package(ROOT/'reports/openai-binary-2026-10-31')
+    reference=read(ROOT/'reports/openai-core-2026-10-31/gpt4-reference.json')['routerbench']
+    if reference['query_ids']!=protocol['partitions']['test']:
+        raise ValueError('Hybrid/PILOT deployment query population/order differs')
+    front=pd.read_csv(base/'native-front.csv')
+    pilot=pd.read_csv(ROOT/'reports/openai-binary-2026-10-31/per-seed.csv')
+    pilot=pilot.loc[(pilot.seed==42)&(pilot.method=='pilot')&(pilot.learning_fraction==1)].copy()
+    if len(front)!=21 or len(pilot)!=8 or front.requested.nunique()!=1 or int(front.requested.iloc[0])!=len(reference['query_ids']):
+        raise ValueError('Native/PILOT comparison condition inventory differs')
+    endpoint=[];ids=protocol['partitions']['test'];cheap,strong=protocol['arms']
+    ref_reward=math.fsum(truth[q,strong][0] for q in ids);ref_cost=math.fsum(truth[q,strong][1] for q in ids)
+    for arm in (cheap,strong):
+        reward=math.fsum(truth[q,arm][0] for q in ids);cost=math.fsum(truth[q,arm][1] for q in ids)
+        endpoint.append(dict(arm=arm,requested=len(ids),served=len(ids),coverage=1.,total_reward=reward,
+            actual_recorded_cost=cost,quality_fraction_gpt4=reward/ref_reward,cost_fraction_gpt4=cost/ref_cost))
+    output=ROOT/'reports/openai-hybrid-2026-10-31';output.mkdir(parents=True,exist_ok=False)
+    front.to_csv(output/'native-threshold-front.csv',index=False,lineterminator='\n')
+    pilot.to_csv(output/'matched-seed42-pilot.csv',index=False,lineterminator='\n')
+    pd.DataFrame(endpoint).to_csv(output/'fixed-models.csv',index=False,lineterminator='\n')
+    import matplotlib
+    matplotlib.use('Agg')
+    import matplotlib.pyplot as plt
+    fig,axes=plt.subplots(1,2,figsize=(12,4.8),constrained_layout=True)
+    for label,rows,color,marker in [('Hybrid native thresholds',front,'C1','^'),('PILOT guarded-stop',pilot,'C0','o')]:
+        axes[0].plot(100*rows.cost_fraction_gpt4,100*rows.quality_fraction_gpt4,color=color,marker=marker,markersize=4,label=label)
+        axes[1].plot(100*rows.cost_fraction_gpt4,100*rows.coverage,color=color,marker=marker,markersize=4,label=label)
+    for row,label in zip(endpoint,('Fixed Llama2','Fixed GPT4')):
+        axes[0].scatter(100*row['cost_fraction_gpt4'],100*row['quality_fraction_gpt4'],marker='*',s=90,label=label)
+    axes[0].set_ylabel('True reward / same-query GPT4 (%)');axes[1].set_ylabel('Requested queries served (%)')
+    for axis in axes:
+        axis.set_xlabel('Recorded cost / same-query GPT4 (%)');axis.grid(alpha=.2)
+    axes[0].legend(fontsize=8);fig.suptitle('Verified binary pair, seed42: native static thresholds and guarded-stop PILOT')
+    for ext in ('png','svg'):
+        fig.savefig(output/('hybrid-binary.'+ext),dpi=160)
+    plt.close(fig)
+    lines=['# HybridLLM native binary comparison','']+recipe_text(protocol,selection)+['',
+        'Binary uses the original CLI8/16 training and8-example evaluation defaults after a synthetic hardware-only feasibility/throughput check, before binary outcomes. An audited AST adapter reuses the immutable local producer and independent reader; original/adapter/source-tree hashes are recorded in the protocol. The conservative2/64 binary preparation was superseded before fitting; the completed separate drift classifier keeps2/64.',
+        'The21 predetermined thresholds0..1 inclusive are all retained; no test-based threshold selection. Fixed model endpoints are computed separately, since a probability exactly1 can still choose cheap at threshold1.',
+        'Both curves use the same deployment questions and GPT4 reference. Native Hybrid serves every query; PILOT uses its already verified guarded-stop deployment controller. They do not share an exact allocated-budget constraint. Assess actual recorded spend and coverage together; no same-budget dominance claim or fabricated interpolated point.',
+        'The matched PILOT file includes only seed42/full learning and eight declared allocation points. Its three other learning-prefix conditions are not mixed into this curve.',
+        '', 'Commands: free assets -> Hybrid real compatibility probe -> binary input audit -> declare -> train -> independent Hybrid verifier -> this report. All raw fits/proofs are retained locally; weights/prompts are excluded from publication.']
+    (output/'README.md').write_text('\n\n'.join(lines)+'\n',encoding='utf-8')
+    print(json.dumps(finish(output,dict(kind='verified-local-native-hybrid-binary',seed=42,native_thresholds=21,
+        matched_pilot_allocation_points=8,test_queries=len(ids),protocol_sha256=sha(base/'protocol.json'),
+        independent_proof_sha256=sha(base/'independent-verification.json'),report_source_sha256=sha(__file__),paper_equivalent=False,paid_api_calls=0)),indent=2))
+
+
+def drift():
+    import pandas as pd
+    from tools.openai_study_drift import summarize_windows
+    from tools.openai_study_hybrid_verify import cheap_probabilities
+    from tools.openai_study_followup_report import finish
+    base,protocol,selection,proof=verified_hybrid('drift');truth=truth_for(protocol)
+    drift_base=FOLLOWUP/'drift';pilot_proof=read(drift_base/'independent-verification.json');manifest=read(drift_base/'manifest.json')
+    if (not pilot_proof['verified'] or pilot_proof['artifact_sha256']!=sha(drift_base/'manifest.json')
+            or pilot_proof['verifier_sha256']!=sha(ROOT/'tools/openai_study_drift_verify.py')):
+        raise ValueError('Current full independent online-drift replay required')
+    for name,fingerprint in manifest['files'].items():
+        if sha(drift_base/name)!=fingerprint:
+            raise ValueError('Verified drift artifact changed')
+    with (drift_base/'trace.jsonl').open(encoding='utf-8') as stream:
+        all_rows=[json.loads(line) for line in stream]
+    pilot=[r for r in all_rows if r['phase']!='warm'];ids=[r['query_id'] for r in pilot]
+    import numpy as np
+    predictions=np.load(ROOT/selection['predictions']['path'],allow_pickle=False)
+    if predictions['test_ids'].tolist()!=ids or protocol['partitions']['test']!=ids:
+        raise ValueError('Static/online drift query identity/order differs')
+    probabilities=cheap_probabilities(predictions['test_logits']);cheap,strong=protocol['arms'];static=[]
+    for row,p in zip(pilot,probabilities,strict=True):
+        arm=cheap if p>=protocol['drift_threshold'] else strong;reward,cost=truth[row['query_id'],arm]
+        static.append(dict(phase=row['phase'],phase_position=row['phase_position'],query_id=row['query_id'],arm_id=arm,
+            reward=reward,actual_cost=cost,gpt4_reward=row['gpt4_reward'],gpt4_cost=row['gpt4_cost'],cheap_match_probability=float(p)))
+    windows=[]
+    for method,rows in [('pilot',pilot),('hybrid-static',static)]:
+        for name,values in summarize_windows(rows,size=1000).items():
+            windows.append(dict(method=method,window=name,**values))
+    output=ROOT/'reports/openai-task-shift-2026-10-31';output.mkdir(parents=True,exist_ok=False)
+    pd.DataFrame(windows).to_csv(output/'window-metrics.csv',index=False,lineterminator='\n')
+    per_query=[]
+    for t,(p,h) in enumerate(zip(pilot,static,strict=True),1):
+        per_query.append(dict(position=t,query_id=p['query_id'],phase=p['phase'],pilot_arm=p['arm_id'],hybrid_arm=h['arm_id'],
+            pilot_reward=p['reward'],hybrid_reward=h['reward'],pilot_cost=p['actual_cost'],hybrid_cost=h['actual_cost'],
+            gpt4_reward=p['gpt4_reward'],gpt4_cost=p['gpt4_cost'],pilot_selected_uncertainty=p['selected_uncertainty'],
+            hybrid_cheap_match_probability=h['cheap_match_probability']))
+    frame=pd.DataFrame(per_query);frame.to_csv(output/'per-query.csv',index=False,lineterminator='\n')
+    import matplotlib
+    matplotlib.use('Agg')
+    import matplotlib.pyplot as plt
+    fig,axes=plt.subplots(2,1,figsize=(11,7),sharex=True,constrained_layout=True)
+    for name,column in [('PILOT online','pilot_reward'),('Hybrid static','hybrid_reward'),('Fixed GPT4','gpt4_reward')]:
+        axes[0].plot(frame.position,frame[column].rolling(100,min_periods=100).mean(),label=name,linewidth=1.2)
+    axes[1].plot(frame.position,frame.pilot_selected_uncertainty.rolling(100,min_periods=100).mean(),color='C0',linewidth=1.2)
+    for axis in axes:
+        axis.axvline(5000.5,color='black',linestyle='--',linewidth=1);axis.grid(alpha=.2)
+    axes[0].legend();axes[0].set_ylabel('True reward / query\ntrailing100-query mean')
+    axes[1].set_ylabel('PILOT selected-arm uncertainty\ntrailing100-query mean');axes[1].set_xlabel('Evaluation position:5000 MMLU then5000 GSM8K')
+    fig.suptitle('Prompt-disjoint local task shift, seed42; separate5000-query MMLU warm training')
+    for ext in ('png','svg'):
+        fig.savefig(output/('task-shift.'+ext),dpi=160)
+    plt.close(fig)
+    lines=['# Verified local MMLU-to-GSM8K task shift','']+recipe_text(protocol,selection)+['',
+        f'A separately trained static Hybrid classifier sees only the5000 warm MMLU labels and{len(protocol["partitions"]["validation"])} original MMLU tuning labels, then stays frozen. It never reuses the full-RouterBench classifier. Threshold0.5 was declared before outcomes. PILOT warms on the same5000 questions, then continues chosen-arm feedback through5000 before-shift MMLU and5000 after-shift GSM8K questions.',
+        'All15000 stream prompts are unique by normalized prompt group. Cohort choice is label-free; original order is retained within each task/cohort. This deliberate task ordering differs from the original mixed global stream. The paper\'s exact sampling/windows/model pair are unverified.',
+        'Both methods serve all10000 evaluation questions; warm examples are excluded from every reported quality/cost denominator. There is no budget controller in this online-adaptation experiment. The six declared windows include all evaluation/all before/all after/last1000 before/first1000 after/last1000 after.',
+        'PILOT uncertainty is sqrt(x^T A^-1 x) for the selected arm, recorded before feedback. Static classifier probabilities have a different meaning and are not plotted on that uncertainty axis. Trailing100-query curves are descriptive, not confidence intervals or independent repetitions.',
+        'These are previously studied benchmark questions, not a project-wide unseen final test. The restriction on GSM8K labels applies to this newly declared fit/selection; the original human-preference prior is retained. Single-seed adaptation evidence must not be presented as exact paper reproduction or general distribution-shift robustness.',
+        '', 'Commands: independent Hybrid drift fit/replay + additive PILOT drift declare/run/full independent replay -> this report. Every adverse window remains in the CSV; no test window/threshold selection.']
+    (output/'README.md').write_text('\n\n'.join(lines)+'\n',encoding='utf-8')
+    print(json.dumps(finish(output,dict(kind='verified-local-task-shift',seed=42,warm_queries=5000,evaluation_queries=10000,
+        prompt_groups=15000,window_rows=len(windows),hybrid_protocol_sha256=sha(base/'protocol.json'),
+        hybrid_proof_sha256=sha(base/'independent-verification.json'),pilot_proof_sha256=sha(drift_base/'independent-verification.json'),
+        report_source_sha256=sha(__file__),paper_equivalent=False,paid_api_calls=0)),indent=2))
+
+
+def main():
+    from scripts.resources import require_resources
+    require_resources();parser=argparse.ArgumentParser();parser.add_argument('cohort',choices=['binary','drift'])
+    globals()[parser.parse_args().cohort]()
+
+
+if __name__=='__main__':
+    main()

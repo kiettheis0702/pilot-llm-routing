@@ -1,0 +1,60 @@
+{
+  "version": 1,
+  "kind": "declared-eight-arm-openai-core-migration",
+  "status": "prepared_offline_not_executed_with_openai_vectors",
+  "paid_api_approved": false,
+  "api_requests_submitted": 0,
+  "paper_equivalent": false,
+  "goal": "re-run the two course core experiments with the paper's embedding model while controlling the other local choices",
+  "arm_catalog_source": "configs/frozen_experiment_protocol.json:arms",
+  "model_count": 8,
+  "eleven_model_rule": "separate fidelity improvement after version bridges are verified; never claim eight-arm equals eleven-arm",
+  "embedding": {
+    "model": "text-embedding-3-small",
+    "dimensions": 1536,
+    "prepared_plan": "outputs/paper-preflight-20261030/embedding-plan",
+    "unique_texts": 38018,
+    "tokens": 6867235,
+    "prepared_http_requests": 298,
+    "estimated_standard_usd": 0.1373447,
+    "cache_once_reuse_all_conditions": true,
+    "submission_entrypoint": "tools.openai_embeddings (separate setup workflow)",
+    "submission_requires_separate_explicit_approval": true,
+    "submission_performed_by_this_workflow": false
+  },
+  "main_preference_fit": {
+    "prepared_dir": "outputs/local-pipeline-verification-20261029/prepared-identity",
+    "train_pairs": 1245,
+    "calibration_pairs": 313,
+    "holdout_interpretation": "calibration for initialization coefficients; not a final independent preference-accuracy test",
+    "dimension": 64,
+    "projection_epochs": 30,
+    "prior_epochs": 40,
+    "learning_rate": 0.03,
+    "margin": 0.2,
+    "seeds": [7, 42, 2026],
+    "entrypoint": "scripts.research_pipeline fit with an imported and exactly aligned OpenAI preference cache",
+    "cost_sizes": "outputs/research-cost-inputs-20261029/cost-size-identity_match.json"
+  },
+  "main_routing": {
+    "tuning_samples": 1000,
+    "learning": 32270,
+    "deployment": 3227,
+    "order": "existing stream_position; MMLU remains the same nested subset",
+    "tuning_selection": "reuse declared alpha/window grids; select fresh parameters on tuning only after new priors exist",
+    "frozen_bge_results": "preserve; do not overwrite their caches, priors, tuning, protocol or run manifests",
+    "openai_freeze": "create new protocol/index with real imported cache/checkpoint fingerprints, never reuse BGE fingerprints"
+  },
+  "main_experiments": ["budget_quality_with_existing_baselines", "learning_size_and_regret"],
+  "main_metrics": ["quality_fraction_gpt4", "cost_fraction_gpt4", "coverage", "actual_overspend"],
+  "supplementary_500_pair_study": {
+    "required_for_core": false,
+    "partition": {"train": 847, "calibration": 211, "test": 500},
+    "entrypoint": "tools.paper_preflight.train",
+    "role": "separate preference-learning study; must not silently replace the main legacy partition",
+    "already_checked_with_bge": true,
+    "historical_caveat": "resplit of previously used corpus, not the authors' split or historically unseen data"
+  },
+  "attribution_limit": "old BGE truncated13 preference inputs; full-text OpenAI comparison measures a recipe difference unless actual encoder texts are matched",
+  "optional_after_core": ["verified_eleven_model_pool", "binary_routing", "matched_hybridllm_or_routellm", "drift_noise", "instructor_xl"]
+}

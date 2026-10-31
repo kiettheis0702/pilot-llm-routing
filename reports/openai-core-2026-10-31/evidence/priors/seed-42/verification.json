@@ -1,0 +1,13 @@
+{
+  "cache_fingerprint": "474857af6dcf4b259ea1a8aeb0758bae67fc9e6023e1c43dadc2415bd4c4c713",
+  "calibration_pairs": 313,
+  "correct_pairs": 190,
+  "dimension": 64,
+  "input_dimension": 1536,
+  "preference_loss": 0.5769736544053398,
+  "projection_loss": 0.0,
+  "synthetic": false,
+  "train_only_triplets": true,
+  "triplets": 1193,
+  "verified": true
+}

@@ -1,0 +1,56 @@
+{
+  "fits": [
+    {
+      "dimension": 64,
+      "fit": {
+        "path": "outputs/openai-core-20261031/priors/seed-7/fit-manifest.json",
+        "sha256": "54aeb63d97f6967ce114481ff6c16f0e9f270a0ba0705301613e04e666829cae"
+      },
+      "prior": {
+        "path": "outputs/openai-core-20261031/priors/seed-7/prior.json",
+        "sha256": "0a417ef5c93b0c4c1ad29d8bb472ef7ded4e1e958096ab4da12bcd39c903c703"
+      },
+      "seed": 7,
+      "verification": {
+        "path": "outputs/openai-core-20261031/priors/seed-7/verification.json",
+        "sha256": "bee9da2e00d616eada0177763ba454265af7b82d94748a07334841dfa9dcdc48"
+      }
+    },
+    {
+      "dimension": 64,
+      "fit": {
+        "path": "outputs/openai-core-20261031/priors/seed-42/fit-manifest.json",
+        "sha256": "da7a44706a01e6c2277b0b8d74b7dfb6c90d1706f6c7c2dc557dbc354bca70d4"
+      },
+      "prior": {
+        "path": "outputs/openai-core-20261031/priors/seed-42/prior.json",
+        "sha256": "e7d1edb0e10bd48bbc5c100a0558ea2f73416d0376e707ebc3fdbc15d9e27d0c"
+      },
+      "seed": 42,
+      "verification": {
+        "path": "outputs/openai-core-20261031/priors/seed-42/verification.json",
+        "sha256": "e88f9ae33cd8d9d89d0d66d28dbe9d3471257a8f9a02c57ca0cd81f753f69473"
+      }
+    },
+    {
+      "dimension": 64,
+      "fit": {
+        "path": "outputs/openai-core-20261031/priors/seed-2026/fit-manifest.json",
+        "sha256": "de10fd709ad9bd901a5edab21b9b0e3e6af30c067e68bd516907626df34243f3"
+      },
+      "prior": {
+        "path": "outputs/openai-core-20261031/priors/seed-2026/prior.json",
+        "sha256": "1910d2782f045040e48d56ced5daf9d12f69d0e70ed5a16196dda40256e946ac"
+      },
+      "seed": 2026,
+      "verification": {
+        "path": "outputs/openai-core-20261031/priors/seed-2026/verification.json",
+        "sha256": "2fcd5688f8a1ed883aabedf64d2d94784332f5e0281796588cd02a8b93b209e3"
+      }
+    }
+  ],
+  "kind": "openai-core-prior-index",
+  "manifest_sha256": "e3e19ebce70b46e317234c331f9dc3dbdccc40ef5f776a402b1f8c3d223792f1",
+  "synthetic": false,
+  "version": 1
+}

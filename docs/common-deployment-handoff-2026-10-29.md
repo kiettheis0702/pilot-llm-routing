@@ -1,5 +1,7 @@
 # Common deployment integration — 2026-10-29
 
+> **TÀI LIỆU LỊCH SỬ — BGE / mốc 29–30/10/2026.** Các số liệu, trạng thái “hiện tại/current”, nhánh Git và việc còn chờ bên dưới chỉ đúng tại mốc ghi nhận. Không dùng làm kết quả OpenAI hiện hành. Đọc [trạng thái OpenAI](openai-followup-status.md), [bản giao việc hiện hành cho Claude](CLAUDE_UPDATE_OPENAI_2026-10-31.md) và [khôi phục từ checkout sạch](openai-reproduce.md). Giữ nội dung cũ để truy vết, không ghi đè bằng kết quả mới.
+
 The common adapter and first real end-to-end integration are verified. They
 complete tasks 4.1 and 4.2 of the offline research plan. The overall project remains
 unfinished: tuning, the full frozen experiment inventory, MMLU and multiple seeds,

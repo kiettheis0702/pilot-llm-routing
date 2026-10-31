@@ -1,0 +1,9 @@
+method,arm
+fixed-00,WizardLM/WizardLM-13B-V1.2
+fixed-01,claude-instant-v1
+fixed-02,claude-v1
+fixed-03,gpt-3.5-turbo-1106
+fixed-04,gpt-4-1106-preview
+fixed-05,meta/code-llama-instruct-34b-chat
+fixed-06,meta/llama-2-70b-chat
+fixed-07,zero-one-ai/Yi-34B-Chat

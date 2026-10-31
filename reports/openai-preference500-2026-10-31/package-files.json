@@ -1,0 +1,9 @@
+{
+  "files": {
+    "README.md": "35a0bad6e08ab3e35381dbc30a9b7bf723e75fa50c05b1e0c4275cf04ea3856f",
+    "calibration-candidates.csv": "5045df237e49e9bb1d48e8cc8c4031308a7ab6ff524b697c70372679072a5210",
+    "manifest.json": "3ded0b2c74bf741ebead949f6e40dc7f4f484afe7d606d186a7c85f7f56dcce4",
+    "per-seed.csv": "593606736aec5ef5a3726272ed814d25ea5fec9844f2e66afc2126604f94ea07",
+    "verification.json": "f18635584c713fa99ba626b0f39919c15340aa2fb19ab71802b93d5fe419c4b6"
+  }
+}

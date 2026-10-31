@@ -18,6 +18,10 @@ parser.add_argument('--seed',type=int,default=7)
 parser.add_argument('--method',default='pilot')
 parser.add_argument('--variant',default='main')
 parser.add_argument('--output',required=True)
+parser.add_argument('--base',type=Path,default=ROOT/'outputs/research-experiments-20261029')
+parser.add_argument('--protocol',type=Path,default=ROOT/'configs/frozen_experiment_protocol.json')
+parser.add_argument('--index',type=Path,default=ROOT/'configs/research_prior_index.json')
+parser.add_argument('--cache-dir',type=Path,default=ROOT/'outputs/research-embeddings-20261029/routing-full')
 args=parser.parse_args()
 destination=ROOT/args.output
 if destination.exists():raise FileExistsError(destination)
@@ -26,7 +30,7 @@ preflight=require_resources()
 import numpy as np
 import pandas as pd
 
-BASE=ROOT/'outputs/research-experiments-20261029'
+BASE=ROOT/args.base
 def read(p):return json.loads(Path(p).read_text(encoding='utf-8'))
 def digest(v):return hashlib.sha256(json.dumps(v,sort_keys=True,separators=(',',':'),ensure_ascii=False,allow_nan=False).encode()).hexdigest()
 def filehash(p):
@@ -47,13 +51,13 @@ def rows(p):
     with Path(p).open(encoding='utf-8') as f:
         for s in f:yield json.loads(s)
 
-protocol=read(ROOT/'configs/frozen_experiment_protocol.json');plan=protocol['primary_plan'];arms=protocol['arms'];K=len(arms)
+protocol=read(ROOT/args.protocol);plan=protocol['primary_plan'];arms=protocol['arms'];K=len(arms)
 assert digest({k:v for k,v in protocol.items() if k!='manifest_sha256'})==protocol['manifest_sha256']
-index=read(ROOT/'configs/research_prior_index.json');dimension=8 if args.variant=='projection-dimension-8' else 64
+index=read(ROOT/args.index);dimension=8 if args.variant=='projection-dimension-8' else 64
 entry=next(v for v in index['fits'] if (v['dimension'],v['seed'])==(dimension,args.seed))
 assert filehash(ROOT/entry['prior']['path'])==entry['prior']['sha256']
 prior=envelope(ROOT/entry['prior']['path']);W=np.array(prior['W']);bias=np.array(prior['b'])
-cache_dir=ROOT/'outputs/research-embeddings-20261029/routing-full';cache=envelope(cache_dir/'manifest.json')
+cache_dir=ROOT/args.cache_dir;cache=envelope(cache_dir/'manifest.json')
 assert filehash(cache_dir/'vectors.npy')==cache['vector_sha256']
 vectors=np.load(cache_dir/'vectors.npy',mmap_mode='r');positions={q:i for i,q in enumerate(cache['query_ids'])}
 data=ROOT/'data/processed/routerbench_0shot';queries=pd.read_parquet(data/'queries.parquet')

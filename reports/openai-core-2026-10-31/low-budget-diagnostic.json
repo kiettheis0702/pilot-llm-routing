@@ -1,0 +1,163 @@
+{
+  "additional_paid_api_calls": 0,
+  "conditions": [
+    {
+      "affordable_now": [
+        "WizardLM/WizardLM-13B-V1.2",
+        "claude-instant-v1",
+        "claude-v1",
+        "gpt-3.5-turbo-1106",
+        "gpt-4-1106-preview",
+        "meta/code-llama-instruct-34b-chat",
+        "meta/llama-2-70b-chat",
+        "zero-one-ai/Yi-34B-Chat"
+      ],
+      "allocated_budget": 0.3588131909547739,
+      "available_in_current_bin": 0.006889957653652882,
+      "budget_fraction": 0.2,
+      "cheapest_estimate": 0.00010079773869346733,
+      "fallback_allowance": 9.704165709370256e-05,
+      "fallback_eligible": [],
+      "globally_unspent_estimated_budget": 0.338102133919598,
+      "query_id": "mmlu-professional-law.val.401",
+      "requested": 1275,
+      "seed": 7,
+      "served": 29,
+      "source_manifest_sha256": "d29bfb242c9b6c719dbd47e824fecf5ee3669fd96858383d3fb57601c139854c",
+      "threshold_eligible": []
+    },
+    {
+      "affordable_now": [
+        "WizardLM/WizardLM-13B-V1.2",
+        "claude-instant-v1",
+        "claude-v1",
+        "gpt-3.5-turbo-1106",
+        "gpt-4-1106-preview",
+        "meta/code-llama-instruct-34b-chat",
+        "meta/llama-2-70b-chat",
+        "zero-one-ai/Yi-34B-Chat"
+      ],
+      "allocated_budget": 0.5382197864321607,
+      "available_in_current_bin": 0.01100299818322378,
+      "budget_fraction": 0.3,
+      "cheapest_estimate": 0.00029009773869346735,
+      "fallback_allowance": 0.0002200599636644756,
+      "fallback_eligible": [],
+      "globally_unspent_estimated_budget": 0.383616696482412,
+      "query_id": "mmlu-college-medicine.val.50",
+      "requested": 1275,
+      "seed": 7,
+      "served": 350,
+      "source_manifest_sha256": "714ec08483e79b53cd50d5178f508a2fc2fe62b1beded2b943c4da08bb024f03",
+      "threshold_eligible": []
+    },
+    {
+      "affordable_now": [
+        "WizardLM/WizardLM-13B-V1.2",
+        "claude-instant-v1",
+        "claude-v1",
+        "gpt-3.5-turbo-1106",
+        "gpt-4-1106-preview",
+        "meta/code-llama-instruct-34b-chat",
+        "meta/llama-2-70b-chat",
+        "zero-one-ai/Yi-34B-Chat"
+      ],
+      "allocated_budget": 0.3588131909547739,
+      "available_in_current_bin": 0.00688824308078856,
+      "budget_fraction": 0.2,
+      "cheapest_estimate": 0.00010079773869346733,
+      "fallback_allowance": 9.701750818012057e-05,
+      "fallback_eligible": [],
+      "globally_unspent_estimated_budget": 0.3381004193467337,
+      "query_id": "mmlu-professional-law.val.401",
+      "requested": 1275,
+      "seed": 42,
+      "served": 29,
+      "source_manifest_sha256": "a7b35e63814a9954bec40b2cdfea64893efd4bda3297b48c9278afde15f2e4a5",
+      "threshold_eligible": []
+    },
+    {
+      "affordable_now": [
+        "WizardLM/WizardLM-13B-V1.2",
+        "claude-instant-v1",
+        "claude-v1",
+        "gpt-3.5-turbo-1106",
+        "gpt-4-1106-preview",
+        "meta/code-llama-instruct-34b-chat",
+        "meta/llama-2-70b-chat",
+        "zero-one-ai/Yi-34B-Chat"
+      ],
+      "allocated_budget": 0.5382197864321607,
+      "available_in_current_bin": 0.010559301489756442,
+      "budget_fraction": 0.3,
+      "cheapest_estimate": 0.00029009773869346735,
+      "fallback_allowance": 0.00021118602979512886,
+      "fallback_eligible": [],
+      "globally_unspent_estimated_budget": 0.38317299978894465,
+      "query_id": "mmlu-college-medicine.val.50",
+      "requested": 1275,
+      "seed": 42,
+      "served": 350,
+      "source_manifest_sha256": "3137d3da9b66b12d45f4286db2d4292562a7c1d9e76aac01b1997f5d0101fe52",
+      "threshold_eligible": []
+    },
+    {
+      "affordable_now": [
+        "WizardLM/WizardLM-13B-V1.2",
+        "claude-instant-v1",
+        "claude-v1",
+        "gpt-3.5-turbo-1106",
+        "gpt-4-1106-preview",
+        "meta/code-llama-instruct-34b-chat",
+        "meta/llama-2-70b-chat",
+        "zero-one-ai/Yi-34B-Chat"
+      ],
+      "allocated_budget": 0.3588131909547739,
+      "available_in_current_bin": 0.006963175492848862,
+      "budget_fraction": 0.2,
+      "cheapest_estimate": 0.00010079773869346733,
+      "fallback_allowance": 9.807289426547693e-05,
+      "fallback_eligible": [],
+      "globally_unspent_estimated_budget": 0.338175351758794,
+      "query_id": "mmlu-professional-law.val.401",
+      "requested": 1275,
+      "seed": 2026,
+      "served": 29,
+      "source_manifest_sha256": "85664b03471cfd7bfe852e9558439ed299d04d014c7589956e857cc332945b5a",
+      "threshold_eligible": []
+    },
+    {
+      "affordable_now": [
+        "WizardLM/WizardLM-13B-V1.2",
+        "claude-instant-v1",
+        "claude-v1",
+        "gpt-3.5-turbo-1106",
+        "gpt-4-1106-preview",
+        "meta/code-llama-instruct-34b-chat",
+        "meta/llama-2-70b-chat",
+        "zero-one-ai/Yi-34B-Chat"
+      ],
+      "allocated_budget": 0.5382197864321607,
+      "available_in_current_bin": 0.011138745077696141,
+      "budget_fraction": 0.3,
+      "cheapest_estimate": 0.00029009773869346735,
+      "fallback_allowance": 0.00022277490155392282,
+      "fallback_eligible": [],
+      "globally_unspent_estimated_budget": 0.38375244337688436,
+      "query_id": "mmlu-college-medicine.val.50",
+      "requested": 1275,
+      "seed": 2026,
+      "served": 350,
+      "source_manifest_sha256": "c44f2a66f1377eacd508674e1e8deb194de2417c74e1742d5677ec7c5b071630",
+      "threshold_eligible": []
+    }
+  ],
+  "explanation": "Current-bin threshold rejects all arms; fallback fair share is below every model estimate. The declared policy stops although total allocation remains.",
+  "preflight": {
+    "available_gib": 11.10361099243164,
+    "heavy_jobs": []
+  },
+  "scope": "diagnosis only; no new policy experiment or modified result",
+  "script_sha256": "1ca0098bdd85aad7d562d53e06ca20b97e5bbf6e0b4cd6bb4c80565f60866151",
+  "verified": true
+}

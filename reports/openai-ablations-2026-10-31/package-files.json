@@ -1,0 +1,11 @@
+{
+  "files": {
+    "README.md": "7de513cc3072680110681e565ce7ad01e3bfaaa98978f4b1d6e48a5055657445",
+    "ablations.png": "128cda9bb9ca549282ed009629a4ace048322657c78d71c57706a7f367c672a0",
+    "ablations.svg": "d807e7d6b405fe7317958bed5ebec34b90081d357c5534ab684318c46f22ea63",
+    "manifest.json": "45a96cc9d1b19263e3db52106a3b93b8bb5fc03cc088610c07a82b18fb0e642b",
+    "means.csv": "8a2340cdeb627b292351bf86a8018120a2825ee756b5f839ba8b5d9e8be24289",
+    "paired-main.csv": "e3bbf3f852ed848e5132cab8cbfe61fa11607b062c36dbb4a8098b8bceffb98e",
+    "per-seed.csv": "50a1ef065d45a65c36d8d7e1e2da6f30a359ea268d02a3faa2304263d3c0b837"
+  }
+}

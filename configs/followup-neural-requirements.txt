@@ -1,0 +1,12 @@
+# Install the CUDA128 torch wheel from the official PyTorch index first.
+# These are the observed local versions, not a claim of latest releases.
+torch==2.8.0+cu128
+transformers==4.57.1
+numpy==2.4.6
+huggingface-hub==0.36.0
+tokenizers==0.22.2
+sentencepiece==0.2.1
+safetensors==0.6.2
+packaging==26.3
+# Added for the Hybrid fast-tokenizer conversion after Instructor encoding.
+protobuf==7.36.2

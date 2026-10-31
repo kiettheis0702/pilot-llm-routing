@@ -1,0 +1,44 @@
+{
+  "approved": false,
+  "batch_size": 128,
+  "cache_identity": "model + default dimensions + exact original UTF-8 text SHA256",
+  "dimensions": 1536,
+  "dimensions_parameter": "omitted: OpenAI default, not a confirmed author dimension",
+  "duplicate_text_rows": 37,
+  "eleven_model_verified": false,
+  "estimate_note": "Standard-price estimate; no Batch discount assumed; excludes tax or later reruns",
+  "estimated_standard_usd": 0.13734470000000001,
+  "files": {
+    "id-map.json": "226eaff8cf0041259517f0883f731f305b38c5db1f25052367aeb3c351505e71",
+    "requests.jsonl": "18abed9ca9d79013abf19d6b5439c5c74d74d43c197c2682bb28ba63b85a32f3"
+  },
+  "kind": "offline-openai-embedding-plan",
+  "max_batch_tokens": 50000,
+  "model": "text-embedding-3-small",
+  "paid_api_calls": 0,
+  "pending": "final scientific protocol and paid-run approval; these files are never submitted by this tool",
+  "per_input_token_cap": 8191,
+  "price_source": "https://developers.openai.com/api/docs/models/text-embedding-3-small",
+  "prompt_construction": "verbatim exported text; no instruction, truncation or whitespace normalization",
+  "requests": 298,
+  "source_files": [
+    {
+      "file": "routing-inputs.json",
+      "rows": 36497,
+      "sha256": "2e820e635a45c4d31b634671c128010abf619b9f83decda16653092662a188ca"
+    },
+    {
+      "file": "preference-inputs.json",
+      "rows": 1558,
+      "sha256": "a8c9edc0b80bd881599598bba5097d95b08530a38776f879f891f9352fddb383"
+    }
+  ],
+  "source_rows": 38055,
+  "standard_usd_per_million_tokens": 0.02,
+  "submission_supported": false,
+  "tokenizer": "cl100k_base",
+  "tokenizer_version": "0.5.2",
+  "tokens": 6867235,
+  "unique_texts": 38018,
+  "version": 1
+}

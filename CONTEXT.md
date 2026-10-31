@@ -1,5 +1,11 @@
 # Project context
 
+**Current entrypoint (31 October 2026):** [OpenAI evidence and limits](docs/openai-followup-status.md), [current Claude handoff](docs/CLAUDE_UPDATE_OPENAI_2026-10-31.md), and [offline restore/replay guide](docs/openai-reproduce.md). The measured OpenAI core has 858 conditions plus 240 controlled ablations, separate from the historical 1098 BGE conditions. The expanded registry has 2498 new summary views and preserves 1128 old records; these are not independent datasets or live API calls. Slides/poster still await Claude edits; Moodle submission is unconfirmed.
+
+## Historical context through 30 October 2026
+
+All uses of “current”, “complete”, “main” and “pending” below describe their dated checkpoint, not the current OpenAI state.
+
 Publication update (2026-10-30): GitHub `main` is the complete submission branch.
 W&B is Public; anonymous readback verified all 1,128 finished runs and 13,314
 metrics. The current [Claude handoff](docs/CLAUDE_HANDOFF.md) supersedes historical

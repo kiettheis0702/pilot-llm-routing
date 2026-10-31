@@ -1,0 +1,23 @@
+{
+  "additional_paid_api_calls": 0,
+  "arms": [
+    "gpt-4-1106-preview",
+    "meta/llama-2-70b-chat"
+  ],
+  "conditions": 231,
+  "files": {
+    "README.md": "daae859739a73029bace62ab2fd8a82e0b02117fcf77c6da5f840caa27fc5e09",
+    "binary-routing.png": "ef7fdcd60c21a8627784ec19cb5649d971384f5381038779b8e1c949d758506c",
+    "binary-routing.svg": "1087525f42a8d306412c288303ca12995940e92c576ba2499c88a4132a071659",
+    "learning-prefixes.csv": "a2a257d359c3ac6ee8732ef641166a13c99406db07937c7383003e3458553c62",
+    "means.csv": "3c436b9845ef7271b5a43826154e1fbc673966727d84c851d1e289cf3be6f260",
+    "per-seed.csv": "6a19f4743f6aff132bb1e3f6a23ff9e856e02072dc7afc5ea5ae5a407dd9b5a1"
+  },
+  "groups": 21,
+  "kind": "verified-openai-binary-pair",
+  "manifest_sha256": "da42561444b5bd364e2aed2358f753c0c775cac7a2ce4b48f27880c847a42ed2",
+  "paper_equivalent": false,
+  "parent_pretraining_arms": 8,
+  "protocol_sha256": "da99ec55811e3070ae77cc44eb612fd128fbf39cfaed0486974d142f22927c93",
+  "tuning_verification_sha256": "857a92aaf8ba32f40badf8973448f4664b59322834da2e744aac20beecff02e2"
+}

@@ -1,0 +1,363 @@
+{
+  "public_read_only": true,
+  "paid_api_calls": 0,
+  "records": [
+    {
+      "url": "https://api.github.com/repos/lm-sys/RouteLLM",
+      "path": "lm-sys__RouteLLM/repository.json",
+      "sha256": "f1dc3e64fe91e0cb581ed8b8fcc538e3d0fc437444c78657f54938f4da32bded",
+      "bytes": 6072,
+      "ok": true
+    },
+    {
+      "url": "https://api.github.com/repos/lm-sys/RouteLLM/commits/main",
+      "path": "lm-sys__RouteLLM/commit.json",
+      "sha256": "12e0c69cfc5d66c748b3be935790bd722c3abed007dbb70ac062ef5f3fcd0c07",
+      "bytes": 4208,
+      "ok": true
+    },
+    {
+      "url": "https://api.github.com/repos/lm-sys/RouteLLM/git/trees/0b64fdafe049e596a3f5657c219329f24af24198?recursive=1",
+      "path": "lm-sys__RouteLLM/tree.json",
+      "sha256": "1280536dc5550eef496767d49b5e237c5db14a890d094209187ffce7ed29eab5",
+      "bytes": 31107,
+      "ok": true
+    },
+    {
+      "url": "https://raw.githubusercontent.com/lm-sys/RouteLLM/0b64fdafe049e596a3f5657c219329f24af24198/README.md",
+      "path": "lm-sys__RouteLLM/code/README.md",
+      "sha256": "380ebee5361b8a191d92091639bc2be08e258dd2b4404f804a680f343fa16f0c",
+      "bytes": 14103,
+      "ok": true
+    },
+    {
+      "url": "https://raw.githubusercontent.com/lm-sys/RouteLLM/0b64fdafe049e596a3f5657c219329f24af24198/examples/router_chat.py",
+      "path": "lm-sys__RouteLLM/code/examples/router_chat.py",
+      "sha256": "89d82dd50cc1d0c55f07c033438ddc180f89d2d5abcf21e8e5fefc50c7ca5613",
+      "bytes": 3274,
+      "ok": true
+    },
+    {
+      "url": "https://raw.githubusercontent.com/lm-sys/RouteLLM/0b64fdafe049e596a3f5657c219329f24af24198/routellm/routers/causal_llm/configs.py",
+      "path": "lm-sys__RouteLLM/code/routellm/routers/causal_llm/configs.py",
+      "sha256": "1740f578048106022b079fe998445d251fed94c61787d8e162fae6d52e318150",
+      "bytes": 976,
+      "ok": true
+    },
+    {
+      "url": "https://raw.githubusercontent.com/lm-sys/RouteLLM/0b64fdafe049e596a3f5657c219329f24af24198/routellm/routers/causal_llm/llm_utils.py",
+      "path": "lm-sys__RouteLLM/code/routellm/routers/causal_llm/llm_utils.py",
+      "sha256": "4b92b934122323e1f960b35b40ca58f2bbcec3356035f1419f9f18c8a09b0af8",
+      "bytes": 2328,
+      "ok": true
+    },
+    {
+      "url": "https://raw.githubusercontent.com/lm-sys/RouteLLM/0b64fdafe049e596a3f5657c219329f24af24198/routellm/routers/causal_llm/model.py",
+      "path": "lm-sys__RouteLLM/code/routellm/routers/causal_llm/model.py",
+      "sha256": "d6e963901a32a7b90fac57db0e62417acb7d9425d80751bc610c850b0fcf2985",
+      "bytes": 5894,
+      "ok": true
+    },
+    {
+      "url": "https://raw.githubusercontent.com/lm-sys/RouteLLM/0b64fdafe049e596a3f5657c219329f24af24198/routellm/routers/causal_llm/prompt_format.py",
+      "path": "lm-sys__RouteLLM/code/routellm/routers/causal_llm/prompt_format.py",
+      "sha256": "72c8059e4b9017c5c9578b2c3cff5f049a08d5d9f1f2645eb6908c22817bb62b",
+      "bytes": 5301,
+      "ok": true
+    },
+    {
+      "url": "https://raw.githubusercontent.com/lm-sys/RouteLLM/0b64fdafe049e596a3f5657c219329f24af24198/routellm/routers/matrix_factorization/model.py",
+      "path": "lm-sys__RouteLLM/code/routellm/routers/matrix_factorization/model.py",
+      "sha256": "81072b840e6dd389888e9f7a7198342693beab37b06aeab690083d67663da7ba",
+      "bytes": 3657,
+      "ok": true
+    },
+    {
+      "url": "https://raw.githubusercontent.com/lm-sys/RouteLLM/0b64fdafe049e596a3f5657c219329f24af24198/routellm/routers/matrix_factorization/train_matrix_factorization.py",
+      "path": "lm-sys__RouteLLM/code/routellm/routers/matrix_factorization/train_matrix_factorization.py",
+      "sha256": "36633e67a0104a2483cee37a73d49a2528c865ca41f6eb4ad3ed6e092bc60c75",
+      "bytes": 7747,
+      "ok": true
+    },
+    {
+      "url": "https://raw.githubusercontent.com/lm-sys/RouteLLM/0b64fdafe049e596a3f5657c219329f24af24198/routellm/routers/routers.py",
+      "path": "lm-sys__RouteLLM/code/routellm/routers/routers.py",
+      "sha256": "2393da77f9049970f57dd6d8eada3cc68e99506b2a547e7662e7d2d56b5065b8",
+      "bytes": 8431,
+      "ok": true
+    },
+    {
+      "url": "https://raw.githubusercontent.com/lm-sys/RouteLLM/0b64fdafe049e596a3f5657c219329f24af24198/routellm/routers/similarity_weighted/generate_embeddings.py",
+      "path": "lm-sys__RouteLLM/code/routellm/routers/similarity_weighted/generate_embeddings.py",
+      "sha256": "6670c66dae29737165b819d538cbae887ce647a1b56201e1e0e3c96543fe97f7",
+      "bytes": 1614,
+      "ok": true
+    },
+    {
+      "url": "https://raw.githubusercontent.com/lm-sys/RouteLLM/0b64fdafe049e596a3f5657c219329f24af24198/routellm/routers/similarity_weighted/utils.py",
+      "path": "lm-sys__RouteLLM/code/routellm/routers/similarity_weighted/utils.py",
+      "sha256": "1f5893b9d263897253788dced906b940c76dd8f87579982acad583c5eb343360",
+      "bytes": 3457,
+      "ok": true
+    },
+    {
+      "url": "https://api.github.com/repos/microsoft/best-route-llm",
+      "path": "microsoft__best-route-llm/repository.json",
+      "sha256": "4b36da4b9108d959a5f6a7a3f56dfd4b62944c57f97ee0a155d0218aa4a19cdd",
+      "bytes": 6721,
+      "ok": true
+    },
+    {
+      "url": "https://api.github.com/repos/microsoft/best-route-llm/commits/main",
+      "path": "microsoft__best-route-llm/commit.json",
+      "sha256": "2f162d288189c505144de55a72e97559b1e5856129676d3f0cae602ab66f01d8",
+      "bytes": 20428,
+      "ok": true
+    },
+    {
+      "url": "https://api.github.com/repos/microsoft/best-route-llm/git/trees/b13c5bdaaf9a87af7587a9a83afc9b7219c2509d?recursive=1",
+      "path": "microsoft__best-route-llm/tree.json",
+      "sha256": "2c11825dbb90d79fb0b1959fdf620cd77d1e27a969cebff5949065b77d9e6cbf",
+      "bytes": 8522,
+      "ok": true
+    },
+    {
+      "url": "https://raw.githubusercontent.com/microsoft/best-route-llm/b13c5bdaaf9a87af7587a9a83afc9b7219c2509d/README.md",
+      "path": "microsoft__best-route-llm/code/README.md",
+      "sha256": "e35be3325c915ceddbb358ff5ba5c246855ac7ab73dcff22b0fcf12e8911ffc4",
+      "bytes": 10531,
+      "ok": true
+    },
+    {
+      "url": "https://raw.githubusercontent.com/microsoft/best-route-llm/b13c5bdaaf9a87af7587a9a83afc9b7219c2509d/hybrid_llm/__init__.py",
+      "path": "microsoft__best-route-llm/code/hybrid_llm/__init__.py",
+      "sha256": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855",
+      "bytes": 0,
+      "ok": true
+    },
+    {
+      "url": "https://raw.githubusercontent.com/microsoft/best-route-llm/b13c5bdaaf9a87af7587a9a83afc9b7219c2509d/hybrid_llm/pair_ranker/__init__.py",
+      "path": "microsoft__best-route-llm/code/hybrid_llm/pair_ranker/__init__.py",
+      "sha256": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855",
+      "bytes": 0,
+      "ok": true
+    },
+    {
+      "url": "https://raw.githubusercontent.com/microsoft/best-route-llm/b13c5bdaaf9a87af7587a9a83afc9b7219c2509d/hybrid_llm/pair_ranker/collator.py",
+      "path": "microsoft__best-route-llm/code/hybrid_llm/pair_ranker/collator.py",
+      "sha256": "4967d389000e2c0e3d0d589e22a0efff27906789b88209f5412193479b15f8c5",
+      "bytes": 2952,
+      "ok": true
+    },
+    {
+      "url": "https://raw.githubusercontent.com/microsoft/best-route-llm/b13c5bdaaf9a87af7587a9a83afc9b7219c2509d/hybrid_llm/pair_ranker/config.py",
+      "path": "microsoft__best-route-llm/code/hybrid_llm/pair_ranker/config.py",
+      "sha256": "404603ad6a2ab2933b0fb4da101031872b88ad83d955af1447b1f979dde815a9",
+      "bytes": 3070,
+      "ok": true
+    },
+    {
+      "url": "https://raw.githubusercontent.com/microsoft/best-route-llm/b13c5bdaaf9a87af7587a9a83afc9b7219c2509d/hybrid_llm/pair_ranker/data.py",
+      "path": "microsoft__best-route-llm/code/hybrid_llm/pair_ranker/data.py",
+      "sha256": "7a6ac3a41f2f6f699293c2dd00f55ddf8efdba54fe461c1af01ada9d23e139f7",
+      "bytes": 12139,
+      "ok": true
+    },
+    {
+      "url": "https://raw.githubusercontent.com/microsoft/best-route-llm/b13c5bdaaf9a87af7587a9a83afc9b7219c2509d/hybrid_llm/pair_ranker/model_util.py",
+      "path": "microsoft__best-route-llm/code/hybrid_llm/pair_ranker/model_util.py",
+      "sha256": "a1f371431de16164773d4bc6133d08e5fea7d5a9fc0ba9e4a217ca5b95568b4a",
+      "bytes": 4304,
+      "ok": true
+    },
+    {
+      "url": "https://raw.githubusercontent.com/microsoft/best-route-llm/b13c5bdaaf9a87af7587a9a83afc9b7219c2509d/hybrid_llm/pair_ranker/ranker.py",
+      "path": "microsoft__best-route-llm/code/hybrid_llm/pair_ranker/ranker.py",
+      "sha256": "df9ff2f1a1b9689e27cdb2a49025f17b0e42f50c135a76ae0c62ef340daf1ad0",
+      "bytes": 9552,
+      "ok": true
+    },
+    {
+      "url": "https://raw.githubusercontent.com/microsoft/best-route-llm/b13c5bdaaf9a87af7587a9a83afc9b7219c2509d/hybrid_llm/pair_ranker/trainer.py",
+      "path": "microsoft__best-route-llm/code/hybrid_llm/pair_ranker/trainer.py",
+      "sha256": "b5ab6c847598ed23ee3f0f12f7bf047b2bff85adb1b84cfa3c76f8228e44f902",
+      "bytes": 5783,
+      "ok": true
+    },
+    {
+      "url": "https://raw.githubusercontent.com/microsoft/best-route-llm/b13c5bdaaf9a87af7587a9a83afc9b7219c2509d/notebooks/reward_modeling.py",
+      "path": "microsoft__best-route-llm/code/notebooks/reward_modeling.py",
+      "sha256": "f4b63491b839aff2ae5153cd53d2c6c829f6c0d3b5a8d8aa65b5e87de5c5bc31",
+      "bytes": 4744,
+      "ok": true
+    },
+    {
+      "url": "https://raw.githubusercontent.com/microsoft/best-route-llm/b13c5bdaaf9a87af7587a9a83afc9b7219c2509d/notebooks/scoring_per_model_armoRM.py",
+      "path": "microsoft__best-route-llm/code/notebooks/scoring_per_model_armoRM.py",
+      "sha256": "7def7bdbcfea1c664976070866e15354f1b75acef3b852cf84e3cba1c7201bb7",
+      "bytes": 2942,
+      "ok": true
+    },
+    {
+      "url": "https://raw.githubusercontent.com/microsoft/best-route-llm/b13c5bdaaf9a87af7587a9a83afc9b7219c2509d/notebooks/scoring_per_model_ourRM.py",
+      "path": "microsoft__best-route-llm/code/notebooks/scoring_per_model_ourRM.py",
+      "sha256": "c3c75673e2801183faae226c856f685e3d17ea11bd30c751f05343d90f889d0e",
+      "bytes": 2573,
+      "ok": true
+    },
+    {
+      "url": "https://raw.githubusercontent.com/microsoft/best-route-llm/b13c5bdaaf9a87af7587a9a83afc9b7219c2509d/train_router.py",
+      "path": "microsoft__best-route-llm/code/train_router.py",
+      "sha256": "a4eb961e006e3b48c4f570feab35a69b8ba204063671749e6205c47623bf125d",
+      "bytes": 18553,
+      "ok": true
+    },
+    {
+      "url": "https://api.github.com/repos/xlang-ai/instructor-embedding",
+      "path": "xlang-ai__instructor-embedding/repository.json",
+      "sha256": "4bc0a53b7b60f1fcd936cac48a8a5ab2ff8137394a98e5357455ad58b7453ec1",
+      "bytes": 6902,
+      "ok": true
+    },
+    {
+      "url": "https://api.github.com/repos/xlang-ai/instructor-embedding/commits/main",
+      "path": "xlang-ai__instructor-embedding/commit.json",
+      "sha256": "595a20516b97935eae1d336cdc6c1a866f96e8ea30d6487a3f21880392202b42",
+      "bytes": 5983,
+      "ok": true
+    },
+    {
+      "url": "https://api.github.com/repos/xlang-ai/instructor-embedding/git/trees/9a9742c130cef6e028af9f3bd582204c5bcfe96e?recursive=1",
+      "path": "xlang-ai__instructor-embedding/tree.json",
+      "sha256": "98fabbeb1cd8085a46404f2b050e7d61068dcc2ed5581910e1651ee2537b25e0",
+      "bytes": 59281,
+      "ok": true
+    },
+    {
+      "url": "https://raw.githubusercontent.com/xlang-ai/instructor-embedding/9a9742c130cef6e028af9f3bd582204c5bcfe96e/InstructorEmbedding/instructor.py",
+      "path": "xlang-ai__instructor-embedding/code/InstructorEmbedding/instructor.py",
+      "sha256": "b023be41b02db2a22802b9c6dc6f8a4037bd021f4a8bfb45024073ba6b808476",
+      "bytes": 28380,
+      "ok": true
+    },
+    {
+      "url": "https://raw.githubusercontent.com/xlang-ai/instructor-embedding/9a9742c130cef6e028af9f3bd582204c5bcfe96e/README.md",
+      "path": "xlang-ai__instructor-embedding/code/README.md",
+      "sha256": "ffadbba969d4e1b42ff1c398a28d009542877bfa963f2896a78e5583c5bb69b8",
+      "bytes": 23702,
+      "ok": true
+    },
+    {
+      "url": "https://raw.githubusercontent.com/xlang-ai/instructor-embedding/9a9742c130cef6e028af9f3bd582204c5bcfe96e/evaluation/MTEB/examples/evaluate_model.py",
+      "path": "xlang-ai__instructor-embedding/code/evaluation/MTEB/examples/evaluate_model.py",
+      "sha256": "76df70430a17fe5d634483a25cbe86c972428b212ae2558f00408741f40452cf",
+      "bytes": 1283,
+      "ok": true
+    },
+    {
+      "url": "https://raw.githubusercontent.com/xlang-ai/instructor-embedding/9a9742c130cef6e028af9f3bd582204c5bcfe96e/evaluation/prompt_retrieval/MetaICL/metaicl/model.py",
+      "path": "xlang-ai__instructor-embedding/code/evaluation/prompt_retrieval/MetaICL/metaicl/model.py",
+      "sha256": "9afd7410b9fa32ce434d51540b82484513d04728efcb384cebf32ee219ebe594",
+      "bytes": 11358,
+      "ok": true
+    },
+    {
+      "url": "https://raw.githubusercontent.com/xlang-ai/instructor-embedding/9a9742c130cef6e028af9f3bd582204c5bcfe96e/train.py",
+      "path": "xlang-ai__instructor-embedding/code/train.py",
+      "sha256": "e640f9995f75fe326181851a2be64c6afe1df62fc85cae1bfd711348c0582f66",
+      "bytes": 23283,
+      "ok": true
+    },
+    {
+      "url": "https://api.github.com/repos/ast-fri/contextual-bandit-routing-of-llms",
+      "path": "ast-fri__contextual-bandit-routing-of-llms/repository.json",
+      "sha256": "caad91923cfe1e6870b63615e85ee479c4366e140d2fb7fec676373714af4d57",
+      "bytes": 6986,
+      "ok": true
+    },
+    {
+      "url": "https://api.github.com/repos/ast-fri/contextual-bandit-routing-of-llms/commits/main",
+      "path": "ast-fri__contextual-bandit-routing-of-llms/commit.json",
+      "sha256": "21ab53ad947c42d49c42079609b2cea479eeba64c9cb85545440d6fb3e977b56",
+      "bytes": 7011,
+      "ok": true
+    },
+    {
+      "url": "https://api.github.com/repos/ast-fri/contextual-bandit-routing-of-llms/git/trees/369160b38ac915cdc9359177faa1ded3afc5d0ad?recursive=1",
+      "path": "ast-fri__contextual-bandit-routing-of-llms/tree.json",
+      "sha256": "ce15263f7b23298b14d766f7024631a1819e9073b113b46df49502772c7b7e67",
+      "bytes": 73593,
+      "ok": true
+    },
+    {
+      "url": "https://raw.githubusercontent.com/ast-fri/contextual-bandit-routing-of-llms/369160b38ac915cdc9359177faa1ded3afc5d0ad/README.md",
+      "path": "ast-fri__contextual-bandit-routing-of-llms/code/README.md",
+      "sha256": "8e8bc68180997244cb9b495135d514bad41a431e3f9621602e16b4d0546cd050",
+      "bytes": 35,
+      "ok": true
+    },
+    {
+      "url": "https://huggingface.co/api/models/hkunlp/instructor-xl",
+      "path": "instructor-xl/model.json",
+      "sha256": "5585e19e9f491d17bfc62352190ea0f1f7193363bb8f353fee9b393daff2b51a",
+      "bytes": 142123,
+      "ok": true
+    },
+    {
+      "url": "https://huggingface.co/hkunlp/instructor-xl/resolve/ce48b213095e647a6c3536364b9fa00daf57f436/modules.json",
+      "path": "instructor-xl/modules.json",
+      "sha256": "41251094dfd3e7ff81a85ba97b3f4788df47e4039f1bc5037575b43c028beb40",
+      "bytes": 461,
+      "ok": true
+    },
+    {
+      "url": "https://huggingface.co/hkunlp/instructor-xl/resolve/ce48b213095e647a6c3536364b9fa00daf57f436/config.json",
+      "path": "instructor-xl/config.json",
+      "sha256": "0a38bc45e2db96f87ac3f32afa7fb02acf483b4d09ded3e1ca235ad925c68546",
+      "bytes": 1521,
+      "ok": true
+    },
+    {
+      "url": "https://huggingface.co/hkunlp/instructor-xl/resolve/ce48b213095e647a6c3536364b9fa00daf57f436/sentence_bert_config.json",
+      "path": "instructor-xl/sentence_bert_config.json",
+      "sha256": "ec8e29d6dcb61b611b7d3fdd2982c4524e6ad985959fa7194eacfb655a8d0d51",
+      "bytes": 53,
+      "ok": true
+    },
+    {
+      "url": "https://huggingface.co/hkunlp/instructor-xl/resolve/ce48b213095e647a6c3536364b9fa00daf57f436/1_Pooling/config.json",
+      "path": "instructor-xl/1_Pooling/config.json",
+      "sha256": "f2fa6333d3899e2f9368e2e2741ece8e74160337b3698f475f6e0f7f28e396fe",
+      "bytes": 270,
+      "ok": true
+    },
+    {
+      "url": "https://huggingface.co/hkunlp/instructor-xl/resolve/ce48b213095e647a6c3536364b9fa00daf57f436/2_Dense/config.json",
+      "path": "instructor-xl/2_Dense/config.json",
+      "sha256": "d8dfe28f975c278029485521b90a9b2ad7f11f551a862fb772e38973050a22a9",
+      "bytes": 116,
+      "ok": true
+    },
+    {
+      "url": "https://huggingface.co/hkunlp/instructor-xl/resolve/ce48b213095e647a6c3536364b9fa00daf57f436/config_sentence_transformers.json",
+      "path": "instructor-xl/config_sentence_transformers.json",
+      "sha256": "f631e4bd49910419948c5e9134ab07e0d63b22b8cebbe6875f99a0712bcadd4d",
+      "bytes": 122,
+      "ok": true
+    },
+    {
+      "url": "https://huggingface.co/api/models/hkunlp/instructor-xl/tree/ce48b213095e647a6c3536364b9fa00daf57f436?recursive=true",
+      "path": "instructor-xl/tree.json",
+      "sha256": "3bf3831f9a190fb35b9a15ce5cd96ddad43a16f0ea3eace53c6b9bd267d1eb7f",
+      "bytes": 2253,
+      "ok": true
+    },
+    {
+      "url": "https://api.github.com/search/repositories?q=%22Adaptive+LLM+Routing+under+Budget+Constraints%22",
+      "path": "pilot-repository-search.json",
+      "sha256": "4af480b8ee5b87b369a76c49bd22c9a783908272ebffbe97898f8ab0f0772a5f",
+      "bytes": 55,
+      "ok": true
+    }
+  ]
+}

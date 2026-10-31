@@ -1,0 +1,21 @@
+{
+  "paid_api_calls": 0,
+  "passed": true,
+  "probes": [
+    {
+      "error": "Pinned checksum mismatch: configs/model_mapping.json",
+      "passed": true,
+      "probe": "changed actual protocol source pin"
+    },
+    {
+      "error": "Incomplete artifact: C:\\Users\\ADMIN\\Documents\\ChatGPT\\AI pilot\\outputs\\openai-core-20261031\\negative-control\\incomplete",
+      "passed": true,
+      "probe": "incomplete artifact"
+    },
+    {
+      "error": "Incomplete or unexpected deployment inventory",
+      "passed": true,
+      "probe": "incomplete858 condition report"
+    }
+  ]
+}
