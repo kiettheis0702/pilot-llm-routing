@@ -73,7 +73,7 @@ jobs:
       - name: Replay zero and one-percent feedback noise
         shell: pwsh
         run: tools/reproduction-ci.ps1 -Stage noise
-      - name: Fresh binary tuning and one complete PILOT group
+      - name: Fresh binary tuning and all seven methods on seed7
         shell: pwsh
         run: tools/reproduction-ci.ps1 -Stage binary
       - name: Compare replays with published values and record coverage

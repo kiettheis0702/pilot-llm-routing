@@ -167,11 +167,33 @@ def verify_preference(folder, seed, candidates, *, comparisons=None):
                 test_labels_flipped=comparisons is not None, paid_api_calls=0)
 
 
+def verify_preference_prerequisites():
+    """Recheck consumed archive inputs and the published oracle before fitting."""
+    from tools.reproduction_bundle import members, safe_path, check_file
+    from tools.course.analyze import verify_package
+    entries = members(read(ROOT / 'configs/openai-reproduction-files.json'))
+    for name in (
+        'outputs/research-cost-inputs-20261029/cost-size-identity_match.json',
+        'outputs/openai-standard-20261030/imported/caches/source-1/manifest.json',
+        'outputs/openai-standard-20261030/imported/caches/source-1/vectors.npy',
+    ):
+        check_file(safe_path(ROOT, name), entries[name])
+    verify_package(ROOT / 'reports/openai-preference500-2026-10-31')
+
+
+def record_ci_summary(summary):
+    from tools.openai_study import once
+    path = ROOT / 'outputs/ci-reproduction/summary.json'
+    once(path, summary)
+    return path
+
+
 def preference(seed):
     from tools.paper_preflight.train import run_training
     from tools.openai_study import once
     if sha(ROOT / SPLIT_TARGET / 'preference-three-way.json') != SPLIT_SHA256:
         raise ValueError('Run verified preparation before preference fitting')
+    verify_preference_prerequisites()
     settings = read(ROOT / 'configs/paper_preflight_protocol.json')['pretraining']
     base = FOLLOWUP / 'preference500'
     if seed == 42:

@@ -63,13 +63,21 @@ switch ($Stage) {
     'binary' {
         foreach ($action in @('declare','tune','freeze')) { Invoke-CheckedPython -m tools.openai_study_binary_run $action }
         Invoke-CheckedPython -m tools.openai_study_binary_verify tuning
-        Invoke-CheckedPython -m tools.openai_study_binary_run run --limit 1
-        Invoke-CheckedPython -m tools.openai_study_binary_verify --domain routerbench --seed 7 --method pilot --output "$readback/binary-seed7.json"
+        # The frozen producer iterates seven methods per seed. Its first method
+        # is epoch-greedy, so a one-group limit does not produce a PILOT trace.
+        $protocol = Get-Content "$followup/binary/protocol.json" -Raw | ConvertFrom-Json
+        $methods = @($protocol.tuning.routerbench.selected_parameters.PSObject.Properties.Name)
+        if ($methods.Count -ne 7 -or 'pilot' -notin $methods) { throw 'Unexpected binary method inventory' }
+        Invoke-CheckedPython -m tools.openai_study_binary_run run --limit 7
+        foreach ($method in $methods) {
+            Invoke-CheckedPython -m tools.openai_study_binary_verify --domain routerbench --seed 7 --method $method --output "$readback/binary-$method-seed7.json"
+        }
     }
     'summary' {
         @'
 import csv, hashlib, json, math, os, sys
 from pathlib import Path
+from tools.openai_study_reproduce import record_ci_summary, sha
 root=Path.cwd()
 def read(path): return json.loads(path.read_text(encoding='utf-8'))
 checks=root/'outputs/followup-reproduction-checks'
@@ -77,7 +85,7 @@ readback=root/'outputs/ci-reproduction/readback'
 summary=dict(commit=os.environ.get('GITHUB_SHA'),run_id=os.environ.get('GITHUB_RUN_ID'),
     python=sys.version,paid_api_calls=0,full_grid_rerun=False,fresh_cuda_environment_tested=False)
 for family,pattern,package,expected in [('core','core-*.json','openai-core',6),
-    ('ablations','ablation-*.json','openai-ablations',5),('binary','binary-*.json','openai-binary',1)]:
+    ('ablations','ablation-*.json','openai-ablations',5),('binary','binary-*.json','openai-binary',7)]:
     proofs=[read(p) for p in sorted(readback.glob(pattern))]
     assert len(proofs)==expected and all(p['verified'] for p in proofs)
     with (root/f'reports/{package}-2026-10-31/per-seed.csv').open(encoding='utf-8',newline='') as stream:
@@ -105,8 +113,10 @@ for manifest in (root/'reports').glob('*/package-files.json'):
         assert actual==want
     packages+=1
 summary['unchanged_report_packages']=packages
-result=root/'outputs/ci-reproduction/summary.json'
-result.write_text(json.dumps(summary,indent=2)+'\n',encoding='utf-8')
+summary['source_sha256']={name:sha(root/name) for name in (
+    'tools/openai_study_reproduce.py','tools/reproduction-ci.ps1',
+    'configs/hybrid-batch-profile-2026-10-31.json','uv.lock')}
+record_ci_summary(summary)
 print('REPRODUCTION_EVIDENCE_JSON='+json.dumps(summary,separators=(',',':')))
 '@ | & .venv/Scripts/python.exe -X utf8 -
         if ($LASTEXITCODE -ne 0) { throw "Evidence summary failed with exit code $LASTEXITCODE" }
