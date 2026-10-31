@@ -4,6 +4,11 @@
 It uses a separately checksummed cache/input archive and tests a clean checkout.
 The BGE commands and earlier reconstruction limits below are historical.
 
+**Follow-up prerequisites and complete command order:**
+[followup-reproduce.md](followup-reproduce.md). It supplies the missing
+preference split preparation, calibration-selected replicate entrypoint,
+independent cost replay and the pinned historical Hybrid batch decision record.
+
 Run from repository root, one command at a time. Use a new output directory for every immutable stage. No paid API is needed.
 
 **31 October followup:** commands below reconstruct the historical BGE course
@@ -75,11 +80,13 @@ $env:TOKENIZERS_PARALLELISM='false'
 
 The default-batch adapter requires its pinned hardware-only feasibility record,
 immutable parent producers, source downloads, model verification and parent core
-protocol/partitions. The saved operational hardware profile is not in a clone.
-It is an evidence-preserving continuation adapter, not a standalone clean-clone
-benchmark builder. Do not bypass these guards or copy a protocol while changing
-inputs. The full-clone reproducibility limit for ignored paid caches and raw
-lineage remains explicit. Drift uses the original2/64 producer; binary uses8/16
+protocol/partitions. Run `python -m tools.openai_study_reproduce prepare` first to
+install the original checksummed hardware decision record. It is historical
+evidence, not a new-machine throughput measurement; run the real compatibility
+probe and input audit in the new checkout. Do not bypass these guards or copy
+a protocol while changing inputs. The restored archive supplies paid caches;
+raw learning lineage must be regenerated in the documented order. Drift uses
+the original2/64 producer; binary uses8/16
 with eval8. See [declared recipes and limitations](hybrid-drift-protocol.md).
 
 Offline follow-up publication preparation requires all11 verified report packages:

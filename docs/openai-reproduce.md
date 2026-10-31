@@ -43,6 +43,8 @@ $env:MKL_NUM_THREADS='1'
 $env:OPENBLAS_NUM_THREADS='1'
 .venv/Scripts/python.exe -c "from scripts.resources import require_resources; print(require_resources())"
 New-Item -ItemType Directory -Force .cache | Out-Null
+$env:TIKTOKEN_CACHE_DIR=Join-Path (Get-Location) '.cache/tiktoken'
+.venv/Scripts/python.exe -c "import tiktoken; from scripts.cost_inputs import HistoricalCounter; tiktoken.get_encoding('cl100k_base'); print(HistoricalCounter().metadata)"
 $bundle = Get-Content configs/openai-reproduction-release.json -Raw | ConvertFrom-Json
 $zip = Join-Path .cache $bundle.filename
 Invoke-WebRequest -Uri $bundle.url -OutFile $zip
@@ -52,6 +54,9 @@ if ((Get-FileHash -Algorithm SHA256 -LiteralPath $zip).Hash.ToLowerInvariant() -
 ```
 
 Cài SDK không gọi model. Không tạo `.env.openai` hoặc điền key cho luồng này.
+Lệnh tokenizer tải một bảng từ vựng công khai nhỏ và kiểm SHA-256 đã pin;
+đây không phải request tạo embedding. Máy sạch cần bước này trước bộ test
+chặn mạng; môi trường Python mới trên máy cũ có thể đã dùng lại cache toàn máy.
 Tag release cố định cả code lẫn manifest; không chạy protocol đã đóng băng trên
 một `main` tương lai đã thay source. `verify_pins` cố ý từ chối code khác byte.
 Lệnh restore kiểm toàn bộ archive và các đích trước khi ghi; thiếu/thừa file,
@@ -131,6 +136,12 @@ protocol hoặc checksum để ép resume. Muốn chạy các nhóm core còn l�
 - Chưa xác nhận file đã nộp Moodle hoặc mức sẵn sàng bảo vệ của hai thành viên.
 
 ## Duy trì gói
+
+Để chạy các nhánh nghiên cứu bổ sung, dùng tag
+`openai-followup-reproduction-2026-10-31` và làm tiếp theo
+[hướng dẫn follow-up](followup-reproduce.md). Tag core ở trên giữ nguyên bản
+phát hành ban đầu; tag mới cố định các script bổ sung sau đó. Gói 139 file và
+checksum của nó không thay đổi.
 
 Trên máy giữ đủ 139 file đúng hash, có thể tạo một ZIP mới bằng
 `python -m tools.reproduction_bundle build --archive <duong-dan-moi.zip>`.

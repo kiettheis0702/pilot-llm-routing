@@ -1,5 +1,13 @@
 # Đối chiếu yêu cầu môn học — 30/10/2026
 
+**Bản chụp lịch sử ngày 30/10:** các yêu cầu và liên kết bên dưới là nguồn đối
+chiếu môn học; cột hiện trạng/việc cần làm mô tả thời điểm đọc, không phải trạng
+thái hiện hành. Xem [kết quả OpenAI hiện hành](openai-followup-status.md),
+[hướng dẫn chạy lại](followup-reproduce.md) và
+[bàn giao slide/poster cho Claude](CLAUDE_UPDATE_OPENAI_2026-10-31.md).
+Repository đã công khai và kết quả đã được tích hợp sau bản chụp này; việc đó
+không xác nhận đã nộp Moodle hoặc đã kiểm tra khả năng bảo vệ của hai thành viên.
+
 Đọc trực tiếp Moodle bằng phiên Chrome đã đăng nhập theo yêu cầu người dùng,
 đề chi tiết gồm sáu trang, bảng đăng ký paper và bảng QA của lớp. Đây là bản
 đối chiếu yêu cầu và kế hoạch đề xuất; chưa triển khai hay nộp các phần còn thiếu.

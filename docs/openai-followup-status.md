@@ -1,5 +1,9 @@
 # OpenAI follow-up: evidence and remaining limits
 
+Later reproducibility checks: **714 passing tests** and real CPU follow-up
+replays on a fresh Windows runner. See the [validation record](followup-reproduction-validation-2026-10-31.md)
+for exact coverage; these repeated checks do not add new scientific/W&B records.
+
 Completed31 October2026: all declared local scientific studies, final review,
 public W&B readbacks and Claude research handoff are complete. Completed
 scientific packages below retain their exact hashes and adverse results.
@@ -76,6 +80,12 @@ rounds, 11 deployment conditions), with independent replay and resume checks.
 See [release verification](release-readiness-2026-10-31.md) for exact coverage
 and current regression results. The entire core/follow-up grid and a fresh
 neural environment have not been rerun; their original results remain frozen.
+
+See [follow-up reproduction commands](followup-reproduce.md) for the missing
+preparation steps and the dependency order for every reported study family.
+The original batch decision record is now packaged with a checksum; actual
+new-machine Hybrid probes remain required. Preference splits are regenerated
+from the restored inputs instead of requiring the old course output directory.
 
 [Claude's update map](CLAUDE_UPDATE_OPENAI_2026-10-31.md) targets the actual
 22-slide deck and one-slide poster, with exact figures, numeric replacements and
