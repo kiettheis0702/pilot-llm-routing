@@ -23,6 +23,7 @@ jobs:
       UV_CONCURRENT_INSTALLS: '1'
       UV_CONCURRENT_BUILDS: '1'
       PYTHONUTF8: '1'
+      TIKTOKEN_CACHE_DIR: ${{ github.workspace }}/.cache/tiktoken
     steps:
       - uses: actions/checkout@11d5960a326750d5838078e36cf38b85af677262 # v4
         with:
@@ -39,6 +40,11 @@ jobs:
           uv sync --locked --python 3.11.18 --extra cost --extra tracking --extra openai
           if ($LASTEXITCODE -ne 0) { exit $LASTEXITCODE }
           New-Item -ItemType Directory -Path .cache -Force | Out-Null
+      - name: Restore and checksum the public tokenizer vocabulary
+        shell: pwsh
+        run: |
+          .venv/Scripts/python.exe -c "import tiktoken; from scripts.cost_inputs import HistoricalCounter; tiktoken.get_encoding('cl100k_base'); print(HistoricalCounter().metadata)"
+          if ($LASTEXITCODE -ne 0) { exit $LASTEXITCODE }
       - name: Baseline regression
         shell: pwsh
         run: |
