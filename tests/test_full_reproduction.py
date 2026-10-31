@@ -106,8 +106,8 @@ catch { $failed=$true }
 Write-Output ('CALLER_CUDA='+$env:CUDA_VISIBLE_DEVICES)
 Write-Output ('CHILD_FAILED='+$failed)
 """.replace('SOURCE', quoted_source).replace('EXIT_CODE', str(exit_code)), encoding='utf-8')
-    result = subprocess.run(['powershell.exe','-NoProfile','-NonInteractive','-File',str(script)],
+    result = subprocess.run(['pwsh','-NoProfile','-NonInteractive','-File',str(script)],
                             cwd=tmp_path, capture_output=True, text=True, check=True)
-    assert 'CHILD_CUDA=-1' in result.stdout
+    assert 'CHILD_CUDA=-1' in result.stdout, (result.stdout, result.stderr)
     assert 'CALLER_CUDA=caller-device-choice' in result.stdout
     assert f'CHILD_FAILED={str(exit_code != 0)}' in result.stdout
