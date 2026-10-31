@@ -8,6 +8,25 @@ independent checks and public W&B readbacks are complete. This file directs
 Claude's presentation edits; Codex preserved the original PPTX/PDF/preview files.
 Author/model/release prerequisites still listed below remain unresolved facts.
 
+## Source precedence and release-readiness update
+
+This is the **current** presentation handoff. `CLAUDE_HANDOFF.md`, the PC
+handoff, implementation-status and dated BGE handoffs are historical. Their
+wording such as "current", "main complete" and their old run counts must not
+override this file or [current OpenAI status](openai-followup-status.md).
+Frozen report packages keep their original bytes; distinguish historical
+checkpoint metadata from the current navigation/status documents.
+
+The [offline restore guide](openai-reproduce.md) and
+[release verification](release-readiness-2026-10-31.md) cover a separate
+139-file cache/input ZIP and a clean-checkout core replay. If reproducibility
+is mentioned on a slide, say exactly what ran: a fresh seed-7 prior refit,
+32,270 RouterBench learning rounds, 11 PILOT deployment conditions, independent
+trace replay and byte-identical resume. Do not claim all OpenAI/Instructor/
+Hybrid studies were retrained in a fresh environment. Cache reuse required no
+new paid request. Never equate code merged into `main` with Moodle submission
+or an approved final presentation.
+
 ## Inspect these exact files
 
 Current deck is **midterm/8.pptx,22 slides**, SHA-256
@@ -23,6 +42,12 @@ Read-only source extraction with shape IDs, text, notes and chart cached values:
 `outputs/openai-followup-20261031/presentation-current.json`.
 All presentation/preview/reference-file baseline hashes:
 `outputs/openai-followup-20261031/presentation-baseline.json`.
+These extraction files and the current `midterm/` and `poster/` drafts are
+local working files, not members of the reproduction ZIP or guaranteed to
+exist in a Git clone. If a saved extraction is unavailable, inspect the actual
+PPTX and read its text, chart data and notes directly. If the PPTX hash differs
+from the baseline above, remap the slide numbers before editing; do not replace
+newer user edits with the historical 33-slide deck.
 
 ## Authoritative result packages
 
@@ -296,3 +321,27 @@ PPTX edits/render/layout/font/notes checks in Claude's workflow, preserving the
 current design and editable objects. Old33-slide deliverable remains historical.
 The new public artifact contains no slide/poster derivative. Never label these
 local8-arm/single-seed supplements as exact author reproduction.
+
+Claude's completion checklist (actual file edits and rendering remain pending):
+
+- Update slide text, native chart series/caches, axis labels, legends, captions,
+  footnotes and speaker notes together; remove stale BGE values only where the
+  panel now represents OpenAI. Keep explicitly labelled BGE comparisons.
+- Trace every displayed number to the exact CSV row/aggregation in this map.
+  Distinguish percent from percentage points, three-seed means from seed42,
+  allocated estimated budget from actual recorded cost, and coverage from accuracy.
+- Audit every claim and citation/QR destination, using the new publication map
+  for new results and the old map only for historical BGE. Cite paper claims
+  separately from local measurements; no invented URLs or matched-budget points.
+- Keep the editable 22-slide design where possible, 20–40 slides overall,
+  notes on every slide (at most 500 words each), and deck below 20 MB. Retain
+  Vietnamese delivery, numbered IEEE citations on relevant slides and no
+  standalone references slide. Poster is one A2 portrait slide, 420 × 594 mm.
+- Export new previews and inspect **every** slide and the whole poster at
+  reading size: no overflow, overlap, clipped labels, unreadable chart text,
+  substituted fonts or broken equations. Open the actual files in PowerPoint
+  when available; code tests and ZIP/XML checks do not establish layout quality.
+- Deliver both edited PPTX files, their matching PDF previews, and a short
+  Markdown change/QA log listing source rows, unresolved issues and any check
+  not performed. Record new file hashes. Do not report the slides as updated
+  merely because this instruction file was updated; do not submit Moodle.

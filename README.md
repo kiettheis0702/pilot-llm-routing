@@ -14,6 +14,15 @@ Pranoy Panda, Raghav Magazine, Chaitanya Devaguptapu, Sho Takemori, and Vishal S
 
 ## Current status
 
+Start with the [current OpenAI evidence](docs/openai-followup-status.md),
+[offline restore and clean-checkout replay](docs/openai-reproduce.md), and
+[Claude slide/poster update map](docs/CLAUDE_UPDATE_OPENAI_2026-10-31.md).
+Older BGE handoffs are historical; their counts must not be relabelled OpenAI.
+Release verification: **700 passed, 1 skipped** in a new locked environment;
+the separate 139-file archive supports a verified clean-checkout core replay.
+The [verification record](docs/release-readiness-2026-10-31.md) states its limits.
+
+
 **OpenAI follow-up completed (31 October2026):** real cached
 `text-embedding-3-small` vectors now feed858 main conditions and240 controlled
 ablations: **1098 OpenAI conditions**, separate from historical1098 BGE.
@@ -54,6 +63,11 @@ retained. The original core checkpoint made no additional paid requests and reta
 eight-arm scope. Core-checkpoint regression: **596 passed, 1 skipped**, with the transient Windows file-denial
 invocation and successful reruns retained. [Frozen execution evidence](reports/openai-core-2026-10-31/assembly.json).
 
+## Historical milestones (through 30 October 2026)
+
+The statuses, branch claims and test counts in this section describe their dated
+checkpoint. Current results and presentation instructions are linked above.
+
 **Offline OpenAI workflow (30 October 2026):** downloaded Batch outputs can now
 be imported with partial recovery into verified 1,536D caches and the existing
 training pipeline. Separate train/calibration/test fitting is tested, including
@@ -74,7 +88,7 @@ Project visibility is **Public**. An anonymous connection verified all 1,128
 finished runs, configs and 13,314 metrics; the signed-out browser shows the project.
 The complete implementation is on **main**. No Moodle submission has occurred.
 [Public experiment → script → run mapping](reports/publication-2026-10-30/experiment-map.csv).
-[Claude handoff for slides and poster](docs/CLAUDE_HANDOFF.md) contains the current
+[historical BGE handoff for slides and poster](docs/CLAUDE_HANDOFF.md) contains the then-current
 results, source links, course requirements and remaining presentation work.
 [Upload verification](docs/wandb-upload-2026-10-30.md).
 [Reproduce and publish checklist](docs/course-reproduce.md). The frozen course
@@ -119,7 +133,7 @@ seed ranges, paired ablations and recorded-cost overruns are reported.
 The [full input audit](docs/offline-research-experiments.md) covers 38,055 prompts
 and selects the verified 2,048-token recipe: no routing truncation and 13 preference
 inputs truncated. [Cache/prior evidence](reports/full-embedding-prior-2026-10-29.json)
-and [current handoff](docs/full-embedding-prior-handoff-2026-10-29.md).
+and [historical BGE handoff](docs/full-embedding-prior-handoff-2026-10-29.md).
 The [offline cost inputs](docs/cost-inputs.md) now cover all routing queries and
 reconstruct all 11,000 tuning costs with an explicit dataset/source scale factor.
 The [common deployment adapter](docs/common-deployment-protocol.md) now supports
@@ -137,9 +151,10 @@ state replay. [Integration evidence](reports/common-deployment-2026-10-29.json).
 
 ## Get the repository
 
-Moving to another Windows PC: follow the Vietnamese
-[PC handoff and setup guide](docs/PC_HANDOFF_2026-10-29.md), including the
-seven-file data transfer checksum manifest.
+Moving to another Windows PC: follow the current Vietnamese
+[OpenAI restore and replay guide](docs/openai-reproduce.md), including the
+139-file cache/input archive and SHA-256 checks. The older
+[PC handoff](docs/PC_HANDOFF_2026-10-29.md) is retained as BGE history.
 
 ```sh
 git clone https://github.com/kiettheis0702/pilot-llm-routing.git
@@ -162,7 +177,9 @@ Verified in a fresh clone and new Python environment: 310 tests passed and both
 commands completed; [execution evidence](reports/reproducibility-2026-10-29.json).
 That is the historical committed baseline. This implementation
 was additionally verified before committing from a byte-preserving source snapshot in a new
-environment: 441 passed, one skipped and both smokes succeeded. [Current evidence](reports/full-experiments-2026-10-29/reproduction-post-review/report.json).
+environment: 441 passed, one skipped and both smokes succeeded. [Historical BGE evidence](reports/full-experiments-2026-10-29/reproduction-post-review/report.json).
+For the OpenAI clean-checkout check and latest release validation, see the
+[release verification](docs/release-readiness-2026-10-31.md).
 See [toy outputs and interpretation](docs/toy-pipeline.md), [baseline commands](docs/baselines.md),
 [pretraining](docs/pretraining-core.md), [PILOT](docs/pilot-core.md),
 [cost policy](docs/cost-policy.md), and [deployment](docs/deployment.md).

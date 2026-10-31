@@ -1,5 +1,7 @@
 # Verified tuning handoff
 
+> **TÀI LIỆU LỊCH SỬ — BGE / mốc 29–30/10/2026.** Các số liệu, trạng thái “hiện tại/current”, nhánh Git và việc còn chờ bên dưới chỉ đúng tại mốc ghi nhận. Không dùng làm kết quả OpenAI hiện hành. Đọc [trạng thái OpenAI](openai-followup-status.md), [bản giao việc hiện hành cho Claude](CLAUDE_UPDATE_OPENAI_2026-10-31.md) và [khôi phục từ checkout sạch](openai-reproduce.md). Giữ nội dung cũ để truy vết, không ghi đè bằng kết quả mới.
+
 Trạng thái: XONG bước tuning và đóng băng protocol local — chưa xong thí nghiệm đầy đủ.
 
 Gate: `pytest tests -q --basetemp outputs/pytest-tuning-regression-20261029-a` đạt 407 passed, 1 skipped trong 7,51 giây; 17 test tuning mới đều đạt. JUnit ở `outputs/tuning-regression-20261029.xml`. Một test symlink Windows bị bỏ qua như baseline.

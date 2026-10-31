@@ -1,0 +1,703 @@
+{
+  "version": 1,
+  "kind": "openai-offline-reproduction-inputs",
+  "scope": "Prepared inputs and completed paid OpenAI caches; frozen core priors and tuning; no saved learning/deployment traces or neural checkpoints.",
+  "research_commit": "73918157547397bcaf538b282f17ad3b4e683262",
+  "files": [
+    {
+      "path": "data/processed/routerbench_0shot/outcomes.parquet",
+      "size": 1094125,
+      "sha256": "82eb9baeab0452d1b59ee053ae7205b641cb70e22deae5e71b86596ffcd87ca4"
+    },
+    {
+      "path": "data/processed/routerbench_0shot/queries.parquet",
+      "size": 23675459,
+      "sha256": "14542cd83a43f7fb64655e21e0e1c8fec48b0753a7334015099b065e061a058a"
+    },
+    {
+      "path": "data/processed/routerbench_0shot/splits.csv",
+      "size": 4469018,
+      "sha256": "989d3663aa4051f6ccd80bedf62e6ef789ead57d744c87fd14c828ac9b08a8a5"
+    },
+    {
+      "path": "outputs/local-pipeline-verification-20261029/prepared-identity/comparisons.json",
+      "size": 275419,
+      "sha256": "2ddc3566438a63cdc09f1fb53ff2dec6fc117078f466757b96e9dda605bcfda5"
+    },
+    {
+      "path": "outputs/local-pipeline-verification-20261029/prepared-identity/manifest.json",
+      "size": 18031,
+      "sha256": "9d1cc854c431ddce40bce59940d23d7bc0cd7de7db38c1d487121f6179c63c91"
+    },
+    {
+      "path": "outputs/local-pipeline-verification-20261029/prepared-identity/preference-inputs.json",
+      "size": 799468,
+      "sha256": "a8c9edc0b80bd881599598bba5097d95b08530a38776f879f891f9352fddb383"
+    },
+    {
+      "path": "outputs/local-pipeline-verification-20261029/prepared-identity/routing-inputs.json",
+      "size": 113375,
+      "sha256": "d2c6368330fb050d876b86466d765001b060a5d3d2ac2f51c8805559e7bc9ff3"
+    },
+    {
+      "path": "outputs/openai-core-20261031/embedding-verification.json",
+      "size": 1235,
+      "sha256": "a9aa11c9d69abf14118d35f5ef8586490c88ca04826e9890fa91f70952ff3fad"
+    },
+    {
+      "path": "outputs/openai-core-20261031/inventory.json",
+      "size": 274314,
+      "sha256": "267e9abac950e544a55b2f48659603479a279d11b1397461ea7a7c009cbc3f45"
+    },
+    {
+      "path": "outputs/openai-core-20261031/prior-index.json",
+      "size": 2068,
+      "sha256": "b50734277a6f74997d4b347ef044c43e1efba244ef745ca78f8a4961b106dd25"
+    },
+    {
+      "path": "outputs/openai-core-20261031/priors/seed-2026/fit-manifest.json",
+      "size": 4307,
+      "sha256": "de10fd709ad9bd901a5edab21b9b0e3e6af30c067e68bd516907626df34243f3"
+    },
+    {
+      "path": "outputs/openai-core-20261031/priors/seed-2026/prior.json",
+      "size": 2301880,
+      "sha256": "1910d2782f045040e48d56ced5daf9d12f69d0e70ed5a16196dda40256e946ac"
+    },
+    {
+      "path": "outputs/openai-core-20261031/priors/seed-2026/verification.json",
+      "size": 352,
+      "sha256": "2fcd5688f8a1ed883aabedf64d2d94784332f5e0281796588cd02a8b93b209e3"
+    },
+    {
+      "path": "outputs/openai-core-20261031/priors/seed-42/fit-manifest.json",
+      "size": 4117,
+      "sha256": "da7a44706a01e6c2277b0b8d74b7dfb6c90d1706f6c7c2dc557dbc354bca70d4"
+    },
+    {
+      "path": "outputs/openai-core-20261031/priors/seed-42/prior.json",
+      "size": 2302389,
+      "sha256": "e7d1edb0e10bd48bbc5c100a0558ea2f73416d0376e707ebc3fdbc15d9e27d0c"
+    },
+    {
+      "path": "outputs/openai-core-20261031/priors/seed-42/verification.json",
+      "size": 352,
+      "sha256": "e88f9ae33cd8d9d89d0d66d28dbe9d3471257a8f9a02c57ca0cd81f753f69473"
+    },
+    {
+      "path": "outputs/openai-core-20261031/priors/seed-7/fit-manifest.json",
+      "size": 4100,
+      "sha256": "54aeb63d97f6967ce114481ff6c16f0e9f270a0ba0705301613e04e666829cae"
+    },
+    {
+      "path": "outputs/openai-core-20261031/priors/seed-7/prior.json",
+      "size": 2302822,
+      "sha256": "0a417ef5c93b0c4c1ad29d8bb472ef7ded4e1e958096ab4da12bcd39c903c703"
+    },
+    {
+      "path": "outputs/openai-core-20261031/priors/seed-7/verification.json",
+      "size": 352,
+      "sha256": "bee9da2e00d616eada0177763ba454265af7b82d94748a07334841dfa9dcdc48"
+    },
+    {
+      "path": "outputs/openai-core-20261031/protocol.json",
+      "size": 12772,
+      "sha256": "5cee68cc19a1f440e01684497475f50de83f9212e6bb04cf9726828cd7bc6859"
+    },
+    {
+      "path": "outputs/openai-core-20261031/tuning/mmlu/calibration.json",
+      "size": 748,
+      "sha256": "5b7894bbecb367b85d9864f9b6c2ecd7b6fb9a82c379be6e4f0eb22fbc7bd60e"
+    },
+    {
+      "path": "outputs/openai-core-20261031/tuning/mmlu/estimator.json",
+      "size": 18843,
+      "sha256": "e2324ce0226f9e1a49bfe70c8a9d490390374934cbe1df00013856ffb41a9151"
+    },
+    {
+      "path": "outputs/openai-core-20261031/tuning/mmlu/manifest.json",
+      "size": 5050,
+      "sha256": "04ef301e4141f14811b82227f6af7badd5854fcaf6186201c6452a19aeb9b9df"
+    },
+    {
+      "path": "outputs/openai-core-20261031/tuning/mmlu/search/candidate-000/router.json",
+      "size": 691428,
+      "sha256": "9d6a34cde15afb5916d74c16b5d9654be9cab3054cddfe2c52323624b5ca3a62"
+    },
+    {
+      "path": "outputs/openai-core-20261031/tuning/mmlu/search/candidate-000/trace.jsonl",
+      "size": 221270,
+      "sha256": "0e4175e6386d50c8f87b29af9b88677533dfa3b4a952fa4e4ca4abafd361c247"
+    },
+    {
+      "path": "outputs/openai-core-20261031/tuning/mmlu/search/candidate-001/router.json",
+      "size": 687971,
+      "sha256": "88ea740f9f6ceccf028574893079351f371c473ff366aa5a5b2a887ae6c9d983"
+    },
+    {
+      "path": "outputs/openai-core-20261031/tuning/mmlu/search/candidate-001/trace.jsonl",
+      "size": 221650,
+      "sha256": "dd9efa3c1dcabd8f7ee29e82e41393cf8ded5412febc742ffa5066516131e82c"
+    },
+    {
+      "path": "outputs/openai-core-20261031/tuning/mmlu/search/candidate-002/router.json",
+      "size": 687225,
+      "sha256": "1eef76a8a655487e6510c9d5f1c9be71a664be0a29cbfa726fb5c0ff483e2a47"
+    },
+    {
+      "path": "outputs/openai-core-20261031/tuning/mmlu/search/candidate-002/trace.jsonl",
+      "size": 221665,
+      "sha256": "8dee3f500f65d1e4eb3c1c27717448face29f65fade3ad2d55df5c0ec835a5fd"
+    },
+    {
+      "path": "outputs/openai-core-20261031/tuning/mmlu/search/candidate-003/router.json",
+      "size": 684780,
+      "sha256": "58a38d1125441838f0fc9dfad9b9cbd9d5281e00bd5697bd2b59b79e33c0c277"
+    },
+    {
+      "path": "outputs/openai-core-20261031/tuning/mmlu/search/candidate-003/trace.jsonl",
+      "size": 222055,
+      "sha256": "a6bb7671eaa5afce881d99bd9b805fb90b50cc20b68a20ac72c1b969231aaabc"
+    },
+    {
+      "path": "outputs/openai-core-20261031/tuning/mmlu/search/candidate-004/router.json",
+      "size": 683943,
+      "sha256": "3c69e64c00b4208120dfb83499d433b3760b8c46d854745f0d7bc40f5a41eb20"
+    },
+    {
+      "path": "outputs/openai-core-20261031/tuning/mmlu/search/candidate-004/trace.jsonl",
+      "size": 222194,
+      "sha256": "b60e00241598e445ebe7806f263bc998ac8f1644ed230d9c8e529c0faa4038d5"
+    },
+    {
+      "path": "outputs/openai-core-20261031/tuning/mmlu/search/candidate-005/router.json",
+      "size": 202239,
+      "sha256": "6ccd546099affc8601df87c84f87bdd0acf98e7095209fe5dd03701577f227c6"
+    },
+    {
+      "path": "outputs/openai-core-20261031/tuning/mmlu/search/candidate-005/trace.jsonl",
+      "size": 177354,
+      "sha256": "ebd67dda697cb9856efed1a50f272b2287147fb9160b97fd110c22ff7abaa3eb"
+    },
+    {
+      "path": "outputs/openai-core-20261031/tuning/mmlu/search/candidate-006/router.json",
+      "size": 202239,
+      "sha256": "ef89cb5a10e90d9148ad60a233853626e7773de08d141acca16713db56a58dc3"
+    },
+    {
+      "path": "outputs/openai-core-20261031/tuning/mmlu/search/candidate-006/trace.jsonl",
+      "size": 177354,
+      "sha256": "ebd67dda697cb9856efed1a50f272b2287147fb9160b97fd110c22ff7abaa3eb"
+    },
+    {
+      "path": "outputs/openai-core-20261031/tuning/mmlu/search/candidate-007/router.json",
+      "size": 272981,
+      "sha256": "39e7b126aa188fd26e7f3b4dff40b324ed4d31adbd8a08b70b5b260228e962fd"
+    },
+    {
+      "path": "outputs/openai-core-20261031/tuning/mmlu/search/candidate-007/trace.jsonl",
+      "size": 179619,
+      "sha256": "ea71d34df033b8e93101c55ca7d734b1769e68b1dc3b18f69afcce70270c1d12"
+    },
+    {
+      "path": "outputs/openai-core-20261031/tuning/mmlu/search/candidate-008/router.json",
+      "size": 717741,
+      "sha256": "3738e278b45d4027966d96c96643f7b966645483133510c55580ea70abb74f8b"
+    },
+    {
+      "path": "outputs/openai-core-20261031/tuning/mmlu/search/candidate-008/trace.jsonl",
+      "size": 195786,
+      "sha256": "865818ebda6dc9768b10708a24277e8dc75302d5dcfdcfc5fc1e893e6e1cb0da"
+    },
+    {
+      "path": "outputs/openai-core-20261031/tuning/mmlu/search/candidate-009/router.json",
+      "size": 703557,
+      "sha256": "21033b8317856fc0ebcceea5d7876f7a2dd6c004098dce34556fc8e26e9f4ed7"
+    },
+    {
+      "path": "outputs/openai-core-20261031/tuning/mmlu/search/candidate-009/trace.jsonl",
+      "size": 203225,
+      "sha256": "156078a42faebf6bbd30cc82589ab8000311686713df50fc1e2d19ebab808147"
+    },
+    {
+      "path": "outputs/openai-core-20261031/tuning/mmlu/search/candidate-010/router.json",
+      "size": 723528,
+      "sha256": "bd1ce42b7d24979a0b3be766c9bea51c903bf94bc35e223a5ec396353d6de6a7"
+    },
+    {
+      "path": "outputs/openai-core-20261031/tuning/mmlu/search/candidate-010/trace.jsonl",
+      "size": 198553,
+      "sha256": "3ddc39d1c2e3a3367d01b1135cfcdd63f39e0693551f5ea164ff92ecfd8a9f22"
+    },
+    {
+      "path": "outputs/openai-core-20261031/tuning/mmlu/search/candidate-011/router.json",
+      "size": 427263,
+      "sha256": "d04be3fcbfab2a64b354c68ceb7e581a41540f2e359f154997691ff3818726fb"
+    },
+    {
+      "path": "outputs/openai-core-20261031/tuning/mmlu/search/candidate-011/trace.jsonl",
+      "size": 181289,
+      "sha256": "cee3bc5a050fc39f7efa8fa4eb17b3e648d85dd37e4fe21c7dec2ac05959cf96"
+    },
+    {
+      "path": "outputs/openai-core-20261031/tuning/mmlu/search/candidate-012/router.json",
+      "size": 428815,
+      "sha256": "1eea71f23c3da9134d1f49053ad274c9646156a91f540831df2eb5bc0bf44cc9"
+    },
+    {
+      "path": "outputs/openai-core-20261031/tuning/mmlu/search/candidate-012/trace.jsonl",
+      "size": 177348,
+      "sha256": "4178d23be0ca6aabbcd905636a5c157e14e5ec16c83f064c0dc17789c697b450"
+    },
+    {
+      "path": "outputs/openai-core-20261031/tuning/mmlu/search/candidate-013/router.json",
+      "size": 202262,
+      "sha256": "04e929b35e8b6c187a0d4a71ba993c7a2dea514c5bd56c57aeeb23abde61e1c4"
+    },
+    {
+      "path": "outputs/openai-core-20261031/tuning/mmlu/search/candidate-013/trace.jsonl",
+      "size": 177354,
+      "sha256": "ebd67dda697cb9856efed1a50f272b2287147fb9160b97fd110c22ff7abaa3eb"
+    },
+    {
+      "path": "outputs/openai-core-20261031/tuning/mmlu/search/candidate-014/router.json",
+      "size": 702573,
+      "sha256": "0118f6b3e1481e2d815f04bd4c50462fca34f89c6ab7edf6e77583102238d892"
+    },
+    {
+      "path": "outputs/openai-core-20261031/tuning/mmlu/search/candidate-014/trace.jsonl",
+      "size": 210637,
+      "sha256": "3319a35756698a64ded7c39893ecb3a2f69605e3f8cc481e3c3e9f9361036992"
+    },
+    {
+      "path": "outputs/openai-core-20261031/tuning/mmlu/search/candidate-015/router.json",
+      "size": 623,
+      "sha256": "5652207be746da34d284d3389cc0e2717b91c0bd088c09ea6570ccab7834fd65"
+    },
+    {
+      "path": "outputs/openai-core-20261031/tuning/mmlu/search/candidate-015/trace.jsonl",
+      "size": 176210,
+      "sha256": "f432abeeff443f2e40827aac70ed18df89aa681c57e032a7b0989e507929afdc"
+    },
+    {
+      "path": "outputs/openai-core-20261031/tuning/mmlu/search/candidate-016/router.json",
+      "size": 651,
+      "sha256": "8cf30d3aef3b33e753f5159b18da49a7e33637b9f490cbe390de860c0a08714c"
+    },
+    {
+      "path": "outputs/openai-core-20261031/tuning/mmlu/search/candidate-016/trace.jsonl",
+      "size": 171264,
+      "sha256": "cb9b0be6117a97129a2026dd0476739bd478e6ba6442b5f8659c9594a1af474e"
+    },
+    {
+      "path": "outputs/openai-core-20261031/tuning/mmlu/search/candidate-017/router.json",
+      "size": 642,
+      "sha256": "486c492be377f247a36502a558e8222e37e30ce63d6c2a2835aaea00fe352d3c"
+    },
+    {
+      "path": "outputs/openai-core-20261031/tuning/mmlu/search/candidate-017/trace.jsonl",
+      "size": 169279,
+      "sha256": "b8f8568d437311b0d46d9d4947e48e33f281b8d3853da269be7878360604125c"
+    },
+    {
+      "path": "outputs/openai-core-20261031/tuning/mmlu/search/candidate-018/router.json",
+      "size": 634,
+      "sha256": "668a99dde6cf2ff9098225f1bd720fd65d81f7fd75c8f0992ee15323926028de"
+    },
+    {
+      "path": "outputs/openai-core-20261031/tuning/mmlu/search/candidate-018/trace.jsonl",
+      "size": 164668,
+      "sha256": "da516d98a91d86249d6d517aa8f06359f03416c118185c2cce445243c23fd739"
+    },
+    {
+      "path": "outputs/openai-core-20261031/tuning/mmlu/search/candidate-019/router.json",
+      "size": 643,
+      "sha256": "8af9c2db537a3db90d84221e2baff781714aa223f92a43379570b4df3567ea80"
+    },
+    {
+      "path": "outputs/openai-core-20261031/tuning/mmlu/search/candidate-019/trace.jsonl",
+      "size": 168176,
+      "sha256": "024e903f98f223147a3e8cd2abce82ced0e8e065ae09dc7326aaa0b210cff094"
+    },
+    {
+      "path": "outputs/openai-core-20261031/tuning/mmlu/search/candidate-020/router.json",
+      "size": 643,
+      "sha256": "2e76400f1ace4e6a9a57a87dc4aff72f2a0e7da21415641da616473316ac4758"
+    },
+    {
+      "path": "outputs/openai-core-20261031/tuning/mmlu/search/candidate-020/trace.jsonl",
+      "size": 168031,
+      "sha256": "0bbdaff7bab94d93a9029d3efa70699f19b6add9d7354c471ce6ace085c6f4d8"
+    },
+    {
+      "path": "outputs/openai-core-20261031/tuning/mmlu/search/candidate-021/router.json",
+      "size": 658,
+      "sha256": "20857e6ae4a62869ee68defa35641e28d101fbfb26649221e5538537372b86ff"
+    },
+    {
+      "path": "outputs/openai-core-20261031/tuning/mmlu/search/candidate-021/trace.jsonl",
+      "size": 175279,
+      "sha256": "42f82777803ccc367e9f41bcc14f5c697405c58ceca4efb65394dbf93b49d4f7"
+    },
+    {
+      "path": "outputs/openai-core-20261031/tuning/mmlu/search/candidate-022/router.json",
+      "size": 646,
+      "sha256": "a7cbb776dfd0fb0736f702d42bbaa73486fd57efd2c67f0b8908a859009a452d"
+    },
+    {
+      "path": "outputs/openai-core-20261031/tuning/mmlu/search/candidate-022/trace.jsonl",
+      "size": 170015,
+      "sha256": "82c28d4ebc798eddb9c30845a74394683941b20d13abb9c4a6e0698063fd824d"
+    },
+    {
+      "path": "outputs/openai-core-20261031/tuning/mmlu/search/candidate-023/router.json",
+      "size": 648,
+      "sha256": "9cef1ce94a959eb41019cc2e255244921ca687190cd5c2e909f3a8b4aa682e33"
+    },
+    {
+      "path": "outputs/openai-core-20261031/tuning/mmlu/search/candidate-023/trace.jsonl",
+      "size": 171203,
+      "sha256": "0e4c314cb26494e5baa530c5565db5247b5b54a0c8758224bdf0d8eaf2c67e02"
+    },
+    {
+      "path": "outputs/openai-core-20261031/tuning/mmlu/search/manifest.json",
+      "size": 42393,
+      "sha256": "235438f3e2e4f3a5c36aefe683a61fae91360f1304f025fe6963b93b76a0ba57"
+    },
+    {
+      "path": "outputs/openai-core-20261031/tuning/routerbench/calibration.json",
+      "size": 737,
+      "sha256": "6a50e1c806c2158f65f01750d317406811c5a721023de6d2ba29696ef88cad0d"
+    },
+    {
+      "path": "outputs/openai-core-20261031/tuning/routerbench/estimator.json",
+      "size": 36372,
+      "sha256": "fbb665a4bbfdf12efd3cb32c6bf535c3599431087d5ef85dfb0788320ed1fbb5"
+    },
+    {
+      "path": "outputs/openai-core-20261031/tuning/routerbench/manifest.json",
+      "size": 5079,
+      "sha256": "b65927c48c9f9aaa96611a2b2c79426e160d38811f2bce55262185a5df09f687"
+    },
+    {
+      "path": "outputs/openai-core-20261031/tuning/routerbench/search/candidate-000/router.json",
+      "size": 683515,
+      "sha256": "2d6758ea3b6a2788a571c6d82891a6cab3c6fce95bab19c75a2e24e81f0bab8b"
+    },
+    {
+      "path": "outputs/openai-core-20261031/tuning/routerbench/search/candidate-000/trace.jsonl",
+      "size": 550368,
+      "sha256": "97a2ff068471dc4955f4afb4aeb710b42572901cd6239dfb6b3b801dfc984468"
+    },
+    {
+      "path": "outputs/openai-core-20261031/tuning/routerbench/search/candidate-001/router.json",
+      "size": 677427,
+      "sha256": "fd55c7208a9b7333de2b181d7b33972463718b29303970981feb39863621b6ae"
+    },
+    {
+      "path": "outputs/openai-core-20261031/tuning/routerbench/search/candidate-001/trace.jsonl",
+      "size": 551372,
+      "sha256": "c2cbbbc6621686d3aafa2d40405976d7b2e058838821916190e0dcc3e0a1d72a"
+    },
+    {
+      "path": "outputs/openai-core-20261031/tuning/routerbench/search/candidate-002/router.json",
+      "size": 674546,
+      "sha256": "11449ae05557dd5b5a591999691d1fff1b44f72efee6ffcd260b34d1a170128e"
+    },
+    {
+      "path": "outputs/openai-core-20261031/tuning/routerbench/search/candidate-002/trace.jsonl",
+      "size": 551873,
+      "sha256": "a87fcc9c3ffa9ce756d67ae741d5acb5b099e595bc89ff9801541abad91c8fb6"
+    },
+    {
+      "path": "outputs/openai-core-20261031/tuning/routerbench/search/candidate-003/router.json",
+      "size": 671692,
+      "sha256": "e5cd21ceb96d2170cc93cfb72be364c31927f9c9af30978ebd2b7b5affdc5a00"
+    },
+    {
+      "path": "outputs/openai-core-20261031/tuning/routerbench/search/candidate-003/trace.jsonl",
+      "size": 552415,
+      "sha256": "ca516d8660fd3850391b64555775bd950a85e60c71857a87f9fa3360ccb19e23"
+    },
+    {
+      "path": "outputs/openai-core-20261031/tuning/routerbench/search/candidate-004/router.json",
+      "size": 670757,
+      "sha256": "3636936b693a1cce4642ea57a5c74470c04292c0c4f711a0379d513accc88ca7"
+    },
+    {
+      "path": "outputs/openai-core-20261031/tuning/routerbench/search/candidate-004/trace.jsonl",
+      "size": 551809,
+      "sha256": "1163b30dd4ca5051c1d1b24a29005e2d6b75d7d0779100271858002bfc8da703"
+    },
+    {
+      "path": "outputs/openai-core-20261031/tuning/routerbench/search/candidate-005/router.json",
+      "size": 268859,
+      "sha256": "9130ba1600f1f72a378d2edb4f518f8a3aa6954eda8320695757dffc27e68046"
+    },
+    {
+      "path": "outputs/openai-core-20261031/tuning/routerbench/search/candidate-005/trace.jsonl",
+      "size": 451874,
+      "sha256": "ff2efe2acedd7b9ff3158bc32088776b111ecf8212f519eb8938a439dd7ec53e"
+    },
+    {
+      "path": "outputs/openai-core-20261031/tuning/routerbench/search/candidate-006/router.json",
+      "size": 268692,
+      "sha256": "5a53f97ccec07408ebdb684116e9024e1a756b1bd50c93a046567b5f133ccbba"
+    },
+    {
+      "path": "outputs/openai-core-20261031/tuning/routerbench/search/candidate-006/trace.jsonl",
+      "size": 450614,
+      "sha256": "6880294c1f2ba753e0c14b9339dea3c11a54f107500293f14f5c30f6165174c2"
+    },
+    {
+      "path": "outputs/openai-core-20261031/tuning/routerbench/search/candidate-007/router.json",
+      "size": 413569,
+      "sha256": "db97f74463a63c0f8b61435c2d19e6a7dc14f8ee10079ff8f17f22ebc5544365"
+    },
+    {
+      "path": "outputs/openai-core-20261031/tuning/routerbench/search/candidate-007/trace.jsonl",
+      "size": 456867,
+      "sha256": "6e4d3b975248b49eb0da1082d561cb86c466e4a04fd283d95257786c22b00a54"
+    },
+    {
+      "path": "outputs/openai-core-20261031/tuning/routerbench/search/candidate-008/router.json",
+      "size": 694543,
+      "sha256": "c220a8aa219a27e2f31c048a7fbd5ae405894c80dcb224442f8209b89ecd478e"
+    },
+    {
+      "path": "outputs/openai-core-20261031/tuning/routerbench/search/candidate-008/trace.jsonl",
+      "size": 535467,
+      "sha256": "15385caa9862afa7c7fdf8f4ddd9d01aa0708e88b7ac98963dcf5ce7457e251e"
+    },
+    {
+      "path": "outputs/openai-core-20261031/tuning/routerbench/search/candidate-009/router.json",
+      "size": 691669,
+      "sha256": "f9b74f3a414ba551e8f9dcf0d1f5a63fb06f6eda33032657231fa894ae32d1ef"
+    },
+    {
+      "path": "outputs/openai-core-20261031/tuning/routerbench/search/candidate-009/trace.jsonl",
+      "size": 540459,
+      "sha256": "714db64764b8f41cbe8b40bd3512bcbef1576cf5d8274580b54bc98d241bae47"
+    },
+    {
+      "path": "outputs/openai-core-20261031/tuning/routerbench/search/candidate-010/router.json",
+      "size": 706462,
+      "sha256": "1b9e28d44c3a38054637e09e88935950aed9c710ef568de8b39b6b5237d582d0"
+    },
+    {
+      "path": "outputs/openai-core-20261031/tuning/routerbench/search/candidate-010/trace.jsonl",
+      "size": 535225,
+      "sha256": "8a51fdec7447043c8071e4ae309241ffcd44432a9ad7d62bdc6a57ef0335840f"
+    },
+    {
+      "path": "outputs/openai-core-20261031/tuning/routerbench/search/candidate-011/router.json",
+      "size": 652014,
+      "sha256": "3ebe0cdf0df5d54ffd3db5e839615e2417153ad9825fe7613941c559935e3d40"
+    },
+    {
+      "path": "outputs/openai-core-20261031/tuning/routerbench/search/candidate-011/trace.jsonl",
+      "size": 499771,
+      "sha256": "e79f34b616c7c9de6bdcfbef59d0102ad58a5c8b03d6242224c7ce2700fd8fbd"
+    },
+    {
+      "path": "outputs/openai-core-20261031/tuning/routerbench/search/candidate-012/router.json",
+      "size": 502423,
+      "sha256": "7a78e22845ee04880924ba1a614a3570598b398a137acc3db893accb6fe0e91b"
+    },
+    {
+      "path": "outputs/openai-core-20261031/tuning/routerbench/search/candidate-012/trace.jsonl",
+      "size": 473637,
+      "sha256": "8e945423af31230fd3a8a595c0b6ed065629edb2789d8568842fc3eac2b1082f"
+    },
+    {
+      "path": "outputs/openai-core-20261031/tuning/routerbench/search/candidate-013/router.json",
+      "size": 275742,
+      "sha256": "10de19b2cbd747424ee73c5629e1c77e3b0b0eb00db0b6c57a7046fec4d6af0d"
+    },
+    {
+      "path": "outputs/openai-core-20261031/tuning/routerbench/search/candidate-013/trace.jsonl",
+      "size": 449443,
+      "sha256": "6ef32dff90af2bcedd92cee289f837f913dfb2a05ced02e8e4074c4ca07079b0"
+    },
+    {
+      "path": "outputs/openai-core-20261031/tuning/routerbench/search/candidate-014/router.json",
+      "size": 690154,
+      "sha256": "97bb65865c07a41f7bc44195d903dca9c63deff2766206ecb6821d1fa7f1bfcc"
+    },
+    {
+      "path": "outputs/openai-core-20261031/tuning/routerbench/search/candidate-014/trace.jsonl",
+      "size": 543315,
+      "sha256": "6301dc004c8f7f5a3a0f21920f283141b2b53fc60333fc68212fc6694bcdcbc0"
+    },
+    {
+      "path": "outputs/openai-core-20261031/tuning/routerbench/search/candidate-015/router.json",
+      "size": 624,
+      "sha256": "12e26cfd8c79d06c05dc0496377bf058b90a4ed023653b908111bc8613c1bc48"
+    },
+    {
+      "path": "outputs/openai-core-20261031/tuning/routerbench/search/candidate-015/trace.jsonl",
+      "size": 437403,
+      "sha256": "30b8507ba7b17209473d7f93176681e292b2c0cf5f35e404bcd09b0fcb4c1726"
+    },
+    {
+      "path": "outputs/openai-core-20261031/tuning/routerbench/search/candidate-016/router.json",
+      "size": 652,
+      "sha256": "0ec8ed4235e28f42387d522c4520c41aa867a0ce174329d5ec857c3cd1378151"
+    },
+    {
+      "path": "outputs/openai-core-20261031/tuning/routerbench/search/candidate-016/trace.jsonl",
+      "size": 426018,
+      "sha256": "22ef4be4f0e5d390a93ae832567eb420f7618455df55e54753b32d8c216989c1"
+    },
+    {
+      "path": "outputs/openai-core-20261031/tuning/routerbench/search/candidate-017/router.json",
+      "size": 643,
+      "sha256": "ca80cf3ce3c555c8b289bf760629dca0d1074606323b654e5240e82d5a6fa41f"
+    },
+    {
+      "path": "outputs/openai-core-20261031/tuning/routerbench/search/candidate-017/trace.jsonl",
+      "size": 419731,
+      "sha256": "d76cff36b6cb042b894024ca88805ff146c6b7f6f711a696a2a322e5786be114"
+    },
+    {
+      "path": "outputs/openai-core-20261031/tuning/routerbench/search/candidate-018/router.json",
+      "size": 635,
+      "sha256": "e47523c4c1bc3a53321d6099d3e4804bc1c924ba887f31ced11e007f515203ce"
+    },
+    {
+      "path": "outputs/openai-core-20261031/tuning/routerbench/search/candidate-018/trace.jsonl",
+      "size": 408393,
+      "sha256": "cc688b1e9a787c48af4ba88d9863716002c1b9c8a92d5eb04d2c076ad1f502de"
+    },
+    {
+      "path": "outputs/openai-core-20261031/tuning/routerbench/search/candidate-019/router.json",
+      "size": 644,
+      "sha256": "f0f24b0fa29a818b18fb62f6f59c07c2f78f45f3d845e8bf87a43e7e083dd7b1"
+    },
+    {
+      "path": "outputs/openai-core-20261031/tuning/routerbench/search/candidate-019/trace.jsonl",
+      "size": 417549,
+      "sha256": "1dbae4dfd34c0d44f09ee0f390f568d8b5ab9d209803d6fd4923e94250047830"
+    },
+    {
+      "path": "outputs/openai-core-20261031/tuning/routerbench/search/candidate-020/router.json",
+      "size": 644,
+      "sha256": "18d235a20aecb9d55dec01bb75fdb4481e552ec81d44f98c81f354767c542b59"
+    },
+    {
+      "path": "outputs/openai-core-20261031/tuning/routerbench/search/candidate-020/trace.jsonl",
+      "size": 416462,
+      "sha256": "1090dab60c3eb5a6d11704f880dcf6dd4e78984357a3c93a81b36a8daf1bb5e1"
+    },
+    {
+      "path": "outputs/openai-core-20261031/tuning/routerbench/search/candidate-021/router.json",
+      "size": 659,
+      "sha256": "11f19e0a4db1fb4a841440c9e41091ae8201c39ea6c96114092321d73d0d7c8c"
+    },
+    {
+      "path": "outputs/openai-core-20261031/tuning/routerbench/search/candidate-021/trace.jsonl",
+      "size": 435184,
+      "sha256": "3d6ec58a244bc56af8d942bd424517b8d5bf3ebd6c1765b6fbec44abc1607861"
+    },
+    {
+      "path": "outputs/openai-core-20261031/tuning/routerbench/search/candidate-022/router.json",
+      "size": 647,
+      "sha256": "e4491c876d867f1bca69ccca7ee6b14fb8a9cef2bdfbf5eec21c1e462f82e8f2"
+    },
+    {
+      "path": "outputs/openai-core-20261031/tuning/routerbench/search/candidate-022/trace.jsonl",
+      "size": 422096,
+      "sha256": "4a1a4932d3dddbf558cf58fbbf20ae525ea7c3f9825762775db160c81f979a6a"
+    },
+    {
+      "path": "outputs/openai-core-20261031/tuning/routerbench/search/candidate-023/router.json",
+      "size": 649,
+      "sha256": "83de041c8ac1b9e2c502fb5a22b9cd63cbcf03f349f4a5cbbc63627ab5676674"
+    },
+    {
+      "path": "outputs/openai-core-20261031/tuning/routerbench/search/candidate-023/trace.jsonl",
+      "size": 425084,
+      "sha256": "23413b11f46acca8f667f25e95219f73ad26ac65601da5fcd623c5438b9351e5"
+    },
+    {
+      "path": "outputs/openai-core-20261031/tuning/routerbench/search/manifest.json",
+      "size": 61387,
+      "sha256": "f874250433af8bdc18e2f2a1180deac7e3d8b43103f7501950959fc7ddc54dc5"
+    },
+    {
+      "path": "outputs/openai-standard-20261030/imported/caches/source-0/manifest.json",
+      "size": 3468528,
+      "sha256": "8e256fd7664efa6582a9d29043ccf0fea26dd67712d8eae830e6be77214def03"
+    },
+    {
+      "path": "outputs/openai-standard-20261030/imported/caches/source-0/vectors.npy",
+      "size": 224237696,
+      "sha256": "7ecb92f6bbc66f10eb8f26b2f40639b9136bcfaea6d42b93a566d8b3eb98f9c1"
+    },
+    {
+      "path": "outputs/openai-standard-20261030/imported/caches/source-1/manifest.json",
+      "size": 151733,
+      "sha256": "6c85a7e2f962494dfb0434574d2752eabcf35f862c7801444be69525e6467b3d"
+    },
+    {
+      "path": "outputs/openai-standard-20261030/imported/caches/source-1/vectors.npy",
+      "size": 9572480,
+      "sha256": "9e846876f509d1edd9cf03eaaaf8c6237b2890fb78e76697b82c056f48485952"
+    },
+    {
+      "path": "outputs/research-cost-inputs-20261029/cost-size-exact_id.json",
+      "size": 731,
+      "sha256": "82303ebebd7fb262277f01ac71c35fc0ba3160ee61221b70287792d1db6fb24f"
+    },
+    {
+      "path": "outputs/research-cost-inputs-20261029/cost-size-identity_match.json",
+      "size": 947,
+      "sha256": "1f6f2bd7160d223d53bfd79a4b854e298bd9760d96a2c527f092798071f48ec2"
+    },
+    {
+      "path": "outputs/research-cost-inputs-20261029/cost-size-verified_alias.json",
+      "size": 826,
+      "sha256": "b54107a03dd939f6e914cb9ace00e3a9f87a1e2913fbef4202aa2a6e98c89cba"
+    },
+    {
+      "path": "outputs/research-cost-inputs-20261029/estimator.json",
+      "size": 37853,
+      "sha256": "ad9692e5befd9534c425eeca1cdf81af9694f01ff4a8f643579c37044f547fbd"
+    },
+    {
+      "path": "outputs/research-cost-inputs-20261029/input-counts.json",
+      "size": 1323368,
+      "sha256": "8ce84e5066cd3a445929c462249c6ecf7da29000f62860e2930f5fdc70ad59b9"
+    },
+    {
+      "path": "outputs/research-cost-inputs-20261029/manifest.json",
+      "size": 42661,
+      "sha256": "f42751bfc391385ce2cdbe1e69e99f9cf23eaba5e92a375979e224ad8dfb40a7"
+    },
+    {
+      "path": "outputs/research-cost-inputs-20261029/tuning-output-counts.json",
+      "size": 401365,
+      "sha256": "6ad9469a4b5f7401dec272a815932877c36661b0a08d1cf300432a6da95a0936"
+    },
+    {
+      "path": "outputs/research-input-audit-20261029/inputs/manifest.json",
+      "size": 5186,
+      "sha256": "88b3fc0a5d46e772a4ea9e5ef805988083ce0929ce36ecd15858c56ef2d2cd63"
+    },
+    {
+      "path": "outputs/research-input-audit-20261029/inputs/phases.json",
+      "size": 1952719,
+      "sha256": "753945471e62638e43d2842aff33f801074305d79e7babd7d9781c0802eeb3fc"
+    },
+    {
+      "path": "outputs/research-input-audit-20261029/inputs/preference-inputs.json",
+      "size": 799468,
+      "sha256": "a8c9edc0b80bd881599598bba5097d95b08530a38776f879f891f9352fddb383"
+    },
+    {
+      "path": "outputs/research-input-audit-20261029/inputs/routing-inputs.json",
+      "size": 34340215,
+      "sha256": "2e820e635a45c4d31b634671c128010abf619b9f83decda16653092662a188ca"
+    }
+  ]
+}

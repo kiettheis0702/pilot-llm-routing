@@ -1,5 +1,7 @@
 # Bàn giao thí nghiệm cục bộ — 29/10/2026
 
+> **TÀI LIỆU LỊCH SỬ — BGE / mốc 29–30/10/2026.** Các số liệu, trạng thái “hiện tại/current”, nhánh Git và việc còn chờ bên dưới chỉ đúng tại mốc ghi nhận. Không dùng làm kết quả OpenAI hiện hành. Đọc [trạng thái OpenAI](openai-followup-status.md), [bản giao việc hiện hành cho Claude](CLAUDE_UPDATE_OPENAI_2026-10-31.md) và [khôi phục từ checkout sạch](openai-reproduce.md). Giữ nội dung cũ để truy vết, không ghi đè bằng kết quả mới.
+
 Cập nhật đóng gói 30/10/2026: đã sửa nhãn liên kết `paired-deltas.csv` và bổ sung
 giải thích hai loại đối chứng. Minor được ghi trong khối QA lịch sử bên dưới đã
 được xử lý; bảng số liệu và kết quả tính toán giữ nguyên. Việc chưa commit/push

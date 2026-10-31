@@ -1,5 +1,9 @@
 # Course evidence and reproducibility
 
+**Current OpenAI restore entrypoint:** [openai-reproduce.md](openai-reproduce.md).
+It uses a separately checksummed cache/input archive and tests a clean checkout.
+The BGE commands and earlier reconstruction limits below are historical.
+
 Run from repository root, one command at a time. Use a new output directory for every immutable stage. No paid API is needed.
 
 **31 October followup:** commands below reconstruct the historical BGE course
@@ -183,7 +187,7 @@ The original `tools.course.publication` reader accepts only `wandb.ai` URLs
 and a per-run signed-out-browser proof schema. It does not understand this
 new Forge-domain anonymous-API evidence. Do not pass the new manifest into
 that legacy reader or relabel API checks as browser checks. The current
-presentation task is handed to Claude using [CLAUDE_HANDOFF.md](CLAUDE_HANDOFF.md),
+presentation task is handed to Claude using [CLAUDE_UPDATE_OPENAI_2026-10-31.md](CLAUDE_UPDATE_OPENAI_2026-10-31.md),
 the verified numeric sources and the new public mapping. Existing PPTX files
 are references and retain their earlier publication footer until revised.
 

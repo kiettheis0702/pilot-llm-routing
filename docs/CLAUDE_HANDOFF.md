@@ -1,6 +1,8 @@
 # Bàn giao cho Claude: slide và poster PILOT — Team 8
 
-**Cập nhật ngày 30/10/2026.** Đây là bản bàn giao hiện tại, ưu tiên hơn các ghi chú “pending/chưa có W&B” trong tài liệu lịch sử. Người dùng giao Claude làm slide/poster; không cần chạy lại thí nghiệm, mua API hoặc sửa số liệu để làm đẹp kết quả.
+> **TÀI LIỆU LỊCH SỬ — BGE / mốc 29–30/10/2026.** Các số liệu, trạng thái “hiện tại/current”, nhánh Git và việc còn chờ bên dưới chỉ đúng tại mốc ghi nhận. Không dùng làm kết quả OpenAI hiện hành. Đọc [trạng thái OpenAI](openai-followup-status.md), [bản giao việc hiện hành cho Claude](CLAUDE_UPDATE_OPENAI_2026-10-31.md) và [khôi phục từ checkout sạch](openai-reproduce.md). Giữ nội dung cũ để truy vết, không ghi đè bằng kết quả mới.
+
+**Cập nhật ngày 30/10/2026.** Đây là bản bàn giao lịch sử BGE ngày 30/10, từng được ưu tiên hơn các ghi chú “pending/chưa có W&B” trong tài liệu lịch sử. Người dùng giao Claude làm slide/poster; không cần chạy lại thí nghiệm, mua API hoặc sửa số liệu để làm đẹp kết quả.
 
 ## 1. Việc Claude cần làm
 

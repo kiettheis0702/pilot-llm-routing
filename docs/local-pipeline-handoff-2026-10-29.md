@@ -1,5 +1,7 @@
 # Bàn giao giai đoạn pipeline local — 29/10/2026
 
+> **TÀI LIỆU LỊCH SỬ — BGE / mốc 29–30/10/2026.** Các số liệu, trạng thái “hiện tại/current”, nhánh Git và việc còn chờ bên dưới chỉ đúng tại mốc ghi nhận. Không dùng làm kết quả OpenAI hiện hành. Đọc [trạng thái OpenAI](openai-followup-status.md), [bản giao việc hiện hành cho Claude](CLAUDE_UPDATE_OPENAI_2026-10-31.md) và [khôi phục từ checkout sạch](openai-reproduce.md). Giữ nội dung cũ để truy vết, không ghi đè bằng kết quả mới.
+
 Trạng thái: **XONG giai đoạn triển khai pipeline local và smoke GPU**. Code, kiểm thử CPU, môi trường embedding riêng, CUDA và BGE-M3 thật đã được kiểm chứng. Đây chưa phải kết quả tái lập paper hoặc prior thật đầy đủ. Ngoại lệ người dùng duyệt chỉ áp dụng cho test CPU; bước GPU bắt đầu sau khi preflight đo đủ 8 GiB.
 
 Gate: `python -B -m pytest -q -rs` → **338 đạt, 1 bỏ qua**, baseline 310 đạt. Một test symlink thật bị Windows từ chối quyền tạo link; test kiểm tra chặn đường dẫn trước khi ghi vẫn đạt. OpenSpec strict validate và `git diff --check` đạt.

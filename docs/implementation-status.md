@@ -1,5 +1,7 @@
 # Implementation and research readiness — 2026-10-29
 
+> **TÀI LIỆU LỊCH SỬ — BGE / mốc 29–30/10/2026.** Các số liệu, trạng thái “hiện tại/current”, nhánh Git và việc còn chờ bên dưới chỉ đúng tại mốc ghi nhận. Không dùng làm kết quả OpenAI hiện hành. Đọc [trạng thái OpenAI](openai-followup-status.md), [bản giao việc hiện hành cho Claude](CLAUDE_UPDATE_OPENAI_2026-10-31.md) và [khôi phục từ checkout sạch](openai-reproduce.md). Giữ nội dung cũ để truy vết, không ghi đè bằng kết quả mới.
+
 The current branch implements a runnable offline numerical pipeline. No Figure 3/4
 reproduction or eleven-arm preference training is claimed. OpenSpec change files
 are the source of truth for implemented units; this table maps them to the supplied

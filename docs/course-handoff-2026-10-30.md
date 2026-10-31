@@ -1,5 +1,7 @@
 # Bàn giao bộ bài nộp — 30/10/2026
 
+> **TÀI LIỆU LỊCH SỬ — BGE / mốc 29–30/10/2026.** Các số liệu, trạng thái “hiện tại/current”, nhánh Git và việc còn chờ bên dưới chỉ đúng tại mốc ghi nhận. Không dùng làm kết quả OpenAI hiện hành. Đọc [trạng thái OpenAI](openai-followup-status.md), [bản giao việc hiện hành cho Claude](CLAUDE_UPDATE_OPENAI_2026-10-31.md) và [khôi phục từ checkout sạch](openai-reproduce.md). Giữ nội dung cũ để truy vết, không ghi đè bằng kết quả mới.
+
 > **Đây là snapshot bàn giao local trước upload.** Trạng thái mới: W&B đã Public,
 > 1.128 run và 13.314 metric đã kiểm không đăng nhập; GitHub `main` là bản đầy đủ.
 > Xem [bàn giao hiện tại cho Claude](CLAUDE_HANDOFF.md) và

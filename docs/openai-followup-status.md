@@ -5,6 +5,12 @@ public W&B readbacks and Claude research handoff are complete. Completed
 scientific packages below retain their exact hashes and adverse results.
 Poster, slides, PDFs and previews are outside the editing scope.
 
+**Current reading order:** this status page, the
+[OpenAI core results](../reports/openai-core-2026-10-31/KET_QUA_VI.md),
+[current Claude update map](CLAUDE_UPDATE_OPENAI_2026-10-31.md), then the
+[clean-checkout restore guide](openai-reproduce.md). Dated BGE handoffs and
+`CLAUDE_HANDOFF.md` are historical; they do not override the OpenAI evidence.
+
 | Work | Verified evidence | Scope |
 |---|---|---|
 | OpenAI main | [858 conditions](../reports/openai-core-2026-10-31/KET_QUA_VI.md),78 independently replayed learning groups | Eight admitted models; three seeds; GPT4-normalized quality/cost |
@@ -57,14 +63,19 @@ wasUSD0.1373447 before tax, not a verified invoice. All follow-up fits/replays
 reuse caches or free local weights. Recorded benchmark model costs are
 accounting values; they are not new provider charges.
 
-Latest full serial regression:681 passed,1 skipped36.47s. Fresh origin/main
+Research-checkpoint serial regression:681 passed,1 skipped36.47s. Fresh origin/main
 baseline490 passed with the same Windows symlink-privilege skip. Four artifact
 CLI interruption cases failed before the phase-aware recovery fix, then passed.
-Fresh read-only review found no remaining material issue in that correction. A clone includes source and report evidence; paid
-embedding caches, model checkpoints and raw ignored run lineage are not in Git.
-The [reproduction guide](course-reproduce.md) distinguishes asset reconstruction
-from a fresh end-to-end study. Clean-environment installation has not been
-independently repeated.
+Fresh read-only review found no remaining material issue in that correction.
+A clone includes source and report evidence. The separate
+[139-file reproduction archive](openai-reproduce.md) now supplies prepared data,
+paid OpenAI caches, core priors/tuning and protocol with SHA-256 checks.
+A new locked Python environment has exercised restore, a byte-identical
+seed-7 prior refit and one complete RouterBench/PILOT group (32,270 learning
+rounds, 11 deployment conditions), with independent replay and resume checks.
+See [release verification](release-readiness-2026-10-31.md) for exact coverage
+and current regression results. The entire core/follow-up grid and a fresh
+neural environment have not been rerun; their original results remain frozen.
 
 [Claude's update map](CLAUDE_UPDATE_OPENAI_2026-10-31.md) targets the actual
 22-slide deck and one-slide poster, with exact figures, numeric replacements and
