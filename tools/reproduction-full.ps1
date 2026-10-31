@@ -12,8 +12,15 @@ function Invoke-CorePython {
 }
 function Invoke-NeuralPython {
     param([Parameter(ValueFromRemainingArguments=$true)][string[]]$PythonArguments)
-    & .venv-neural/Scripts/python.exe @PythonArguments
-    if ($LASTEXITCODE -ne 0) { throw "Neural Python command failed: $PythonArguments" }
+    # This scope certifies a CPU port, even on a CUDA-capable workstation.
+    $previousCudaVisibility = $env:CUDA_VISIBLE_DEVICES
+    try {
+        $env:CUDA_VISIBLE_DEVICES = '-1'
+        & .venv-neural/Scripts/python.exe @PythonArguments
+        if ($LASTEXITCODE -ne 0) { throw "Neural Python command failed: $PythonArguments" }
+    } finally {
+        $env:CUDA_VISIBLE_DEVICES = $previousCudaVisibility
+    }
 }
 Invoke-CorePython -c 'from scripts.resources import require_resources; print(require_resources())'
 $core = 'outputs/openai-core-20261031'
@@ -30,6 +37,7 @@ switch ($Scope) {
             -not $backup.StartsWith($root,[StringComparison]::OrdinalIgnoreCase)) { throw 'Core move must stay inside this checkout' }
         if (Test-Path -LiteralPath $backup) { throw 'Original core inputs already preserved; use a fresh checkout' }
         if (-not (Test-Path -LiteralPath "$original/embedding-verification.json")) { throw 'Restore core inputs first' }
+        Invoke-CorePython -m tools.openai_study_full_reproduce core-preflight
         Move-Item -LiteralPath $original -Destination $backup
         New-Item -ItemType Directory -Path $original | Out-Null
         Copy-Item -LiteralPath "$backup/embedding-verification.json" -Destination "$original/embedding-verification.json"

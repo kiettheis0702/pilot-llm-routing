@@ -13,6 +13,36 @@ ROOT = Path(__file__).resolve().parents[1]
 OUTPUT = ROOT / 'outputs/full-reproduction'
 
 
+def validate_pristine_core_inputs(root):
+    """Refuse to relocate a scientific tree that contains more than restored inputs."""
+    root = Path(root).resolve()
+    core = root / 'outputs/openai-core-20261031'
+    if not core.is_dir() or core.resolve() != core:
+        raise ValueError('Core inputs must be a real directory in this fresh checkout')
+    entries = [row for row in read(root / 'configs/openai-reproduction-files.json')['files']
+               if row['path'].startswith('outputs/openai-core-20261031/')]
+    files = {Path(row['path']).relative_to('outputs/openai-core-20261031'):row for row in entries}
+    if not files or len(files) != len(entries):
+        raise ValueError('Empty or duplicate restored core input inventory')
+    allowed = set(files)
+    for relative in files:
+        if relative.is_absolute() or '..' in relative.parts:
+            raise ValueError('Restored core input escapes its directory')
+        allowed.update(parent for parent in relative.parents if parent != Path('.'))
+    actual = set()
+    for path in core.rglob('*'):
+        if path.resolve() != path:
+            raise ValueError('Linked core inputs are not a fresh restored tree')
+        actual.add(path.relative_to(core))
+    if actual != allowed:
+        raise ValueError('Use a fresh restored-input-only core tree; existing results are preserved')
+    for relative, entry in files.items():
+        path = core / relative
+        if not path.is_file() or path.stat().st_size != entry['size'] or sha(path) != entry['sha256']:
+            raise ValueError('Restored core input differs: ' + relative.as_posix())
+    return dict(verified=True, restored_core_files=len(files), scientific_outputs_moved=False)
+
+
 def verify_full_inventory(proofs, published):
     expected = {row['id']: row for row in published}
     if not expected or len(expected) != len(published):
@@ -126,13 +156,15 @@ def mf_cpu():
 
 def main():
     parser = argparse.ArgumentParser(description=__doc__)
-    parser.add_argument('scope', choices=['core-inputs','core','followups','mf'])
+    parser.add_argument('scope', choices=['core-preflight','core-inputs','core','followups','mf'])
     args = parser.parse_args()
     from scripts.resources import require_resources
     from tools.course.analyze import verify_package
     from tools.openai_study import once
     preflight = require_resources()
-    if args.scope == 'core-inputs':
+    if args.scope == 'core-preflight':
+        result = validate_pristine_core_inputs(ROOT)
+    elif args.scope == 'core-inputs':
         result = core_inputs()
     else:
         result = dict(scope=args.scope, commit=os.environ.get('GITHUB_SHA'), run_id=os.environ.get('GITHUB_RUN_ID'),
