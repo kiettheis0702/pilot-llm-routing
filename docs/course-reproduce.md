@@ -37,7 +37,7 @@ $env:UV_CONCURRENT_INSTALLS='1'
 $env:UV_CONCURRENT_BUILDS='1'
 uv venv .venv-embedding --python 3.11.18
 uv pip install --python .venv-embedding/Scripts/python.exe torch==2.8.0 --index-url https://download.pytorch.org/whl/cu128
-uv pip install --python .venv-embedding/Scripts/python.exe -e '.[cost]' -r configs/followup-neural-requirements.txt
+uv pip install --python .venv-embedding/Scripts/python.exe -r pyproject.toml --extra cost -r configs/followup-neural-requirements.txt
 ```
 
 The requirements record observed versions; no environment upgrade is needed for

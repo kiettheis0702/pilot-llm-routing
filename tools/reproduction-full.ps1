@@ -90,7 +90,8 @@ switch ($Scope) {
         uv pip install --python .venv-neural/Scripts/python.exe torch==2.8.0 --index-url https://download.pytorch.org/whl/cu128
         if ($LASTEXITCODE -ne 0) { throw 'Pinned PyTorch installation failed' }
         Invoke-CorePython -c 'from scripts.resources import require_resources; print(require_resources())'
-        uv pip install --python .venv-neural/Scripts/python.exe -e '.[cost]' -r configs/followup-neural-requirements.txt
+        # Execute modules from the checkout; this flat repository is not a wheel.
+        uv pip install --python .venv-neural/Scripts/python.exe -r pyproject.toml --extra cost -r configs/followup-neural-requirements.txt
         if ($LASTEXITCODE -ne 0) { throw 'Pinned neural requirements installation failed' }
         foreach ($seed in @(7,42,2026)) { Invoke-NeuralPython -m tools.openai_study_routellm_train run --seed $seed }
         Invoke-NeuralPython -m tools.openai_study_routellm_train run --seed 42 --mutation-probe
