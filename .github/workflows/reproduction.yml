@@ -45,20 +45,37 @@ jobs:
         run: |
           .venv/Scripts/python.exe -c "import tiktoken; from scripts.cost_inputs import HistoricalCounter; tiktoken.get_encoding('cl100k_base'); print(HistoricalCounter().metadata)"
           if ($LASTEXITCODE -ne 0) { exit $LASTEXITCODE }
-      - name: Baseline regression
+      - name: Full serial regression
         shell: pwsh
         run: |
           .venv/Scripts/python.exe -c "from scripts.resources import require_resources; print(require_resources())"
           if ($LASTEXITCODE -ne 0) { exit $LASTEXITCODE }
-          .venv/Scripts/python.exe -m pytest -q -rs --ignore=tests/test_reproduce_followups.py --basetemp=.cache/ci-baseline
+          .venv/Scripts/python.exe -m pytest -q -rs --basetemp=.cache/ci-full
           if ($LASTEXITCODE -ne 0) { exit $LASTEXITCODE }
-      - name: Confirm missing entrypoints fail before implementation
+      - name: Restore inputs and replay preparation twice
         shell: pwsh
-        run: |
-          .venv/Scripts/python.exe -c "from scripts.resources import require_resources; print(require_resources())"
-          if ($LASTEXITCODE -ne 0) { exit $LASTEXITCODE }
-          $output = & .venv/Scripts/python.exe -m pytest tests/test_reproduce_followups.py -q --basetemp=.cache/ci-red 2>&1
-          $testExit = $LASTEXITCODE
-          $output | Write-Output
-          if ($testExit -ne 1 -or ($output -join "`n") -notmatch '8 failed' -or ($output -join "`n") -notmatch "No module named 'tools.openai_study_reproduce'") { throw 'Expected eight missing-entrypoint failures' }
-          exit 0
+        run: tools/reproduction-ci.ps1 -Stage inputs
+      - name: Refit Preference500 on all three seeds
+        shell: pwsh
+        run: tools/reproduction-ci.ps1 -Stage preference
+      - name: Refit after flipping only final-test labels
+        shell: pwsh
+        run: tools/reproduction-ci.ps1 -Stage mutation
+      - name: Rebuild and independently replay six parent PILOT groups
+        shell: pwsh
+        run: tools/reproduction-ci.ps1 -Stage parents
+      - name: Exercise all five ablations on RouterBench seed7
+        shell: pwsh
+        run: tools/reproduction-ci.ps1 -Stage ablations
+      - name: Replay all five allocation policies on RouterBench seed7
+        shell: pwsh
+        run: tools/reproduction-ci.ps1 -Stage budget
+      - name: Replay zero and one-percent feedback noise
+        shell: pwsh
+        run: tools/reproduction-ci.ps1 -Stage noise
+      - name: Fresh binary tuning and one complete PILOT group
+        shell: pwsh
+        run: tools/reproduction-ci.ps1 -Stage binary
+      - name: Compare replays with published values and record coverage
+        shell: pwsh
+        run: tools/reproduction-ci.ps1 -Stage summary
