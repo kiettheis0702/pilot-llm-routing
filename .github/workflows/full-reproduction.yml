@@ -1,6 +1,13 @@
 name: Full offline reproduction
 on:
   workflow_dispatch:
+    inputs:
+      scope:
+        description: Complete CPU inventory to execute
+        required: true
+        type: choice
+        default: all
+        options: [all, core, followups, mf]
   push:
     branches: [codex/full-reproduction]
 permissions:
@@ -48,3 +55,37 @@ jobs:
           if ($LASTEXITCODE -ne 0) { exit $LASTEXITCODE }
           .venv/Scripts/python.exe -m pytest -q -rs --basetemp=.cache/full-reproduction-tests
           if ($LASTEXITCODE -ne 0) { exit $LASTEXITCODE }
+  reproduce:
+    needs: gate
+    if: github.event.repository.private == false
+    runs-on: windows-2025
+    timeout-minutes: 360
+    strategy:
+      max-parallel: 1
+      fail-fast: true
+      matrix:
+        scope: ${{ fromJSON((github.event_name == 'push' || inputs.scope == 'all') && '["core","followups","mf"]' || format('["{0}"]', inputs.scope)) }}
+    steps:
+      - uses: actions/checkout@11d5960a326750d5838078e36cf38b85af677262
+        with:
+          persist-credentials: false
+      - uses: astral-sh/setup-uv@37802adc94f370d6bfd71619e3f0bf239e1f3b78
+        with:
+          version: '0.13.6'
+          enable-cache: 'false'
+      - name: Prepare a fresh locked environment
+        shell: pwsh
+        run: |
+          $ram = (Get-CimInstance Win32_OperatingSystem).FreePhysicalMemory / 1MB
+          if ($ram -lt 8) { throw "Need 8 GiB physical RAM; found $ram" }
+          uv sync --locked --python 3.11.18 --extra cost --extra tracking --extra openai
+          if ($LASTEXITCODE -ne 0) { exit $LASTEXITCODE }
+          New-Item -ItemType Directory -Path .cache -Force | Out-Null
+          .venv/Scripts/python.exe -c "import tiktoken; from scripts.cost_inputs import HistoricalCounter; tiktoken.get_encoding('cl100k_base'); print(HistoricalCounter().metadata)"
+          if ($LASTEXITCODE -ne 0) { exit $LASTEXITCODE }
+      - name: Restore original inputs and prepare missing prerequisites
+        shell: pwsh
+        run: tools/reproduction-ci.ps1 -Stage inputs
+      - name: Run the complete native inventory and independent readers
+        shell: pwsh
+        run: tools/reproduction-full.ps1 -Scope ${{ matrix.scope }}
