@@ -1,5 +1,9 @@
 # Reproduce the reported follow-up studies
 
+For the later complete CPU inventories and fresh refits, see
+[full-reproduce.md](full-reproduce.md) and its current validation record in README.
+The bounded workflow below retains its original coverage.
+
 Use a separate checkout of `openai-followup-reproduction-2026-10-31` for the
 supplementary entrypoints. This later tag preserves the tested source and guides.
 See the [completed fresh-machine validation](followup-reproduction-validation-2026-10-31.md)
@@ -179,6 +183,43 @@ Encoding accepts `--limit-chunks 1`; a repeat resumes the journal. A partial
 encoding cannot enter `declare`. The original tail-recovery adapter is for the
 original interrupted journal only; do not transplant that recovery overlay into
 a fresh run. Public weights take about5GB; full encoding can take hours.
+
+If a live CUDA run stops committing, inspect it before stopping it; never
+remove its lock file to bypass an active writer. After the process has stopped
+and its OS lock is released, the native `encode --limit-chunks 1` command can
+continue one64-vector chunk per process, keeping batch4 and the entire recipe.
+Check the resource gate before every sequential invocation. When all38,018
+rows are committed but `completion.json` is still absent, call `encode`
+without the limit to finalize the manifest/role caches, then run the independent
+verifier. The [fresh replay validation](full-reproduction-validation-2026-10-31.md)
+records the exercised recovery and the unchanged-prefix checksum.
+
+After the full study completes, read back all78 groups with the same independent
+reader used by the core study. Choose a new output directory; stop on any failed
+command, retain partial proofs, and resume only the unfinished groups after
+inspecting the failure and checking resources again.
+
+```powershell
+$instructorReadback='outputs/instructor-readback-NEW'
+if (Test-Path -LiteralPath $instructorReadback) { throw 'Choose a new proof directory' }
+New-Item -ItemType Directory -Path $instructorReadback | Out-Null
+$instructorBase='outputs/instructor-core-20261031'
+$instructorProtocol=Get-Content -LiteralPath "$instructorBase/protocol.json" -Raw | ConvertFrom-Json
+foreach ($domain in @('routerbench','mmlu')) {
+    foreach ($seed in @(7,42,2026)) {
+        foreach ($method in $instructorProtocol.tuning.$domain.selected_parameters.PSObject.Properties.Name) {
+            .venv/Scripts/python.exe tools/research/verify_runs.py --domain $domain --seed $seed --method $method --base "$instructorBase/runs" --protocol "$instructorBase/protocol.json" --index "$instructorBase/prior-index.json" --cache-dir outputs/openai-followup-20261031/instructor/caches/source-0 --output "$instructorReadback/$domain-$seed-$method.json"
+            if ($LASTEXITCODE -ne 0) { throw "Instructor reader failed: $domain/$seed/$method" }
+        }
+    }
+}
+```
+
+These proofs establish each fresh trace's internal correctness. Compare their
+complete `inventory` with `reports/instructor-core-2026-10-31/per-seed.csv`
+separately; a successful reader does not mean all published metrics match.
+The fresh replay found855/858 matching conditions and retained three MMLU
+baseline differences in the validation record, without changing frozen reports.
 
 ## Hybrid binary and task shift
 
