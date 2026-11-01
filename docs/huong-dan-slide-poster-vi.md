@@ -4,7 +4,7 @@ Cập nhật 31/10/2026 theo [`CLAUDE_UPDATE_OPENAI_2026-10-31.md`](CLAUDE_UPDAT
 
 | File | Nội dung | Ghi chú |
 | --- | --- | --- |
-| `midterm/8.pptx` | Deck giữa kỳ, **24 slide**, notes tiếng Anh ở mọi slide (275–497 từ/slide) | Số liệu chính nay lấy từ nghiên cứu **OpenAI text-embedding-3-small**; BGE chỉ còn ở chỗ có nhãn "historical BGE" |
+| `midterm/8.pptx` | Deck giữa kỳ, **24 slide**, notes tiếng Anh ở mọi slide (275–499 từ/slide) | Số liệu chính nay lấy từ nghiên cứu **OpenAI text-embedding-3-small**; BGE chỉ còn ở chỗ có nhãn "historical BGE" |
 | `poster/8.pptx` | Poster **1 slide A2 dọc 420 × 594 mm** | W1 vẫn là thí nghiệm tổng hợp (synthetic); W2 nay dùng số OpenAI |
 | `midterm/8-preview.pdf`, `poster/8-preview.pdf` | Bản PDF xuất bằng PowerPoint để xem nhanh | Không nộp; chỉ để duyệt |
 | `midterm/references.txt` | Danh sách 13 tài liệu IEEE của deck | Đối chiếu số [n] ở chân slide |
@@ -43,7 +43,7 @@ Nguồn: trang đề môn học [statement](https://hcmus-cs-ta.github.io/lab-bo
 
 | Yêu cầu của đề | Cách đáp ứng | Slide |
 | --- | --- | --- |
-| 20–40 slide, < 20 MB, notes ≤ 500 từ ở mọi slide | 24 slide, 0,25 MB, notes 275–497 từ | tất cả |
+| 20–40 slide, < 20 MB, notes ≤ 500 từ ở mọi slide | 24 slide, 0,25 MB, notes 275–499 từ | tất cả |
 | Trích dẫn IEEE đánh số ở chân slide, không có slide References | Chân slide có [n]; số đánh theo thứ tự xuất hiện, script tự kiểm | tất cả |
 | Hình do nhóm tự vẽ, không dán hình paper | Sơ đồ vẽ bằng shape; biểu đồ là chart gốc PowerPoint, sửa được | 2, 6, 8, 9, 10, 15–20 |
 | Bối cảnh: bài toán + **ví dụ thực tế của nhóm** + ≥ 2 công trình trước | Chatbot hỗ trợ sinh viên HCMUS; LinUCB và Hybrid LLM | 2, 3 |
@@ -285,10 +285,15 @@ Mọi biến thể đều phục vụ 100% câu ở mức này. Ba seed chỉ ma
 - **Seed**: khoảng lệch vẫn tồn tại trên **ba seed đã thử** (min/max không chồng). Đây không phải khoảng tin cậy và không loại trừ mọi seed khác.
 - **Code gốc**: không kiểm được.
 
-Ghi chú rà cuối: slide 22 trong PPTX đầu vào còn dùng các nhãn khẳng định mạnh
-hơn ở trên. [Yêu cầu cho Claude](CLAUDE_FINAL_REVIEW_2026-10-31.md) đã chỉ rõ
-câu cần thay. Independent replay chứng minh trace của cấu hình đã chạy;
-không tự chứng minh mọi phần cứng/thư viện đều cho checkpoint giống hệt.
+Ghi chú rà cuối (01/11/2026): theo [yêu cầu rà cuối](CLAUDE_FINAL_REVIEW_2026-10-31.md),
+slide 22 đã đổi nhãn thành “gap persists with OpenAI; other causes unresolved”
+và “gap persists across 3 seeds”. Câu dưới bảng giờ nói: independent replay tái
+lập trace của cấu hình đã chạy; lượt CPU từ checkout mới khớp giá trị công bố
+của 858 điều kiện core và 723 điều kiện follow-up; nhưng không phải mọi môi
+trường đều cho kết quả giống byte (RouteLLM-MF trên CPU 338/338/340, trên CUDA
+338/340/343, tính trên 500 cặp). Notes mục 7 còn ghi lượt dựng lại Instructor
+khớp 855/858 điều kiện (3 baseline MMLU lệch nhẹ, toàn bộ PILOT khớp). Đây là
+lượt kiểm tái lập, không cộng vào 1.098 điều kiện hay 3.626 run W&B.
 
 ### Slide 23 — Những gì được và không được khẳng định
 - **Tái lập, có giới hạn**: regret thấp nhất trong nhóm learner; dẫn đầu chất lượng khi tiền dư (97,94% / 98,44% ở 100%) nhưng tiêu ~92% chi phí GPT-4.
