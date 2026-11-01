@@ -97,3 +97,66 @@ Poster:
   - cặp Mistral/Mixtral của mục D.1.
 - `deliverables/midterm/8.pptx` (33 slide) là bản lịch sử, không bị sửa.
 - Không commit, không push, không nộp Moodle.
+
+## 6. Lượt rà cuối — 01/11/2026
+
+Thực hiện theo [`CLAUDE_FINAL_REVIEW_2026-10-31.md`](CLAUDE_FINAL_REVIEW_2026-10-31.md). Hash đầu vào khớp đúng file yêu cầu (deck `5002638b…68276ab`, poster `05134829…b01b8cf`). Bản đầu vào được giữ nguyên byte trong `outputs/presentation-backup-20261101-final-review/` (local, không lên Git), kèm hai builder trước khi sửa. Không đổi số liệu khoa học, biểu đồ hay thiết kế.
+
+| File | SHA-256 (sau rà cuối) | Kích thước |
+| --- | --- | ---: |
+| `midterm/8.pptx` (24 slide) | `f2d69c28b25779772620720f6dd9b94c44dbf373287911425ff25fcf4080bb70` | 248.108 B |
+| `poster/8.pptx` (1 slide, 420 × 594 mm) | `23dc6c256a5e1e9b4be3ca119761b15f72e3994a98de2bd99dd053cf25b10328` | 42.397 B |
+| `midterm/8-preview.pdf` | `9af34b325c80a9d2614b4967001fa2ef1ab85d256ce2cbe0369985e996c5dfbc` | 1.255.064 B |
+| `poster/8-preview.pdf` | `46c4828f667326b0ccc14d0bfc794c6cf61eab068ed6a5895bc19d328142ccf7` | 472.659 B |
+| `midterm/references.txt` | `2859bd0774f6d34686bf78e50f5974623f6e64ed66d853c6382de46173381340` (không đổi) | 2.023 B |
+
+### Thay đổi
+
+- **Slide 22, bảng** (`build_deck.mjs`):
+  - `embedder ruled out; rest untestable` → `gap persists with OpenAI; other causes unresolved`;
+  - `ruled out` (seed) → `gap persists across 3 seeds` (khoảng trắng không ngắt giữa "3" và "seeds").
+- **Slide 22, câu dưới bảng**: bỏ "floating-point differences cannot create these gaps". Nay ghi: independent replay tái lập trace của cấu hình đã chạy; lượt CPU từ checkout mới khớp giá trị công bố của 858 điều kiện core và 723 điều kiện follow-up; không phải mọi môi trường đều giống byte (RouteLLM-MF 338/338/340 trên CPU so với 338/340/343 trên CUDA, trên 500 cặp).
+- **Slide 22, notes**:
+  - câu mở đầu bỏ "ruled out";
+  - mục 1: "BGE alone does not explain it", không loại trừ tương tác với tuning, split hoặc pool; các nguyên nhân khác "unresolved";
+  - mục 6: khoảng lệch còn trên ba seed; min–max của ba seed không phải khoảng tin cậy, không loại trừ seed khác;
+  - mục 7: thay câu "machine differences cannot create these gaps" bằng đúng phạm vi đã kiểm (858 core + 723 follow-up khớp; MF CPU 338/338/340 so với CUDA 338/340/343; Instructor dựng lại 855/858, 3 baseline MMLU lệch nhẹ, mọi PILOT khớp) và nói rõ các lượt này không thêm điều kiện hay run.
+  - Rút gọn chữ ở câu mở đầu, mục 1 và mục 4 để giữ ≤ 500 từ (499). Không đổi số hay dấu của gap.
+- **Poster, chỉ notes** (`build_poster.mjs`): thêm một câu: lượt từ checkout mới khớp 9 thiết lập W1 (18 policy trace) và 858 điều kiện core OpenAI làm nền cho W2; không thêm điều kiện hay run W&B. Mặt poster không đổi: `ppt/slides/slide1.xml` giống byte bản cũ.
+- **Nguồn số mới**: [biên bản kiểm chứng](full-reproduction-validation-2026-10-31.md) (bản hoàn tất 01/11). Builder dừng nếu số MF CUDA trong `paired-preference500.csv` khác 338/340/343. Số MF CPU lấy từ biên bản, ghi thành hằng số có chú thích nguồn.
+- `docs/huong-dan-slide-poster-vi.md`: cập nhật đoạn ghi chú slide 22 và số từ notes.
+- `tools/course/pptx/check_pptx.py`: thêm `ruled out`, `cannot create these gaps` và `seed noise does not explain` vào danh sách câu lỗi thời. Đối chứng âm: checker báo lỗi `ruled out` ở slide 22 của bản đầu vào.
+
+### Đã kiểm
+
+| Kiểm tra | Kết quả |
+| --- | --- |
+| `node build_deck.mjs`, `node build_poster.mjs` | Đạt; 24 slide, 13 tài liệu |
+| `python tools/course/pptx/check_pptx.py` | **OK**: deck notes 275–499 từ, poster 481 từ; 42 + 5 link run W&B nằm trong registry |
+| Validator OOXML của skill pptx (có và không có `--original`) | **All validations PASSED** cho cả hai file |
+| So chữ toàn deck với bản đầu vào (slide, notes, chart) | Chỉ `slide22.xml` và `notesSlide22.xml` khác chữ. Các khác biệt nhị phân còn lại chỉ là GUID section ngẫu nhiên (`presentation.xml`) và thời điểm tạo trong workbook biểu đồ |
+| Render PowerPoint (COM) 1920 px, so pixel với bản đầu vào | 23/24 slide giống từng pixel; slide 22 chỉ khác trong vùng bảng và chú thích. Đã xem slide 22 ở cỡ đọc được: không tràn, không đè, bảng không giãn, chú thích 2 dòng cách footer |
+| Render poster 3.300 px, so pixel | Giống hoàn toàn bản đầu vào |
+
+### Chưa kiểm / còn mở
+
+- Chưa mở file trên máy khác, chưa quét QR bằng điện thoại, chưa xác nhận Moodle.
+- `deliverables/` không bị sửa. Không commit, không push, không nộp.
+
+## 7. Kiểm độc lập và bàn giao bản cuối — 01/11/2026
+
+Codex đã kiểm độc lập đúng bốn file có hash ở mục 6: mở cả hai PPTX bằng
+PowerPoint ở chế độ chỉ đọc, đối chiếu XML/notes/chart và xem PDF. Ba yêu cầu
+thu hẹp kết luận ở slide 22 đã hoàn thành; notes đều dưới 500 từ, 42 + 5 link
+run khớp registry. Số liệu chart và workbook giữ nguyên. Không phát hiện lỗi
+nội dung hoặc bố cục cần sửa tiếp trong phạm vi kiểm trên máy này.
+
+PDF deck khớp từng pixel với bản xuất mới ở chiều rộng 1.600 px. PDF poster
+giữ nguyên mặt so với bản trước; bản xuất mới có cùng nội dung nhưng một số
+nét/vị trí chữ khác nhẹ, không mất chữ hoặc tràn/đè khối. Không coi kiểm trên
+máy này là bằng chứng đã mở trên máy bảo vệ, quét QR bằng điện thoại hay nộp bài.
+
+Người dùng đã duyệt commit/push bản cuối ngày 01/11/2026. Các dòng “không
+commit, không push” ở mục 5–6 mô tả thời điểm Claude thực hiện từng lượt sửa;
+không phải trạng thái tích hợp của bản cuối trên GitHub. Các kiểm tra nộp bài
+và thiết bị bên ngoài nêu trên vẫn chưa được xác nhận.
