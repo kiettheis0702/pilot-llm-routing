@@ -28,7 +28,12 @@ Giữ nguyên số liệu khoa học, biểu đồ có thể chỉnh sửa và t
 Đối chiếu notes của slide 22, thay câu tương ứng thay vì chỉ đổi nhãn. Notes
 hiện có slide tới 497 từ; luôn giữ tối đa 500 từ. Không đổi số hay dấu của gap.
 
-## Chỉ cập nhật sau khi có bằng chứng hoàn thành
+## Phạm vi đã kiểm chứng và cách ghi notes
+
+**Cập nhật 01/11/2026:** các scope CPU/CUDA trong
+[biên bản kiểm chứng](full-reproduction-validation-2026-10-31.md) đã hoàn tất,
+gồm hai Hybrid năm epoch và task shift. Đây là các lượt kiểm khả năng tái lập;
+giữ nguyên số liệu khoa học của deck/poster.
 
 Phần tái lập dùng đúng tài liệu validation mới nhất được dẫn trong README.
 729 test phần mềm đã qua trong CI tại commit `6a58f962`; full core/followups/MF
@@ -39,8 +44,8 @@ Instructor mới đã chạy/kiểm đủ858 điều kiện:855 khớp,3 baselin
 nhẹ; toàn bộ PILOT khớp. Giữ nguyên bảng công bố, chỉ ghi đúng giới hạn của
 lần dựng lại trong notes nếu cần. Không
 gọi CPU MF là CUDA replay, không cộng replay vào
-1.098 điều kiện OpenAI hoặc 3.626 run W&B, không ghi toàn bộ GPU đã chạy lại
-khi còn chờ RAM/probe/fit. Kiểm trạng thái mới nhất trước khi sửa notes.
+1.098 điều kiện OpenAI hoặc 3.626 run W&B. Chỉ nêu đúng các scope đã hoàn tất
+trong biên bản; không mở rộng thành mọi thí nghiệm BGE lịch sử hoặc mọi máy.
 
 ## Codex đã kiểm đọc bản đầu vào
 

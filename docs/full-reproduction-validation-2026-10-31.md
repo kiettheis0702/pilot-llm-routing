@@ -1,8 +1,10 @@
-# Kiểm chứng chạy lại đầy đủ — 31/10/2026
+# Kiểm chứng chạy lại đầy đủ — lượt 31/10/2026
 
-**Trạng thái: regression, full CPU, MF CUDA và full Instructor đã kiểm xong;
-Hybrid đang train, task shift còn chờ.** Không dùng số test thay cho bằng chứng
-full grid; chênh lệch MF CPU và3 điều kiện Instructor được ghi riêng bên dưới.
+**Trạng thái: các scope CPU/CUDA dưới đây đã chạy và kiểm tra độc lập xong.**
+Luồng native cuối kết thúc lúc 01:49 ngày 01/11/2026 (UTC+7); đối chiếu cuối
+hoàn tất ngày 01/11. Chênh lệch MF CPU và 3 điều kiện Instructor được giữ rõ
+bên dưới. Không dùng số test thay cho bằng chứng full grid, không tuyên bố
+mọi checkpoint/cache giống byte, không cộng các lượt kiểm này vào số run W&B.
 
 ## Phần đã hoàn thành
 
@@ -39,7 +41,7 @@ những runner riêng, không dùng RAM máy cá nhân.
 | Poster W1 |9 trường hợp synthetic,18 policy trace, so kết quả gốc |Đạt; toàn bộ stress/cost/comparison khớp, tổng reward/regret và số lần chọn được đọc lại |
 | MF CUDA |Môi trường mới,3 fit+mutation, NumPy reader, so bảng gốc |Đạt;338/340/343 trên500; epoch84/88/100; mutation340→160 với trọng số không đổi |
 | Instructor |Encode38.018 văn bản,858 điều kiện,78 reader |Đã chạy/kiểm đủ;855/858 khớp,3 điều kiện baseline MMLU khác; toàn bộ PILOT khớp |
-| Hybrid và task shift |Hai fit5 epoch, readback neural;15.000 vòng task shift và reader |Binary đã qua probe/audit/declare, đang train; drift/task shift còn chờ |
+| Hybrid và task shift |Hai fit5 epoch, readback neural;15.000 vòng task shift và reader |Đạt;21 threshold binary,10.000 câu đánh giá và12 dòng window khớp bảng gốc |
 
 [Job core hoàn thành](https://github.com/kiettheis0702/pilot-llm-routing/actions/runs/41206426268/job/124552610427)
 lúc14:50 UTC ngày31/10, sau khoảng70 phút chạy native. Summary trong log ghi
@@ -129,6 +131,37 @@ chỉnh MMLU đổi từ0,1462959118294094 sang0,1462742919866876. Đây là b�
 về chênh lệch của lần dựng lại, chưa phải phép can thiệp tách riêng nguyên
 nhân. Giữ cả kết quả mới và báo cáo gốc; không nới tolerance để gọi858/858
 khớp. Các số trong slide/poster vẫn lấy từ báo cáo khoa học gốc.
+
+Hybrid binary và Hybrid drift đã hoàn thành riêng đủ năm epoch; cả hai chọn
+epoch 4 bằng validation. Reader neural độc lập dựng lại source-token head,
+kiểm validation của cả năm checkpoint (1000 câu/epoch cho binary, 398 cho
+drift), rồi chạy lại toàn bộ 3227/10.000 test logits; sai khác lớn nhất với
+logit đã lưu của chính lượt mới bằng 0. Binary có 1265 bước optimizer được
+thử, 1259 được áp dụng và 6 AMP overflow skip; drift áp dụng đủ 200 bước.
+Mutation của Hybrid kiểm bộ trích đầu vào train/validation thực sự không đổi
+khi đổi test labels, không phải một lần refit neural thứ hai.
+
+Đọc CSV riêng xác nhận cả 21 threshold binary khớp; sai khác do biểu diễn số
+lớn nhất ở recorded cost là 1,78e-15 (rtol 1e-10, atol 1e-9). Task shift đã chạy
+và replay đủ 15.000 vòng: 5000 warm, 5000 trước shift, 5000 sau shift. So riêng
+với bảng công bố xác nhận đúng thứ tự/ID của 10.000 câu đánh giá, cả hai
+chuỗi lựa chọn arm, reward, cost, uncertainty/probability và 12 dòng của sáu
+window đều khớp; các giá trị đọc được có sai khác bằng 0.
+
+SHA256 các proof native mới:
+
+| Proof | SHA256 |
+|---|---|
+| Hybrid binary |`a96330fe79d243bd8204b69362dddd98ac57ef3c4e1c13da8b832b267df5e42a` |
+| Hybrid drift |`5d0701d7605234d2ed584694afc4fd09ae4c19be3adf35b567e9ebbfa6072237` |
+| Task shift |`ddf0ea59921a86da9008e06144aa4ca497a31bb392d200c27c4220ed78b36a81` |
+
+Checkout GPU giữ commit `9a9222f`; các producer khoa học đóng băng giống byte
+với nhánh tích hợp. Các thay đổi code orchestration mới đã được kiểm ở
+`6a58f962`; những commit tài liệu sau đó không thay producer/test. Các proof,
+trace và checkpoint mới được giữ riêng trong checkout kiểm chứng, không ghi
+đè package khoa học gốc. Không có request model trả phí hoặc network attempt
+trong hai fit/readback Hybrid.
 
 Các lần kiểm bounded đã hoàn thành trước đó vẫn ở
 [validation714 test](followup-reproduction-validation-2026-10-31.md); không

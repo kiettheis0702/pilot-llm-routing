@@ -167,6 +167,10 @@ checkpoint hoặc điểm số giống hệt; giữ kết quả CPU riêng khỏ
 Instructor mới cũng đã kiểm đủ858 điều kiện:855 khớp,3 baseline MMLU lệch
 nhẹ về reward/chi phí; toàn bộ PILOT khớp. Biên bản ghi rõ khác biệt cache,
 hiệu chỉnh ngưỡng và trace; bảng khoa học gốc được giữ nguyên.
+Hai Hybrid mới và task shift cũng đã hoàn thành kiểm chứng: 21 threshold binary,
+toàn bộ 10.000 câu đánh giá và 12 dòng window khớp bản công bố. Các bước chạy
+bổ sung đã xong ngày 01/11; phần còn lại của nhóm là rà lời trình bày theo file
+Claude, tự giải thích dự án và xác nhận bài nộp.
 
 ## 8. Việc hai thành viên phải tự làm
 

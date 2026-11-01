@@ -30,8 +30,12 @@ Supplementary validation: **714 passed** on a fresh Windows runner, with real
 follow-up fits and independent trace replay; [exact coverage and limits](docs/followup-reproduction-validation-2026-10-31.md).
 Latest regression: **729 passed** after full-inventory and preservation/device
 guard probes. [Full replay commands](docs/full-reproduce.md) and the
-[live validation record](docs/full-reproduction-validation-2026-10-31.md)
-distinguish completed checks from the full CPU/GPU work still pending.
+[completed validation record](docs/full-reproduction-validation-2026-10-31.md)
+cover full CPU and fresh CUDA execution, including both Hybrid fits and task
+shift. Core/follow-up tables, CUDA MF, Hybrid and task shift reproduce their
+published metrics. CPU MF differs by 0/−2/−3 correct answers; Instructor matches
+855/858 conditions, with three documented MMLU baseline differences and all
+PILOT metrics matching. These replays do not add scientific conditions or W&B runs.
 Older BGE handoffs are historical; their counts must not be relabelled OpenAI.
 Original release verification: **700 passed, 1 skipped** in a new locked environment;
 the separate 139-file archive supports a verified clean-checkout core replay.
